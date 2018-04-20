@@ -1,0 +1,9 @@
+gridOptions.api.setQuickFilter(document.getElementById('quickFilter').value);
+
+onGridReady: function(params) {
+        var defaultSortModel = [
+                {colId: "country", sort: "asc"},
+                {colId: "athlete", sort: "asc"}
+            ];
+        params.api.setSortModel(defaultSortModel);
+    }

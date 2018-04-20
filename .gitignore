@@ -1,0 +1,7 @@
+node_modules/
+.idea/
+out/
+dist/
+temp/
+package-lock.json
+pacdist/

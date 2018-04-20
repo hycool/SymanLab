@@ -1,0 +1,232 @@
+{
+  "tabcmd": {
+    "cmds": [
+      "actionADD",
+      "actionDELETE",
+      "actionSUBMIT",
+      "actionUNSUBMIT",
+      "actionGROUPSUBMIT",
+      "actionVOID",
+      "actionBATCHMODIFY",
+      "actionIMPORT",
+      "actionEXPORT"
+    ],
+    "id": 23965,
+    "prem": [
+      false,
+      true,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "desc": "调拨计划单"
+  },
+  "code": 0,
+  "waListButtons": [
+    {
+      "vuedisplay": "slient",
+      "confirm": "{\"isselect\":true,\"nodesc\":\"请先选择需要执行的记录！\",\"desc\":\"是否执行？\"}",
+      "isrefrsh": false,
+      "webid": 2210,
+      "webdesc": "执行",
+      "webname": "BILL_APPLY_EXECUTE",
+      "webicon": null,
+      "action": "com.jackrain.nea.oc.api.BBillApplyExecuteCmd:1.0:oc",
+      "ishide": false
+    },
+    {
+      "vuedisplay": "dialog",
+      "confirm": "{\"isselect\":true,\"nodesc\":\"请先选择需要终止的记录！\"}",
+      "isrefrsh": false,
+      "webid": 2208,
+      "webdesc": "终止",
+      "webname": "BILL_APPLY_STOP",
+      "webicon": null,
+      "action": "custompage/terminatorDialog?option=ids",
+      "ishide": false
+    },
+    {
+      "vuedisplay": "dialog",
+      "confirm": null,
+      "isrefrsh": false,
+      "webid": 2224,
+      "webdesc": "设置模板",
+      "webname": "setTemplate",
+      "webicon": null,
+      "action": "custompage/Konad",
+      "ishide": false
+    }
+  ],
+  "datas": {
+    "searchFoldnum": 3,
+    "status4css": [
+      {
+        "css": [
+          "blue-font-row"
+        ],
+        "value": [
+          "已提交"
+        ],
+        "desc": "提交"
+      },
+      {
+        "css": [
+          "execute-red-font-row",
+          "executed-pink-font-row"
+        ],
+        "value": [
+          "执行中",
+          "已执行"
+        ],
+        "desc": "执行"
+      },
+      {
+        "css": [
+          "stop-perple-font-row"
+        ],
+        "value": [
+          "已终止"
+        ],
+        "desc": "终止"
+      },
+      {
+        "css": [
+          "inactive-row"
+        ],
+        "value": [
+          "已作废"
+        ],
+        "desc": "作废"
+      }
+    ],
+    "tableid": 23965,
+    "dataarry": [
+      {
+        "coldesc": "配销中心",
+        "colname": "CP_C_DISTRIB_ID",
+        "isuppercase": false,
+        "display": "OBJ_FK",
+        "colid": 148782,
+        "inputname": "CP_C_DISTRIB_ID:ENAME",
+        "fkobj": {
+          "reftable": "CP_C_DISTRIB",
+          "fkdisplay": "drp",
+          "reftableid": 23291,
+          "url": "",
+          "option": null,
+          "searchmodel": "mrp"
+        }
+      },
+      {
+        "coldesc": "单据编号",
+        "colname": "DOCNO",
+        "isuppercase": false,
+        "colid": 148790
+      },
+      {
+        "coldesc": "单据日期",
+        "daterange": "-1",
+        "default": "-1",
+        "colname": "ORDERDATE",
+        "isuppercase": false,
+        "display": "OBJ_DATENUMBER",
+        "colid": 148791
+      },
+      {
+        "coldesc": "下单店仓",
+        "colname": "CP_C_STORE_ID",
+        "isuppercase": false,
+        "display": "OBJ_FK",
+        "colid": 148783,
+        "inputname": "CP_C_STORE_ID:ENAME",
+        "fkobj": {
+          "reftable": "CP_C_STORE",
+          "fkdisplay": "drp",
+          "reftableid": 23296,
+          "url": "",
+          "option": null,
+          "searchmodel": "mop"
+        }
+      },
+      {
+        "coldesc": "商品编码",
+        "colname": "PROCODELIST",
+        "isuppercase": false,
+        "colid": 148838
+      },
+      {
+        "coldesc": "备注",
+        "colname": "REMARK",
+        "isuppercase": false,
+        "colid": 148800
+      },
+      {
+        "coldesc": "状态",
+        "conds": [
+          {
+            "coldesc": "提交",
+            "colname": "SUBMITSTATUS",
+            "isuppercase": false,
+            "display": "OBJ_SELECT",
+            "colid": 148785,
+            "combobox": [
+              {
+                "limitdesc": "已提交",
+                "limitval": "Y"
+              },
+              {
+                "limitdesc": "未提交",
+                "limitval": "N"
+              }
+            ]
+          },
+          {
+            "coldesc": "执行",
+            "colname": "EXECUTESTATUS",
+            "isuppercase": false,
+            "display": "OBJ_SELECT",
+            "colid": 148787,
+            "combobox": [
+              {
+                "limitdesc": "执行中",
+                "limitval": "1"
+              },
+              {
+                "limitdesc": "已执行",
+                "limitval": "9"
+              },
+              {
+                "limitdesc": "未执行",
+                "limitval": "0"
+              }
+            ]
+          },
+          {
+            "coldesc": "终止",
+            "colname": "STOPSTATUS",
+            "isuppercase": false,
+            "display": "OBJ_SELECT",
+            "colid": 148788,
+            "combobox": [
+              {
+                "limitdesc": "未终止",
+                "limitval": "N"
+              },
+              {
+                "limitdesc": "已终止",
+                "limitval": "Y"
+              }
+            ]
+          }
+        ],
+        "display": "OBJ_SELECT"
+      }
+    ],
+    "table": "OC_B_BILL_APPLY",
+    "isIsshowextendpage": false
+  }
+}
