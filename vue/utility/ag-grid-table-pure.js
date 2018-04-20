@@ -38,6 +38,7 @@ const localeText = {
   // numberFilter
   equals: '等于',
   notEqual: '不等于',
+  notContains: '不包含',
   lessThanOrEqual: '小于等于',
   greaterThanOrEqual: '大于等于',
   inRange:'daInRange',
@@ -213,6 +214,11 @@ const cleanChildNode = (node) => {
   while(node && node.firstChild) { node.removeChild(node.firstChild); }
 };
 
+const currencyFormat = (value) => {
+  const arr = `${value}`.split('.');
+  return `${arr[0].replace(/(?=(?!^)(\d{3})+$)/g, ',')}.${arr[1] || ''}`;
+};
+
 /**
  * @param agGridTableContainer // 容器
  * @param options // 配置项
@@ -329,6 +335,12 @@ const agTable = (agGridTableContainer, options) => {
        */
       item.suppressMenu = false; // 是否禁用每一列的菜单选择
       item.menuTabs = menuTabs; // 处理每列菜单情况
+      if (item.type.toLocaleLowerCase() === 'number') {
+        item.filter = 'number'
+      }
+      if (item.type.toLocaleLowerCase() === 'string') {
+        item.filter = 'text'
+      }
       item.checkboxSelection = d.colname === 'ID' ? function (params) {
         return params.data.ID.val !== '合计' && params.data.ID.val !== '统计' && params.columnApi.getRowGroupColumns().length === 0;
       } : null;
@@ -360,8 +372,9 @@ const agTable = (agGridTableContainer, options) => {
 
     // 计算合计值
     if(isSubTotalEnabled) {
+      const subtotalRowData = {};
+
       // 前端计算合计值
-      /*
       const sumField = [];
       columnApi.getAllColumns().forEach(d => {
         subtotalRowData[d.colDef.colname] = { val: '' };
@@ -371,21 +384,24 @@ const agTable = (agGridTableContainer, options) => {
       });
       sumField.forEach(field => {
         subtotalRowData[field].val = data.reduce(function(sum, row) {
-          console.log(row[field].val, typeof row[field].val);
-          return sum + (parseFloat(row[field].val) || 0)
-        }, 0)
+          return sum + (parseFloat(`${row[field].val}`.replace(/\,/g, '')) || 0)
+        }, 0);
+        subtotalRowData[field].val = currencyFormat(subtotalRowData[field].val.toFixed(2));
       });
+      subtotalRowData.ID.val = '合计';
 
-      */
+
       //subtotalRow 计算合计值
-      const subtotalRowData = {};
+      /*
       columnApi.getAllColumns().forEach((d, i) => {
         const { colname } = d.colDef;
         subtotalRowData[colname] = { val: colname === 'ID' ? '合计' : (subtotalRow[i] || '') };
       });
+      */
       rowData = rowData.concat([subtotalRowData]);
     }
 
+    // 计算统计值
     if(isFullRangeSubTotalEnabled) {
       const fullRangeSubTotalRowData = {};
       columnApi.getAllColumns().forEach((d, i) => {
