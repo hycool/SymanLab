@@ -9,12 +9,13 @@ import { LicenseManager } from "ag-grid-enterprise/main";
 LicenseManager.setLicenseKey("Evaluation_License_Valid_Until_6_June_2018__MTUyODIzOTYwMDAwMA==4c69615c372b7cdc6c4bda8601ac106b");
 const cssFeatures = {
   hover: 'ag-syman-hover',
-  imagePreviewBox: 'image-preview-box'
+  imagePreviewBox: 'image-preview-box',
+  tooltipBox: 'tooltip-box'
 };
 
 const config = {
-  smallImageSize: 20,
-  previewImageSize: 150,
+  smallImageSize: 20, // 图片缩略图最小尺寸
+  previewImageSize: 150, // 图片预览图尺寸
 };
 
 const localeText = {
@@ -115,6 +116,33 @@ const setCommonStyles = () => {
       z-index: 999999; 
       box-shadow: 0 0 1px gray;
       transition-duration: 0.3s; 
+    }`,
+    `.${cssFeatures.tooltipBox} { 
+        background-color: black; 
+        position: absolute;
+        z-index: 99999;
+        color: #fff; 
+        font-size: 12px; 
+        padding: 5px 10px;
+        border-radius: 4px;
+        display: block;
+        border: 1px solid black;
+        max-width: 200px;
+        word-break: break-all;
+        text-align: center;
+        left: 10000px;
+    }`,
+    `.${cssFeatures.tooltipBox}::before {
+        display: block;
+        content: '';
+        top: 8px;
+        float: left;
+        position: absolute;
+        left: -11px;
+        border-right: 5px solid black;
+        border-left: 5px solid transparent;
+        border-top: 5px solid transparent;
+        border-bottom: 5px solid transparent;
     }`
   ];
   commonStyles.innerHTML = styleArray.join('\r\n');
@@ -143,15 +171,16 @@ imageComponent.prototype.init = function(params) {
   imgSmall.onmouseenter = function(e) {
     const { target } = e;
     const { agGridDiv, imagePreviewBox } = params;
-    let offsetLeft = 0;
-    const getOffsetLeftBaseRoot = (node) => {
-      offsetLeft += node.offsetLeft;
-      if (node.offsetParent && node.offsetParent !== agGridDiv) {
-        getOffsetLeftBaseRoot(node.offsetParent);
-      }
-    };
-
-    getOffsetLeftBaseRoot(target);
+    // 递归处理方式，这种方式不适用与ag-Grid中将某一列拖拽至最后一列的情况
+    // let offsetLeft = 0;
+    // const getOffsetLeftBaseRoot = (node) => {
+    //   offsetLeft += node.offsetLeft;
+    //   if (node.offsetParent && node.offsetParent !== agGridDiv) {
+    //     getOffsetLeftBaseRoot(node.offsetParent);
+    //   }
+    // };
+    // getOffsetLeftBaseRoot(target);
+    const offsetLeft = target.getBoundingClientRect().left - agGridDiv.getBoundingClientRect().left;
     const offsetTop = target.getBoundingClientRect().top - agGridDiv.getBoundingClientRect().top;
     imagePreviewBox.childNodes[0].setAttribute('src', `${url}?x-oss-process=image/resize,w_${config.previewImageSize}`);
     imagePreviewBox.style.display = '';
@@ -209,6 +238,46 @@ customerUrlComponent.prototype.getGui = function() {
   return this.eGui;
 };
 
+// for sequence component 错误信息提示tooltip
+const sequenceComponent = function() {};
+
+sequenceComponent.prototype.init = function(params) {
+  const { agGridDiv, tooltipBox, options, value, failIds } = params;
+  const eGui = document.createElement('span');
+  this.eGui = eGui;
+  const valueOfId = params.data.ID.val;
+  const template = valueOfId === '合计' || valueOfId === '统计' ? valueOfId :`<span style="color: #0f8ee9" data-target-tag="rowIndex">${params.rowIndex + 1 + params.options.datas.start}</span>`;
+  eGui.innerHTML = template;
+
+  // for tooltip icon
+  if (failIds.indexOf(value) > -1) {
+    const toolTipIcon = document.createElement('i');
+    toolTipIcon.setAttribute('class', `iconfont ${cssFeatures.hover}`);
+    toolTipIcon.innerHTML = '&#xe61b;';
+    toolTipIcon.onmouseenter = function(e) {
+      const { target } = e;
+      const offsetLeft = target.getBoundingClientRect().left - agGridDiv.getBoundingClientRect().left;
+      const offsetTop = target.getBoundingClientRect().top - agGridDiv.getBoundingClientRect().top;
+      tooltipBox.style.display = '';
+      tooltipBox.style.left = `${offsetLeft + 20}px`;
+      tooltipBox.style.top = `${offsetTop - (target.offsetHeight / 2)}px`;
+      if (options && options.datas && options.datas.deleteFailInfo && Object.prototype.toString.call(options.datas.deleteFailInfo) === '[object Array]') {
+        tooltipBox.innerText = options.datas.deleteFailInfo[failIds.indexOf(value)].message;
+      }
+    };
+    toolTipIcon.onmouseleave = function() {
+      tooltipBox.style.display = 'none';
+    };
+    eGui.appendChild(toolTipIcon);
+  }
+
+};
+
+sequenceComponent.prototype.getGui = function() {
+  return this.eGui;
+};
+
+
 const cleanChildNode = (node) => {
   // 清空agGridTableContainer
   while(node && node.firstChild) { node.removeChild(node.firstChild); }
@@ -218,6 +287,7 @@ const currencyFormat = (value) => {
   const arr = `${value}`.split('.');
   return `${arr[0].replace(/(?=(?!^)(\d{3})+$)/g, ',')}.${arr[1] || ''}`;
 };
+
 
 /**
  * @param agGridTableContainer // 容器
@@ -231,11 +301,28 @@ const agTable = (agGridTableContainer, options) => {
   }
   cleanChildNode(agGridTableContainer); // 清空agGridTableContainer节点
 
+  // 处理deleteFailInfo
+  const failIds = [];
+  if (options && options.datas && options.datas.deleteFailInfo && options.datas.deleteFailInfo && Object.prototype.toString.call(options.datas.deleteFailInfo) === '[object Array]') {
+    options.datas.deleteFailInfo.forEach(d => {
+      if (d.objid && d.objid !== '') {
+        failIds.push(d.objid);
+      }
+    });
+  }
+
   let zhColumnNameMap = {}; // 每列的中文字段名映射，形如{ '中文字段名': 'english_name' }
   const agGridDiv = document.createElement('div');
+
+  // 图片预览框
   const imagePreviewBox = document.createElement('div');
   imagePreviewBox.innerHTML = '<img alt="" style="width: 100%; height: 100%" />'
   imagePreviewBox.setAttribute('class', cssFeatures.imagePreviewBox);
+
+  // 自定义tooltip
+  const tooltipBox = document.createElement('div');
+  tooltipBox.setAttribute('class', cssFeatures.tooltipBox);
+
   agGridDiv.style.width = '100%';
   agGridDiv.style.height = '100%';
   agGridDiv.style.margin = '0 auto';
@@ -248,11 +335,15 @@ const agTable = (agGridTableContainer, options) => {
   // 列组件筛选器
   const componentPicker = (columnItem) => {
     if (columnItem.colname === 'ID') {
+
+      return 'sequenceComponent';
+      /*
       return function (params) {
         return params.value === '合计' || params.value === '统计' ?
           params.value :
           `<span style="color: #0f8ee9" data-target-tag="rowIndex">${params.rowIndex + 1 + options.datas.start}</span>`
       }
+      */
     }
     if (columnItem.customerurl) {
       return 'customerUrlComponent'
@@ -310,7 +401,10 @@ const agTable = (agGridTableContainer, options) => {
       item.cellRenderer = componentPicker(item);
       item.cellRendererParams = {
         agGridDiv,
-        imagePreviewBox
+        imagePreviewBox,
+        options,
+        tooltipBox,
+        failIds,
       }; // 在cell rendering 中自定义一个agGridDiv 用于以后的寻根定位
       item.sortingOrder = item.isorder ? ['asc', 'desc', null] : [null]; // 处理每列默认的单击后的排序顺序
       item.unSortIcon = item.isorder; // 设置未排序图表Icon
@@ -333,6 +427,14 @@ const agTable = (agGridTableContainer, options) => {
        return className;
        }; // 单元格class
        */
+      // item.cellStyle = function(params) {
+      //   if(params.column.colId === 'ID') {
+      //     // 如果colId === 'ID'，则将单元格overflow：hidden 属性放开
+      //     return {
+      //       overflow: 'auto',
+      //     }
+      //   }
+      // };
       item.suppressMenu = false; // 是否禁用每一列的菜单选择
       item.menuTabs = menuTabs; // 处理每列菜单情况
       if (item.type.toLocaleLowerCase() === 'number') {
@@ -448,6 +550,7 @@ const agTable = (agGridTableContainer, options) => {
       imageComponent,
       fkComponent,
       customerUrlComponent,
+      sequenceComponent,
     },
     getContextMenuItems() {
       return [
@@ -502,6 +605,7 @@ const agTable = (agGridTableContainer, options) => {
       // 自适应所有列
       columnApi.autoSizeAllColumns();
       agGridDiv.appendChild(imagePreviewBox);
+      agGridDiv.appendChild(tooltipBox);
     }, // 当表格渲染好之后，触发onGridReady
     onBodyScroll(params) {
       const { columnApi, direction } = params;

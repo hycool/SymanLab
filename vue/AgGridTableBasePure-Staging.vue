@@ -200,6 +200,20 @@
         fetch('./assets/fc.data2.json').then(res => {
           res.json().then(data => {
             const { tabth, row } = data.datas;
+            data.datas.deleteFailInfo = [
+              {
+                objid: '630',
+                message: '这是630的删除失败信息',
+              },
+              {
+                objid: '628',
+                message: '这是628的删除失败信息',
+              },
+              {
+                objid: '629',
+                message: '这是629的删除失败信息',
+              },
+            ];
             agTable(this.$refs.agGridTableContainer2, {
               datas: data.datas,
               cssStatus: [
