@@ -19,6 +19,7 @@
       {
         "orderno": 1,
         "isak": false,
+        "isorder": true,
         "display": "text",
         "scale": 0,
         "type": "NUMBER",

@@ -266,6 +266,10 @@
               onColumnVisibleChanged: (colName, visible) => {
                 // 形如 ： ORDERDATE true
                 console.log(colName, visible);
+              },
+              onSelectionChanged: (rowArray) => {
+                // rowArray: [{ ID: { val； '6305421' } }, {}, ...]
+                console.log(rowArray);
               }
             })
               .setCols(tabth)

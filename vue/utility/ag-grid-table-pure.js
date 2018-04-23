@@ -130,7 +130,7 @@ const setCommonStyles = () => {
         max-width: 200px;
         word-break: break-all;
         text-align: center;
-        left: 10000px;
+        left: -10000px;
     }`,
     `.${cssFeatures.tooltipBox}::before {
         display: block;
@@ -253,6 +253,7 @@ sequenceComponent.prototype.init = function(params) {
   if (failIds.indexOf(value) > -1) {
     const toolTipIcon = document.createElement('i');
     toolTipIcon.setAttribute('class', `iconfont ${cssFeatures.hover}`);
+    toolTipIcon.style.color = 'red';
     toolTipIcon.innerHTML = '&#xe61b;';
     toolTipIcon.onmouseenter = function(e) {
       const { target } = e;
@@ -277,7 +278,122 @@ sequenceComponent.prototype.getGui = function() {
   return this.eGui;
 };
 
+// for header component
+const customHeader = function() {}
 
+customHeader.prototype.init = function(params) {
+  const { displayName, enableMenu, enableSorting, column, agGridDiv, tooltipBox } = params;
+  this.params = params;
+  const eGui = document.createElement('div');
+  this.eGui = eGui;
+  eGui.setAttribute('class', 'ag-cell-label-container');
+  eGui.innerHTML = `
+    <span ref="eMenu" class="ag-header-icon ag-header-cell-menu-button" style="opacity: 0">
+      <span class="ag-icon ag-icon-menu"></span>
+    </span>
+    <div ref="eLabel" class="ag-header-cell-label" role="presentation">
+        <span ref="eText" class="ag-header-cell-text" role="columnheader">
+          ${params.column.colDef.comment ? `<i class="icon-font comment ${cssFeatures.hover}" style="color: orangered">&#xe640;</i>` : ''} ${displayName}
+        </span>
+        <span ref="eSortOrder" class="ag-header-icon ag-sort-order" ></span>
+        <span ref="eSortAsc" class="ag-header-icon ag-sort-ascending-icon ${params.column.colDef.sort === 'asc' ? '' : 'ag-hidden'}" >
+          <span class="ag-icon ag-icon-asc"></span>
+        </span>
+        <span ref="eSortDesc" class="ag-header-icon ag-sort-descending-icon ${params.column.colDef.sort === 'desc' ? '' : 'ag-hidden'}" >
+          <span class="ag-icon ag-icon-desc"></span>
+        </span>
+        <span ref="eSortNone" class="ag-header-icon ag-sort-none-icon ${!params.column.colDef.sort && params.column.colDef.isorder ? '' : 'ag-hidden'}" >
+          <span class="ag-icon ag-icon-none"></span>
+        </span>
+    </div>
+  `;
+  this.eMenuButton = eGui.querySelector('.ag-header-cell-menu-button');
+  this.eSortOrderAsc = eGui.querySelector('.ag-sort-ascending-icon');
+  this.eSortOrderDesc = eGui.querySelector('.ag-sort-descending-icon');
+  this.eSortNone = eGui.querySelector('.ag-sort-none-icon');
+  this.eComment = eGui.querySelector('i.comment');
+
+  if (this.eComment) {
+    this.eComment.onmouseenter = (e) => {
+      const { target } = e;
+      const offsetLeft = target.getBoundingClientRect().left - agGridDiv.getBoundingClientRect().left;
+      const offsetTop = target.getBoundingClientRect().top - agGridDiv.getBoundingClientRect().top;
+      tooltipBox.style.display = '';
+      tooltipBox.style.left = `${offsetLeft + 20}px`;
+      tooltipBox.style.top = `${offsetTop - 5}px`;
+      tooltipBox.innerText = column.colDef.comment;
+    };
+    this.eComment.onmouseleave = () => {
+      tooltipBox.style.display = 'none';
+    };
+  }
+
+  // 处理column menu:hover
+  eGui.onmouseenter = () => { this.eMenuButton.style.opacity = 1; };
+  eGui.onmouseleave = () => { this.eMenuButton.style.opacity = 0; };
+
+  // 处理column menu
+  if (enableMenu) {
+    this.onMenuClickListener = this.onMenuClick.bind(this);
+    this.eMenuButton.addEventListener('click', this.onMenuClickListener);
+  }
+
+  // 处理label click
+  this.onHeaderClickListener = this.onHeaderClick.bind(this);
+  eGui.addEventListener('click', this.onHeaderClickListener);
+
+  // 处理排序信息
+  if (enableSorting) {
+    this.onSortChangeListener = this.onSortChanged.bind(this);
+    column.addEventListener('sortChanged', this.onSortChangeListener);
+  }
+};
+
+customHeader.prototype.onMenuClick = function () {
+  this.params.showColumnMenu(this.eMenuButton);
+};
+
+customHeader.prototype.onHeaderClick = function(event) {
+  this.params.progressSort(event.shiftKey);
+};
+
+customHeader.prototype.onSortChanged = function() {
+  const { column } = this.params;
+  const { eSortOrderAsc, eSortOrderDesc, eSortNone } = this;
+  const sortState = column.getSort();
+  if (sortState === 'asc') {
+    eSortOrderAsc.classList.remove('ag-hidden');
+  } else {
+    eSortOrderAsc.classList.add('ag-hidden');
+  }
+
+  if (sortState === 'desc') {
+    eSortOrderDesc.classList.remove('ag-hidden');
+  } else {
+    eSortOrderDesc.classList.add('ag-hidden');
+  }
+
+  if (sortState === null && column.colDef.isorder) {
+    // 只有当此列允许排序，并且当前排序模式为null时，则显示图标
+    eSortNone.classList.remove('ag-hidden');
+  } else {
+    eSortNone.classList.add('ag-hidden');
+  }
+};
+
+customHeader.prototype.getGui = function() {
+  return this.eGui;
+};
+
+customHeader.prototype.destroy = function() {
+  if (this.onMenuClickListener) {
+    this.eMenuButton.removeEventListener('click', this.onMenuClickListener);
+  }
+  this.params.column.removeEventListener('sortChanged', this.onSortChangeListener);
+  this.eGui.removeEventListener('click', this.onHeaderClickListener);
+};
+
+// 公共方法
 const cleanChildNode = (node) => {
   // 清空agGridTableContainer
   while(node && node.firstChild) { node.removeChild(node.firstChild); }
@@ -394,6 +510,8 @@ const agTable = (agGridTableContainer, options) => {
       if(d.colname === 'field') { alert('field : 列名冲突'); }
       const item = JSON.parse(decodeURI(encodeURI(JSON.stringify(d))));
       item.headerName = d.colname === 'ID' ? '序号' : d.name || '未定义';
+      item.headerComponent = 'customHeader';
+      item.headerComponentParams = { agGridDiv, tooltipBox };
       item.field = `${d.colname}.val`; // 参与显示和计算的列值
       item.colId = d.colname; // 每一列的ID，默认和item.field一致。
       item.sort = defaultSortKeyMap[d.colname]; // 设置默认排序列
@@ -551,6 +669,7 @@ const agTable = (agGridTableContainer, options) => {
       fkComponent,
       customerUrlComponent,
       sequenceComponent,
+      customHeader
     },
     getContextMenuItems() {
       return [
@@ -588,6 +707,18 @@ const agTable = (agGridTableContainer, options) => {
         options.rowSingleClick(colDef, data, event.target);
       }
     }, // 行单击,
+    onSelectionChanged(params) {
+      if (typeof options.onSelectionChanged === 'function') {
+        const ids = [];
+        params.api.getSelectedRows().forEach(d => {
+          const { val } = d.ID;
+          if (val !== '合计' && val !== '统计') {
+            ids.push(val);
+          }
+        });
+        options.onSelectionChanged(ids);
+      }
+    }, // 行选中事件
     onRowDoubleClicked(params) {
       const { colDef, data, event } = params;
       if (typeof options.rowDoubleClick === 'function') {
@@ -597,7 +728,9 @@ const agTable = (agGridTableContainer, options) => {
     onSortChanged(params) {
       const { api } = params;
       if (typeof options.onSortChanged === 'function') {
-        options.onSortChanged(api.getSortModel());
+        if (api.getSortModel().length !== 0) {
+          options.onSortChanged(api.getSortModel());
+        }
       }
     }, // 响应排序事件
     onGridReady(params) {
