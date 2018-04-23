@@ -104,6 +104,7 @@ const localeText = {
 const setCommonStyles = () => {
   const commonStyles = document.createElement('style');
   const styleArray = [
+    `.ag-column-tool-panel-item { display: none; } .ag-filter-body { padding-left: 4px }`, // 禁止隐藏全部列
     `.${cssFeatures.hover} { cursor: pointer; }`,
     `.${cssFeatures.imagePreviewBox} {
       width: ${config .previewImageSize}px; 
