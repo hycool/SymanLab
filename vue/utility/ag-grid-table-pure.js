@@ -61,7 +61,7 @@ const localeText = {
   values: '聚合分析值',
   pivots: 'laPivots',
   valueColumnsEmptyMessage: '将需要聚合分析的‘列’拖拽到此处',
-  pivotColumnsEmptyMessage: 'drag here to pivot',
+  pivotColumnsEmptyMessage: '将需要透视分析的‘列’拖拽至此处',
   // other
   noRowsToShow: '暂无数据',
   // enterPriseMenu
