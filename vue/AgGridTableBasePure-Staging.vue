@@ -256,6 +256,8 @@
                   "desc": "作废"
                 }
               ],
+              toolPanelSuppressSideButtons: false,
+              useDefaultHeader: true,
               cellSingleClick: (colDef, row, target) => {},
               cellDoubleClick: (colDef, row, target) => {},
               rowSingleClick: (colDef, row, target) => {},

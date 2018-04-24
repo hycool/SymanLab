@@ -59,7 +59,7 @@ const localeText = {
   pivotMode: '透视模式',
   groups: '分组详情',
   values: '聚合分析值',
-  pivots: 'laPivots',
+  pivots: '透视列',
   valueColumnsEmptyMessage: '将需要聚合分析的‘列’拖拽到此处',
   pivotColumnsEmptyMessage: '将需要透视分析的‘列’拖拽至此处',
   // other
@@ -101,10 +101,10 @@ const localeText = {
   ctrlV: 'ctrl+V'
 };
 
-const setCommonStyles = () => {
+const setCommonStyles = (options) => {
   const commonStyles = document.createElement('style');
   const styleArray = [
-    `.ag-column-tool-panel-item { display: none; } .ag-filter-body { padding-left: 4px }`, // 禁止隐藏全部列
+    `${options && options.showAgToolPanelItem ? '' : '.ag-column-tool-panel-item { display: none; } .ag-filter-body { padding-left: 4px }'}`, // 禁止隐藏全部列
     `.${cssFeatures.hover} { cursor: pointer; }`,
     `.${cssFeatures.imagePreviewBox} {
       width: ${config .previewImageSize}px; 
@@ -216,7 +216,11 @@ fkComponent.prototype.init = function(params) {
   const template = value !== null && value !== '' ?
     `<i class="iconfont ${ cssFeatures.hover }" data-target-tag="fkIcon" style="color: #0f8ee9">&#xe625;</i>${params.value || ''}` :
     '';
-  if (params.data.ID.val !== '合计') {
+  if (params.data && params.data.ID.val !== '合计' && params.data.ID.val !== '统计') {
+    // 当前模式如果为非分组模式，则判断当前行是否是“合计行”、“统计行”
+    eGui.innerHTML = template;
+  } else if (params.columnApi.getRowGroupColumns().length !== 0) {
+    // 当前模式如果为分组模式，则不考虑特殊情况，所有行正恒渲染。
     eGui.innerHTML = template;
   }
 };
@@ -246,7 +250,7 @@ sequenceComponent.prototype.init = function(params) {
   const { agGridDiv, tooltipBox, options, value, failIds } = params;
   const eGui = document.createElement('span');
   this.eGui = eGui;
-  const valueOfId = params.data.ID.val;
+  const valueOfId = params.data ? params.data.ID.val : '';
   const template = valueOfId === '合计' || valueOfId === '统计' ? valueOfId :`<span style="color: #0f8ee9" data-target-tag="rowIndex">${params.rowIndex + 1 + params.options.datas.start}</span>`;
   eGui.innerHTML = template;
 
@@ -280,7 +284,9 @@ sequenceComponent.prototype.getGui = function() {
 };
 
 // for header component
-const customHeader = function() {}
+const customHeader = function() {
+  console.log('customHeader');
+};
 
 customHeader.prototype.init = function(params) {
   const { displayName, enableMenu, enableSorting, column, agGridDiv, tooltipBox } = params;
@@ -447,7 +453,7 @@ const agTable = (agGridTableContainer, options) => {
   agGridDiv.setAttribute('class', 'ag-theme-balham');  // 设置主题
   agGridTableContainer.appendChild(agGridDiv);
   // 设置通用样式
-  agGridDiv.appendChild(setCommonStyles());
+  agGridDiv.appendChild(setCommonStyles(options));
 
   // 列组件筛选器
   const componentPicker = (columnItem) => {
@@ -511,7 +517,7 @@ const agTable = (agGridTableContainer, options) => {
       if(d.colname === 'field') { alert('field : 列名冲突'); }
       const item = JSON.parse(decodeURI(encodeURI(JSON.stringify(d))));
       item.headerName = d.colname === 'ID' ? '序号' : d.name || '未定义';
-      item.headerComponent = 'customHeader';
+      item.headerComponent = options && options.useDefaultHeader ? null :'customHeader';
       item.headerComponentParams = { agGridDiv, tooltipBox };
       item.field = `${d.colname}.val`; // 参与显示和计算的列值
       item.colId = d.colname; // 每一列的ID，默认和item.field一致。
@@ -556,6 +562,12 @@ const agTable = (agGridTableContainer, options) => {
       // };
       item.suppressMenu = false; // 是否禁用每一列的菜单选择
       item.menuTabs = menuTabs; // 处理每列菜单情况
+      item.valueGetter = function (params) {
+        if (d.type.toLocaleLowerCase() === 'number') {
+          return params.data ? parseFloat(params.data[d.colname].val) : '';
+        }
+        return params.data ? params.data[d.colname].val : '';
+      };
       if (item.type.toLocaleLowerCase() === 'number') {
         item.filter = 'number'
       }
@@ -563,7 +575,7 @@ const agTable = (agGridTableContainer, options) => {
         item.filter = 'text'
       }
       item.checkboxSelection = d.colname === 'ID' ? function (params) {
-        return params.data.ID.val !== '合计' && params.data.ID.val !== '统计' && params.columnApi.getRowGroupColumns().length === 0;
+        return params.columnApi.getRowGroupColumns().length === 0 && params.data.ID.val !== '合计' && params.data.ID.val !== '统计';
       } : null;
       item.headerCheckboxSelection = d.colname === 'ID' ? function (params) {
         return params.columnApi.getRowGroupColumns().length === 0;
@@ -640,22 +652,25 @@ const agTable = (agGridTableContainer, options) => {
     rowData : options && options.rowData ? options.rowData : [],// 行数据
     multiSortKey: 'ctrl', // 多列排序组合键（按下ctrl + 鼠标点击某一列）
     animateRows: true, // 显示row动画
-    pagination: options && options.pagination ? options.pagination : false, // 是否启用分页
+    pagination: options && options.pagination !== undefined ? options.pagination : false, // 是否启用分页
     paginationPageSize: options && options.paginationPageSize ? options.paginationPageSize : 10, // 分页状态下，默认每页显示条目
-    enableColResize: options && options.enableColResize ? options.enableColResize : true, // 允许用户调整列宽
-    enableSorting: options && options.enableSorting ? options.enableSorting : true,// 允许按照列值排序
-    suppressAutoSize: options && options.suppressAutoSize ? options.suppressAutoSize : false, // 禁止双击某列边缘进行当前列宽自适应
-    enableFilter: options && options.enableFilter ? options.enableFilter : true, // 是否允许过滤
-    toolPanelSuppressSideButtons: options && options.toolPanelSuppressSideButtons ? options.toolPanelSuppressSideButtons : true,
-    enableStatusBar: options && options.enableStatusBar ? options.enableStatusBar : false, // 当用户在视图区进行区域选择的时候，是否显示所有可计算数据的[平均、求和、计数、最大、最小]等值
-    enableRangeSelection: options && options.enableRangeSelection ? options.enableRangeSelection : false, // 是否允许进行单元格区域选择
+    enableColResize: options && options.enableColResize !== undefined ? options.enableColResize : true, // 允许用户调整列宽
+    enableSorting: options && options.enableSorting !== undefined ? options.enableSorting : true,// 允许按照列值排序
+    suppressAutoSize: options && options.suppressAutoSize !== undefined ? options.suppressAutoSize : false, // 禁止双击某列边缘进行当前列宽自适应
+    enableFilter: options && options.enableFilter !== undefined ? options.enableFilter : true, // 是否允许过滤
+    toolPanelSuppressSideButtons: options && options.toolPanelSuppressSideButtons !== undefined ? options.toolPanelSuppressSideButtons : true,
+    enableStatusBar: options && options.enableStatusBar !== undefined ? options.enableStatusBar : true, // 当用户在视图区进行区域选择的时候，是否显示所有可计算数据的[平均、求和、计数、最大、最小]等值
+    enableRangeSelection: options && options.enableRangeSelection !== undefined ? options.enableRangeSelection : false, // 是否允许进行单元格区域选择
     rowSelection: "multiple", // 行选择模式
-    rowDeselection: options && options.rowDeselection ? options.rowDeselection : false, // 是否允许按住ctrl + click 取消选中某个已经选中的行
+    rowDeselection: options && options.rowDeselection !== undefined ? options.rowDeselection : false, // 是否允许按住ctrl + click 取消选中某个已经选中的行
     quickFilterText: null,
-    groupSelectsChildren: options && options.groupSelectsChildren ? options.groupSelectsChildren : false, // 当进行分组的时候，控制选择分组的行为，是否连带其children一起选中
+    groupSelectsChildren: options && options.groupSelectsChildren !== undefined? options.groupSelectsChildren : false, // 当进行分组的时候，控制选择分组的行为，是否连带其children一起选中
     defaultColDef: {
       // minWidth: options && options.minWidth ? options.minWidth : 100,
       comparator: options && options.sortByLocal ? null : function() {return 0; },
+      enableRowGroup: true,
+      enablePivot: true,
+      enableValue: true
     }, // 默认列配置
     enableCellChangeFlash: true,
     floatingFilter: options && options.floatingFilter ? options.floatingFilter : true, // 是否显表头下方的浮动筛选框
@@ -665,6 +680,8 @@ const agTable = (agGridTableContainer, options) => {
     enterMovesDownAfterEdit: true,
     enterMovesDown: true,
     localeText,
+    groupDefaultExpanded: 1, //
+    groupMultiAutoColumn: true, // 分组时，显示分组原字段
     components: {
       imageComponent,
       fkComponent,
@@ -760,7 +777,7 @@ const agTable = (agGridTableContainer, options) => {
       const { data } = params;
       if (options.cssStatus) {
         options.cssStatus.forEach(d => {
-          if (zhColumnNameMap[d.desc]) {
+          if (data && zhColumnNameMap[d.desc]) {
             const columnName = zhColumnNameMap[d.desc]; // 与d.desc所述中文字段相匹配的英文字段名
             const columnValueOfCurrentRow = data[columnName].val; // 与d.desc所述中文字段相匹配的当前行的columnName的取值
             className += `${d.css[d.value.indexOf(columnValueOfCurrentRow)] || ''} ` || ' ';
