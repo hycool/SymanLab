@@ -220,7 +220,7 @@ fkComponent.prototype.init = function(params) {
     // 当前模式如果为非分组模式，则判断当前行是否是“合计行”、“统计行”
     eGui.innerHTML = template;
   } else if (params.columnApi.getRowGroupColumns().length !== 0) {
-    // 当前模式如果为分组模式，则不考虑特殊情况，所有行正恒渲染。
+    // 当前模式如果为分组模式，则不考虑特殊情况，所有行正常渲染。
     eGui.innerHTML = template;
   }
 };
@@ -517,7 +517,7 @@ const agTable = (agGridTableContainer, options) => {
       if(d.colname === 'field') { alert('field : 列名冲突'); }
       const item = JSON.parse(decodeURI(encodeURI(JSON.stringify(d))));
       item.headerName = d.colname === 'ID' ? '序号' : d.name || '未定义';
-      item.headerComponent = options && options.useDefaultHeader ? null :'customHeader';
+      item.headerComponent = options && options.useDefaultHeader ? null :'customHeader'; // 如果外界传值useDefaultHeader = true，则不适用headerComponent
       item.headerComponentParams = { agGridDiv, tooltipBox };
       item.field = `${d.colname}.val`; // 参与显示和计算的列值
       item.colId = d.colname; // 每一列的ID，默认和item.field一致。
