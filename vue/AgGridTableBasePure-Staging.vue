@@ -1,7 +1,11 @@
 <!-- 本组件内的ag-Grid采用pure javascript 实现 -->
 <template>
   <div>
-    <div ref="agGridTableContainer2" style="width: 100%; height: 540px;border: 0px solid black; margin: 0 auto;">
+    <div ref="agGridReport" style="width: 100%; height: 540px;border: 1px solid black; margin: 0 auto;">
+      <p style="margin-top: 30px; text-align: center;">Loading...</p>
+    </div>
+    <div style="width: 100%; height: 30px;"></div>
+    <div ref="agGridTableContainer2" style="width: 100%; height: 540px;border: 1px solid black; margin: 0 auto;">
       <p style="margin-top: 30px; text-align: center;">Loading...</p>
     </div>
   </div>
@@ -10,6 +14,7 @@
 <script>
   import Papa from 'papaparse';
   import agTable from './utility/ag-grid-table-pure';
+  import agReport from './utility/ag-grid-report-pure';
   import AgGridTableBaseWrapper from './AgGridTableBaseWrapper.vue';
   import mock from 'mockjs';
   const headers = [
@@ -143,8 +148,9 @@
           columnDefs.push({
             headerName: d,
             field: 'field' + i,
-            editable: true,
-            enableRowGroup: true,
+            // rowGroupIndex: i === 2 ? 0 : null,
+            // pivotIndex: i === 5 ? 0 : null,
+            // aggFunc: i === 19 ? 'count' : null,
           });
         });
         return columnDefs;
@@ -175,7 +181,7 @@
         const beforeFetchTime = Date.now();
         const self = this;
         const fileIndex = 1; // fileIndex
-        fetch(`./csvDataForAgGridTable${fileIndex}.csv`).then((res) => {
+        fetch(`./assets/csvDataForAgGridTable${fileIndex}.csv`).then((res) => {
           console.log('fetchCsv耗时：', Date.now() - beforeFetchTime);
           res.text().then(data => {
             const beforeParseTime = Date.now();
@@ -184,7 +190,8 @@
                 console.log('转换 Csv To Array 耗时：', Date.now() - beforeParseTime );
                 const rowData = self.transformRowData(result.data);
                 const columnDefs = self.transformColumnDefs();
-                agTable(self.$refs.agGridTableContainer)
+                agReport(self.$refs.agGridReport, {
+                })
                   .setCols(columnDefs)
                   .setRows(rowData);
               }
@@ -308,9 +315,9 @@
     },
     beforeMount() {
       console.log('Vue组件渲染用时：', Date.now() - beforeMountTime);
-      // this.fetchCsv();
+      this.fetchCsv();
       // this.mockDemo();
-      this.fetchFCData();
+      // this.fetchFCData();
       // this.fetchFCDataOrigin();
       // this.fetchFCDataForWrapper();
     },
