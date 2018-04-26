@@ -3,6 +3,7 @@ import "../../node_modules/ag-grid/dist/styles/ag-grid.css"
 import "../../node_modules/ag-grid/dist/styles/ag-theme-balham.css"
 import "ag-grid-enterprise/main";
 import { LicenseManager } from "ag-grid-enterprise/main";
+import Papa from 'papaparse';
 
 // 设置enterprise key
 // 以下license key 为研发试用key，有效期到2018-06-06
@@ -99,7 +100,6 @@ const localeText = {
 const setCommonStyles = (options) => {
   const commonStyles = document.createElement('style');
   const styleArray = [
-    `.ag-pivot-mode-select .ag-checkbox-checked { display: none; }`,
     `${options && options.showAgToolPanelItem ? '' : '.ag-column-tool-panel-item { display: none; } .ag-filter-body { padding-left: 4px }'}`, // 禁止隐藏全部列
     `.${cssFeatures.hover} { cursor: pointer; }`,
   ];
@@ -111,6 +111,50 @@ const setCommonStyles = (options) => {
 const cleanChildNode = (node) => {
   // 清空agGridTableContainer
   while(node && node.firstChild) { node.removeChild(node.firstChild); }
+};
+
+// 替换Html Dom
+const replaceNode = (node) => {
+  const clone = node.cloneNode(true);
+  node.parentNode.appendChild(clone);
+  node.remove();
+};
+
+const exportCustomExcel = (csvData, groupState) => {
+  let groupNumber = 0;
+  groupState.forEach(d => {
+    // 分组列的groupId形如： FAKE_PATH_ag-Grid-AutoColumn-field2}_0
+    if (d.groupId.indexOf('FAKE_PATH') > -1) {
+      groupNumber += 1;
+    }
+  });
+  const simplifyData = [];
+  Papa.parse(csvData, {
+    complete(result) {
+     const { data } = result;
+     data.forEach((d, i) => {
+       if (d[0].replace(/\s/g, '').split('->')[1]) {
+         d[0] = d[0].replace(/\s/g, '').split('->')[1]
+       }
+
+       // 处理无效数据
+       if (d[groupNumber - 1] !== '') {
+         simplifyData.push(d);
+       }
+     });
+
+     // 填补显示问题
+     simplifyData.forEach((d, i) => {
+       for (let j = 1; j < groupNumber -1; j++) {
+         if (d[j] === '') {
+           d[j] = simplifyData[i - 1][j];
+         }
+       }
+     });
+
+     console.log(simplifyData);
+    }
+  })
 };
 
 /**
@@ -125,15 +169,25 @@ const agReport = (agGridTableContainer, options) => {
   }
   cleanChildNode(agGridTableContainer); // 清空agGridTableContainer节点
 
+  // create normal gird for top
   const agGridDiv = document.createElement('div');
-
   agGridDiv.style.width = '100%';
   agGridDiv.style.height = '100%';
   agGridDiv.style.margin = '0 auto';
   agGridDiv.style.position = 'relative';
   agGridDiv.setAttribute('class', 'ag-theme-balham');  // 设置主题
   agGridTableContainer.appendChild(agGridDiv);
-  // 设置通用样式
+
+  // create bottom grid as total footer
+  // const agGridDivBottom = document.createElement('div');
+  // agGridDivBottom.style.width = '100%';
+  // agGridDivBottom.style.height = '40px';
+  // agGridDivBottom.style.margin = '0 auto';
+  // agGridDivBottom.style.position = 'relative';
+  // agGridDivBottom.setAttribute('class', 'ag-theme-balham');  // 设置主题
+  // agGridTableContainer.appendChild(agGridDivBottom);
+
+  // 为agGridDiv设置通用样式
   agGridDiv.appendChild(setCommonStyles(options));
 
   const gridOptions = {
@@ -159,8 +213,9 @@ const agReport = (agGridTableContainer, options) => {
     enableCellChangeFlash: true,
     pivotPanelShow: 'always', // on of ['always','onlyWhenPivoting'] 表头上方可用于拖拽pivot列的区域
     pivotMode: true,
-    pivotTotals: true,
+    pivotTotals: false,
     showToolPanel: true, // 显示工具栏
+    toolPanelSuppressValues: true, // 引用aggregate value section 面板
     floatingFilter: options && options.floatingFilter ? options.floatingFilter : true, // 是否显表头下方的浮动筛选框
     rowDragManaged: true,
     rowGroupPanelShow: options && options.rowGroupPanelShow ? options.rowGroupPanelShow : 'always', // 是否显最顶部的group panel ['always', 'onlyWhenGrouping']
@@ -168,13 +223,19 @@ const agReport = (agGridTableContainer, options) => {
     localeText,
     groupDefaultExpanded: 9, //
     groupMultiAutoColumn: true, // 分组时，显示分组原字段
+    autoGroupColumnDef: {
+      cellRendererParams:{
+        suppressCount: true, // 禁用分组状态下，各个分组行的计数统计
+      },
+    },
     groupHideOpenParents: true, // 分组隐藏
     onGridReady(params) {
-      const { columnApi } = params;
+      const { columnApi, api } = params;
       // 自适应所有列
       columnApi.autoSizeAllColumns();
-      const pivotModeSelect = document.querySelector('span.ag-pivot-mode-select');
-      console.log(pivotModeSelect);
+      exportCustomExcel(api.getDataAsCsv(), columnApi.getColumnGroupState());
+      // clone [span.ag-pivot-mode-select] and replace it in order to disable its event listeners
+      replaceNode(document.querySelector('span.ag-pivot-mode-select'));
     }, // 当表格渲染好之后，触发onGridReady
     onColumnRowGroupChanged(params) {
       const { columnApi } = params;

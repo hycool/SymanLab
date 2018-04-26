@@ -285,7 +285,6 @@ sequenceComponent.prototype.getGui = function() {
 
 // for header component
 const customHeader = function() {
-  console.log('customHeader');
 };
 
 customHeader.prototype.init = function(params) {
@@ -361,7 +360,9 @@ customHeader.prototype.onMenuClick = function () {
 };
 
 customHeader.prototype.onHeaderClick = function(event) {
-  this.params.progressSort(event.shiftKey);
+  if (this.params.column.colDef.isorder) {
+    this.params.progressSort(event.shiftKey);
+  }
 };
 
 customHeader.prototype.onSortChanged = function() {
@@ -561,7 +562,7 @@ const agTable = (agGridTableContainer, options) => {
       //   }
       // };
       item.suppressMenu = false; // 是否禁用每一列的菜单选择
-      item.menuTabs = menuTabs; // 处理每列菜单情况
+      // item.menuTabs = menuTabs; // 处理每列菜单情况
       item.valueGetter = function (params) {
         if (d.type.toLocaleLowerCase() === 'number') {
           return params.data ? parseFloat(params.data[d.colname].val) : '';
@@ -572,7 +573,7 @@ const agTable = (agGridTableContainer, options) => {
         item.filter = 'number'
       }
       if (item.type.toLocaleLowerCase() === 'string') {
-        item.filter = 'text'
+        item.filter = 'agTextColumnFilter'
       }
       item.checkboxSelection = d.colname === 'ID' ? function (params) {
         return params.columnApi.getRowGroupColumns().length === 0 && params.data.ID.val !== '合计' && params.data.ID.val !== '统计';
@@ -680,6 +681,7 @@ const agTable = (agGridTableContainer, options) => {
     enterMovesDownAfterEdit: true,
     enterMovesDown: true,
     localeText,
+    // domLayout: 'autoHeight',
     groupDefaultExpanded: 1, //
     groupMultiAutoColumn: true, // 分组时，显示分组原字段
     components: {
@@ -760,13 +762,18 @@ const agTable = (agGridTableContainer, options) => {
     }, // 当表格渲染好之后，触发onGridReady
     onBodyScroll(params) {
       const { columnApi, direction } = params;
+      // console.log({ left: params.left, top: params.top });
       if (direction === 'horizontal' && options.autoSizeWhenScroll) {
         setTimeout(() => {
           columnApi.autoSizeAllColumns();
         }, 0); // 当检测到滚动条为横向滚动时，自适应当前视口范围内的所有列
       }
     }, // 当表体发生滚动时候触发该事件
-    onVirtualColumnsChanged(params) {}, // 当列很多时，如果用户横向拉动混动条以查看其它不在视口区域的列，则会触发此事件
+    onVirtualColumnsChanged(params) {
+      const allVirtualCols = params.columnApi.getAllDisplayedVirtualColumns();
+      const currentLastVirtualColumn = allVirtualCols[allVirtualCols.length - 1].colId;
+      console.log(currentLastVirtualColumn);
+    }, // 当列很多时，如果用户横向拉动混动条以查看其它不在视口区域的列，则会触发此事件
     onColumnVisible(params) {
       if (typeof options.onColumnVisibleChanged === 'function') {
         options.onColumnVisibleChanged(params.columns[0].colId, params.visible);

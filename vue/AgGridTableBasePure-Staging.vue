@@ -1,13 +1,13 @@
 <!-- 本组件内的ag-Grid采用pure javascript 实现 -->
 <template>
   <div>
-    <div ref="agGridReport" style="width: 100%; height: 600px; border: 1px solid black; margin: 0 auto;">
-      <p style="margin-top: 30px; text-align: center;">Loading...</p>
-    </div>
-    <div style="width: 100%; height: 30px;"></div>
-    <!--<div ref="agGridTableContainer2" style="width: 100%; height: 540px;border: 1px solid black; margin: 0 auto;">-->
+    <!--<div ref="agGridReport" style="width: 100%; height: 600px; border: 0px solid black; margin: 0 auto;">-->
       <!--<p style="margin-top: 30px; text-align: center;">Loading...</p>-->
     <!--</div>-->
+    <!--<div style="width: 100%; height: 30px;"></div>-->
+    <div ref="agGridTableContainer2" style="width: 100%; height: 540px;border: 0px solid black; margin: 0 auto; display: flex;">
+      <p style="margin-top: 30px; text-align: center;">Loading...</p>
+    </div>
   </div>
 </template>
 
@@ -149,11 +149,12 @@
             headerName: d,
             field: 'field' + i,
             allowedAggFuncs: ['count', 'sum'],
+            suppressToolPanel: true,
             valueGetter(params) {
               if (parseFloat(params.data[params.colDef.field])) {
                 return parseFloat(params.data[params.colDef.field]);
               } else {
-                return params.data[params.colDef.field]
+                return params.data[params.colDef.field] === '' ? '[未知]' : params.data[params.colDef.field];
               }
             }
           });
@@ -275,8 +276,8 @@
                   "desc": "作废"
                 }
               ],
-              toolPanelSuppressSideButtons: false,
-              useDefaultHeader: true,
+              toolPanelSuppressSideButtons: true,
+              useDefaultHeader: false,
               cellSingleClick: (colDef, row, target) => {},
               cellDoubleClick: (colDef, row, target) => {},
               rowSingleClick: (colDef, row, target) => {},
@@ -323,13 +324,29 @@
         }).then(res => {
           console.log(res);
         })
+      },
+      
+      convertCsvToExcel() {
+        fetch(`./assets/exportCsv.csv`).then((res) => {
+          res.text().then(data => {
+            Papa.parse(data, {
+              complete(result) {
+                console.log('result = ', result.data);
+                // result.data.forEach((d, i) => {
+                //   console.log(i, d.length);
+                // });
+              }
+            })
+          });
+        })
       }
     },
     beforeMount() {
       console.log('Vue组件渲染用时：', Date.now() - beforeMountTime);
-      this.fetchCsv();
+      // this.fetchCsv();
+      // this.convertCsvToExcel();
       // this.mockDemo();
-      // this.fetchFCData();
+      this.fetchFCData();
       // this.fetchFCDataOrigin();
       // this.fetchFCDataForWrapper();
     },

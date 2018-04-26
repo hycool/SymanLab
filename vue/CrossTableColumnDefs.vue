@@ -2,7 +2,11 @@
 <template>
   <div class="list-container" :style="{ width: width + 'px', marginLeft: marginLeft + 'px' }">
     <div>字段列表</div>
-    <cross-table-column-item v-for="column in columnLists" :info="column"></cross-table-column-item>
+    <cross-table-column-item
+      v-for="column in columnLists"
+      :info="column"
+      :key="'key' + Math.round(Math.random() * 1000000)"
+    ></cross-table-column-item>
   </div>
 </template>
 

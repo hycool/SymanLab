@@ -103,7 +103,8 @@
         "name": "单据编号",
         "type": "STRING",
         "inputname": "DOCNO",
-        "comment": "这是单据编号的注释信息"
+        "comment": "这是单据编号的注释信息",
+        "isorder": true
       },
       {
         "datelimit": "all",
