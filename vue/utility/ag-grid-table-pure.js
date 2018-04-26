@@ -681,8 +681,8 @@ const agTable = (agGridTableContainer, options) => {
     enterMovesDownAfterEdit: true,
     enterMovesDown: true,
     localeText,
-    // domLayout: 'autoHeight',
-    groupDefaultExpanded: 1, //
+    groupDefaultExpanded: 1,
+    domLayout: null,
     groupMultiAutoColumn: true, // 分组时，显示分组原字段
     components: {
       imageComponent,
@@ -770,9 +770,9 @@ const agTable = (agGridTableContainer, options) => {
       }
     }, // 当表体发生滚动时候触发该事件
     onVirtualColumnsChanged(params) {
-      const allVirtualCols = params.columnApi.getAllDisplayedVirtualColumns();
-      const currentLastVirtualColumn = allVirtualCols[allVirtualCols.length - 1].colId;
-      console.log(currentLastVirtualColumn);
+      // const allVirtualCols = params.columnApi.getAllDisplayedVirtualColumns();
+      // const currentLastVirtualColumn = allVirtualCols[allVirtualCols.length - 1].colId;
+      // console.log(currentLastVirtualColumn);  // 当前视口区域最后可见的列的colID
     }, // 当列很多时，如果用户横向拉动混动条以查看其它不在视口区域的列，则会触发此事件
     onColumnVisible(params) {
       if (typeof options.onColumnVisibleChanged === 'function') {
