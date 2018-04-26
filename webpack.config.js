@@ -2,7 +2,8 @@ const path = require('path');
 
 module.exports = () => ({
   entry: {
-    agGridIndex: './vue/agGrid.js'
+    agGridIndex: './vue/agGrid.js',
+    crossTable: './vue/crossTable.js',
   },
   output: {
     filename: '[name].bundle.js',

@@ -79,14 +79,14 @@ const localeText = {
   pinRight: '向右固定',
   noPin: '取消固定',
   // enterPriseAggregationAndStatusPanel
-  sum: '求和',
-  min: '最小值',
-  max: '最大值',
-  first: '首值',
-  last: '末值',
+  sum: 'Sum',
+  min: 'Min',
+  max: 'Max',
+  first: 'First',
+  last: 'Last',
   none: 'None',
-  count: '计数',
-  avg: '平均',
+  count: 'Count',
+  avg: 'Avg',
   average: '平均值',
   // standardMenu
   copyWithHeaders: '复制（含表头）',
@@ -99,6 +99,7 @@ const localeText = {
 const setCommonStyles = (options) => {
   const commonStyles = document.createElement('style');
   const styleArray = [
+    `.ag-pivot-mode-select .ag-checkbox-checked { display: none; }`,
     `${options && options.showAgToolPanelItem ? '' : '.ag-column-tool-panel-item { display: none; } .ag-filter-body { padding-left: 4px }'}`, // 禁止隐藏全部列
     `.${cssFeatures.hover} { cursor: pointer; }`,
   ];
@@ -156,19 +157,24 @@ const agReport = (agGridTableContainer, options) => {
       enableValue: true,
     }, // 默认列配置
     enableCellChangeFlash: true,
-    pivotPanelShow: 'onlyWhenPivoting', // on of ['always','onlyWhenPivoting'] 表头上方可用于拖拽pivot列的区域
-    pivotMode: false,
+    pivotPanelShow: 'always', // on of ['always','onlyWhenPivoting'] 表头上方可用于拖拽pivot列的区域
+    pivotMode: true,
+    pivotTotals: true,
+    showToolPanel: true, // 显示工具栏
     floatingFilter: options && options.floatingFilter ? options.floatingFilter : true, // 是否显表头下方的浮动筛选框
     rowDragManaged: true,
-    rowGroupPanelShow: options && options.rowGroupPanelShow ? options.rowGroupPanelShow : 'onlyWhenGrouping', // 是否显最顶部的group panel
+    rowGroupPanelShow: options && options.rowGroupPanelShow ? options.rowGroupPanelShow : 'always', // 是否显最顶部的group panel ['always', 'onlyWhenGrouping']
     enterMovesDownAfterEdit: true,
     localeText,
-    groupDefaultExpanded: 1, //
+    groupDefaultExpanded: 9, //
     groupMultiAutoColumn: true, // 分组时，显示分组原字段
+    groupHideOpenParents: true, // 分组隐藏
     onGridReady(params) {
       const { columnApi } = params;
       // 自适应所有列
       columnApi.autoSizeAllColumns();
+      const pivotModeSelect = document.querySelector('span.ag-pivot-mode-select');
+      console.log(pivotModeSelect);
     }, // 当表格渲染好之后，触发onGridReady
     onColumnRowGroupChanged(params) {
       const { columnApi } = params;
@@ -197,6 +203,9 @@ const agReport = (agGridTableContainer, options) => {
         }
       });
     },
+    onColumnPivotModeChanged(params) {
+      console.log('onColumnPivotModeChanged', params);
+    }
   };
 
   // 初始化ag grid

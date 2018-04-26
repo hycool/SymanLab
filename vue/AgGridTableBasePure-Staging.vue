@@ -1,13 +1,13 @@
 <!-- 本组件内的ag-Grid采用pure javascript 实现 -->
 <template>
   <div>
-    <div ref="agGridReport" style="width: 100%; height: 540px;border: 1px solid black; margin: 0 auto;">
+    <div ref="agGridReport" style="width: 100%; height: 600px; border: 1px solid black; margin: 0 auto;">
       <p style="margin-top: 30px; text-align: center;">Loading...</p>
     </div>
     <div style="width: 100%; height: 30px;"></div>
-    <div ref="agGridTableContainer2" style="width: 100%; height: 540px;border: 1px solid black; margin: 0 auto;">
-      <p style="margin-top: 30px; text-align: center;">Loading...</p>
-    </div>
+    <!--<div ref="agGridTableContainer2" style="width: 100%; height: 540px;border: 1px solid black; margin: 0 auto;">-->
+      <!--<p style="margin-top: 30px; text-align: center;">Loading...</p>-->
+    <!--</div>-->
   </div>
 </template>
 
@@ -148,11 +148,23 @@
           columnDefs.push({
             headerName: d,
             field: 'field' + i,
-            // rowGroupIndex: i === 2 ? 0 : null,
-            // pivotIndex: i === 5 ? 0 : null,
-            // aggFunc: i === 19 ? 'count' : null,
+            allowedAggFuncs: ['count', 'sum'],
+            valueGetter(params) {
+              if (parseFloat(params.data[params.colDef.field])) {
+                return parseFloat(params.data[params.colDef.field]);
+              } else {
+                return params.data[params.colDef.field]
+              }
+            }
           });
         });
+        columnDefs[2].rowGroupIndex = 0;
+        columnDefs[66].rowGroupIndex = 1;
+        columnDefs[6].rowGroupIndex = 2;
+        
+        columnDefs[5].pivotIndex = 0;
+        columnDefs[19].aggFunc = 'sum';
+        columnDefs[20].aggFunc = 'sum';
         return columnDefs;
       },
       
