@@ -107,23 +107,23 @@ const setCommonStyles = (options) => {
     `${options && options.showAgToolPanelItem ? '' : '.ag-column-tool-panel-item { display: none; } .ag-filter-body { padding-left: 4px }'}`, // 禁止隐藏全部列
     `.${cssFeatures.hover} { cursor: pointer; }`,
     `.${cssFeatures.imagePreviewBox} {
-      width: ${config .previewImageSize}px; 
-      height: ${config.previewImageSize}px; 
-      border: 0px solid black; 
-      position: absolute; 
-      bottom: 0; 
-      right: 10000px; 
-      background-color: #fff; 
-      z-index: 999999; 
+      width: ${config .previewImageSize}px;
+      height: ${config.previewImageSize}px;
+      border: 0px solid black;
+      position: absolute;
+      bottom: 0;
+      right: 10000px;
+      background-color: #fff;
+      z-index: 999999;
       box-shadow: 0 0 1px gray;
-      transition-duration: 0.3s; 
+      transition-duration: 0.3s;
     }`,
-    `.${cssFeatures.tooltipBox} { 
-        background-color: black; 
+    `.${cssFeatures.tooltipBox} {
+        background-color: black;
         position: absolute;
         z-index: 99999;
-        color: #fff; 
-        font-size: 12px; 
+        color: #fff;
+        font-size: 12px;
         padding: 5px 10px;
         border-radius: 4px;
         display: block;
@@ -303,13 +303,13 @@ customHeader.prototype.init = function(params) {
         </span>
         <span ref="eSortOrder" class="ag-header-icon ag-sort-order" ></span>
         <span ref="eSortAsc" class="ag-header-icon ag-sort-ascending-icon ${params.column.colDef.sort === 'asc' ? '' : 'ag-hidden'}" >
-          <span class="ag-icon ag-icon-asc"></span>
+          <span class="ag-icon ag-icon-asc ${cssFeatures.hover} trigger-sorting"></span>
         </span>
         <span ref="eSortDesc" class="ag-header-icon ag-sort-descending-icon ${params.column.colDef.sort === 'desc' ? '' : 'ag-hidden'}" >
-          <span class="ag-icon ag-icon-desc"></span>
+          <span class="ag-icon ag-icon-desc ${cssFeatures.hover} trigger-sorting"></span>
         </span>
         <span ref="eSortNone" class="ag-header-icon ag-sort-none-icon ${!params.column.colDef.sort && params.column.colDef.isorder ? '' : 'ag-hidden'}" >
-          <span class="ag-icon ag-icon-none"></span>
+          <span class="ag-icon ag-icon-none ${cssFeatures.hover} trigger-sorting"></span>
         </span>
     </div>
   `;
@@ -360,7 +360,8 @@ customHeader.prototype.onMenuClick = function () {
 };
 
 customHeader.prototype.onHeaderClick = function(event) {
-  if (this.params.column.colDef.isorder) {
+  if (this.params.column.colDef.isorder && event.target.getAttribute('class').indexOf('trigger-sorting') > -1) {
+    console.log('trigger sorting');
     this.params.progressSort(event.shiftKey);
   }
 };
@@ -447,8 +448,9 @@ const agTable = (agGridTableContainer, options) => {
   const tooltipBox = document.createElement('div');
   tooltipBox.setAttribute('class', cssFeatures.tooltipBox);
 
-  agGridDiv.style.width = '100%';
+  agGridDiv.style.width = `100%`;
   agGridDiv.style.height = `${agGridTableContainer.offsetHeight}px`;
+  // console.log(agGridTableContainer.offsetWidth, agGridTableContainer.offsetHeight);
   agGridDiv.style.margin = '0 auto';
   agGridDiv.style.position = 'relative';
   agGridDiv.setAttribute('class', 'ag-theme-balham');  // 设置主题
@@ -462,12 +464,12 @@ const agTable = (agGridTableContainer, options) => {
 
       return 'sequenceComponent';
       /*
-      return function (params) {
-        return params.value === '合计' || params.value === '统计' ?
-          params.value :
-          `<span style="color: #0f8ee9" data-target-tag="rowIndex">${params.rowIndex + 1 + options.datas.start}</span>`
-      }
-      */
+       return function (params) {
+       return params.value === '合计' || params.value === '统计' ?
+       params.value :
+       `<span style="color: #0f8ee9" data-target-tag="rowIndex">${params.rowIndex + 1 + options.datas.start}</span>`
+       }
+       */
     }
     if (columnItem.customerurl) {
       return 'customerUrlComponent'
@@ -627,11 +629,11 @@ const agTable = (agGridTableContainer, options) => {
 
       //subtotalRow 计算合计值
       /*
-      columnApi.getAllColumns().forEach((d, i) => {
-        const { colname } = d.colDef;
-        subtotalRowData[colname] = { val: colname === 'ID' ? '合计' : (subtotalRow[i] || '') };
-      });
-      */
+       columnApi.getAllColumns().forEach((d, i) => {
+       const { colname } = d.colDef;
+       subtotalRowData[colname] = { val: colname === 'ID' ? '合计' : (subtotalRow[i] || '') };
+       });
+       */
       rowData = rowData.concat([subtotalRowData]);
     }
 
@@ -754,8 +756,9 @@ const agTable = (agGridTableContainer, options) => {
       }
     }, // 响应排序事件
     onGridReady(params) {
-      const { columnApi } = params;
+      const { api, columnApi } = params;
       // 自适应所有列
+      api.ensureColumnVisible(agGridTableContainer.getAttribute('data-last-virtual-column') || ''); // 获取最后一次横向滚动后，视口区域能看到的最后一列，并予以显示
       columnApi.autoSizeAllColumns();
       agGridDiv.appendChild(imagePreviewBox);
       agGridDiv.appendChild(tooltipBox);
@@ -770,9 +773,9 @@ const agTable = (agGridTableContainer, options) => {
       }
     }, // 当表体发生滚动时候触发该事件
     onVirtualColumnsChanged(params) {
-      // const allVirtualCols = params.columnApi.getAllDisplayedVirtualColumns();
-      // const currentLastVirtualColumn = allVirtualCols[allVirtualCols.length - 1].colId;
-      // console.log(currentLastVirtualColumn);  // 当前视口区域最后可见的列的colID
+      const allVirtualCols = params.columnApi.getAllDisplayedVirtualColumns();
+      const currentLastVirtualColumn = allVirtualCols[allVirtualCols.length - 1].colId;
+      agGridTableContainer.setAttribute('data-last-virtual-column', currentLastVirtualColumn);
     }, // 当列很多时，如果用户横向拉动混动条以查看其它不在视口区域的列，则会触发此事件
     onColumnVisible(params) {
       if (typeof options.onColumnVisibleChanged === 'function') {

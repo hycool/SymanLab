@@ -290,13 +290,12 @@
                 console.log(colName, visible);
               },
               onSelectionChanged: (rowArray) => {
-                // rowArray: [{ ID: { val； '6305421' } }, {}, ...]
+                // rowArray: ['rowID one', 'rowID tow', 'rowID three']
                 console.log(rowArray);
               }
             })
               .setCols(tabth)
-              .setRows(row)
-              .setHiddenCols('DOCNO,ORDERDATE');
+              .setRows(row);
           });
         });
       },
