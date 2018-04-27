@@ -295,7 +295,8 @@
               }
             })
               .setCols(tabth)
-              .setRows(row);
+              .setRows(row)
+              .setHiddenCols('DOCNO,ORDERDATE');
           });
         });
       },

@@ -448,7 +448,7 @@ const agTable = (agGridTableContainer, options) => {
   tooltipBox.setAttribute('class', cssFeatures.tooltipBox);
 
   agGridDiv.style.width = '100%';
-  agGridDiv.style.height = '100%';
+  agGridDiv.style.height = `${agGridTableContainer.offsetHeight}px`;
   agGridDiv.style.margin = '0 auto';
   agGridDiv.style.position = 'relative';
   agGridDiv.setAttribute('class', 'ag-theme-balham');  // 设置主题
@@ -821,6 +821,11 @@ const agTable = (agGridTableContainer, options) => {
     }
     api.setRowData(transformRowData(data));
     return agTable;
+  };
+
+  // 设置显示和隐藏列
+  agTable.setHiddenCols = (colString) => {
+    columnApi.setColumnsVisible(colString.split(','), false);
   };
 
   // 设置默认排序规则
