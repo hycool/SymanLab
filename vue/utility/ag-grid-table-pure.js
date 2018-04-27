@@ -361,7 +361,6 @@ customHeader.prototype.onMenuClick = function () {
 
 customHeader.prototype.onHeaderClick = function(event) {
   if (this.params.column.colDef.isorder && event.target.getAttribute('class').indexOf('trigger-sorting') > -1) {
-    console.log('trigger sorting');
     this.params.progressSort(event.shiftKey);
   }
 };
@@ -450,7 +449,6 @@ const agTable = (agGridTableContainer, options) => {
 
   agGridDiv.style.width = `100%`;
   agGridDiv.style.height = `${agGridTableContainer.offsetHeight}px`;
-  // console.log(agGridTableContainer.offsetWidth, agGridTableContainer.offsetHeight);
   agGridDiv.style.margin = '0 auto';
   agGridDiv.style.position = 'relative';
   agGridDiv.setAttribute('class', 'ag-theme-balham');  // 设置主题
@@ -770,7 +768,6 @@ const agTable = (agGridTableContainer, options) => {
     }, // 当表格渲染好之后，触发onGridReady
     onBodyScroll(params) {
       const { columnApi, direction } = params;
-      // console.log({ left: params.left, top: params.top });
       if (direction === 'horizontal' && options.autoSizeWhenScroll) {
         setTimeout(() => {
           columnApi.autoSizeAllColumns();
