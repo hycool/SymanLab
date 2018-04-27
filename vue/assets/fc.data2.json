@@ -511,7 +511,8 @@
         "ismodify": false,
         "name": "备注",
         "type": "STRING",
-        "inputname": "REMARK"
+        "inputname": "REMARK",
+        "isorder": true
       }
     ],
     "totalRowCount": 488,

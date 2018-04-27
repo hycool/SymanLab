@@ -30,6 +30,7 @@
       return {
         cols: [],
         rows: [],
+        agInstance: null,
       };
     },
     components: {
@@ -217,6 +218,7 @@
        * 模拟FC商品标准档案接口
        */
       fetchFCData() {
+        const self = this;
         fetch('./assets/fc.data2.json').then(res => {
           res.json().then(data => {
             const { tabth, row } = data.datas;
@@ -234,7 +236,7 @@
                 message: '这是629的删除失败信息',
               },
             ];
-            agTable(this.$refs.agGridTableContainer2, {
+            const agInstance = agTable(this.$refs.agGridTableContainer2, {
               datas: data.datas,
               cssStatus: [
                 {
@@ -284,6 +286,7 @@
               rowDoubleClick: (colDef, row, target) => {},
               onSortChanged: (arrayOfSortInfo) => {
                 console.log('on sort changed', arrayOfSortInfo);
+                self.fetchFCData();
               },
               onColumnVisibleChanged: (colName, visible) => {
                 // 形如 ： ORDERDATE true
@@ -293,9 +296,9 @@
                 // rowArray: ['rowID one', 'rowID tow', 'rowID three']
                 console.log(rowArray);
               }
-            })
-              .setCols(tabth)
-              .setRows(row);
+            });
+            agInstance.setCols(tabth);
+            agInstance.setRows(row);
           });
         });
       },
@@ -341,7 +344,7 @@
         })
       }
     },
-    beforeMount() {
+    mounted() {
       console.log('Vue组件渲染用时：', Date.now() - beforeMountTime);
       // this.fetchCsv();
       // this.convertCsvToExcel();

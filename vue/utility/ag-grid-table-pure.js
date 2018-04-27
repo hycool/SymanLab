@@ -648,6 +648,11 @@ const agTable = (agGridTableContainer, options) => {
     return rowData;
   };
 
+  // 处理ag-body-viewport 横向滚动问题
+  const horizontalScrollTo = function (element, scrollValue) {
+    element.scrollLeft = parseFloat(scrollValue);
+  };
+
   const gridOptions = {
     columnDefs: options && options.columnDefs ? options.columnDefs : [], // 列定义
     rowData : options && options.rowData ? options.rowData : [],// 行数据
@@ -754,6 +759,7 @@ const agTable = (agGridTableContainer, options) => {
       const { api } = params;
       if (typeof options.onSortChanged === 'function') {
         if (api.getSortModel().length !== 0) {
+          api.showLoadingOverlay();
           options.onSortChanged(api.getSortModel());
         }
       }
@@ -761,7 +767,7 @@ const agTable = (agGridTableContainer, options) => {
     onGridReady(params) {
       const { api, columnApi } = params;
       // 自适应所有列
-      api.ensureColumnVisible(agGridTableContainer.getAttribute('data-last-virtual-column') || ''); // 获取最后一次横向滚动后，视口区域能看到的最后一列，并予以显示
+      horizontalScrollTo(agGridDiv.querySelector('.ag-body-viewport'), agGridTableContainer.getAttribute('data-scroll-left')); // 处理表体的横向滚动问题。
       columnApi.autoSizeAllColumns();
       agGridDiv.appendChild(imagePreviewBox);
       agGridDiv.appendChild(tooltipBox);
@@ -773,11 +779,12 @@ const agTable = (agGridTableContainer, options) => {
           columnApi.autoSizeAllColumns();
         }, 0); // 当检测到滚动条为横向滚动时，自适应当前视口范围内的所有列
       }
+      agGridTableContainer.setAttribute('data-scroll-left', params.left);
     }, // 当表体发生滚动时候触发该事件
     onVirtualColumnsChanged(params) {
-      const allVirtualCols = params.columnApi.getAllDisplayedVirtualColumns();
-      const currentLastVirtualColumn = allVirtualCols[allVirtualCols.length - 1].colId;
-      agGridTableContainer.setAttribute('data-last-virtual-column', currentLastVirtualColumn);
+      // const allVirtualCols = params.columnApi.getAllDisplayedVirtualColumns();
+      // const currentLastVirtualColumn = allVirtualCols[allVirtualCols.length - 1].colId;
+      // agGridTableContainer.setAttribute('data-last-virtual-column', currentLastVirtualColumn);
     }, // 当列很多时，如果用户横向拉动混动条以查看其它不在视口区域的列，则会触发此事件
     onColumnVisible(params) {
       if (typeof options.onColumnVisibleChanged === 'function') {
