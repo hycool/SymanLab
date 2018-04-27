@@ -829,6 +829,7 @@ const agTable = (agGridTableContainer, options) => {
   // 设置显示和隐藏列
   agTable.setHiddenCols = (colString) => {
     columnApi.setColumnsVisible(colString.split(','), false);
+    return agTable;
   };
 
   // 设置默认排序规则
