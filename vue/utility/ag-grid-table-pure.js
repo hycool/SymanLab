@@ -302,10 +302,10 @@ customHeader.prototype.init = function(params) {
           ${params.column.colDef.comment ? `<i class="icon-font comment ${cssFeatures.hover}" style="color: orangered">&#xe640;</i>` : ''} ${displayName}
         </span>
         <span ref="eSortOrder" class="ag-header-icon ag-sort-order" ></span>
-        <span ref="eSortAsc" class="ag-header-icon ag-sort-ascending-icon ${params.column.colDef.sort === 'asc' ? '' : 'ag-hidden'}" >
+        <span ref="eSortAsc" class="ag-header-icon ag-sort-ascending-icon ${params.column.colDef.isorder && params.column.colDef.sort === 'asc' ? '' : 'ag-hidden'}" >
           <span class="ag-icon ag-icon-asc ${cssFeatures.hover} trigger-sorting"></span>
         </span>
-        <span ref="eSortDesc" class="ag-header-icon ag-sort-descending-icon ${params.column.colDef.sort === 'desc' ? '' : 'ag-hidden'}" >
+        <span ref="eSortDesc" class="ag-header-icon ag-sort-descending-icon ${params.column.colDef.isorder && params.column.colDef.sort === 'desc' ? '' : 'ag-hidden'}" >
           <span class="ag-icon ag-icon-desc ${cssFeatures.hover} trigger-sorting"></span>
         </span>
         <span ref="eSortNone" class="ag-header-icon ag-sort-none-icon ${!params.column.colDef.sort && params.column.colDef.isorder ? '' : 'ag-hidden'}" >
@@ -765,7 +765,7 @@ const agTable = (agGridTableContainer, options) => {
       }
     }, // 响应排序事件
     onGridReady(params) {
-      const { api, columnApi } = params;
+      const { columnApi } = params;
       // 自适应所有列
       horizontalScrollTo(agGridDiv.querySelector('.ag-body-viewport'), agGridTableContainer.getAttribute('data-scroll-left')); // 处理表体的横向滚动问题。
       columnApi.autoSizeAllColumns();
