@@ -693,6 +693,11 @@ const agTable = (agGridTableContainer, options) => {
       sequenceComponent,
       customHeader
     },
+    columnTypes: {
+      // 防止后台api返回的colDef中有type，会引起columnType警告
+      'NUMBER': {},
+      'STRING': {},
+    },
     getContextMenuItems() {
       return [
         'copy',
