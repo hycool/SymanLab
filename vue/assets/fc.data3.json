@@ -1,0 +1,2063 @@
+{
+  "code": 0,
+  "datas": {
+    "start": 0,
+    "ordids": [
+      {
+        "colname": "ECODE",
+        "ordasc": true
+      },
+      {
+        "colname": "ID",
+        "ordasc": true
+      }
+    ],
+    "isFullRangeSubTotalEnabled": false,
+    "message": null,
+    "tabname": "PS_C_PRODIM",
+    "tabth": [
+      {
+        "orderno": 1,
+        "isak": false,
+        "display": "text",
+        "scale": 0,
+        "type": "NUMBER",
+        "datelimit": "all",
+        "isfilter": false,
+        "colname": "ID",
+        "isuppercase": false,
+        "isnotnull": false,
+        "ismodify": false,
+        "name": "ID",
+        "inputname": "ID"
+      },
+      {
+        "orderno": 130,
+        "isak": false,
+        "display": "text",
+        "type": "STRING",
+        "datelimit": "all",
+        "isfilter": true,
+        "colname": "ECODE",
+        "isuppercase": true,
+        "isnotnull": true,
+        "ismodify": false,
+        "name": "编码",
+        "isorder": true,
+        "inputname": "ECODE"
+      },
+      {
+        "orderno": 140,
+        "isak": true,
+        "display": "text",
+        "type": "STRING",
+        "datelimit": "all",
+        "isfilter": true,
+        "colname": "ENAME",
+        "isuppercase": false,
+        "isnotnull": true,
+        "ismodify": true,
+        "name": "名称",
+        "isorder": true,
+        "inputname": "ENAME"
+      },
+      {
+        "orderno": 145,
+        "isak": false,
+        "display": "text",
+        "type": "STRING",
+        "datelimit": "all",
+        "isfilter": true,
+        "colname": "AD_PROCOLUMN_NAME",
+        "isuppercase": true,
+        "isnotnull": true,
+        "ismodify": true,
+        "name": "关联档案字段",
+        "isorder": true,
+        "inputname": "AD_PROCOLUMN_NAME"
+      },
+      {
+        "orderno": 150,
+        "isak": false,
+        "display": "select",
+        "type": "STRING",
+        "datelimit": "all",
+        "isfilter": true,
+        "colname": "DATA_TYPE",
+        "isuppercase": false,
+        "isnotnull": true,
+        "ismodify": false,
+        "name": "数据类型",
+        "combobox": [
+          {
+            "limitdesc": "文本输入型",
+            "limitcss": null,
+            "limitval": "byPage"
+          },
+          {
+            "limitdesc": "数字型",
+            "limitcss": null,
+            "limitval": "number"
+          },
+          {
+            "limitdesc": "日期",
+            "limitcss": null,
+            "limitval": "datetime"
+          },
+          {
+            "limitdesc": "字典型",
+            "limitcss": null,
+            "limitval": "object"
+          }
+        ],
+        "inputname": "DATA_TYPE"
+      },
+      {
+        "reftable": "PS_C_PRODIM",
+        "orderno": 160,
+        "isak": false,
+        "display": "text",
+        "reftableid": 23151,
+        "type": "STRING",
+        "datelimit": "all",
+        "isfilter": false,
+        "colname": "PS_C_PRODIM_ID",
+        "isuppercase": false,
+        "isnotnull": false,
+        "fkdesc": "商品属性",
+        "ismodify": false,
+        "name": "上级商品属性",
+        "fkdisplay": "drp",
+        "inputname": "PS_C_PRODIM_ID:ENAME",
+        "isfk": true,
+        "objdistype": "object"
+      },
+      {
+        "orderno": 200,
+        "isak": false,
+        "display": "check",
+        "scale": 0,
+        "type": "NUMBER",
+        "datelimit": "all",
+        "isfilter": false,
+        "colname": "ISCODENULL",
+        "isuppercase": false,
+        "isnotnull": false,
+        "ismodify": false,
+        "name": "编码空值",
+        "combobox": [
+          {
+            "limitdesc": "是",
+            "limitcss": null,
+            "limitdis": true,
+            "limitval": "1"
+          },
+          {
+            "limitdesc": "否",
+            "limitcss": null,
+            "limitdis": false,
+            "limitval": "0"
+          }
+        ],
+        "inputname": "ISCODENULL"
+      },
+      {
+        "datelimit": "all",
+        "isfilter": false,
+        "colname": "MODIFIERENAME",
+        "orderno": 1003,
+        "isak": false,
+        "isuppercase": false,
+        "isnotnull": false,
+        "display": "text",
+        "ismodify": false,
+        "name": "修改人",
+        "type": "STRING",
+        "inputname": "MODIFIERENAME"
+      },
+      {
+        "datelimit": "all",
+        "isfilter": false,
+        "colname": "MODIFIEDDATE",
+        "orderno": 1004,
+        "isak": false,
+        "isuppercase": false,
+        "isnotnull": false,
+        "display": "OBJ_DATE",
+        "ismodify": false,
+        "name": "修改时间",
+        "type": "STRING",
+        "inputname": "MODIFIEDDATE"
+      }
+    ],
+    "totalRowCount": 53,
+    "rowCount": 53,
+    "row": [
+      {
+        "ENAME": {
+          "val": "系列15"
+        },
+        "PS_C_PRODIM_ID": {
+          "val": "主面料",
+          "reftablename": "PS_C_PRODIM",
+          "reftableid": 23151,
+          "reftabdesc": "商品属性",
+          "refobjid": 30,
+          "colid": 128007,
+          "isfk": true
+        },
+        "ISCODENULL": {
+          "val": "否"
+        },
+        "ECODE": {
+          "val": "112"
+        },
+        "MODIFIEDDATE": {
+          "val": "2018-03-09 11:30:56"
+        },
+        "ID": {
+          "val": "44"
+        },
+        "AD_PROCOLUMN_NAME": {
+          "val": "NUMDIM7"
+        },
+        "DATA_TYPE": {
+          "val": "字典型"
+        },
+        "MODIFIERENAME": {
+          "val": "系统管理员"
+        }
+      },
+      {
+        "ENAME": {
+          "val": "品类"
+        },
+        "PS_C_PRODIM_ID": {
+          "val": "",
+          "reftablename": "PS_C_PRODIM",
+          "reftableid": 23151,
+          "reftabdesc": "商品属性",
+          "refobjid": -1,
+          "colid": 128007,
+          "isfk": true
+        },
+        "ISCODENULL": {
+          "val": "否"
+        },
+        "ECODE": {
+          "val": "123"
+        },
+        "MODIFIEDDATE": {
+          "val": "2018-04-19 16:17:15"
+        },
+        "ID": {
+          "val": "713"
+        },
+        "AD_PROCOLUMN_NAME": {
+          "val": "NUMDIM26"
+        },
+        "DATA_TYPE": {
+          "val": "字典型"
+        },
+        "MODIFIERENAME": {
+          "val": "系统管理员"
+        }
+      },
+      {
+        "ENAME": {
+          "val": "33321"
+        },
+        "PS_C_PRODIM_ID": {
+          "val": "",
+          "reftablename": "PS_C_PRODIM",
+          "reftableid": 23151,
+          "reftabdesc": "商品属性",
+          "refobjid": -1,
+          "colid": 128007,
+          "isfk": true
+        },
+        "ISCODENULL": {
+          "val": "否"
+        },
+        "ECODE": {
+          "val": "12333"
+        },
+        "MODIFIEDDATE": {
+          "val": "2018-04-24 15:49:41"
+        },
+        "ID": {
+          "val": "716"
+        },
+        "AD_PROCOLUMN_NAME": {
+          "val": "123"
+        },
+        "DATA_TYPE": {
+          "val": "字典型"
+        },
+        "MODIFIERENAME": {
+          "val": "系统管理员"
+        }
+      },
+      {
+        "ENAME": {
+          "val": "性别"
+        },
+        "PS_C_PRODIM_ID": {
+          "val": "",
+          "reftablename": "PS_C_PRODIM",
+          "reftableid": 23151,
+          "reftabdesc": "商品属性",
+          "refobjid": -1,
+          "colid": 128007,
+          "isfk": true
+        },
+        "ISCODENULL": {
+          "val": "否"
+        },
+        "ECODE": {
+          "val": "200000000819"
+        },
+        "MODIFIEDDATE": {
+          "val": "2018-04-18 14:12:49"
+        },
+        "ID": {
+          "val": "11"
+        },
+        "AD_PROCOLUMN_NAME": {
+          "val": "SEX"
+        },
+        "DATA_TYPE": {
+          "val": "字典型"
+        },
+        "MODIFIERENAME": {
+          "val": "系统管理员"
+        }
+      },
+      {
+        "ENAME": {
+          "val": "大类"
+        },
+        "PS_C_PRODIM_ID": {
+          "val": "",
+          "reftablename": "PS_C_PRODIM",
+          "reftableid": 23151,
+          "reftabdesc": "商品属性",
+          "refobjid": -1,
+          "colid": 128007,
+          "isfk": true
+        },
+        "ISCODENULL": {
+          "val": "否"
+        },
+        "ECODE": {
+          "val": "200000000821"
+        },
+        "MODIFIEDDATE": {
+          "val": "2018-04-27 13:39:52"
+        },
+        "ID": {
+          "val": "12"
+        },
+        "AD_PROCOLUMN_NAME": {
+          "val": "LARGECLASS"
+        },
+        "DATA_TYPE": {
+          "val": "字典型"
+        },
+        "MODIFIERENAME": {
+          "val": "系统管理员"
+        }
+      },
+      {
+        "ENAME": {
+          "val": "设计师"
+        },
+        "PS_C_PRODIM_ID": {
+          "val": "",
+          "reftablename": "PS_C_PRODIM",
+          "reftableid": 23151,
+          "reftabdesc": "商品属性",
+          "refobjid": -1,
+          "colid": 128007,
+          "isfk": true
+        },
+        "ISCODENULL": {
+          "val": "否"
+        },
+        "ECODE": {
+          "val": "200000000823"
+        },
+        "MODIFIEDDATE": {
+          "val": "2018-04-03 17:06:17"
+        },
+        "ID": {
+          "val": "13"
+        },
+        "AD_PROCOLUMN_NAME": {
+          "val": "DESIGNER"
+        },
+        "DATA_TYPE": {
+          "val": "字典型"
+        },
+        "MODIFIERENAME": {
+          "val": "高健"
+        }
+      },
+      {
+        "ENAME": {
+          "val": "波段"
+        },
+        "PS_C_PRODIM_ID": {
+          "val": "",
+          "reftablename": "PS_C_PRODIM",
+          "reftableid": 23151,
+          "reftabdesc": "商品属性",
+          "refobjid": -1,
+          "colid": 128007,
+          "isfk": true
+        },
+        "ISCODENULL": {
+          "val": "否"
+        },
+        "ECODE": {
+          "val": "200000000825"
+        },
+        "MODIFIEDDATE": {
+          "val": "2018-01-09 22:34:29"
+        },
+        "ID": {
+          "val": "14"
+        },
+        "AD_PROCOLUMN_NAME": {
+          "val": "PROBAND"
+        },
+        "DATA_TYPE": {
+          "val": "字典型"
+        },
+        "MODIFIERENAME": {
+          "val": "系统管理员"
+        }
+      },
+      {
+        "ENAME": {
+          "val": "风格"
+        },
+        "PS_C_PRODIM_ID": {
+          "val": "",
+          "reftablename": "PS_C_PRODIM",
+          "reftableid": 23151,
+          "reftabdesc": "商品属性",
+          "refobjid": -1,
+          "colid": 128007,
+          "isfk": true
+        },
+        "ISCODENULL": {
+          "val": "否"
+        },
+        "ECODE": {
+          "val": "200000000826"
+        },
+        "MODIFIEDDATE": {
+          "val": "2018-04-17 10:14:13"
+        },
+        "ID": {
+          "val": "15"
+        },
+        "AD_PROCOLUMN_NAME": {
+          "val": "SERIES"
+        },
+        "DATA_TYPE": {
+          "val": "字典型"
+        },
+        "MODIFIERENAME": {
+          "val": "系统管理员"
+        }
+      },
+      {
+        "ENAME": {
+          "val": "价格带"
+        },
+        "PS_C_PRODIM_ID": {
+          "val": "",
+          "reftablename": "PS_C_PRODIM",
+          "reftableid": 23151,
+          "reftabdesc": "商品属性",
+          "refobjid": -1,
+          "colid": 128007,
+          "isfk": true
+        },
+        "ISCODENULL": {
+          "val": "否"
+        },
+        "ECODE": {
+          "val": "200000000832"
+        },
+        "MODIFIEDDATE": {
+          "val": "2018-01-06 22:36:19"
+        },
+        "ID": {
+          "val": "16"
+        },
+        "AD_PROCOLUMN_NAME": {
+          "val": "PRICEBAND"
+        },
+        "DATA_TYPE": {
+          "val": "字典型"
+        },
+        "MODIFIERENAME": {
+          "val": "郑晨敏"
+        }
+      },
+      {
+        "ENAME": {
+          "val": "商品来源"
+        },
+        "PS_C_PRODIM_ID": {
+          "val": "",
+          "reftablename": "PS_C_PRODIM",
+          "reftableid": 23151,
+          "reftabdesc": "商品属性",
+          "refobjid": -1,
+          "colid": 128007,
+          "isfk": true
+        },
+        "ISCODENULL": {
+          "val": "否"
+        },
+        "ECODE": {
+          "val": "200000371762"
+        },
+        "MODIFIEDDATE": {
+          "val": "2018-02-05 14:39:54"
+        },
+        "ID": {
+          "val": "18"
+        },
+        "AD_PROCOLUMN_NAME": {
+          "val": "PROSOURCE"
+        },
+        "DATA_TYPE": {
+          "val": "字典型"
+        },
+        "MODIFIERENAME": {
+          "val": "孙雅倩"
+        }
+      },
+      {
+        "ENAME": {
+          "val": "年份"
+        },
+        "PS_C_PRODIM_ID": {
+          "val": "",
+          "reftablename": "PS_C_PRODIM",
+          "reftableid": 23151,
+          "reftabdesc": "商品属性",
+          "refobjid": -1,
+          "colid": 128007,
+          "isfk": true
+        },
+        "ISCODENULL": {
+          "val": "否"
+        },
+        "ECODE": {
+          "val": "200000371764"
+        },
+        "MODIFIEDDATE": {
+          "val": "2018-01-09 15:40:45"
+        },
+        "ID": {
+          "val": "5"
+        },
+        "AD_PROCOLUMN_NAME": {
+          "val": "PROYEAR"
+        },
+        "DATA_TYPE": {
+          "val": "字典型"
+        },
+        "MODIFIERENAME": {
+          "val": "系统管理员"
+        }
+      },
+      {
+        "ENAME": {
+          "val": "推广类型"
+        },
+        "PS_C_PRODIM_ID": {
+          "val": "",
+          "reftablename": "PS_C_PRODIM",
+          "reftableid": 23151,
+          "reftabdesc": "商品属性",
+          "refobjid": -1,
+          "colid": 128007,
+          "isfk": true
+        },
+        "ISCODENULL": {
+          "val": "否"
+        },
+        "ECODE": {
+          "val": "200000371768"
+        },
+        "MODIFIEDDATE": {
+          "val": "2018-01-16 12:39:55"
+        },
+        "ID": {
+          "val": "6"
+        },
+        "AD_PROCOLUMN_NAME": {
+          "val": "PROMOTIONTYPE"
+        },
+        "DATA_TYPE": {
+          "val": "字典型"
+        },
+        "MODIFIERENAME": {
+          "val": "系统管理员"
+        }
+      },
+      {
+        "ENAME": {
+          "val": "商品性质"
+        },
+        "PS_C_PRODIM_ID": {
+          "val": "",
+          "reftablename": "PS_C_PRODIM",
+          "reftableid": 23151,
+          "reftabdesc": "商品属性",
+          "refobjid": -1,
+          "colid": 128007,
+          "isfk": true
+        },
+        "ISCODENULL": {
+          "val": "否"
+        },
+        "ECODE": {
+          "val": "200000371769"
+        },
+        "MODIFIEDDATE": {
+          "val": "2018-01-06 22:36:19"
+        },
+        "ID": {
+          "val": "7"
+        },
+        "AD_PROCOLUMN_NAME": {
+          "val": "PRONATURE"
+        },
+        "DATA_TYPE": {
+          "val": "字典型"
+        },
+        "MODIFIERENAME": {
+          "val": "郑晨敏"
+        }
+      },
+      {
+        "ENAME": {
+          "val": "产品线"
+        },
+        "PS_C_PRODIM_ID": {
+          "val": "",
+          "reftablename": "PS_C_PRODIM",
+          "reftableid": 23151,
+          "reftabdesc": "商品属性",
+          "refobjid": -1,
+          "colid": 128007,
+          "isfk": true
+        },
+        "ISCODENULL": {
+          "val": "否"
+        },
+        "ECODE": {
+          "val": "200000371770"
+        },
+        "MODIFIEDDATE": {
+          "val": "2018-01-10 08:33:01"
+        },
+        "ID": {
+          "val": "8"
+        },
+        "AD_PROCOLUMN_NAME": {
+          "val": "PROLINE"
+        },
+        "DATA_TYPE": {
+          "val": "字典型"
+        },
+        "MODIFIERENAME": {
+          "val": "系统管理员"
+        }
+      },
+      {
+        "ENAME": {
+          "val": "季节"
+        },
+        "PS_C_PRODIM_ID": {
+          "val": "",
+          "reftablename": "PS_C_PRODIM",
+          "reftableid": 23151,
+          "reftabdesc": "商品属性",
+          "refobjid": -1,
+          "colid": 128007,
+          "isfk": true
+        },
+        "ISCODENULL": {
+          "val": "否"
+        },
+        "ECODE": {
+          "val": "200000371771"
+        },
+        "MODIFIEDDATE": {
+          "val": "2018-01-06 22:36:19"
+        },
+        "ID": {
+          "val": "9"
+        },
+        "AD_PROCOLUMN_NAME": {
+          "val": "PROSEA"
+        },
+        "DATA_TYPE": {
+          "val": "字典型"
+        },
+        "MODIFIERENAME": {
+          "val": "郑晨敏"
+        }
+      },
+      {
+        "ENAME": {
+          "val": "采购性质"
+        },
+        "PS_C_PRODIM_ID": {
+          "val": "",
+          "reftablename": "PS_C_PRODIM",
+          "reftableid": 23151,
+          "reftabdesc": "商品属性",
+          "refobjid": -1,
+          "colid": 128007,
+          "isfk": true
+        },
+        "ISCODENULL": {
+          "val": "否"
+        },
+        "ECODE": {
+          "val": "200000371773"
+        },
+        "MODIFIEDDATE": {
+          "val": "2018-01-06 22:36:19"
+        },
+        "ID": {
+          "val": "10"
+        },
+        "AD_PROCOLUMN_NAME": {
+          "val": "PURNATURE"
+        },
+        "DATA_TYPE": {
+          "val": "字典型"
+        },
+        "MODIFIERENAME": {
+          "val": "郑晨敏"
+        }
+      },
+      {
+        "ENAME": {
+          "val": "安全技术类别"
+        },
+        "PS_C_PRODIM_ID": {
+          "val": "",
+          "reftablename": "PS_C_PRODIM",
+          "reftableid": 23151,
+          "reftabdesc": "商品属性",
+          "refobjid": -1,
+          "colid": 128007,
+          "isfk": true
+        },
+        "ISCODENULL": {
+          "val": "否"
+        },
+        "ECODE": {
+          "val": "200000371780"
+        },
+        "MODIFIEDDATE": {
+          "val": "2018-04-03 16:03:21"
+        },
+        "ID": {
+          "val": "1"
+        },
+        "AD_PROCOLUMN_NAME": {
+          "val": "SAFETECHCLASS"
+        },
+        "DATA_TYPE": {
+          "val": "字典型"
+        },
+        "MODIFIERENAME": {
+          "val": "系统管理员"
+        }
+      },
+      {
+        "ENAME": {
+          "val": "执行标准"
+        },
+        "PS_C_PRODIM_ID": {
+          "val": "",
+          "reftablename": "PS_C_PRODIM",
+          "reftableid": 23151,
+          "reftabdesc": "商品属性",
+          "refobjid": -1,
+          "colid": 128007,
+          "isfk": true
+        },
+        "ISCODENULL": {
+          "val": "否"
+        },
+        "ECODE": {
+          "val": "200000371781"
+        },
+        "MODIFIEDDATE": {
+          "val": "2018-03-05 11:21:41"
+        },
+        "ID": {
+          "val": "2"
+        },
+        "AD_PROCOLUMN_NAME": {
+          "val": "PROSTANDARD"
+        },
+        "DATA_TYPE": {
+          "val": "字典型"
+        },
+        "MODIFIERENAME": {
+          "val": "邢忆"
+        }
+      },
+      {
+        "ENAME": {
+          "val": "产品结构类型"
+        },
+        "PS_C_PRODIM_ID": {
+          "val": "",
+          "reftablename": "PS_C_PRODIM",
+          "reftableid": 23151,
+          "reftabdesc": "商品属性",
+          "refobjid": -1,
+          "colid": 128007,
+          "isfk": true
+        },
+        "ISCODENULL": {
+          "val": "否"
+        },
+        "ECODE": {
+          "val": "200000371900"
+        },
+        "MODIFIEDDATE": {
+          "val": "2018-01-25 13:46:37"
+        },
+        "ID": {
+          "val": "45"
+        },
+        "AD_PROCOLUMN_NAME": {
+          "val": "NUMDIM5"
+        },
+        "DATA_TYPE": {
+          "val": "字典型"
+        },
+        "MODIFIERENAME": {
+          "val": "高健"
+        }
+      },
+      {
+        "ENAME": {
+          "val": "采购员"
+        },
+        "PS_C_PRODIM_ID": {
+          "val": "",
+          "reftablename": "PS_C_PRODIM",
+          "reftableid": 23151,
+          "reftabdesc": "商品属性",
+          "refobjid": -1,
+          "colid": 128007,
+          "isfk": true
+        },
+        "ISCODENULL": {
+          "val": "否"
+        },
+        "ECODE": {
+          "val": "200000703222"
+        },
+        "MODIFIEDDATE": {
+          "val": "2018-02-05 10:57:46"
+        },
+        "ID": {
+          "val": "3"
+        },
+        "AD_PROCOLUMN_NAME": {
+          "val": "BUYER"
+        },
+        "DATA_TYPE": {
+          "val": "字典型"
+        },
+        "MODIFIERENAME": {
+          "val": "孙雅倩"
+        }
+      },
+      {
+        "ENAME": {
+          "val": "跟单员"
+        },
+        "PS_C_PRODIM_ID": {
+          "val": "",
+          "reftablename": "PS_C_PRODIM",
+          "reftableid": 23151,
+          "reftabdesc": "商品属性",
+          "refobjid": -1,
+          "colid": 128007,
+          "isfk": true
+        },
+        "ISCODENULL": {
+          "val": "否"
+        },
+        "ECODE": {
+          "val": "200000703223"
+        },
+        "MODIFIEDDATE": {
+          "val": "2018-01-29 16:18:16"
+        },
+        "ID": {
+          "val": "4"
+        },
+        "AD_PROCOLUMN_NAME": {
+          "val": "FOLLOWER"
+        },
+        "DATA_TYPE": {
+          "val": "字典型"
+        },
+        "MODIFIERENAME": {
+          "val": "孙雅倩"
+        }
+      },
+      {
+        "ENAME": {
+          "val": "供应商品牌"
+        },
+        "PS_C_PRODIM_ID": {
+          "val": "",
+          "reftablename": "PS_C_PRODIM",
+          "reftableid": 23151,
+          "reftabdesc": "商品属性",
+          "refobjid": -1,
+          "colid": 128007,
+          "isfk": true
+        },
+        "ISCODENULL": {
+          "val": "否"
+        },
+        "ECODE": {
+          "val": "200000704223"
+        },
+        "MODIFIEDDATE": {
+          "val": "2018-02-22 13:13:56"
+        },
+        "ID": {
+          "val": "17"
+        },
+        "AD_PROCOLUMN_NAME": {
+          "val": "SUPBRAND"
+        },
+        "DATA_TYPE": {
+          "val": "字典型"
+        },
+        "MODIFIERENAME": {
+          "val": "孙雅倩"
+        }
+      },
+      {
+        "ENAME": {
+          "val": "2018040402"
+        },
+        "PS_C_PRODIM_ID": {
+          "val": "",
+          "reftablename": "PS_C_PRODIM",
+          "reftableid": 23151,
+          "reftabdesc": "商品属性",
+          "refobjid": -1,
+          "colid": 128007,
+          "isfk": true
+        },
+        "ISCODENULL": {
+          "val": "否"
+        },
+        "ECODE": {
+          "val": "20180404"
+        },
+        "MODIFIEDDATE": {
+          "val": "2018-04-04 14:14:37"
+        },
+        "ID": {
+          "val": "708"
+        },
+        "AD_PROCOLUMN_NAME": {
+          "val": "20180404"
+        },
+        "DATA_TYPE": {
+          "val": "字典型"
+        },
+        "MODIFIERENAME": {
+          "val": "系统管理员"
+        }
+      },
+      {
+        "ENAME": {
+          "val": "2018040401"
+        },
+        "PS_C_PRODIM_ID": {
+          "val": "",
+          "reftablename": "PS_C_PRODIM",
+          "reftableid": 23151,
+          "reftabdesc": "商品属性",
+          "refobjid": -1,
+          "colid": 128007,
+          "isfk": true
+        },
+        "ISCODENULL": {
+          "val": "否"
+        },
+        "ECODE": {
+          "val": "2018040401"
+        },
+        "MODIFIEDDATE": {
+          "val": "2018-04-04 14:32:05"
+        },
+        "ID": {
+          "val": "711"
+        },
+        "AD_PROCOLUMN_NAME": {
+          "val": "2018040402"
+        },
+        "DATA_TYPE": {
+          "val": "文本输入型"
+        },
+        "MODIFIERENAME": {
+          "val": "系统管理员"
+        }
+      },
+      {
+        "ENAME": {
+          "val": "销售渠道"
+        },
+        "PS_C_PRODIM_ID": {
+          "val": "",
+          "reftablename": "PS_C_PRODIM",
+          "reftableid": 23151,
+          "reftabdesc": "商品属性",
+          "refobjid": -1,
+          "colid": 128007,
+          "isfk": true
+        },
+        "ISCODENULL": {
+          "val": "否"
+        },
+        "ECODE": {
+          "val": "206508699512"
+        },
+        "MODIFIEDDATE": {
+          "val": "2018-01-06 22:36:19"
+        },
+        "ID": {
+          "val": "33"
+        },
+        "AD_PROCOLUMN_NAME": {
+          "val": "NUMDIM2"
+        },
+        "DATA_TYPE": {
+          "val": "字典型"
+        },
+        "MODIFIERENAME": {
+          "val": "郑晨敏"
+        }
+      },
+      {
+        "ENAME": {
+          "val": "买手"
+        },
+        "PS_C_PRODIM_ID": {
+          "val": "",
+          "reftablename": "PS_C_PRODIM",
+          "reftableid": 23151,
+          "reftabdesc": "商品属性",
+          "refobjid": -1,
+          "colid": 128007,
+          "isfk": true
+        },
+        "ISCODENULL": {
+          "val": "否"
+        },
+        "ECODE": {
+          "val": "206508703381"
+        },
+        "MODIFIEDDATE": {
+          "val": "2018-02-28 15:59:33"
+        },
+        "ID": {
+          "val": "19"
+        },
+        "AD_PROCOLUMN_NAME": {
+          "val": "NUMDIM3"
+        },
+        "DATA_TYPE": {
+          "val": "字典型"
+        },
+        "MODIFIERENAME": {
+          "val": "孙雅倩"
+        }
+      },
+      {
+        "ENAME": {
+          "val": "版权类型"
+        },
+        "PS_C_PRODIM_ID": {
+          "val": "",
+          "reftablename": "PS_C_PRODIM",
+          "reftableid": 23151,
+          "reftabdesc": "商品属性",
+          "refobjid": -1,
+          "colid": 128007,
+          "isfk": true
+        },
+        "ISCODENULL": {
+          "val": "否"
+        },
+        "ECODE": {
+          "val": "206508705026"
+        },
+        "MODIFIEDDATE": {
+          "val": "2018-01-06 22:36:19"
+        },
+        "ID": {
+          "val": "20"
+        },
+        "AD_PROCOLUMN_NAME": {
+          "val": "NUMDIM1"
+        },
+        "DATA_TYPE": {
+          "val": "字典型"
+        },
+        "MODIFIERENAME": {
+          "val": "郑晨敏"
+        }
+      },
+      {
+        "ENAME": {
+          "val": "类别"
+        },
+        "PS_C_PRODIM_ID": {
+          "val": "",
+          "reftablename": "PS_C_PRODIM",
+          "reftableid": 23151,
+          "reftabdesc": "商品属性",
+          "refobjid": -1,
+          "colid": 128007,
+          "isfk": true
+        },
+        "ISCODENULL": {
+          "val": "否"
+        },
+        "ECODE": {
+          "val": "206508707742"
+        },
+        "MODIFIEDDATE": {
+          "val": "2018-01-25 10:27:11"
+        },
+        "ID": {
+          "val": "21"
+        },
+        "AD_PROCOLUMN_NAME": {
+          "val": "NUMDIM6"
+        },
+        "DATA_TYPE": {
+          "val": "字典型"
+        },
+        "MODIFIERENAME": {
+          "val": "高健"
+        }
+      },
+      {
+        "ENAME": {
+          "val": "客群"
+        },
+        "PS_C_PRODIM_ID": {
+          "val": "",
+          "reftablename": "PS_C_PRODIM",
+          "reftableid": 23151,
+          "reftabdesc": "商品属性",
+          "refobjid": -1,
+          "colid": 128007,
+          "isfk": true
+        },
+        "ISCODENULL": {
+          "val": "否"
+        },
+        "ECODE": {
+          "val": "206508708442"
+        },
+        "MODIFIEDDATE": {
+          "val": "2018-01-06 22:36:19"
+        },
+        "ID": {
+          "val": "22"
+        },
+        "AD_PROCOLUMN_NAME": {
+          "val": "NUMDIM8"
+        },
+        "DATA_TYPE": {
+          "val": "字典型"
+        },
+        "MODIFIERENAME": {
+          "val": "郑晨敏"
+        }
+      },
+      {
+        "ENAME": {
+          "val": "外观"
+        },
+        "PS_C_PRODIM_ID": {
+          "val": "",
+          "reftablename": "PS_C_PRODIM",
+          "reftableid": 23151,
+          "reftabdesc": "商品属性",
+          "refobjid": -1,
+          "colid": 128007,
+          "isfk": true
+        },
+        "ISCODENULL": {
+          "val": "否"
+        },
+        "ECODE": {
+          "val": "206508708882"
+        },
+        "MODIFIEDDATE": {
+          "val": "2018-01-19 08:47:04"
+        },
+        "ID": {
+          "val": "23"
+        },
+        "AD_PROCOLUMN_NAME": {
+          "val": "NUMDIM9"
+        },
+        "DATA_TYPE": {
+          "val": "字典型"
+        },
+        "MODIFIERENAME": {
+          "val": "系统管理员"
+        }
+      },
+      {
+        "ENAME": {
+          "val": "衣长"
+        },
+        "PS_C_PRODIM_ID": {
+          "val": "",
+          "reftablename": "PS_C_PRODIM",
+          "reftableid": 23151,
+          "reftabdesc": "商品属性",
+          "refobjid": -1,
+          "colid": 128007,
+          "isfk": true
+        },
+        "ISCODENULL": {
+          "val": "否"
+        },
+        "ECODE": {
+          "val": "206508710166"
+        },
+        "MODIFIEDDATE": {
+          "val": "2018-01-19 18:55:58"
+        },
+        "ID": {
+          "val": "34"
+        },
+        "AD_PROCOLUMN_NAME": {
+          "val": "NUMDIM10"
+        },
+        "DATA_TYPE": {
+          "val": "字典型"
+        },
+        "MODIFIERENAME": {
+          "val": "王燕"
+        }
+      },
+      {
+        "ENAME": {
+          "val": "版型"
+        },
+        "PS_C_PRODIM_ID": {
+          "val": "",
+          "reftablename": "PS_C_PRODIM",
+          "reftableid": 23151,
+          "reftabdesc": "商品属性",
+          "refobjid": -1,
+          "colid": 128007,
+          "isfk": true
+        },
+        "ISCODENULL": {
+          "val": "否"
+        },
+        "ECODE": {
+          "val": "206508710849"
+        },
+        "MODIFIEDDATE": {
+          "val": "2018-01-19 08:50:18"
+        },
+        "ID": {
+          "val": "24"
+        },
+        "AD_PROCOLUMN_NAME": {
+          "val": "NUMDIM11"
+        },
+        "DATA_TYPE": {
+          "val": "字典型"
+        },
+        "MODIFIERENAME": {
+          "val": "系统管理员"
+        }
+      },
+      {
+        "ENAME": {
+          "val": "袖长"
+        },
+        "PS_C_PRODIM_ID": {
+          "val": "",
+          "reftablename": "PS_C_PRODIM",
+          "reftableid": 23151,
+          "reftabdesc": "商品属性",
+          "refobjid": -1,
+          "colid": 128007,
+          "isfk": true
+        },
+        "ISCODENULL": {
+          "val": "否"
+        },
+        "ECODE": {
+          "val": "206508711709"
+        },
+        "MODIFIEDDATE": {
+          "val": "2018-01-06 22:36:19"
+        },
+        "ID": {
+          "val": "25"
+        },
+        "AD_PROCOLUMN_NAME": {
+          "val": "NUMDIM12"
+        },
+        "DATA_TYPE": {
+          "val": "字典型"
+        },
+        "MODIFIERENAME": {
+          "val": "郑晨敏"
+        }
+      },
+      {
+        "ENAME": {
+          "val": "领型"
+        },
+        "PS_C_PRODIM_ID": {
+          "val": "",
+          "reftablename": "PS_C_PRODIM",
+          "reftableid": 23151,
+          "reftabdesc": "商品属性",
+          "refobjid": -1,
+          "colid": 128007,
+          "isfk": true
+        },
+        "ISCODENULL": {
+          "val": "否"
+        },
+        "ECODE": {
+          "val": "206508712724"
+        },
+        "MODIFIEDDATE": {
+          "val": "2018-01-22 16:45:09"
+        },
+        "ID": {
+          "val": "26"
+        },
+        "AD_PROCOLUMN_NAME": {
+          "val": "NUMDIM13"
+        },
+        "DATA_TYPE": {
+          "val": "字典型"
+        },
+        "MODIFIERENAME": {
+          "val": "王燕"
+        }
+      },
+      {
+        "ENAME": {
+          "val": "核心设计元素"
+        },
+        "PS_C_PRODIM_ID": {
+          "val": "",
+          "reftablename": "PS_C_PRODIM",
+          "reftableid": 23151,
+          "reftabdesc": "商品属性",
+          "refobjid": -1,
+          "colid": 128007,
+          "isfk": true
+        },
+        "ISCODENULL": {
+          "val": "否"
+        },
+        "ECODE": {
+          "val": "206508713731"
+        },
+        "MODIFIEDDATE": {
+          "val": "2018-01-18 16:46:07"
+        },
+        "ID": {
+          "val": "35"
+        },
+        "AD_PROCOLUMN_NAME": {
+          "val": "NUMDIM14"
+        },
+        "DATA_TYPE": {
+          "val": "字典型"
+        },
+        "MODIFIERENAME": {
+          "val": "王燕"
+        }
+      },
+      {
+        "ENAME": {
+          "val": "核心设计位置"
+        },
+        "PS_C_PRODIM_ID": {
+          "val": "",
+          "reftablename": "PS_C_PRODIM",
+          "reftableid": 23151,
+          "reftabdesc": "商品属性",
+          "refobjid": -1,
+          "colid": 128007,
+          "isfk": true
+        },
+        "ISCODENULL": {
+          "val": "否"
+        },
+        "ECODE": {
+          "val": "206508714589"
+        },
+        "MODIFIEDDATE": {
+          "val": "2018-01-19 09:07:46"
+        },
+        "ID": {
+          "val": "27"
+        },
+        "AD_PROCOLUMN_NAME": {
+          "val": "NUMDIM15"
+        },
+        "DATA_TYPE": {
+          "val": "字典型"
+        },
+        "MODIFIERENAME": {
+          "val": "系统管理员"
+        }
+      },
+      {
+        "ENAME": {
+          "val": "印花类型"
+        },
+        "PS_C_PRODIM_ID": {
+          "val": "",
+          "reftablename": "PS_C_PRODIM",
+          "reftableid": 23151,
+          "reftabdesc": "商品属性",
+          "refobjid": -1,
+          "colid": 128007,
+          "isfk": true
+        },
+        "ISCODENULL": {
+          "val": "否"
+        },
+        "ECODE": {
+          "val": "206508715993"
+        },
+        "MODIFIEDDATE": {
+          "val": "2018-01-06 22:36:19"
+        },
+        "ID": {
+          "val": "36"
+        },
+        "AD_PROCOLUMN_NAME": {
+          "val": "NUMDIM16"
+        },
+        "DATA_TYPE": {
+          "val": "字典型"
+        },
+        "MODIFIERENAME": {
+          "val": "郑晨敏"
+        }
+      },
+      {
+        "ENAME": {
+          "val": "袖型"
+        },
+        "PS_C_PRODIM_ID": {
+          "val": "",
+          "reftablename": "PS_C_PRODIM",
+          "reftableid": 23151,
+          "reftabdesc": "商品属性",
+          "refobjid": -1,
+          "colid": 128007,
+          "isfk": true
+        },
+        "ISCODENULL": {
+          "val": "否"
+        },
+        "ECODE": {
+          "val": "206508717658"
+        },
+        "MODIFIEDDATE": {
+          "val": "2018-01-19 19:45:23"
+        },
+        "ID": {
+          "val": "28"
+        },
+        "AD_PROCOLUMN_NAME": {
+          "val": "NUMDIM17"
+        },
+        "DATA_TYPE": {
+          "val": "字典型"
+        },
+        "MODIFIERENAME": {
+          "val": "系统管理员"
+        }
+      },
+      {
+        "ENAME": {
+          "val": "加工工艺"
+        },
+        "PS_C_PRODIM_ID": {
+          "val": "",
+          "reftablename": "PS_C_PRODIM",
+          "reftableid": 23151,
+          "reftabdesc": "商品属性",
+          "refobjid": -1,
+          "colid": 128007,
+          "isfk": true
+        },
+        "ISCODENULL": {
+          "val": "否"
+        },
+        "ECODE": {
+          "val": "206508719030"
+        },
+        "MODIFIEDDATE": {
+          "val": "2018-01-06 22:36:19"
+        },
+        "ID": {
+          "val": "37"
+        },
+        "AD_PROCOLUMN_NAME": {
+          "val": "NUMDIM18"
+        },
+        "DATA_TYPE": {
+          "val": "字典型"
+        },
+        "MODIFIERENAME": {
+          "val": "郑晨敏"
+        }
+      },
+      {
+        "ENAME": {
+          "val": "辅料"
+        },
+        "PS_C_PRODIM_ID": {
+          "val": "",
+          "reftablename": "PS_C_PRODIM",
+          "reftableid": 23151,
+          "reftabdesc": "商品属性",
+          "refobjid": -1,
+          "colid": 128007,
+          "isfk": true
+        },
+        "ISCODENULL": {
+          "val": "否"
+        },
+        "ECODE": {
+          "val": "206508720872"
+        },
+        "MODIFIEDDATE": {
+          "val": "2018-01-19 08:48:50"
+        },
+        "ID": {
+          "val": "29"
+        },
+        "AD_PROCOLUMN_NAME": {
+          "val": "NUMDIM19"
+        },
+        "DATA_TYPE": {
+          "val": "字典型"
+        },
+        "MODIFIERENAME": {
+          "val": "系统管理员"
+        }
+      },
+      {
+        "ENAME": {
+          "val": "面料区分"
+        },
+        "PS_C_PRODIM_ID": {
+          "val": "",
+          "reftablename": "PS_C_PRODIM",
+          "reftableid": 23151,
+          "reftabdesc": "商品属性",
+          "refobjid": -1,
+          "colid": 128007,
+          "isfk": true
+        },
+        "ISCODENULL": {
+          "val": "否"
+        },
+        "ECODE": {
+          "val": "206508721909"
+        },
+        "MODIFIEDDATE": {
+          "val": "2018-01-06 22:36:19"
+        },
+        "ID": {
+          "val": "38"
+        },
+        "AD_PROCOLUMN_NAME": {
+          "val": "NUMDIM20"
+        },
+        "DATA_TYPE": {
+          "val": "字典型"
+        },
+        "MODIFIERENAME": {
+          "val": "郑晨敏"
+        }
+      },
+      {
+        "ENAME": {
+          "val": "主面料"
+        },
+        "PS_C_PRODIM_ID": {
+          "val": "",
+          "reftablename": "PS_C_PRODIM",
+          "reftableid": 23151,
+          "reftabdesc": "商品属性",
+          "refobjid": -1,
+          "colid": 128007,
+          "isfk": true
+        },
+        "ISCODENULL": {
+          "val": "否"
+        },
+        "ECODE": {
+          "val": "206508723041"
+        },
+        "MODIFIEDDATE": {
+          "val": "2018-01-09 23:39:14"
+        },
+        "ID": {
+          "val": "30"
+        },
+        "AD_PROCOLUMN_NAME": {
+          "val": "NUMDIM21"
+        },
+        "DATA_TYPE": {
+          "val": "字典型"
+        },
+        "MODIFIERENAME": {
+          "val": "系统管理员"
+        }
+      },
+      {
+        "ENAME": {
+          "val": "面料设计"
+        },
+        "PS_C_PRODIM_ID": {
+          "val": "",
+          "reftablename": "PS_C_PRODIM",
+          "reftableid": 23151,
+          "reftabdesc": "商品属性",
+          "refobjid": -1,
+          "colid": 128007,
+          "isfk": true
+        },
+        "ISCODENULL": {
+          "val": "否"
+        },
+        "ECODE": {
+          "val": "206508730662"
+        },
+        "MODIFIEDDATE": {
+          "val": "2018-01-19 19:42:46"
+        },
+        "ID": {
+          "val": "31"
+        },
+        "AD_PROCOLUMN_NAME": {
+          "val": "NUMDIM22"
+        },
+        "DATA_TYPE": {
+          "val": "字典型"
+        },
+        "MODIFIERENAME": {
+          "val": "系统管理员"
+        }
+      },
+      {
+        "ENAME": {
+          "val": "面料（里料）"
+        },
+        "PS_C_PRODIM_ID": {
+          "val": "",
+          "reftablename": "PS_C_PRODIM",
+          "reftableid": 23151,
+          "reftabdesc": "商品属性",
+          "refobjid": -1,
+          "colid": 128007,
+          "isfk": true
+        },
+        "ISCODENULL": {
+          "val": "否"
+        },
+        "ECODE": {
+          "val": "206508731297"
+        },
+        "MODIFIEDDATE": {
+          "val": "2018-01-19 08:49:40"
+        },
+        "ID": {
+          "val": "32"
+        },
+        "AD_PROCOLUMN_NAME": {
+          "val": "NUMDIM23"
+        },
+        "DATA_TYPE": {
+          "val": "字典型"
+        },
+        "MODIFIERENAME": {
+          "val": "系统管理员"
+        }
+      },
+      {
+        "ENAME": {
+          "val": "面料克重"
+        },
+        "PS_C_PRODIM_ID": {
+          "val": "",
+          "reftablename": "PS_C_PRODIM",
+          "reftableid": 23151,
+          "reftabdesc": "商品属性",
+          "refobjid": -1,
+          "colid": 128007,
+          "isfk": true
+        },
+        "ISCODENULL": {
+          "val": "否"
+        },
+        "ECODE": {
+          "val": "206508732279"
+        },
+        "MODIFIEDDATE": {
+          "val": "2018-01-19 19:43:09"
+        },
+        "ID": {
+          "val": "39"
+        },
+        "AD_PROCOLUMN_NAME": {
+          "val": "NUMDIM24"
+        },
+        "DATA_TYPE": {
+          "val": "字典型"
+        },
+        "MODIFIERENAME": {
+          "val": "系统管理员"
+        }
+      },
+      {
+        "ENAME": {
+          "val": "克重单位"
+        },
+        "PS_C_PRODIM_ID": {
+          "val": "",
+          "reftablename": "PS_C_PRODIM",
+          "reftableid": 23151,
+          "reftabdesc": "商品属性",
+          "refobjid": -1,
+          "colid": 128007,
+          "isfk": true
+        },
+        "ISCODENULL": {
+          "val": "否"
+        },
+        "ECODE": {
+          "val": "206508733478"
+        },
+        "MODIFIEDDATE": {
+          "val": "2018-02-09 09:50:01"
+        },
+        "ID": {
+          "val": "40"
+        },
+        "AD_PROCOLUMN_NAME": {
+          "val": "NUMDIM25"
+        },
+        "DATA_TYPE": {
+          "val": "字典型"
+        },
+        "MODIFIERENAME": {
+          "val": "孙雅倩"
+        }
+      },
+      {
+        "ENAME": {
+          "val": "选款方式"
+        },
+        "PS_C_PRODIM_ID": {
+          "val": "",
+          "reftablename": "PS_C_PRODIM",
+          "reftableid": 23151,
+          "reftabdesc": "商品属性",
+          "refobjid": -1,
+          "colid": 128007,
+          "isfk": true
+        },
+        "ISCODENULL": {
+          "val": "否"
+        },
+        "ECODE": {
+          "val": "206524858849"
+        },
+        "MODIFIEDDATE": {
+          "val": "2018-01-06 22:36:19"
+        },
+        "ID": {
+          "val": "41"
+        },
+        "AD_PROCOLUMN_NAME": {
+          "val": "NUMDIM4"
+        },
+        "DATA_TYPE": {
+          "val": "字典型"
+        },
+        "MODIFIERENAME": {
+          "val": "郑晨敏"
+        }
+      },
+      {
+        "ENAME": {
+          "val": "采购来源"
+        },
+        "PS_C_PRODIM_ID": {
+          "val": "",
+          "reftablename": "PS_C_PRODIM",
+          "reftableid": 23151,
+          "reftabdesc": "商品属性",
+          "refobjid": -1,
+          "colid": 128007,
+          "isfk": true
+        },
+        "ISCODENULL": {
+          "val": "否"
+        },
+        "ECODE": {
+          "val": "206600526890"
+        },
+        "MODIFIEDDATE": {
+          "val": "2018-01-09 18:51:21"
+        },
+        "ID": {
+          "val": "42"
+        },
+        "AD_PROCOLUMN_NAME": {
+          "val": "PURCHASEMODE"
+        },
+        "DATA_TYPE": {
+          "val": "字典型"
+        },
+        "MODIFIERENAME": {
+          "val": "系统管理员"
+        }
+      },
+      {
+        "ENAME": {
+          "val": "3334252"
+        },
+        "PS_C_PRODIM_ID": {
+          "val": "",
+          "reftablename": "PS_C_PRODIM",
+          "reftableid": 23151,
+          "reftabdesc": "商品属性",
+          "refobjid": -1,
+          "colid": 128007,
+          "isfk": true
+        },
+        "ISCODENULL": {
+          "val": "否"
+        },
+        "ECODE": {
+          "val": "23444"
+        },
+        "MODIFIEDDATE": {
+          "val": "2018-04-24 15:49:17"
+        },
+        "ID": {
+          "val": "715"
+        },
+        "AD_PROCOLUMN_NAME": {
+          "val": "25"
+        },
+        "DATA_TYPE": {
+          "val": "文本输入型"
+        },
+        "MODIFIERENAME": {
+          "val": "系统管理员"
+        }
+      },
+      {
+        "ENAME": {
+          "val": "959559"
+        },
+        "PS_C_PRODIM_ID": {
+          "val": "",
+          "reftablename": "PS_C_PRODIM",
+          "reftableid": 23151,
+          "reftabdesc": "商品属性",
+          "refobjid": -1,
+          "colid": 128007,
+          "isfk": true
+        },
+        "ISCODENULL": {
+          "val": "否"
+        },
+        "ECODE": {
+          "val": "8536"
+        },
+        "MODIFIEDDATE": {
+          "val": "2018-04-24 15:42:47"
+        },
+        "ID": {
+          "val": "714"
+        },
+        "AD_PROCOLUMN_NAME": {
+          "val": "LL"
+        },
+        "DATA_TYPE": {
+          "val": "字典型"
+        },
+        "MODIFIERENAME": {
+          "val": "系统管理员"
+        }
+      },
+      {
+        "ENAME": {
+          "val": "asdada"
+        },
+        "PS_C_PRODIM_ID": {
+          "val": "",
+          "reftablename": "PS_C_PRODIM",
+          "reftableid": 23151,
+          "reftabdesc": "商品属性",
+          "refobjid": -1,
+          "colid": 128007,
+          "isfk": true
+        },
+        "ISCODENULL": {
+          "val": "是"
+        },
+        "ECODE": {
+          "val": "ASDA"
+        },
+        "MODIFIEDDATE": {
+          "val": "2018-04-04 14:25:14"
+        },
+        "ID": {
+          "val": "710"
+        },
+        "AD_PROCOLUMN_NAME": {
+          "val": "R"
+        },
+        "DATA_TYPE": {
+          "val": "字典型"
+        },
+        "MODIFIERENAME": {
+          "val": "系统管理员"
+        }
+      },
+      {
+        "ENAME": {
+          "val": "系列1"
+        },
+        "PS_C_PRODIM_ID": {
+          "val": "主面料",
+          "reftablename": "PS_C_PRODIM",
+          "reftableid": 23151,
+          "reftabdesc": "商品属性",
+          "refobjid": 30,
+          "colid": 128007,
+          "isfk": true
+        },
+        "ISCODENULL": {
+          "val": "否"
+        },
+        "ECODE": {
+          "val": "CS001"
+        },
+        "MODIFIEDDATE": {
+          "val": "2018-03-07 15:06:55"
+        },
+        "ID": {
+          "val": "707"
+        },
+        "AD_PROCOLUMN_NAME": {
+          "val": "NUMDIM7"
+        },
+        "DATA_TYPE": {
+          "val": "字典型"
+        },
+        "MODIFIERENAME": {
+          "val": "系统管理员"
+        }
+      },
+      {
+        "ENAME": {
+          "val": "Z01"
+        },
+        "PS_C_PRODIM_ID": {
+          "val": "",
+          "reftablename": "PS_C_PRODIM",
+          "reftableid": 23151,
+          "reftabdesc": "商品属性",
+          "refobjid": -1,
+          "colid": 128007,
+          "isfk": true
+        },
+        "ISCODENULL": {
+          "val": "否"
+        },
+        "ECODE": {
+          "val": "Z01"
+        },
+        "MODIFIEDDATE": {
+          "val": "2018-04-16 10:34:59"
+        },
+        "ID": {
+          "val": "712"
+        },
+        "AD_PROCOLUMN_NAME": {
+          "val": "YAOJING"
+        },
+        "DATA_TYPE": {
+          "val": "字典型"
+        },
+        "MODIFIERENAME": {
+          "val": "系统管理员"
+        }
+      }
+    ],
+    "selectrange": [
+      10,
+      20,
+      30,
+      50,
+      100
+    ],
+    "queryDesc": "",
+    "defaultrange": 100,
+    "objdistype": "object"
+  }
+}

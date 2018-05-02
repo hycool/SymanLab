@@ -150,7 +150,7 @@
             headerName: d,
             field: 'field' + i,
             allowedAggFuncs: ['count', 'sum'],
-            suppressToolPanel: true,
+            // suppressToolPanel: true,
             valueGetter(params) {
               if (parseFloat(params.data[params.colDef.field])) {
                 return parseFloat(params.data[params.colDef.field]);
@@ -347,9 +347,9 @@
     mounted() {
       console.log('Vue组件渲染用时：', Date.now() - beforeMountTime);
       // this.fetchCsv();
+      this.fetchFCData();
       // this.convertCsvToExcel();
       // this.mockDemo();
-      this.fetchFCData();
       // this.fetchFCDataOrigin();
       // this.fetchFCDataForWrapper();
     },

@@ -563,15 +563,21 @@ const agTable = (agGridTableContainer, options) => {
       // };
       item.suppressMenu = false; // 是否禁用每一列的菜单选择
       // item.menuTabs = menuTabs; // 处理每列菜单情况
+      // 取消valueGetter
+      /*
       item.valueGetter = function (params) {
         if (d.type.toLocaleLowerCase() === 'number') {
           return params.data ? parseFloat(params.data[d.colname].val) : '';
         }
         return params.data ? params.data[d.colname].val : '';
       };
+      */
+      // 取消字段类型过滤逻辑判断
+      /*
       if (item.type.toLocaleLowerCase() === 'number') {
         item.filter = 'number'
       }
+      */
       if (item.type.toLocaleLowerCase() === 'string') {
         item.filter = 'agTextColumnFilter'
       }
@@ -592,6 +598,7 @@ const agTable = (agGridTableContainer, options) => {
   // 处理行数据
   const transformRowData = (data) => {
     let rowData = data;
+    const pinnedBottomRowData = [];
     let fullRangeSubTotalRow = null;
     let isFullRangeSubTotalEnabled = null;
     let isSubTotalEnabled = null;
@@ -612,7 +619,7 @@ const agTable = (agGridTableContainer, options) => {
       const sumField = [];
       columnApi.getAllColumns().forEach(d => {
         subtotalRowData[d.colDef.colname] = { val: '' };
-        if (d.colDef.type && d.colDef.type.toLocaleLowerCase() === 'number') {
+        if (d.colDef.issubtotal) {
           sumField.push(d.colDef.colname);
         }
       });
@@ -632,7 +639,8 @@ const agTable = (agGridTableContainer, options) => {
        subtotalRowData[colname] = { val: colname === 'ID' ? '合计' : (subtotalRow[i] || '') };
        });
        */
-      rowData = rowData.concat([subtotalRowData]);
+      // rowData = rowData.concat([subtotalRowData]);
+      pinnedBottomRowData.push(subtotalRowData);
     }
 
     // 计算统计值
@@ -642,10 +650,11 @@ const agTable = (agGridTableContainer, options) => {
         const { colname } = d.colDef;
         fullRangeSubTotalRowData[colname] = { val: colname === 'ID' ? '统计' : (fullRangeSubTotalRow[0][i] || '') };
       });
-      rowData = rowData.concat([fullRangeSubTotalRowData]);
+      // rowData = rowData.concat([fullRangeSubTotalRowData]);
+      pinnedBottomRowData.push(fullRangeSubTotalRowData);
     }
 
-    return rowData;
+    return { rowData, pinnedBottomRowData };
   };
 
   // 处理ag-body-viewport 横向滚动问题
@@ -831,7 +840,9 @@ const agTable = (agGridTableContainer, options) => {
       alert('agTable.setRows requires Array as first param');
       return agTable;
     }
-    api.setRowData(transformRowData(data));
+    const { rowData, pinnedBottomRowData } = transformRowData(data);
+    api.setRowData(rowData);
+    api.setPinnedBottomRowData(pinnedBottomRowData);
     return agTable;
   };
 

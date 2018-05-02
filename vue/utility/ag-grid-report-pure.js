@@ -118,6 +118,7 @@ const replaceNode = (node) => {
   const clone = node.cloneNode(true);
   node.parentNode.appendChild(clone);
   node.remove();
+  return clone;
 };
 
 const exportCustomExcel = (csvData, groupState) => {
@@ -152,7 +153,7 @@ const exportCustomExcel = (csvData, groupState) => {
        }
      });
 
-     console.log(simplifyData);
+     // console.log(simplifyData);
     }
   })
 };
@@ -235,38 +236,39 @@ const agReport = (agGridTableContainer, options) => {
       columnApi.autoSizeAllColumns();
       exportCustomExcel(api.getDataAsCsv(), columnApi.getColumnGroupState());
       // clone [span.ag-pivot-mode-select] and replace it in order to disable its event listeners
-      replaceNode(document.querySelector('span.ag-pivot-mode-select'));
+      const clone = replaceNode(document.querySelector('span.ag-pivot-mode-select'));
+      clone.querySelector('span.ag-checkbox-checked').style.display = 'none'; // 隐藏checkbox
     }, // 当表格渲染好之后，触发onGridReady
     onColumnRowGroupChanged(params) {
       const { columnApi } = params;
       columnApi.getColumnState().forEach(d => {
         const { rowGroupIndex } = d;
         if (rowGroupIndex !== undefined && rowGroupIndex !== null) {
-          console.log('column group changed', rowGroupIndex, d.colId);
+          // console.log('column group changed', rowGroupIndex, d.colId);
         }
       });
-    },
+    }, // 分组变化
     onColumnPivotChanged(params) {
       const { columnApi } = params;
       columnApi.getColumnState().forEach(d => {
         const { pivotIndex } = d;
         if (pivotIndex !== undefined && pivotIndex !== null) {
-          console.log('column pivot changed', pivotIndex, d.colId);
+          // console.log('column pivot changed', pivotIndex, d.colId);
         }
       });
-    },
+    }, // 透视变化
     onColumnValueChanged(params) {
       const { columnApi } = params;
       columnApi.getColumnState().forEach(d => {
         const { aggFunc } = d;
         if (aggFunc !== undefined && aggFunc !== null) {
-          console.log('column value changed', aggFunc, d.colId, d);
+          // console.log('column value changed', aggFunc, d.colId, d);
         }
       });
-    },
+    }, // aggregation 变化
     onColumnPivotModeChanged(params) {
-      console.log('onColumnPivotModeChanged', params);
-    }
+      // console.log('onColumnPivotModeChanged', params);
+    } // pivot mode 变化
   };
 
   // 初始化ag grid
