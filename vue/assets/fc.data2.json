@@ -174,7 +174,8 @@
         "isnotnull": false,
         "ismodify": false,
         "name": "下单数量",
-        "inputname": "COUNT"
+        "inputname": "COUNT",
+        "issubtotal": true
       },
       {
         "orderno": 160,

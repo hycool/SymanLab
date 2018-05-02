@@ -1,13 +1,13 @@
 <!-- 本组件内的ag-Grid采用pure javascript 实现 -->
 <template>
   <div>
-    <!--<div ref="agGridReport" style="width: 100%; height: 600px; border: 0px solid black; margin: 0 auto;">-->
-      <!--<p style="margin-top: 30px; text-align: center;">Loading...</p>-->
-    <!--</div>-->
-    <!--<div style="width: 100%; height: 30px;"></div>-->
-    <div ref="agGridTableContainer2" style="width: 100%; height: 540px;border: 0px solid black; margin: 0 auto; display: flex;">
+    <div ref="agGridReport" style="width: 100%; height: 600px; border: 0px solid black; margin: 0 auto;">
       <p style="margin-top: 30px; text-align: center;">Loading...</p>
     </div>
+    <!--<div style="width: 100%; height: 30px;"></div>-->
+    <!--<div ref="agGridTableContainer2" style="width: 100%; height: 540px;border: 0px solid black; margin: 0 auto; display: flex;">-->
+      <!--<p style="margin-top: 30px; text-align: center;">Loading...</p>-->
+    <!--</div>-->
   </div>
 </template>
 
@@ -346,8 +346,8 @@
     },
     mounted() {
       console.log('Vue组件渲染用时：', Date.now() - beforeMountTime);
-      // this.fetchCsv();
-      this.fetchFCData();
+      this.fetchCsv();
+      // this.fetchFCData();
       // this.convertCsvToExcel();
       // this.mockDemo();
       // this.fetchFCDataOrigin();
