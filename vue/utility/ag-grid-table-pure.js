@@ -214,7 +214,7 @@ fkComponent.prototype.init = function(params) {
   const { value } = params;
   // 设置fk icon 的样式
   const template = value !== null && value !== '' ?
-    `<i class="iconfont ${ cssFeatures.hover }" data-target-tag="fkIcon" style="color: #0f8ee9">&#xe625;</i>${params.value || ''}` :
+    `<i class="iconfont ${ cssFeatures.hover }" data-target-tag="fkIcon" style="color: #0f8ee9">&#xe625;</i> ${params.value || ''}` :
     '';
   if (params.data && params.data.ID.val !== '合计' && params.data.ID.val !== '统计') {
     // 当前模式如果为非分组模式，则判断当前行是否是“合计行”、“统计行”
@@ -299,7 +299,7 @@ customHeader.prototype.init = function(params) {
     </span>
     <div ref="eLabel" class="ag-header-cell-label" role="presentation">
         <span ref="eText" class="ag-header-cell-text" role="columnheader">
-          ${params.column.colDef.comment ? `<i class="icon-font comment ${cssFeatures.hover}" style="color: orangered">&#xe640;</i>` : ''} ${displayName}
+          ${params.column.colDef.comment ? `<i class="iconfont comment ${cssFeatures.hover}" style="color: orangered">&#xe640;</i> ` : ''} ${displayName}
         </span>
         <span ref="eSortOrder" class="ag-header-icon ag-sort-order" ></span>
         <span ref="eSortAsc" class="ag-header-icon ag-sort-ascending-icon ${params.column.colDef.isorder && params.column.colDef.sort === 'asc' ? '' : 'ag-hidden'}" >
