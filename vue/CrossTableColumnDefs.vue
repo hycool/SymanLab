@@ -1,23 +1,30 @@
-<!-- 用于测试大规模数据量的情况下，ag-grid-vue 的性能问题 -->
 <template>
   <div class="list-container" :style="{ width: width + 'px', marginLeft: marginLeft + 'px' }">
-    <div>字段列表</div>
-    <cross-table-column-item
-      v-for="column in columnLists"
-      :info="column"
-      :key="'key' + Math.round(Math.random() * 1000000)"
-    ></cross-table-column-item>
+    <div class="desc">字段列表</div>
+    <div class="list">
+      <cross-table-column-item
+        v-for="column in columnLists"
+        :info="column"
+        :key="'key' + Math.round(Math.random() * 1000000)"
+        :click-call-back="pickCols"
+      ></cross-table-column-item>
+    </div>
   </div>
 </template>
 
 <script>
-  
+
   import CrossTableColumnItem from './CrossTableColumnItem.vue';
-  
+
   export default {
     name: 'CrossTableColumnDefs',
     components: {
       'cross-table-column-item': CrossTableColumnItem
+    },
+    methods: {
+      pickCols(col) {
+        console.log(col);
+      }
     },
     props: {
       width: {
@@ -34,9 +41,20 @@
 </script>
 
 <style scoped>
-.list-container {
-  border: 1px solid #DCDCDC;
-  height: 460px;
-  float: left;
-}
+  .list-container {
+    border: 1px solid #DCDCDC;
+    border-radius: 4px;
+    height: 460px;
+    float: left;
+  }
+  
+  .desc {
+    font-size: 13px;
+    padding: 6px 17px 6px 17px;
+  }
+  
+  .list {
+    border-top: 1px solid #DEDEDE;
+    margin: 0 15px 0 10px;
+  }
 </style>

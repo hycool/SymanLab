@@ -1,4 +1,3 @@
-<!-- 用于测试大规模数据量的情况下，ag-grid-vue 的性能问题 -->
 <template>
   <div>
     <div :style="{width: (childWidth * 3) + (childMarginLeft * 4) + 'px', height: contentHeight + 'px', border: '1px solid #DCDCDC', margin: '15px auto', paddingTop: contentPaddingTop + 'px'}">
@@ -14,23 +13,27 @@
         <cross-table-opr-area
           :width="childWidth"
           :margin-left="childMarginLeft"
+          desc="页定义"
         >
         </cross-table-opr-area>
         <cross-table-opr-area
           :width="childWidth"
           :margin-left="childMarginLeft"
+          desc="列定义"
         >
         </cross-table-opr-area>
         <cross-table-opr-area
           :width="childWidth"
           :margin-top="newLineMarginTop"
           :margin-left="childMarginLeft"
+          desc="行定义"
         >
         </cross-table-opr-area>
         <cross-table-opr-area
           :width="childWidth"
           :margin-top="newLineMarginTop"
           :margin-left="childMarginLeft"
+          desc="汇总字段"
         >
         </cross-table-opr-area>
       </div>
