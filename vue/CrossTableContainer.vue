@@ -18,6 +18,7 @@
           :picked-columns="pageArray"
           @pick-column="pickColumn"
           @remove-column="removeColumn"
+          @click-picked-column="clickPickedColumn"
           desc="页定义"
           mark="pageArray"
         >
@@ -29,6 +30,7 @@
           :picked-columns="columnArray"
           @pick-column="pickColumn"
           @remove-column="removeColumn"
+          @click-picked-column="clickPickedColumn"
           desc="列定义"
           mark="columnArray"
         >
@@ -41,6 +43,7 @@
           :picked-columns="rowArray"
           @pick-column="pickColumn"
           @remove-column="removeColumn"
+          @click-picked-column="clickPickedColumn"
           desc="行定义"
           mark="rowArray"
         >
@@ -91,6 +94,16 @@
         });
         this.columnLists = [].concat(this.columnLists); // 强制更新this.columnLists
       },
+      clickPickedColumn(info) {
+        this.columnLists.forEach(d => {
+          if(d.colname === info.colname && d.pickedBy === info.pickedBy) {
+            d.selected = !d.selected;
+          } else if(d.colname !== info.colname && d.pickedBy === info.pickedBy) {
+            d.selected = false;
+          }
+        });
+        this.columnLists = [].concat(this.columnLists); // 强制更新this.columnLists
+      },
       pickColumn(mark) {
         // 挑选字段
         const arr = [];
@@ -107,6 +120,7 @@
         this.columnLists.some(d => {
           if (d.colname === info.colname) {
             d.pickedBy = undefined;
+            d.selected = false;
             return true;
           }
         });

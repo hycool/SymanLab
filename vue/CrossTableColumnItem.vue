@@ -8,7 +8,7 @@
       <i class="icon iconfont icon-color" v-if="!info.selected && !info.pickedBy">&#xe647;</i>
       <i class="icon iconfont icon-color selected" v-if="info.selected && !info.pickedBy">&#xe646;</i>
       {{ info ? info.name || '' : '' }}
-      <i class="icon iconfont remove" v-if="info.pickedBy" @click="removeColumn(info)">&#xe638;</i>
+      <i class="icon iconfont remove" v-if="info.pickedBy" @click="removeColumn(info, $event)">&#xe638;</i>
     </p>
   </div>
 </template>
@@ -26,7 +26,8 @@
       }
     },
     methods: {
-      removeColumn(info) {
+      removeColumn(info, event) {
+        event.stopPropagation();
         this.$emit('remove-column', info);
       }
     }

@@ -18,6 +18,7 @@
         v-for="column in pickedColumns"
         :info="column"
         :key="'key' + Math.round(Math.random() * 1000000)"
+        :click-call-back="clickCallBack"
         @remove-column="removeColumn"
       ></cross-table-column-item>
     </div>
@@ -65,6 +66,9 @@
       },
       removeColumn(info) {
         this.$emit('remove-column', info);
+      },
+      clickCallBack(info) {
+        this.$emit('click-picked-column', info);
       }
     },
     components: {
