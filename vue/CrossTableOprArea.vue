@@ -9,8 +9,8 @@
       {{ desc || '' }}
       <span class="icon-btn">
         <i class="icon iconfont hover" :class="{ colored: pickable }" @click="pickColumns">&#xe64a;</i>
-        <i class="icon iconfont hover">&#xe712;</i>
-        <i class="icon iconfont hover">&#xe711;</i>
+        <i class="icon iconfont hover" @click="columnMove('up')">&#xe711;</i>
+        <i class="icon iconfont hover" @click="columnMove('down')">&#xe712;</i>
       </span>
     </div>
     <div class="list" ref="list">
@@ -55,7 +55,7 @@
     },
     computed: {
       pickable() {
-        return this.unpickedColumns ? this.unpickedColumns.some(d => d.selected) : false;
+        return this.unpickedColumns ? this.unpickedColumns.some(d => d.selected && !d.pickedBy) : false;
       }
     },
     methods: {
@@ -69,6 +69,18 @@
       },
       clickCallBack(info) {
         this.$emit('click-picked-column', info);
+      },
+      columnMove(direction) {
+        let item;
+        this.pickedColumns.some(d => {
+          if (d.selected) {
+            item = d;
+            return true;
+          }
+        });
+        if (item) {
+          this.$emit('move-column', item, direction);
+        }
       }
     },
     components: {
