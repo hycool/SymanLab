@@ -33,7 +33,7 @@
           @remove-column="removeColumn"
           @click-picked-column="clickPickedColumn"
           @move-column="moveColumn"
-          desc="列定义"
+          desc="透视字段"
           mark="columnArray"
         >
         </cross-table-opr-area>
@@ -47,7 +47,7 @@
           @remove-column="removeColumn"
           @click-picked-column="clickPickedColumn"
           @move-column="moveColumn"
-          desc="行定义"
+          desc="分组字段"
           mark="rowArray"
         >
         </cross-table-opr-area>
@@ -55,7 +55,7 @@
           :width="childWidth"
           :margin-top="newLineMarginTop"
           :margin-left="childMarginLeft"
-          desc="汇总字段"
+          desc="聚合字段"
         >
         </cross-table-opr-area>
       </div>
