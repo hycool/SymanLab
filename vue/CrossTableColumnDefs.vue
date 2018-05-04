@@ -6,6 +6,7 @@
         v-for="column in columnLists"
         v-if="!column.pickedBy"
         :info="column"
+        :enableDrag="true"
         :key="'key' + Math.round(Math.random() * 1000000)"
         :click-call-back="clickCallBack"
       ></cross-table-column-item>

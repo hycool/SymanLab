@@ -13,7 +13,7 @@
         <i class="icon iconfont hover" @click="columnMove('down')">&#xe712;</i>
       </span>
     </div>
-    <div class="list" ref="list">
+    <div class="list" ref="list" @drop="drop" @dragover="dragOver">
       <cross-table-column-item
         v-for="column in pickedColumns"
         :info="column"
@@ -81,6 +81,12 @@
         if (item) {
           this.$emit('move-column', item, direction);
         }
+      },
+      dragOver(e) {
+        e.preventDefault();
+      },
+      drop(e) {
+        this.$emit('drop-column', JSON.parse(decodeURI(e.dataTransfer.getData('text'))), this.mark);
       }
     },
     components: {

@@ -1,7 +1,9 @@
 <template>
   <div
     class="column-item"
+    :draggable="enableDrag || false"
     @click="typeof clickCallBack === 'function' ? clickCallBack(info) : null"
+    @dragstart="dragStart(info, $event)"
     :class="{ 'bg-selected' : info.selected, 'bg-picked': info.pickedBy }"
   >
     <p>
@@ -23,12 +25,18 @@
       },
       clickCallBack: {
         type: Function
+      },
+      enableDrag: {
+        type: Boolean
       }
     },
     methods: {
       removeColumn(info, event) {
         event.stopPropagation();
         this.$emit('remove-column', info);
+      },
+      dragStart(info, event) {
+        event.dataTransfer.setData('text/plain', encodeURI(JSON.stringify(info)));
       }
     }
   }

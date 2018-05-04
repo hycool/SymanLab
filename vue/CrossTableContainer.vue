@@ -20,6 +20,7 @@
           @remove-column="removeColumn"
           @click-picked-column="clickPickedColumn"
           @move-column="moveColumn"
+          @drop-column="dropColumn"
           desc="页定义"
           mark="pageArray"
         >
@@ -33,6 +34,7 @@
           @remove-column="removeColumn"
           @click-picked-column="clickPickedColumn"
           @move-column="moveColumn"
+          @drop-column="dropColumn"
           desc="透视字段"
           mark="columnArray"
         >
@@ -47,6 +49,7 @@
           @remove-column="removeColumn"
           @click-picked-column="clickPickedColumn"
           @move-column="moveColumn"
+          @drop-column="dropColumn"
           desc="分组字段"
           mark="rowArray"
         >
@@ -116,6 +119,14 @@
             d.pickedBy = mark;
             d.selected = false;
             arr.push(d);
+          }
+        });
+        this.columnLists = [].concat(this.columnLists);
+      },
+      dropColumn(info, mark) {
+        this.columnLists.forEach(d => {
+          if (d.colname === info.colname && !d.pickedBy) {
+            d.pickedBy = mark;
           }
         });
         this.columnLists = [].concat(this.columnLists);
