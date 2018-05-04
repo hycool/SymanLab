@@ -42,7 +42,7 @@ const localeText = {
   notContains: '不包含',
   lessThanOrEqual: '小于等于',
   greaterThanOrEqual: '大于等于',
-  inRange:'daInRange',
+  inRange:'在...范围内',
   lessThan: '小于',
   greaterThan: '大于',
   // textFilter
@@ -53,9 +53,9 @@ const localeText = {
   group: '当前分组',
   // toolPanel
   columns: '所有列',
-  rowGroupColumns: 'Pivot Cols',
+  rowGroupColumns: '透视列',
   rowGroupColumnsEmptyMessage: '将需要分组查询的“列”拖拽至此处',
-  valueColumns: 'Value Cols',
+  valueColumns: '聚合列',
   pivotMode: '透视模式',
   groups: '分组详情',
   values: '聚合分析值',
@@ -419,6 +419,7 @@ const currencyFormat = (value) => {
  * @returns {function(*=, *=)} 函数
  */
 const agTable = (agGridTableContainer, options) => {
+  let updateColumnPositionDelay = -1;
   if (!(agGridTableContainer instanceof HTMLElement)) {
     alert('agGridTableContainer is not a HTMLElement');
     return null;
@@ -710,12 +711,20 @@ const agTable = (agGridTableContainer, options) => {
       'NUMBER': {},
       'STRING': {},
     },
-    getContextMenuItems() {
+    getContextMenuItems(param) {
       return [
         'copy',
         'copyWithHeaders',
         'paste',
         'export',
+        {
+          name: '清除所有列的位置信息',
+          action: function() {
+            if (typeof options.clearColumnPosition === 'function') {
+              options.clearColumnPosition();
+            }
+          }
+        },
       ];
     }, // 表体右击菜单
     getMainMenuItems() {
@@ -799,6 +808,15 @@ const agTable = (agGridTableContainer, options) => {
       if (typeof options.onColumnVisibleChanged === 'function') {
         options.onColumnVisibleChanged(params.columns[0].colId, params.visible);
       }
+    }, // 显示或者隐藏列的监听
+    onColumnMoved(param) {
+      const { columnApi } = param;
+      clearTimeout(updateColumnPositionDelay);
+      updateColumnPositionDelay = setTimeout(() => {
+        if (typeof options.onColumnMoved === 'function') {
+          options.onColumnMoved(columnApi.getColumnState().map(d => d.colId));
+        }
+      }, 500);
     },
     getRowClass(params) {
       let className = '';
