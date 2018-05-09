@@ -1,6 +1,7 @@
 <template>
   <div>
-    <div :style="{width: (childWidth * 3) + (childMarginLeft * 4) + 'px', height: contentHeight + 'px', border: '1px solid #DCDCDC', margin: '15px auto', paddingTop: contentPaddingTop + 'px'}">
+    <div
+      :style="{width: (childWidth * 3) + (childMarginLeft * 4) + 'px', height: contentHeight + 'px', border: '1px solid #DCDCDC', margin: '15px auto', paddingTop: contentPaddingTop + 'px'}">
       <!-- left  for column defs-->
       <cross-table-column-defs
         :width="childWidth"
@@ -67,17 +68,17 @@
 </template>
 
 <script>
-  
+
   import CrossTableColumnDefs from './CrossTableColumnDefs.vue';
   import CrossTableOprArea from './CrossTableOprArea.vue';
-  
+
   const newLineMarginTop = 8;
   const childWidth = 240;
   const childBaseHeight = 226;
   const childMarginLeft = 10;
   const contentPaddingTop = 15;
-  const contentHeight = (childBaseHeight * 2) + (contentPaddingTop * 2) + newLineMarginTop ;
-  
+  const contentHeight = (childBaseHeight * 2) + (contentPaddingTop * 2) + newLineMarginTop;
+
   export default {
     name: 'CrossTableContainer',
     data() {
@@ -93,7 +94,7 @@
     methods: {
       clickUnpickedColumn(info) {
         this.columnLists.some(d => {
-          if(d.colname === info.colname) {
+          if (d.colname === info.colname) {
             d.selected = !d.selected;
             return true;
           }
@@ -102,9 +103,9 @@
       },
       clickPickedColumn(info) {
         this.columnLists.forEach(d => {
-          if(d.colname === info.colname && d.pickedBy === info.pickedBy) {
+          if (d.colname === info.colname && d.pickedBy === info.pickedBy) {
             d.selected = !d.selected;
-          } else if(d.colname !== info.colname && d.pickedBy === info.pickedBy) {
+          } else if (d.colname !== info.colname && d.pickedBy === info.pickedBy) {
             d.selected = false;
           }
         });
@@ -289,10 +290,23 @@
 </script>
 
 <style scoped>
-div {
-  color: #505050;
-  box-sizing: border-box;
-  user-select: none;
-  font-family: "Microsoft YaHei UI";
-}
+  div::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  div::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  }
+  
+  div::-webkit-scrollbar-thumb {
+    background-color: darkgrey;
+    outline: 1px solid slategrey;
+  }
+  
+  div {
+    color: #505050;
+    box-sizing: border-box;
+    user-select: none;
+    font-family: "Microsoft YaHei UI";
+  }
 </style>

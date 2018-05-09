@@ -1,0 +1,123 @@
+{
+  "code": 0,
+  "data": {
+    "selects": {
+      "1": [
+        {
+          "orderno": 2,
+          "description": "周",
+          "value": "W"
+        },
+        {
+          "orderno": null,
+          "description": "月",
+          "value": "M"
+        },
+        {
+          "orderno": null,
+          "description": "年",
+          "value": "Y"
+        }
+      ],
+      "18": [
+        {
+          "orderno": null,
+          "description": "春",
+          "value": "1"
+        },
+        {
+          "orderno": null,
+          "description": "夏",
+          "value": "2"
+        },
+        {
+          "orderno": null,
+          "description": "秋",
+          "value": "3"
+        },
+        {
+          "orderno": null,
+          "description": "冬",
+          "value": "4"
+        },
+        {
+          "orderno": null,
+          "description": "春夏",
+          "value": "5"
+        },
+        {
+          "orderno": null,
+          "description": "夏秋",
+          "value": "6"
+        },
+        {
+          "orderno": null,
+          "description": "秋冬",
+          "value": "7"
+        },
+        {
+          "orderno": null,
+          "description": "冬春",
+          "value": "8"
+        }
+      ]
+    },
+    "params": [
+      {
+        "ad_column_id": null,
+        "orderno": 5,
+        "nullable": "N",
+        "selectiontype": null,
+        "rp_limitvalue_group_id": null,
+        "name": "DATE",
+        "description": "日期",
+        "defaultvalue": null,
+        "paratype": "D"
+      },
+      {
+        "ad_column_id": null,
+        "orderno": 10,
+        "nullable": "N",
+        "selectiontype": "drp",
+        "rp_limitvalue_group_id": 1,
+        "name": "DATETYPE",
+        "description": "日期类型",
+        "defaultvalue": "W",
+        "paratype": "S"
+      },
+      {
+        "ad_column_id": 135367,
+        "orderno": 20,
+        "nullable": "Y",
+        "selectiontype": "drp",
+        "rp_limitvalue_group_id": null,
+        "name": "CP_C_DISTRIB_ID",
+        "description": "分区",
+        "defaultvalue": null,
+        "paratype": "N"
+      },
+      {
+        "ad_column_id": 147139,
+        "orderno": 30,
+        "nullable": "Y",
+        "selectiontype": "drp",
+        "rp_limitvalue_group_id": null,
+        "name": "NUMDIM26",
+        "description": "品类",
+        "defaultvalue": null,
+        "paratype": "N"
+      },
+      {
+        "ad_column_id": 132812,
+        "orderno": 40,
+        "nullable": "Y",
+        "selectiontype": "drp",
+        "rp_limitvalue_group_id": 18,
+        "name": "PROSEA",
+        "description": "商品季节",
+        "defaultvalue": null,
+        "paratype": "N"
+      }
+    ]
+  }
+}
