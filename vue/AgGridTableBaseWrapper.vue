@@ -3,7 +3,7 @@
 </template>
 
 <script>
-  import agTable from './utility/ag-grid-table-pure';
+  import agTable from './utility/ag-grid/ag-grid-table-pure';
   
   export default {
     name: 'AgGridTableBaseWrapper',

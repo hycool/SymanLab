@@ -1,6 +1,6 @@
 import { Grid } from 'ag-grid';
-import "../../node_modules/ag-grid/dist/styles/ag-grid.css"
-import "../../node_modules/ag-grid/dist/styles/ag-theme-balham.css"
+import "../../../node_modules/ag-grid/dist/styles/ag-grid.css"
+import "../../../node_modules/ag-grid/dist/styles/ag-theme-balham.css"
 import "ag-grid-enterprise/main";
 import { LicenseManager } from "ag-grid-enterprise/main";
 
@@ -335,7 +335,11 @@ customHeader.prototype.init = function(params) {
   }
 
   // 处理column menu:hover
-  eGui.onmouseenter = () => { this.eMenuButton.style.opacity = 1; };
+  eGui.onmouseenter = () => {
+    if (enableMenu) {
+      this.eMenuButton.style.opacity = 1;
+    }
+  };
   eGui.onmouseleave = () => { this.eMenuButton.style.opacity = 0; };
 
   // 处理column menu
@@ -449,7 +453,8 @@ const agTable = (agGridTableContainer, options) => {
   tooltipBox.setAttribute('class', cssFeatures.tooltipBox);
 
   agGridDiv.style.width = `100%`;
-  agGridDiv.style.height = `${agGridTableContainer.offsetHeight}px`;
+  // agGridDiv.style.height = `${agGridTableContainer.offsetHeight}px`;
+  agGridDiv.style.height = '100%';
   agGridDiv.style.margin = '0 auto';
   agGridDiv.style.position = 'relative';
   agGridDiv.setAttribute('class', 'ag-theme-balham');  // 设置主题
@@ -519,6 +524,13 @@ const agTable = (agGridTableContainer, options) => {
       if(d.colname === 'field') { alert('field : 列名冲突'); }
       const item = JSON.parse(decodeURI(encodeURI(JSON.stringify(d))));
       item.headerName = d.colname === 'ID' ? '序号' : d.name || '未定义';
+      item.lockVisible = d.colname === 'ID'; // 锁定序号列的隐藏功能
+      item.pinned = d.colname === 'ID' ? 'left' : null;
+      item.maxWidth = d.colname === 'ID' ? 100 : null; // 为ID列预设最大宽度
+      item.suppressResize = d.colname === 'ID'; // 禁止拖动ID列边缘以改变其列宽
+      item.suppressMovable = d.colname === 'ID'; // 禁用ID列拖拽
+      item.lockPinned = true; // 锁定序号列的pinned功能
+      item.lockPosition = d.colanme === 'ID'; //  锁定ID列的位置
       item.headerComponent = options && options.useDefaultHeader ? null :'customHeader'; // 如果外界传值useDefaultHeader = true，则不适用headerComponent
       item.headerComponentParams = { agGridDiv, tooltipBox };
       item.field = `${d.colname}.val`; // 参与显示和计算的列值
@@ -533,52 +545,10 @@ const agTable = (agGridTableContainer, options) => {
         tooltipBox,
         failIds,
       }; // 在cell rendering 中自定义一个agGridDiv 用于以后的寻根定位
-      item.sortingOrder = item.isorder ? ['asc', 'desc', null] : [null]; // 处理每列默认的单击后的排序顺序
+      item.sortingOrder = item.isorder ? ['asc', 'desc'] : [null]; // 处理每列默认的单击后的排序顺序
       item.unSortIcon = item.isorder; // 设置未排序图表Icon
       item.hide = hideColumn.indexOf(item.colname) > -1;
-      /*
-       // 暂时不做单元格颜色控制，改为行颜色控制
-       item.cellClass = function(params) {
-       let className = '';
-       const { cssStatus } = options;
-       if (options.cssStatus) {
-       const { colDef, value } = params;
-       const { headerName } = colDef;
-       cssStatus.some(d => {
-       if (d.desc === headerName) {
-       className = d.css[d.value.indexOf(value)];
-       return true;
-       }
-       });
-       }
-       return className;
-       }; // 单元格class
-       */
-      // item.cellStyle = function(params) {
-      //   if(params.column.colId === 'ID') {
-      //     // 如果colId === 'ID'，则将单元格overflow：hidden 属性放开
-      //     return {
-      //       overflow: 'auto',
-      //     }
-      //   }
-      // };
-      item.suppressMenu = false; // 是否禁用每一列的菜单选择
-      // item.menuTabs = menuTabs; // 处理每列菜单情况
-      // 取消valueGetter
-      /*
-      item.valueGetter = function (params) {
-        if (d.type.toLocaleLowerCase() === 'number') {
-          return params.data ? parseFloat(params.data[d.colname].val) : '';
-        }
-        return params.data ? params.data[d.colname].val : '';
-      };
-      */
-      // 取消字段类型过滤逻辑判断
-      /*
-      if (item.type.toLocaleLowerCase() === 'number') {
-        item.filter = 'number'
-      }
-      */
+      item.suppressMenu = d.colname === 'ID'; // 是否禁用每一列的菜单选择
       if (item.type.toLocaleLowerCase() === 'string') {
         item.filter = 'agTextColumnFilter'
       }
@@ -649,7 +619,8 @@ const agTable = (agGridTableContainer, options) => {
       const fullRangeSubTotalRowData = {};
       columnApi.getAllColumns().forEach((d, i) => {
         const { colname } = d.colDef;
-        fullRangeSubTotalRowData[colname] = { val: colname === 'ID' ? '统计' : (fullRangeSubTotalRow[0][i] || '') };
+        const columnFullRangeValue = (fullRangeSubTotalRow[0] ? (fullRangeSubTotalRow[0][i] || '') : '')
+        fullRangeSubTotalRowData[colname] = { val: colname === 'ID' ? '统计' : columnFullRangeValue };
       });
       // rowData = rowData.concat([fullRangeSubTotalRowData]);
       pinnedBottomRowData.push(fullRangeSubTotalRowData);
@@ -718,23 +689,49 @@ const agTable = (agGridTableContainer, options) => {
         'paste',
         'export',
         {
-          name: '清除所有列的位置信息',
+          name: '显示所有列',
           action: function() {
-            if (typeof options.clearColumnPosition === 'function') {
-              options.clearColumnPosition();
+            if (typeof options.onColumnVisibleChanged === 'function') {
+              param.columnApi.resetColumnState();
+              // 将所有隐藏列都显示出来
+              param.columnApi.setColumnsVisible(param.columnApi.getColumnState().map(d => d.colId), true);
+              // 处理列排序问题。
+              if (agTable.colPosition && agTable.colPosition !== '') {
+                agTable.colPosition.split(',').forEach((d, i) => {
+                  param.columnApi.moveColumn(d, i);
+                });
+              }
+              // 向后台发送API，清除所有隐藏列
+              options.onColumnVisibleChanged('');
             }
           }
         },
       ];
     }, // 表体右击菜单
-    getMainMenuItems() {
+    getMainMenuItems(params) {
       return [
         'pinSubMenu',
         'separator',
         'autoSizeThis',
         'autoSizeAll',
         'separator',
-        'resetColumns'
+        {
+          name: '重置有所列位置信息',
+          action: function() {
+            if (typeof options.onColumnMoved === 'function') {
+              const visibleColumns = [];
+              agTable.originColumnDefs.map(d => d.colname).forEach(d => {
+                if (params.columnApi.getColumn(d).visible) {
+                  visibleColumns.push(d);
+                }
+              });
+              visibleColumns.forEach((d, i) => {
+                params.columnApi.moveColumn(d, i);
+              });
+              options.onColumnMoved('');
+            }
+          }
+        },
       ];
     }, // 设置每列的general menu item
     onCellClicked(params) {
@@ -806,7 +803,13 @@ const agTable = (agGridTableContainer, options) => {
     }, // 当列很多时，如果用户横向拉动混动条以查看其它不在视口区域的列，则会触发此事件
     onColumnVisible(params) {
       if (typeof options.onColumnVisibleChanged === 'function') {
-        options.onColumnVisibleChanged(params.columns[0].colId, params.visible);
+        const hideColumns = [];
+        params.columnApi.getColumnState().forEach(d => {
+          if (d.hide) {
+            hideColumns.push(d.colId);
+          }
+        });
+        options.onColumnVisibleChanged(hideColumns.toString());
       }
     }, // 显示或者隐藏列的监听
     onColumnMoved(param) {
@@ -814,7 +817,18 @@ const agTable = (agGridTableContainer, options) => {
       clearTimeout(updateColumnPositionDelay);
       updateColumnPositionDelay = setTimeout(() => {
         if (typeof options.onColumnMoved === 'function') {
-          options.onColumnMoved(columnApi.getColumnState().map(d => d.colId));
+          const columnState = columnApi.getColumnState().map(d => d.colId);
+          const orderedColumns = [];
+          const hideColumn = options.datas.hideColumn && options.datas.hideColumn !== '' ? options.datas.hideColumn.split(',') : [];
+          columnState.forEach(d => {
+            if (hideColumn.indexOf(d) === -1 && d !== 'ID') {
+              // 所有非隐藏列，并且不是ID列，进组。
+              orderedColumns.push(d);
+            }
+          });
+          // ID列永远作为显示列，并且永远放在排序的首位，并且记录用户操作后的列的顺序到agTable实例中
+          agTable.colPosition = ['ID'].concat(orderedColumns).toString();
+          options.onColumnMoved(['ID'].concat(orderedColumns).toString());
         }
       }, 500);
     },
@@ -840,14 +854,26 @@ const agTable = (agGridTableContainer, options) => {
   const { api, columnApi } = gridOptions;
   agTable.api = api;
   agTable.columnApi = columnApi;
+
   // 设置columnDefs
   agTable.setCols = (data) => {
     if (!data) { return agTable; } // 如果未传参，则返回。
+    agTable.originColumnDefs = data;
     if (!(Object.prototype.toString.call(data) === '[object Array]')) {
       alert('agTable.setCols requires Array as first param');
       return agTable;
     }
     api.setColumnDefs(transformColumnDefs(data));
+
+    // 移动列的顺序
+    const { colPosition } = options.datas;
+    if (colPosition && colPosition !== '') {
+      // 初始化的时候，记录colPosition，以便点击“显示所有列”按钮时，可以还原已经排序列的顺序
+      agTable.colPosition = colPosition;
+      colPosition.split(',').forEach((d, i) => {
+        columnApi.moveColumn(d, i);
+      });
+    }
     return agTable;
   };
 

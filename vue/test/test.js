@@ -1,8 +1,3 @@
-
-try {
-  const result = JSON.parse('abcd');
-  console.log(result);
-} catch (e) {
-  console.log('处理失败')
-}
-
+const a = [1, 2, 3, 4];
+a.splice(1, a.indexOf(2));
+console.log(a);

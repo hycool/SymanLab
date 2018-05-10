@@ -1,0 +1,973 @@
+{
+  "code": 0,
+  "datas": {
+    "subtotalRow": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      1000,
+      0,
+      0,
+      1000,
+      1000,
+      null,
+      null,
+      "100,000.00",
+      null,
+      null
+    ],
+    "start": 0,
+    "fullRangeSubTotalRow": [],
+    "ordids": [
+      {
+        "colname": "ID",
+        "ordasc": true
+      }
+    ],
+    "isFullRangeSubTotalEnabled": true,
+    "tabname": "SC_B_STOCK",
+    "isSubTotalEnabled": true,
+    "tabth": [
+      {
+        "orderno": 1,
+        "isak": true,
+        "display": "text",
+        "scale": 0,
+        "type": "NUMBER",
+        "datelimit": "all",
+        "isfilter": false,
+        "colname": "ID",
+        "isuppercase": false,
+        "isnotnull": true,
+        "subtotal": false,
+        "ismodify": false,
+        "name": "ID",
+        "inputname": "ID"
+      },
+      {
+        "reftable": "CP_C_STORE",
+        "orderno": 10,
+        "isak": false,
+        "display": "text",
+        "reftableid": 23296,
+        "type": "STRING",
+        "datelimit": "all",
+        "isfilter": true,
+        "colname": "CP_C_STORE_ID",
+        "isuppercase": false,
+        "isnotnull": false,
+        "subtotal": false,
+        "fkdesc": "店仓档案",
+        "ismodify": false,
+        "name": "店仓",
+        "fkdisplay": "drp",
+        "inputname": "CP_C_STORE_ID",
+        "isfk": true,
+        "objdistype": "tabpanle"
+      },
+      {
+        "orderno": 21,
+        "isak": false,
+        "display": "text",
+        "type": "STRING",
+        "datelimit": "all",
+        "isfilter": false,
+        "colname": "PS_C_SKU_ECODE",
+        "isuppercase": true,
+        "isnotnull": false,
+        "subtotal": false,
+        "ismodify": false,
+        "name": "条码",
+        "isorder": true,
+        "inputname": "PS_C_SKU_ECODE"
+      },
+      {
+        "reftable": "PS_C_PRO",
+        "orderno": 30,
+        "isak": false,
+        "display": "text",
+        "reftableid": 23276,
+        "type": "STRING",
+        "datelimit": "all",
+        "isfilter": true,
+        "colname": "PS_C_PRO_ID",
+        "isuppercase": false,
+        "isnotnull": false,
+        "subtotal": false,
+        "fkdesc": "标准商品档案",
+        "ismodify": false,
+        "name": "商品编码",
+        "isorder": true,
+        "fkdisplay": "drp",
+        "inputname": "PS_C_PRO_ID",
+        "isfk": true,
+        "objdistype": "tabpanle"
+      },
+      {
+        "orderno": 50,
+        "isak": false,
+        "display": "text",
+        "scale": 0,
+        "type": "NUMBER",
+        "datelimit": "all",
+        "isfilter": false,
+        "colname": "PS_C_CLR_ECODE",
+        "isuppercase": false,
+        "isnotnull": false,
+        "subtotal": false,
+        "ismodify": false,
+        "name": "颜色",
+        "inputname": "PS_C_CLR_ECODE"
+      },
+      {
+        "orderno": 60,
+        "isak": false,
+        "display": "text",
+        "scale": 0,
+        "type": "NUMBER",
+        "datelimit": "all",
+        "isfilter": false,
+        "colname": "PS_C_SIZE_ECODE",
+        "isuppercase": false,
+        "isnotnull": false,
+        "subtotal": false,
+        "ismodify": false,
+        "name": "尺寸",
+        "inputname": "PS_C_SIZE_ECODE"
+      },
+      {
+        "orderno": 85,
+        "isak": false,
+        "display": "text",
+        "scale": 0,
+        "type": "NUMBER",
+        "datelimit": "all",
+        "isfilter": false,
+        "colname": "QTY_STOCK",
+        "isuppercase": false,
+        "isnotnull": false,
+        "subtotal": true,
+        "ismodify": false,
+        "name": "在库数量",
+        "isorder": true,
+        "inputname": "QTY_STOCK"
+      },
+      {
+        "orderno": 90,
+        "isak": false,
+        "display": "text",
+        "scale": 0,
+        "type": "NUMBER",
+        "datelimit": "all",
+        "isfilter": false,
+        "colname": "QTY_STOCK_OCCU",
+        "isuppercase": false,
+        "isnotnull": false,
+        "subtotal": true,
+        "ismodify": false,
+        "name": "占用数量",
+        "isorder": true,
+        "inputname": "QTY_STOCK_OCCU"
+      },
+      {
+        "orderno": 120,
+        "isak": false,
+        "display": "text",
+        "scale": 0,
+        "type": "NUMBER",
+        "datelimit": "all",
+        "isfilter": false,
+        "colname": "QTY_STOCK_PREIN",
+        "isuppercase": false,
+        "isnotnull": false,
+        "subtotal": true,
+        "ismodify": false,
+        "name": "在途数量",
+        "isorder": true,
+        "inputname": "QTY_STOCK_PREIN"
+      },
+      {
+        "orderno": 180,
+        "isak": false,
+        "display": "text",
+        "scale": 0,
+        "type": "NUMBER",
+        "datelimit": "all",
+        "isfilter": false,
+        "colname": "QTY_STOCK_ABLE",
+        "isuppercase": false,
+        "isnotnull": false,
+        "subtotal": true,
+        "ismodify": false,
+        "name": "可用数量",
+        "isorder": true,
+        "inputname": "QTY_STOCK_ABLE"
+      },
+      {
+        "orderno": 190,
+        "isak": false,
+        "display": "text",
+        "scale": 0,
+        "type": "NUMBER",
+        "datelimit": "all",
+        "isfilter": false,
+        "colname": "QTY_STOCK_PRE",
+        "isuppercase": false,
+        "isnotnull": false,
+        "subtotal": true,
+        "ismodify": false,
+        "name": "预计数量",
+        "isorder": true,
+        "inputname": "QTY_STOCK_PRE"
+      },
+      {
+        "orderno": 200,
+        "isak": false,
+        "display": "text",
+        "scale": 2,
+        "type": "NUMBER",
+        "datelimit": "all",
+        "isfilter": false,
+        "colname": "PRICE_LIST",
+        "isuppercase": false,
+        "isnotnull": false,
+        "subtotal": false,
+        "ismodify": false,
+        "name": "吊牌价",
+        "isorder": true,
+        "inputname": "PRICE_LIST"
+      },
+      {
+        "orderno": 210,
+        "isak": false,
+        "display": "text",
+        "scale": 2,
+        "type": "NUMBER",
+        "datelimit": "all",
+        "isfilter": false,
+        "colname": "PRICE_COST",
+        "isuppercase": false,
+        "isnotnull": false,
+        "subtotal": false,
+        "ismodify": false,
+        "name": "成本价",
+        "isorder": true,
+        "inputname": "PRICE_COST"
+      },
+      {
+        "orderno": 220,
+        "isak": false,
+        "display": "text",
+        "scale": 2,
+        "type": "NUMBER",
+        "datelimit": "all",
+        "isfilter": false,
+        "colname": "AMT_COST",
+        "isuppercase": false,
+        "isnotnull": false,
+        "subtotal": true,
+        "ismodify": false,
+        "name": "在库成本金额",
+        "isorder": true,
+        "inputname": "AMT_COST"
+      },
+      {
+        "orderno": 1003,
+        "isak": false,
+        "display": "text",
+        "type": "STRING",
+        "datelimit": "all",
+        "isfilter": false,
+        "colname": "MODIFIERENAME",
+        "isuppercase": false,
+        "isnotnull": false,
+        "subtotal": false,
+        "ismodify": false,
+        "name": "修改人",
+        "inputname": "MODIFIERENAME"
+      },
+      {
+        "orderno": 1004,
+        "isak": false,
+        "display": "OBJ_DATE",
+        "type": "STRING",
+        "datelimit": "all",
+        "isfilter": false,
+        "colname": "MODIFIEDDATE",
+        "isuppercase": false,
+        "isnotnull": false,
+        "subtotal": false,
+        "ismodify": false,
+        "name": "修改时间",
+        "isorder": true,
+        "inputname": "MODIFIEDDATE"
+      }
+    ],
+    "totalRowCount": 12,
+    "rowCount": 10,
+    "row": [
+      {
+        "QTY_STOCK_PREIN": {
+          "val": "0.00"
+        },
+        "QTY_STOCK": {
+          "val": "100.00"
+        },
+        "PS_C_SIZE_ECODE": {
+          "val": "05"
+        },
+        "(SC_B_STOCK.ID + 12)": {
+          "val": ""
+        },
+        "PRICE_LIST": {
+          "val": "499.00"
+        },
+        "MODIFIEDDATE": {
+          "val": "2018-05-02 20:19:25"
+        },
+        "PS_C_SKU_ECODE": {
+          "val": "7Y50160905"
+        },
+        "CP_C_STORE_ID": {
+          "val": "[33339]双塔店",
+          "reftablename": "CP_C_STORE",
+          "reftableid": 23296,
+          "reftabdesc": "店仓档案",
+          "refobjid": 193595714866,
+          "colid": 151155,
+          "isfk": true
+        },
+        "PRICE_COST": {
+          "val": "243.00"
+        },
+        "QTY_STOCK_ABLE": {
+          "val": "100.00"
+        },
+        "QTY_STOCK_OCCU": {
+          "val": "0.00"
+        },
+        "QTY_STOCK_PRE": {
+          "val": "100.00"
+        },
+        "AMT_COST": {
+          "val": "10,000.00"
+        },
+        "ID": {
+          "val": "2"
+        },
+        "PS_C_PRO_ID": {
+          "val": "7Y5016",
+          "reftablename": "PS_C_PRO",
+          "reftableid": 23276,
+          "reftabdesc": "标准商品档案",
+          "refobjid": "15075094",
+          "colid": 151161,
+          "isfk": true
+        },
+        "MODIFIERENAME": {
+          "val": "系统管理员"
+        },
+        "PS_C_CLR_ECODE": {
+          "val": "09"
+        }
+      },
+      {
+        "QTY_STOCK_PREIN": {
+          "val": "0.00"
+        },
+        "QTY_STOCK": {
+          "val": "100.00"
+        },
+        "PS_C_SIZE_ECODE": {
+          "val": "07"
+        },
+        "(SC_B_STOCK.ID + 12)": {
+          "val": ""
+        },
+        "PRICE_LIST": {
+          "val": "19.00"
+        },
+        "MODIFIEDDATE": {
+          "val": "2018-05-02 20:19:25"
+        },
+        "PS_C_SKU_ECODE": {
+          "val": "8T8400225607"
+        },
+        "CP_C_STORE_ID": {
+          "val": "[31004]城中店",
+          "reftablename": "CP_C_STORE",
+          "reftableid": 23296,
+          "reftabdesc": "店仓档案",
+          "refobjid": 200000244070,
+          "colid": 151155,
+          "isfk": true
+        },
+        "PRICE_COST": {
+          "val": "13.30"
+        },
+        "QTY_STOCK_ABLE": {
+          "val": "100.00"
+        },
+        "QTY_STOCK_OCCU": {
+          "val": "0.00"
+        },
+        "QTY_STOCK_PRE": {
+          "val": "100.00"
+        },
+        "AMT_COST": {
+          "val": "10,000.00"
+        },
+        "ID": {
+          "val": "3"
+        },
+        "PS_C_PRO_ID": {
+          "val": "8T84002",
+          "reftablename": "PS_C_PRO",
+          "reftableid": 23276,
+          "reftabdesc": "标准商品档案",
+          "refobjid": "15076505",
+          "colid": 151161,
+          "isfk": true
+        },
+        "MODIFIERENAME": {
+          "val": "系统管理员"
+        },
+        "PS_C_CLR_ECODE": {
+          "val": "11"
+        }
+      },
+      {
+        "QTY_STOCK_PREIN": {
+          "val": "0.00"
+        },
+        "QTY_STOCK": {
+          "val": "100.00"
+        },
+        "PS_C_SIZE_ECODE": {
+          "val": "07"
+        },
+        "(SC_B_STOCK.ID + 12)": {
+          "val": ""
+        },
+        "PRICE_LIST": {
+          "val": "499.00"
+        },
+        "MODIFIEDDATE": {
+          "val": "2018-05-02 20:19:25"
+        },
+        "PS_C_SKU_ECODE": {
+          "val": "7Y50165807"
+        },
+        "CP_C_STORE_ID": {
+          "val": "[33273]珊瑚店",
+          "reftablename": "CP_C_STORE",
+          "reftableid": 23296,
+          "reftabdesc": "店仓档案",
+          "refobjid": 200000243797,
+          "colid": 151155,
+          "isfk": true
+        },
+        "PRICE_COST": {
+          "val": "243.00"
+        },
+        "QTY_STOCK_ABLE": {
+          "val": "100.00"
+        },
+        "QTY_STOCK_OCCU": {
+          "val": "0.00"
+        },
+        "QTY_STOCK_PRE": {
+          "val": "100.00"
+        },
+        "AMT_COST": {
+          "val": "10,000.00"
+        },
+        "ID": {
+          "val": "7"
+        },
+        "PS_C_PRO_ID": {
+          "val": "7Y5016",
+          "reftablename": "PS_C_PRO",
+          "reftableid": 23276,
+          "reftabdesc": "标准商品档案",
+          "refobjid": "15075094",
+          "colid": 151161,
+          "isfk": true
+        },
+        "MODIFIERENAME": {
+          "val": "系统管理员"
+        },
+        "PS_C_CLR_ECODE": {
+          "val": "58"
+        }
+      },
+      {
+        "QTY_STOCK_PREIN": {
+          "val": "0.00"
+        },
+        "QTY_STOCK": {
+          "val": "100.00"
+        },
+        "PS_C_SIZE_ECODE": {
+          "val": "05"
+        },
+        "(SC_B_STOCK.ID + 12)": {
+          "val": ""
+        },
+        "PRICE_LIST": {
+          "val": "499.00"
+        },
+        "MODIFIEDDATE": {
+          "val": "2018-05-02 20:19:25"
+        },
+        "PS_C_SKU_ECODE": {
+          "val": "7Y50160905"
+        },
+        "CP_C_STORE_ID": {
+          "val": "[33149]开元店",
+          "reftablename": "CP_C_STORE",
+          "reftableid": 23296,
+          "reftabdesc": "店仓档案",
+          "refobjid": 200000243823,
+          "colid": 151155,
+          "isfk": true
+        },
+        "PRICE_COST": {
+          "val": "243.00"
+        },
+        "QTY_STOCK_ABLE": {
+          "val": "100.00"
+        },
+        "QTY_STOCK_OCCU": {
+          "val": "0.00"
+        },
+        "QTY_STOCK_PRE": {
+          "val": "100.00"
+        },
+        "AMT_COST": {
+          "val": "10,000.00"
+        },
+        "ID": {
+          "val": "8"
+        },
+        "PS_C_PRO_ID": {
+          "val": "7Y5016",
+          "reftablename": "PS_C_PRO",
+          "reftableid": 23276,
+          "reftabdesc": "标准商品档案",
+          "refobjid": "15075094",
+          "colid": 151161,
+          "isfk": true
+        },
+        "MODIFIERENAME": {
+          "val": "系统管理员"
+        },
+        "PS_C_CLR_ECODE": {
+          "val": "09"
+        }
+      },
+      {
+        "QTY_STOCK_PREIN": {
+          "val": "0.00"
+        },
+        "QTY_STOCK": {
+          "val": "100.00"
+        },
+        "PS_C_SIZE_ECODE": {
+          "val": "07"
+        },
+        "(SC_B_STOCK.ID + 12)": {
+          "val": ""
+        },
+        "PRICE_LIST": {
+          "val": "19.00"
+        },
+        "MODIFIEDDATE": {
+          "val": "2018-05-02 20:19:25"
+        },
+        "PS_C_SKU_ECODE": {
+          "val": "8T8400225607"
+        },
+        "CP_C_STORE_ID": {
+          "val": "[33089]庆丰店",
+          "reftablename": "CP_C_STORE",
+          "reftableid": 23296,
+          "reftabdesc": "店仓档案",
+          "refobjid": 200000243853,
+          "colid": 151155,
+          "isfk": true
+        },
+        "PRICE_COST": {
+          "val": "13.30"
+        },
+        "QTY_STOCK_ABLE": {
+          "val": "100.00"
+        },
+        "QTY_STOCK_OCCU": {
+          "val": "0.00"
+        },
+        "QTY_STOCK_PRE": {
+          "val": "100.00"
+        },
+        "AMT_COST": {
+          "val": "10,000.00"
+        },
+        "ID": {
+          "val": "9"
+        },
+        "PS_C_PRO_ID": {
+          "val": "8T84002",
+          "reftablename": "PS_C_PRO",
+          "reftableid": 23276,
+          "reftabdesc": "标准商品档案",
+          "refobjid": "15076505",
+          "colid": 151161,
+          "isfk": true
+        },
+        "MODIFIERENAME": {
+          "val": "系统管理员"
+        },
+        "PS_C_CLR_ECODE": {
+          "val": "11"
+        }
+      },
+      {
+        "QTY_STOCK_PREIN": {
+          "val": "0.00"
+        },
+        "QTY_STOCK": {
+          "val": "100.00"
+        },
+        "PS_C_SIZE_ECODE": {
+          "val": "08"
+        },
+        "(SC_B_STOCK.ID + 12)": {
+          "val": ""
+        },
+        "PRICE_LIST": {
+          "val": "52.00"
+        },
+        "MODIFIEDDATE": {
+          "val": "2018-05-02 20:19:25"
+        },
+        "PS_C_SKU_ECODE": {
+          "val": "4P10716908"
+        },
+        "CP_C_STORE_ID": {
+          "val": "[33339]双塔店",
+          "reftablename": "CP_C_STORE",
+          "reftableid": 23296,
+          "reftabdesc": "店仓档案",
+          "refobjid": 193595714866,
+          "colid": 151155,
+          "isfk": true
+        },
+        "PRICE_COST": {
+          "val": "243.00"
+        },
+        "QTY_STOCK_ABLE": {
+          "val": "100.00"
+        },
+        "QTY_STOCK_OCCU": {
+          "val": "0.00"
+        },
+        "QTY_STOCK_PRE": {
+          "val": "100.00"
+        },
+        "AMT_COST": {
+          "val": "10,000.00"
+        },
+        "ID": {
+          "val": "14"
+        },
+        "PS_C_PRO_ID": {
+          "val": "4P1071",
+          "reftablename": "PS_C_PRO",
+          "reftableid": 23276,
+          "reftabdesc": "标准商品档案",
+          "refobjid": "15037078",
+          "colid": 151161,
+          "isfk": true
+        },
+        "MODIFIERENAME": {
+          "val": "系统管理员"
+        },
+        "PS_C_CLR_ECODE": {
+          "val": "69"
+        }
+      },
+      {
+        "QTY_STOCK_PREIN": {
+          "val": "0.00"
+        },
+        "QTY_STOCK": {
+          "val": "100.00"
+        },
+        "PS_C_SIZE_ECODE": {
+          "val": "07"
+        },
+        "(SC_B_STOCK.ID + 12)": {
+          "val": ""
+        },
+        "PRICE_LIST": {
+          "val": "19.00"
+        },
+        "MODIFIEDDATE": {
+          "val": "2018-05-02 20:19:25"
+        },
+        "PS_C_SKU_ECODE": {
+          "val": "8T8400225607"
+        },
+        "CP_C_STORE_ID": {
+          "val": "[46003]上邦店",
+          "reftablename": "CP_C_STORE",
+          "reftableid": 23296,
+          "reftabdesc": "店仓档案",
+          "refobjid": 206598864949,
+          "colid": 151155,
+          "isfk": true
+        },
+        "PRICE_COST": {
+          "val": "13.30"
+        },
+        "QTY_STOCK_ABLE": {
+          "val": "100.00"
+        },
+        "QTY_STOCK_OCCU": {
+          "val": "0.00"
+        },
+        "QTY_STOCK_PRE": {
+          "val": "100.00"
+        },
+        "AMT_COST": {
+          "val": "10,000.00"
+        },
+        "ID": {
+          "val": "15"
+        },
+        "PS_C_PRO_ID": {
+          "val": "8T84002",
+          "reftablename": "PS_C_PRO",
+          "reftableid": 23276,
+          "reftabdesc": "标准商品档案",
+          "refobjid": "15076505",
+          "colid": 151161,
+          "isfk": true
+        },
+        "MODIFIERENAME": {
+          "val": "系统管理员"
+        },
+        "PS_C_CLR_ECODE": {
+          "val": "11"
+        }
+      },
+      {
+        "QTY_STOCK_PREIN": {
+          "val": "0.00"
+        },
+        "QTY_STOCK": {
+          "val": "100.00"
+        },
+        "PS_C_SIZE_ECODE": {
+          "val": "07"
+        },
+        "(SC_B_STOCK.ID + 12)": {
+          "val": ""
+        },
+        "PRICE_LIST": {
+          "val": "39.00"
+        },
+        "MODIFIEDDATE": {
+          "val": "2018-05-02 20:19:25"
+        },
+        "PS_C_SKU_ECODE": {
+          "val": "4P10710907"
+        },
+        "CP_C_STORE_ID": {
+          "val": "[31004]城中店",
+          "reftablename": "CP_C_STORE",
+          "reftableid": 23296,
+          "reftabdesc": "店仓档案",
+          "refobjid": 200000244070,
+          "colid": 151155,
+          "isfk": true
+        },
+        "PRICE_COST": {
+          "val": "243.00"
+        },
+        "QTY_STOCK_ABLE": {
+          "val": "100.00"
+        },
+        "QTY_STOCK_OCCU": {
+          "val": "0.00"
+        },
+        "QTY_STOCK_PRE": {
+          "val": "100.00"
+        },
+        "AMT_COST": {
+          "val": "10,000.00"
+        },
+        "ID": {
+          "val": "16"
+        },
+        "PS_C_PRO_ID": {
+          "val": "4P1071",
+          "reftablename": "PS_C_PRO",
+          "reftableid": 23276,
+          "reftabdesc": "标准商品档案",
+          "refobjid": "15037078",
+          "colid": 151161,
+          "isfk": true
+        },
+        "MODIFIERENAME": {
+          "val": "系统管理员"
+        },
+        "PS_C_CLR_ECODE": {
+          "val": "09"
+        }
+      },
+      {
+        "QTY_STOCK_PREIN": {
+          "val": "0.00"
+        },
+        "QTY_STOCK": {
+          "val": "100.00"
+        },
+        "PS_C_SIZE_ECODE": {
+          "val": "09"
+        },
+        "(SC_B_STOCK.ID + 12)": {
+          "val": ""
+        },
+        "PRICE_LIST": {
+          "val": "50.00"
+        },
+        "MODIFIEDDATE": {
+          "val": "2018-05-02 20:19:25"
+        },
+        "PS_C_SKU_ECODE": {
+          "val": "4P10710909"
+        },
+        "CP_C_STORE_ID": {
+          "val": "[31004]城中店",
+          "reftablename": "CP_C_STORE",
+          "reftableid": 23296,
+          "reftabdesc": "店仓档案",
+          "refobjid": 200000244070,
+          "colid": 151155,
+          "isfk": true
+        },
+        "PRICE_COST": {
+          "val": "13.30"
+        },
+        "QTY_STOCK_ABLE": {
+          "val": "100.00"
+        },
+        "QTY_STOCK_OCCU": {
+          "val": "0.00"
+        },
+        "QTY_STOCK_PRE": {
+          "val": "100.00"
+        },
+        "AMT_COST": {
+          "val": "10,000.00"
+        },
+        "ID": {
+          "val": "17"
+        },
+        "PS_C_PRO_ID": {
+          "val": "4P1071",
+          "reftablename": "PS_C_PRO",
+          "reftableid": 23276,
+          "reftabdesc": "标准商品档案",
+          "refobjid": "15037078",
+          "colid": 151161,
+          "isfk": true
+        },
+        "MODIFIERENAME": {
+          "val": "系统管理员"
+        },
+        "PS_C_CLR_ECODE": {
+          "val": "09"
+        }
+      },
+      {
+        "QTY_STOCK_PREIN": {
+          "val": "0.00"
+        },
+        "QTY_STOCK": {
+          "val": "100.00"
+        },
+        "PS_C_SIZE_ECODE": {
+          "val": "07"
+        },
+        "(SC_B_STOCK.ID + 12)": {
+          "val": ""
+        },
+        "PRICE_LIST": {
+          "val": "51.00"
+        },
+        "MODIFIEDDATE": {
+          "val": "2018-05-02 20:19:25"
+        },
+        "PS_C_SKU_ECODE": {
+          "val": "4P10716907"
+        },
+        "CP_C_STORE_ID": {
+          "val": "[31004]城中店",
+          "reftablename": "CP_C_STORE",
+          "reftableid": 23296,
+          "reftabdesc": "店仓档案",
+          "refobjid": 200000244070,
+          "colid": 151155,
+          "isfk": true
+        },
+        "PRICE_COST": {
+          "val": "243.00"
+        },
+        "QTY_STOCK_ABLE": {
+          "val": "100.00"
+        },
+        "QTY_STOCK_OCCU": {
+          "val": "0.00"
+        },
+        "QTY_STOCK_PRE": {
+          "val": "100.00"
+        },
+        "AMT_COST": {
+          "val": "10,000.00"
+        },
+        "ID": {
+          "val": "18"
+        },
+        "PS_C_PRO_ID": {
+          "val": "4P1071",
+          "reftablename": "PS_C_PRO",
+          "reftableid": 23276,
+          "reftabdesc": "标准商品档案",
+          "refobjid": "15037078",
+          "colid": 151161,
+          "isfk": true
+        },
+        "MODIFIERENAME": {
+          "val": "系统管理员"
+        },
+        "PS_C_CLR_ECODE": {
+          "val": "69"
+        }
+      }
+    ],
+    "selectrange": [
+      10,
+      20,
+      30,
+      50,
+      100
+    ],
+    "queryDesc": "",
+    "defaultrange": 10
+  }
+}

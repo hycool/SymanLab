@@ -13,7 +13,7 @@
 
 <script>
   import Papa from 'papaparse';
-  import agTable from './utility/ag-grid-table-pure';
+  import agTable from './utility/ag-grid/ag-grid-table-pure';
   import agReport from './utility/ag-grid-report-pure';
   import AgGridTableBaseWrapper from './AgGridTableBaseWrapper.vue';
   import mock from 'mockjs';
@@ -219,7 +219,7 @@
        */
       fetchFCData() {
         const self = this;
-        fetch('./assets/fc.data2.json').then(res => {
+        fetch('./assets/fc.data4.json').then(res => {
           res.json().then(data => {
             const { tabth, row } = data.datas;
             data.datas.deleteFailInfo = [
@@ -297,7 +297,7 @@
                 console.log(rowArray);
               },
               onColumnMoved: (columnState) => {
-                // columnState : ["DOCNO", "ORDERDATE", "CP_C_STORE_ID", "ID", ...]
+                // columnState : "DOCNO,ORDERDATE,CP_C_STORE_ID,ID"
                 console.log(columnState);
               },
               clearColumnPosition: () => {
