@@ -423,7 +423,8 @@ const currencyFormat = (value) => {
  * @returns {function(*=, *=)} 函数
  */
 const agTable = (agGridTableContainer, options) => {
-  let updateColumnPositionDelay = -1;
+  let updateColumnPositionDelay = -1; // column move 延迟计时器
+  let updateColumnVisibleDelay = -1; // column visible 延迟计时器
   if (!(agGridTableContainer instanceof HTMLElement)) {
     alert('agGridTableContainer is not a HTMLElement');
     return null;
@@ -695,11 +696,13 @@ const agTable = (agGridTableContainer, options) => {
               param.columnApi.resetColumnState();
               // 将所有隐藏列都显示出来
               param.columnApi.setColumnsVisible(param.columnApi.getColumnState().map(d => d.colId), true);
+              setTimeout(() => { clearTimeout(updateColumnVisibleDelay) }, 0);
               // 处理列排序问题。
               if (agTable.colPosition && agTable.colPosition !== '') {
                 agTable.colPosition.split(',').forEach((d, i) => {
                   param.columnApi.moveColumn(d, i);
                 });
+                setTimeout(() => { clearTimeout(updateColumnPositionDelay) }, 0);
               }
               // 向后台发送API，清除所有隐藏列
               options.onColumnVisibleChanged('');
@@ -728,6 +731,9 @@ const agTable = (agGridTableContainer, options) => {
               visibleColumns.forEach((d, i) => {
                 params.columnApi.moveColumn(d, i);
               });
+              setTimeout(() => {
+                clearTimeout(updateColumnPositionDelay);
+              }, 0);
               options.onColumnMoved('');
             }
           }
@@ -802,15 +808,18 @@ const agTable = (agGridTableContainer, options) => {
       // agGridTableContainer.setAttribute('data-last-virtual-column', currentLastVirtualColumn);
     }, // 当列很多时，如果用户横向拉动混动条以查看其它不在视口区域的列，则会触发此事件
     onColumnVisible(params) {
-      if (typeof options.onColumnVisibleChanged === 'function') {
-        const hideColumns = [];
-        params.columnApi.getColumnState().forEach(d => {
-          if (d.hide) {
-            hideColumns.push(d.colId);
-          }
-        });
-        options.onColumnVisibleChanged(hideColumns.toString());
-      }
+      clearTimeout(updateColumnVisibleDelay);
+      updateColumnVisibleDelay = setTimeout(() => {
+        if (typeof options.onColumnVisibleChanged === 'function') {
+          const hideColumns = [];
+          params.columnApi.getColumnState().forEach(d => {
+            if (d.hide) {
+              hideColumns.push(d.colId);
+            }
+          });
+          options.onColumnVisibleChanged(hideColumns.toString());
+        }
+      }, 10);
     }, // 显示或者隐藏列的监听
     onColumnMoved(param) {
       const { columnApi } = param;
@@ -878,6 +887,7 @@ const agTable = (agGridTableContainer, options) => {
       colPosition.split(',').forEach((d, i) => {
         columnApi.moveColumn(d, i);
       });
+      setTimeout(() => { clearTimeout(updateColumnPositionDelay) }, 0);
     }
     return agTable;
   };

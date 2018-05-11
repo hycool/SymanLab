@@ -298,7 +298,7 @@
               },
               onColumnMoved: (columnState) => {
                 // columnState : "DOCNO,ORDERDATE,CP_C_STORE_ID,ID"
-                console.log(columnState);
+                console.log('columnState = ', columnState);
               },
               clearColumnPosition: () => {
                 console.log('clearColumnPosition');
