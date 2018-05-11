@@ -1,0 +1,5505 @@
+{
+  "code": 0,
+  "datas": {
+    "subtotalRow": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      104731,
+      "8,274,589.00",
+      104676,
+      "8,270,312.00",
+      147,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "start": 0,
+    "fullRangeSubTotalRow": [
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        "105,658.00",
+        "8,363,752.00",
+        "105,596.00",
+        "8,359,001.00",
+        "189.00",
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    ],
+    "ordids": [
+      {
+        "colname": "CREATIONDATE",
+        "ordasc": false
+      },
+      {
+        "colname": "ID",
+        "ordasc": true
+      }
+    ],
+    "isFullRangeSubTotalEnabled": true,
+    "message": null,
+    "tabname": "OC_B_BILL_APPLY",
+    "isSubTotalEnabled": true,
+    "tabth": [
+      {
+        "orderno": 1,
+        "isak": true,
+        "display": "text",
+        "scale": 0,
+        "type": "NUMBER",
+        "datelimit": "all",
+        "isfilter": false,
+        "colname": "ID",
+        "isuppercase": false,
+        "isnotnull": false,
+        "subtotal": false,
+        "ismodify": false,
+        "name": "ID",
+        "inputname": "ID"
+      },
+      {
+        "orderno": 110,
+        "isak": false,
+        "display": "text",
+        "type": "STRING",
+        "datelimit": "all",
+        "isfilter": true,
+        "colname": "DOCNO",
+        "isuppercase": false,
+        "isnotnull": true,
+        "subtotal": false,
+        "ismodify": false,
+        "name": "单据编号",
+        "isorder": true,
+        "inputname": "DOCNO"
+      },
+      {
+        "orderno": 120,
+        "isak": false,
+        "display": "OBJ_DATENUMBER",
+        "type": "STRING",
+        "datelimit": "all",
+        "isfilter": true,
+        "colname": "ORDERDATE",
+        "isuppercase": false,
+        "isnotnull": false,
+        "subtotal": false,
+        "ismodify": false,
+        "name": "单据日期",
+        "isorder": true,
+        "inputname": "ORDERDATE"
+      },
+      {
+        "reftable": "CP_C_WAREHOUSE",
+        "orderno": 125,
+        "isak": false,
+        "display": "text",
+        "reftableid": 23451,
+        "type": "STRING",
+        "datelimit": "all",
+        "isfilter": false,
+        "colname": "RECYCLE_WH_ID",
+        "isuppercase": false,
+        "isnotnull": false,
+        "subtotal": false,
+        "fkdesc": "仓库档案",
+        "ismodify": false,
+        "name": "发货店仓",
+        "isorder": true,
+        "fkdisplay": "drp",
+        "inputname": "RECYCLE_WH_ID:ENAME",
+        "isfk": true,
+        "objdistype": "tabpanle"
+      },
+      {
+        "reftable": "CP_C_STORE",
+        "orderno": 130,
+        "isak": false,
+        "display": "text",
+        "reftableid": 23296,
+        "type": "STRING",
+        "datelimit": "all",
+        "isfilter": true,
+        "colname": "CP_C_STORE_ID",
+        "isuppercase": false,
+        "isnotnull": false,
+        "subtotal": false,
+        "fkdesc": "店仓档案",
+        "ismodify": false,
+        "name": "下单店仓",
+        "isorder": true,
+        "fkdisplay": "drp",
+        "inputname": "CP_C_STORE_ID:ENAME",
+        "isfk": true,
+        "objdistype": "tabpanle"
+      },
+      {
+        "orderno": 140,
+        "isak": false,
+        "display": "select",
+        "type": "STRING",
+        "datelimit": "all",
+        "isfilter": true,
+        "colname": "SOURCE",
+        "isuppercase": false,
+        "isnotnull": false,
+        "subtotal": false,
+        "ismodify": false,
+        "name": "单据来源",
+        "combobox": [
+          {
+            "limitdesc": "选款平台",
+            "limitcss": null,
+            "limitval": "web"
+          }
+        ],
+        "inputname": "SOURCE"
+      },
+      {
+        "orderno": 150,
+        "isak": false,
+        "display": "text",
+        "scale": 0,
+        "type": "NUMBER",
+        "datelimit": "all",
+        "isfilter": false,
+        "colname": "COUNT",
+        "isuppercase": false,
+        "isnotnull": false,
+        "subtotal": true,
+        "ismodify": false,
+        "name": "下单数量",
+        "inputname": "COUNT"
+      },
+      {
+        "orderno": 160,
+        "isak": false,
+        "display": "text",
+        "scale": 2,
+        "type": "NUMBER",
+        "datelimit": "all",
+        "isfilter": false,
+        "colname": "PRICE",
+        "isuppercase": false,
+        "isnotnull": false,
+        "subtotal": true,
+        "ismodify": false,
+        "name": "下单金额",
+        "inputname": "PRICE"
+      },
+      {
+        "orderno": 170,
+        "isak": false,
+        "display": "text",
+        "scale": 0,
+        "type": "NUMBER",
+        "datelimit": "all",
+        "isfilter": false,
+        "colname": "EXECUTECOUNT",
+        "isuppercase": false,
+        "isnotnull": false,
+        "subtotal": true,
+        "ismodify": false,
+        "name": "计划执行数",
+        "inputname": "EXECUTECOUNT"
+      },
+      {
+        "orderno": 180,
+        "isak": false,
+        "display": "text",
+        "scale": 2,
+        "type": "NUMBER",
+        "datelimit": "all",
+        "isfilter": false,
+        "colname": "EXECUTEPRICE",
+        "isuppercase": false,
+        "isnotnull": false,
+        "subtotal": true,
+        "ismodify": false,
+        "name": "计划执行金额",
+        "isorder": true,
+        "inputname": "EXECUTEPRICE"
+      },
+      {
+        "orderno": 190,
+        "isak": false,
+        "display": "text",
+        "scale": 0,
+        "type": "NUMBER",
+        "datelimit": "all",
+        "isfilter": false,
+        "colname": "EXECUTEDCOUNT",
+        "isuppercase": false,
+        "isnotnull": false,
+        "subtotal": true,
+        "ismodify": false,
+        "name": "已执行数",
+        "isorder": true,
+        "inputname": "EXECUTEDCOUNT"
+      },
+      {
+        "orderno": 195,
+        "isak": false,
+        "display": "text",
+        "scale": 0,
+        "type": "NUMBER",
+        "datelimit": "all",
+        "isfilter": false,
+        "colname": "LESSEXECUTE",
+        "isuppercase": false,
+        "isnotnull": false,
+        "subtotal": false,
+        "ismodify": false,
+        "name": "剩余执行数",
+        "inputname": "LESSEXECUTE"
+      },
+      {
+        "orderno": 300,
+        "isak": false,
+        "display": "text",
+        "type": "STRING",
+        "datelimit": "all",
+        "isfilter": true,
+        "colname": "REMARK",
+        "isuppercase": false,
+        "isnotnull": false,
+        "subtotal": false,
+        "ismodify": false,
+        "name": "备注",
+        "inputname": "REMARK"
+      },
+      {
+        "orderno": 1001,
+        "isak": false,
+        "display": "text",
+        "type": "STRING",
+        "datelimit": "all",
+        "isfilter": false,
+        "colname": "OWNERENAME",
+        "isuppercase": false,
+        "isnotnull": false,
+        "subtotal": false,
+        "ismodify": false,
+        "name": "创建人",
+        "inputname": "OWNERENAME"
+      },
+      {
+        "orderno": 1002,
+        "isak": false,
+        "display": "OBJ_DATE",
+        "type": "STRING",
+        "datelimit": "all",
+        "isfilter": false,
+        "colname": "CREATIONDATE",
+        "isuppercase": false,
+        "isnotnull": false,
+        "subtotal": false,
+        "ismodify": false,
+        "name": "创建时间",
+        "inputname": "CREATIONDATE"
+      },
+      {
+        "orderno": 1010,
+        "isak": false,
+        "display": "select",
+        "type": "STRING",
+        "datelimit": "all",
+        "isfilter": true,
+        "colname": "SUBMITSTATUS",
+        "isuppercase": false,
+        "isnotnull": false,
+        "subtotal": false,
+        "ismodify": false,
+        "name": "提交",
+        "combobox": [
+          {
+            "limitdesc": "已提交",
+            "limitcss": "blue-font-row",
+            "limitval": "Y"
+          },
+          {
+            "limitdesc": "未提交",
+            "limitcss": null,
+            "limitval": "N"
+          }
+        ],
+        "inputname": "SUBMITSTATUS"
+      },
+      {
+        "orderno": 1013,
+        "isak": false,
+        "display": "text",
+        "type": "STRING",
+        "datelimit": "all",
+        "isfilter": false,
+        "colname": "STATUSERENAME",
+        "isuppercase": false,
+        "isnotnull": false,
+        "subtotal": false,
+        "ismodify": false,
+        "name": "提交人",
+        "inputname": "STATUSERENAME"
+      },
+      {
+        "orderno": 1016,
+        "isak": false,
+        "display": "OBJ_DATE",
+        "type": "STRING",
+        "datelimit": "all",
+        "isfilter": false,
+        "colname": "STATUSTIME",
+        "isuppercase": false,
+        "isnotnull": false,
+        "subtotal": false,
+        "ismodify": false,
+        "name": "提交日期",
+        "inputname": "STATUSTIME"
+      },
+      {
+        "orderno": 1020,
+        "isak": false,
+        "display": "select",
+        "type": "STRING",
+        "datelimit": "all",
+        "isfilter": true,
+        "colname": "EXECUTESTATUS",
+        "isuppercase": false,
+        "isnotnull": false,
+        "subtotal": false,
+        "ismodify": false,
+        "name": "执行",
+        "combobox": [
+          {
+            "limitdesc": "执行中",
+            "limitcss": "execute-red-font-row",
+            "limitval": "1"
+          },
+          {
+            "limitdesc": "已执行",
+            "limitcss": "executed-pink-font-row",
+            "limitval": "9"
+          },
+          {
+            "limitdesc": "未执行",
+            "limitcss": null,
+            "limitval": "0"
+          }
+        ],
+        "inputname": "EXECUTESTATUS"
+      },
+      {
+        "orderno": 1023,
+        "isak": false,
+        "display": "text",
+        "type": "STRING",
+        "datelimit": "all",
+        "isfilter": false,
+        "colname": "EXECUTORENAME",
+        "isuppercase": false,
+        "isnotnull": false,
+        "subtotal": false,
+        "ismodify": false,
+        "name": "执行人",
+        "inputname": "EXECUTORENAME"
+      },
+      {
+        "orderno": 1026,
+        "isak": false,
+        "display": "OBJ_DATE",
+        "type": "STRING",
+        "datelimit": "all",
+        "isfilter": false,
+        "colname": "EXECUTEDDATE",
+        "isuppercase": false,
+        "isnotnull": false,
+        "subtotal": false,
+        "ismodify": false,
+        "name": "执行日期",
+        "inputname": "EXECUTEDDATE"
+      },
+      {
+        "orderno": 1030,
+        "isak": false,
+        "display": "select",
+        "type": "STRING",
+        "datelimit": "all",
+        "isfilter": true,
+        "colname": "STOPSTATUS",
+        "isuppercase": false,
+        "isnotnull": false,
+        "subtotal": false,
+        "ismodify": false,
+        "name": "终止",
+        "combobox": [
+          {
+            "limitdesc": "未终止",
+            "limitcss": null,
+            "limitval": "N"
+          },
+          {
+            "limitdesc": "已终止",
+            "limitcss": "stop-perple-font-row",
+            "limitval": "Y"
+          }
+        ],
+        "inputname": "STOPSTATUS"
+      },
+      {
+        "orderno": 1033,
+        "isak": false,
+        "display": "text",
+        "type": "STRING",
+        "datelimit": "all",
+        "isfilter": false,
+        "colname": "TERMINATORENAME",
+        "isuppercase": false,
+        "isnotnull": false,
+        "subtotal": false,
+        "ismodify": false,
+        "name": "终止人",
+        "inputname": "TERMINATORENAME"
+      },
+      {
+        "orderno": 1036,
+        "isak": false,
+        "display": "OBJ_DATE",
+        "type": "STRING",
+        "datelimit": "all",
+        "isfilter": false,
+        "colname": "TERMINATEDDATE",
+        "isuppercase": false,
+        "isnotnull": false,
+        "subtotal": false,
+        "ismodify": false,
+        "name": "终止日期",
+        "inputname": "TERMINATEDDATE"
+      },
+      {
+        "orderno": 1038,
+        "isak": false,
+        "display": "text",
+        "type": "STRING",
+        "datelimit": "all",
+        "isfilter": false,
+        "colname": "TERMINATORREASON",
+        "isuppercase": false,
+        "isnotnull": false,
+        "subtotal": false,
+        "ismodify": false,
+        "name": "终止原因",
+        "inputname": "TERMINATORREASON"
+      },
+      {
+        "orderno": 1040,
+        "isak": false,
+        "display": "check",
+        "type": "STRING",
+        "datelimit": "all",
+        "isfilter": true,
+        "colname": "ISACTIVE",
+        "isuppercase": false,
+        "isnotnull": false,
+        "subtotal": false,
+        "ismodify": false,
+        "name": "作废",
+        "combobox": [
+          {
+            "limitdesc": "未作废",
+            "limitcss": null,
+            "limitdis": true,
+            "limitval": "Y"
+          },
+          {
+            "limitdesc": "已作废",
+            "limitcss": "inactive-row",
+            "limitdis": false,
+            "limitval": "N"
+          }
+        ],
+        "inputname": "ISACTIVE"
+      },
+      {
+        "orderno": 1043,
+        "isak": false,
+        "display": "text",
+        "type": "STRING",
+        "datelimit": "all",
+        "isfilter": false,
+        "colname": "CANCELENAME",
+        "isuppercase": false,
+        "isnotnull": false,
+        "subtotal": false,
+        "ismodify": false,
+        "name": "作废人",
+        "inputname": "CANCELENAME"
+      },
+      {
+        "orderno": 1046,
+        "isak": false,
+        "display": "OBJ_DATE",
+        "type": "STRING",
+        "datelimit": "all",
+        "isfilter": false,
+        "colname": "CANCELDATE",
+        "isuppercase": false,
+        "isnotnull": false,
+        "subtotal": false,
+        "ismodify": false,
+        "name": "作废日期",
+        "inputname": "CANCELDATE"
+      }
+    ],
+    "totalRowCount": 93,
+    "rowCount": 50,
+    "row": [
+      {
+        "EXECUTEDCOUNT": {
+          "val": "2"
+        },
+        "STATUSERENAME": {
+          "val": "徐丽君"
+        },
+        "EXECUTESTATUS": {
+          "val": "已执行"
+        },
+        "TERMINATORREASON": {
+          "val": ""
+        },
+        "ORDERDATE": {
+          "val": "20180423"
+        },
+        "EXECUTORENAME": {
+          "val": "徐丽君"
+        },
+        "LESSEXECUTE": {
+          "val": "0"
+        },
+        "ID": {
+          "val": "516"
+        },
+        "REMARK": {
+          "val": ""
+        },
+        "STOPSTATUS": {
+          "val": "未终止"
+        },
+        "EXECUTEDDATE": {
+          "val": "2018-04-23 19:37:39"
+        },
+        "CREATIONDATE": {
+          "val": "2018-04-23 19:37:39"
+        },
+        "PRICE": {
+          "val": "198.00"
+        },
+        "SUBMITSTATUS": {
+          "val": "已提交"
+        },
+        "RECYCLE_WH_ID": {
+          "val": "东1正品仓",
+          "reftablename": "CP_C_WAREHOUSE",
+          "reftableid": 23451,
+          "reftabdesc": "仓库档案",
+          "refobjid": 206598864983,
+          "colid": 148905,
+          "isfk": true
+        },
+        "CANCELDATE": {
+          "val": ""
+        },
+        "EXECUTECOUNT": {
+          "val": "2"
+        },
+        "CP_C_STORE_ID": {
+          "val": "[33007]下沙店",
+          "reftablename": "CP_C_STORE",
+          "reftableid": 23296,
+          "reftabdesc": "店仓档案",
+          "refobjid": 200000243715,
+          "colid": 148783,
+          "isfk": true
+        },
+        "ISACTIVE": {
+          "val": "未作废"
+        },
+        "OWNERENAME": {
+          "val": "徐丽君"
+        },
+        "CANCELENAME": {
+          "val": ""
+        },
+        "TERMINATEDDATE": {
+          "val": ""
+        },
+        "SOURCE": {
+          "val": "选款平台"
+        },
+        "TERMINATORENAME": {
+          "val": ""
+        },
+        "DOCNO": {
+          "val": "SQ0118042300002A"
+        },
+        "COUNT": {
+          "val": "2"
+        },
+        "EXECUTEPRICE": {
+          "val": "198.00"
+        },
+        "STATUSTIME": {
+          "val": "2018-04-23 19:37:39"
+        }
+      },
+      {
+        "EXECUTEDCOUNT": {
+          "val": "1"
+        },
+        "STATUSERENAME": {
+          "val": "徐丽君"
+        },
+        "EXECUTESTATUS": {
+          "val": "已执行"
+        },
+        "TERMINATORREASON": {
+          "val": ""
+        },
+        "ORDERDATE": {
+          "val": "20180423"
+        },
+        "EXECUTORENAME": {
+          "val": "徐丽君"
+        },
+        "LESSEXECUTE": {
+          "val": "0"
+        },
+        "ID": {
+          "val": "512"
+        },
+        "REMARK": {
+          "val": ""
+        },
+        "STOPSTATUS": {
+          "val": "未终止"
+        },
+        "EXECUTEDDATE": {
+          "val": "2018-04-23 18:51:12"
+        },
+        "CREATIONDATE": {
+          "val": "2018-04-23 18:51:10"
+        },
+        "PRICE": {
+          "val": "99.00"
+        },
+        "SUBMITSTATUS": {
+          "val": "已提交"
+        },
+        "RECYCLE_WH_ID": {
+          "val": "东2正品仓",
+          "reftablename": "CP_C_WAREHOUSE",
+          "reftableid": 23451,
+          "reftabdesc": "仓库档案",
+          "refobjid": 206598864990,
+          "colid": 148905,
+          "isfk": true
+        },
+        "CANCELDATE": {
+          "val": ""
+        },
+        "EXECUTECOUNT": {
+          "val": "1"
+        },
+        "CP_C_STORE_ID": {
+          "val": "[31007]大华店",
+          "reftablename": "CP_C_STORE",
+          "reftableid": 23296,
+          "reftabdesc": "店仓档案",
+          "refobjid": 200126719955,
+          "colid": 148783,
+          "isfk": true
+        },
+        "ISACTIVE": {
+          "val": "未作废"
+        },
+        "OWNERENAME": {
+          "val": "徐丽君"
+        },
+        "CANCELENAME": {
+          "val": ""
+        },
+        "TERMINATEDDATE": {
+          "val": ""
+        },
+        "SOURCE": {
+          "val": "选款平台"
+        },
+        "TERMINATORENAME": {
+          "val": ""
+        },
+        "DOCNO": {
+          "val": "SQ0118042300001A"
+        },
+        "COUNT": {
+          "val": "1"
+        },
+        "EXECUTEPRICE": {
+          "val": "99.00"
+        },
+        "STATUSTIME": {
+          "val": "2018-04-23 18:51:11"
+        }
+      },
+      {
+        "EXECUTEDCOUNT": {
+          "val": "0"
+        },
+        "STATUSERENAME": {
+          "val": "高健"
+        },
+        "EXECUTESTATUS": {
+          "val": "未执行"
+        },
+        "TERMINATORREASON": {
+          "val": ""
+        },
+        "ORDERDATE": {
+          "val": "20180420"
+        },
+        "EXECUTORENAME": {
+          "val": ""
+        },
+        "LESSEXECUTE": {
+          "val": "3"
+        },
+        "ID": {
+          "val": "504"
+        },
+        "REMARK": {
+          "val": ""
+        },
+        "STOPSTATUS": {
+          "val": "未终止"
+        },
+        "EXECUTEDDATE": {
+          "val": ""
+        },
+        "CREATIONDATE": {
+          "val": "2018-04-20 16:09:59"
+        },
+        "PRICE": {
+          "val": "207.00"
+        },
+        "SUBMITSTATUS": {
+          "val": "已提交"
+        },
+        "RECYCLE_WH_ID": {
+          "val": "东2正品仓",
+          "reftablename": "CP_C_WAREHOUSE",
+          "reftableid": 23451,
+          "reftabdesc": "仓库档案",
+          "refobjid": 206598864990,
+          "colid": 148905,
+          "isfk": true
+        },
+        "CANCELDATE": {
+          "val": ""
+        },
+        "EXECUTECOUNT": {
+          "val": "3"
+        },
+        "CP_C_STORE_ID": {
+          "val": "[32033]政和店",
+          "reftablename": "CP_C_STORE",
+          "reftableid": 23296,
+          "reftabdesc": "店仓档案",
+          "refobjid": 200000244331,
+          "colid": 148783,
+          "isfk": true
+        },
+        "ISACTIVE": {
+          "val": "未作废"
+        },
+        "OWNERENAME": {
+          "val": "高健"
+        },
+        "CANCELENAME": {
+          "val": ""
+        },
+        "TERMINATEDDATE": {
+          "val": ""
+        },
+        "SOURCE": {
+          "val": "选款平台"
+        },
+        "TERMINATORENAME": {
+          "val": ""
+        },
+        "DOCNO": {
+          "val": "SQ0118042000015A"
+        },
+        "COUNT": {
+          "val": "3"
+        },
+        "EXECUTEPRICE": {
+          "val": "207.00"
+        },
+        "STATUSTIME": {
+          "val": "2018-04-20 16:09:59"
+        }
+      },
+      {
+        "EXECUTEDCOUNT": {
+          "val": "3"
+        },
+        "STATUSERENAME": {
+          "val": "高健"
+        },
+        "EXECUTESTATUS": {
+          "val": "已执行"
+        },
+        "TERMINATORREASON": {
+          "val": ""
+        },
+        "ORDERDATE": {
+          "val": "20180420"
+        },
+        "EXECUTORENAME": {
+          "val": "高健"
+        },
+        "LESSEXECUTE": {
+          "val": "0"
+        },
+        "ID": {
+          "val": "498"
+        },
+        "REMARK": {
+          "val": ""
+        },
+        "STOPSTATUS": {
+          "val": "未终止"
+        },
+        "EXECUTEDDATE": {
+          "val": "2018-04-20 15:49:27"
+        },
+        "CREATIONDATE": {
+          "val": "2018-04-20 15:49:26"
+        },
+        "PRICE": {
+          "val": "297.00"
+        },
+        "SUBMITSTATUS": {
+          "val": "已提交"
+        },
+        "RECYCLE_WH_ID": {
+          "val": "东2正品仓",
+          "reftablename": "CP_C_WAREHOUSE",
+          "reftableid": 23451,
+          "reftabdesc": "仓库档案",
+          "refobjid": 206598864990,
+          "colid": 148905,
+          "isfk": true
+        },
+        "CANCELDATE": {
+          "val": ""
+        },
+        "EXECUTECOUNT": {
+          "val": "3"
+        },
+        "CP_C_STORE_ID": {
+          "val": "[31007]大华店",
+          "reftablename": "CP_C_STORE",
+          "reftableid": 23296,
+          "reftabdesc": "店仓档案",
+          "refobjid": 200126719955,
+          "colid": 148783,
+          "isfk": true
+        },
+        "ISACTIVE": {
+          "val": "未作废"
+        },
+        "OWNERENAME": {
+          "val": "高健"
+        },
+        "CANCELENAME": {
+          "val": ""
+        },
+        "TERMINATEDDATE": {
+          "val": ""
+        },
+        "SOURCE": {
+          "val": "选款平台"
+        },
+        "TERMINATORENAME": {
+          "val": ""
+        },
+        "DOCNO": {
+          "val": "SQ0118042000014A"
+        },
+        "COUNT": {
+          "val": "3"
+        },
+        "EXECUTEPRICE": {
+          "val": "297.00"
+        },
+        "STATUSTIME": {
+          "val": "2018-04-20 15:49:26"
+        }
+      },
+      {
+        "EXECUTEDCOUNT": {
+          "val": "4"
+        },
+        "STATUSERENAME": {
+          "val": "高健"
+        },
+        "EXECUTESTATUS": {
+          "val": "已执行"
+        },
+        "TERMINATORREASON": {
+          "val": ""
+        },
+        "ORDERDATE": {
+          "val": "20180420"
+        },
+        "EXECUTORENAME": {
+          "val": "高健"
+        },
+        "LESSEXECUTE": {
+          "val": "0"
+        },
+        "ID": {
+          "val": "496"
+        },
+        "REMARK": {
+          "val": ""
+        },
+        "STOPSTATUS": {
+          "val": "未终止"
+        },
+        "EXECUTEDDATE": {
+          "val": "2018-04-20 15:48:37"
+        },
+        "CREATIONDATE": {
+          "val": "2018-04-20 15:48:36"
+        },
+        "PRICE": {
+          "val": "396.00"
+        },
+        "SUBMITSTATUS": {
+          "val": "已提交"
+        },
+        "RECYCLE_WH_ID": {
+          "val": "东2正品仓",
+          "reftablename": "CP_C_WAREHOUSE",
+          "reftableid": 23451,
+          "reftabdesc": "仓库档案",
+          "refobjid": 206598864990,
+          "colid": 148905,
+          "isfk": true
+        },
+        "CANCELDATE": {
+          "val": ""
+        },
+        "EXECUTECOUNT": {
+          "val": "4"
+        },
+        "CP_C_STORE_ID": {
+          "val": "[31007]大华店",
+          "reftablename": "CP_C_STORE",
+          "reftableid": 23296,
+          "reftabdesc": "店仓档案",
+          "refobjid": 200126719955,
+          "colid": 148783,
+          "isfk": true
+        },
+        "ISACTIVE": {
+          "val": "未作废"
+        },
+        "OWNERENAME": {
+          "val": "高健"
+        },
+        "CANCELENAME": {
+          "val": ""
+        },
+        "TERMINATEDDATE": {
+          "val": ""
+        },
+        "SOURCE": {
+          "val": "选款平台"
+        },
+        "TERMINATORENAME": {
+          "val": ""
+        },
+        "DOCNO": {
+          "val": "SQ0118042000013A"
+        },
+        "COUNT": {
+          "val": "4"
+        },
+        "EXECUTEPRICE": {
+          "val": "396.00"
+        },
+        "STATUSTIME": {
+          "val": "2018-04-20 15:48:37"
+        }
+      },
+      {
+        "EXECUTEDCOUNT": {
+          "val": "0"
+        },
+        "STATUSERENAME": {
+          "val": "高健"
+        },
+        "EXECUTESTATUS": {
+          "val": "未执行"
+        },
+        "TERMINATORREASON": {
+          "val": ""
+        },
+        "ORDERDATE": {
+          "val": "20180420"
+        },
+        "EXECUTORENAME": {
+          "val": ""
+        },
+        "LESSEXECUTE": {
+          "val": "9"
+        },
+        "ID": {
+          "val": "484"
+        },
+        "REMARK": {
+          "val": ""
+        },
+        "STOPSTATUS": {
+          "val": "未终止"
+        },
+        "EXECUTEDDATE": {
+          "val": ""
+        },
+        "CREATIONDATE": {
+          "val": "2018-04-20 14:52:05"
+        },
+        "PRICE": {
+          "val": "621.00"
+        },
+        "SUBMITSTATUS": {
+          "val": "已提交"
+        },
+        "RECYCLE_WH_ID": {
+          "val": "东2正品仓",
+          "reftablename": "CP_C_WAREHOUSE",
+          "reftableid": 23451,
+          "reftabdesc": "仓库档案",
+          "refobjid": 206598864990,
+          "colid": 148905,
+          "isfk": true
+        },
+        "CANCELDATE": {
+          "val": ""
+        },
+        "EXECUTECOUNT": {
+          "val": "9"
+        },
+        "CP_C_STORE_ID": {
+          "val": "[31007]大华店",
+          "reftablename": "CP_C_STORE",
+          "reftableid": 23296,
+          "reftabdesc": "店仓档案",
+          "refobjid": 200126719955,
+          "colid": 148783,
+          "isfk": true
+        },
+        "ISACTIVE": {
+          "val": "未作废"
+        },
+        "OWNERENAME": {
+          "val": "高健"
+        },
+        "CANCELENAME": {
+          "val": ""
+        },
+        "TERMINATEDDATE": {
+          "val": ""
+        },
+        "SOURCE": {
+          "val": "选款平台"
+        },
+        "TERMINATORENAME": {
+          "val": ""
+        },
+        "DOCNO": {
+          "val": "SQ0118042000012A"
+        },
+        "COUNT": {
+          "val": "9"
+        },
+        "EXECUTEPRICE": {
+          "val": "621.00"
+        },
+        "STATUSTIME": {
+          "val": "2018-04-20 14:52:05"
+        }
+      },
+      {
+        "EXECUTEDCOUNT": {
+          "val": "0"
+        },
+        "STATUSERENAME": {
+          "val": "高健"
+        },
+        "EXECUTESTATUS": {
+          "val": "未执行"
+        },
+        "TERMINATORREASON": {
+          "val": ""
+        },
+        "ORDERDATE": {
+          "val": "20180420"
+        },
+        "EXECUTORENAME": {
+          "val": ""
+        },
+        "LESSEXECUTE": {
+          "val": "3"
+        },
+        "ID": {
+          "val": "483"
+        },
+        "REMARK": {
+          "val": ""
+        },
+        "STOPSTATUS": {
+          "val": "未终止"
+        },
+        "EXECUTEDDATE": {
+          "val": ""
+        },
+        "CREATIONDATE": {
+          "val": "2018-04-20 14:48:55"
+        },
+        "PRICE": {
+          "val": "297.00"
+        },
+        "SUBMITSTATUS": {
+          "val": "已提交"
+        },
+        "RECYCLE_WH_ID": {
+          "val": "东2正品仓",
+          "reftablename": "CP_C_WAREHOUSE",
+          "reftableid": 23451,
+          "reftabdesc": "仓库档案",
+          "refobjid": 206598864990,
+          "colid": 148905,
+          "isfk": true
+        },
+        "CANCELDATE": {
+          "val": ""
+        },
+        "EXECUTECOUNT": {
+          "val": "3"
+        },
+        "CP_C_STORE_ID": {
+          "val": "[31007]大华店",
+          "reftablename": "CP_C_STORE",
+          "reftableid": 23296,
+          "reftabdesc": "店仓档案",
+          "refobjid": 200126719955,
+          "colid": 148783,
+          "isfk": true
+        },
+        "ISACTIVE": {
+          "val": "未作废"
+        },
+        "OWNERENAME": {
+          "val": "高健"
+        },
+        "CANCELENAME": {
+          "val": ""
+        },
+        "TERMINATEDDATE": {
+          "val": ""
+        },
+        "SOURCE": {
+          "val": "选款平台"
+        },
+        "TERMINATORENAME": {
+          "val": ""
+        },
+        "DOCNO": {
+          "val": "SQ0118042000011A"
+        },
+        "COUNT": {
+          "val": "3"
+        },
+        "EXECUTEPRICE": {
+          "val": "297.00"
+        },
+        "STATUSTIME": {
+          "val": "2018-04-20 14:48:55"
+        }
+      },
+      {
+        "EXECUTEDCOUNT": {
+          "val": "0"
+        },
+        "STATUSERENAME": {
+          "val": "高健"
+        },
+        "EXECUTESTATUS": {
+          "val": "未执行"
+        },
+        "TERMINATORREASON": {
+          "val": ""
+        },
+        "ORDERDATE": {
+          "val": "20180420"
+        },
+        "EXECUTORENAME": {
+          "val": ""
+        },
+        "LESSEXECUTE": {
+          "val": "3"
+        },
+        "ID": {
+          "val": "482"
+        },
+        "REMARK": {
+          "val": ""
+        },
+        "STOPSTATUS": {
+          "val": "未终止"
+        },
+        "EXECUTEDDATE": {
+          "val": ""
+        },
+        "CREATIONDATE": {
+          "val": "2018-04-20 14:48:26"
+        },
+        "PRICE": {
+          "val": "297.00"
+        },
+        "SUBMITSTATUS": {
+          "val": "已提交"
+        },
+        "RECYCLE_WH_ID": {
+          "val": "东2正品仓",
+          "reftablename": "CP_C_WAREHOUSE",
+          "reftableid": 23451,
+          "reftabdesc": "仓库档案",
+          "refobjid": 206598864990,
+          "colid": 148905,
+          "isfk": true
+        },
+        "CANCELDATE": {
+          "val": ""
+        },
+        "EXECUTECOUNT": {
+          "val": "3"
+        },
+        "CP_C_STORE_ID": {
+          "val": "[31007]大华店",
+          "reftablename": "CP_C_STORE",
+          "reftableid": 23296,
+          "reftabdesc": "店仓档案",
+          "refobjid": 200126719955,
+          "colid": 148783,
+          "isfk": true
+        },
+        "ISACTIVE": {
+          "val": "未作废"
+        },
+        "OWNERENAME": {
+          "val": "高健"
+        },
+        "CANCELENAME": {
+          "val": ""
+        },
+        "TERMINATEDDATE": {
+          "val": ""
+        },
+        "SOURCE": {
+          "val": "选款平台"
+        },
+        "TERMINATORENAME": {
+          "val": ""
+        },
+        "DOCNO": {
+          "val": "SQ0118042000010A"
+        },
+        "COUNT": {
+          "val": "3"
+        },
+        "EXECUTEPRICE": {
+          "val": "297.00"
+        },
+        "STATUSTIME": {
+          "val": "2018-04-20 14:48:26"
+        }
+      },
+      {
+        "EXECUTEDCOUNT": {
+          "val": "0"
+        },
+        "STATUSERENAME": {
+          "val": "高健"
+        },
+        "EXECUTESTATUS": {
+          "val": "未执行"
+        },
+        "TERMINATORREASON": {
+          "val": ""
+        },
+        "ORDERDATE": {
+          "val": "20180420"
+        },
+        "EXECUTORENAME": {
+          "val": ""
+        },
+        "LESSEXECUTE": {
+          "val": "6"
+        },
+        "ID": {
+          "val": "481"
+        },
+        "REMARK": {
+          "val": ""
+        },
+        "STOPSTATUS": {
+          "val": "未终止"
+        },
+        "EXECUTEDDATE": {
+          "val": ""
+        },
+        "CREATIONDATE": {
+          "val": "2018-04-20 14:47:43"
+        },
+        "PRICE": {
+          "val": "594.00"
+        },
+        "SUBMITSTATUS": {
+          "val": "已提交"
+        },
+        "RECYCLE_WH_ID": {
+          "val": "东2正品仓",
+          "reftablename": "CP_C_WAREHOUSE",
+          "reftableid": 23451,
+          "reftabdesc": "仓库档案",
+          "refobjid": 206598864990,
+          "colid": 148905,
+          "isfk": true
+        },
+        "CANCELDATE": {
+          "val": ""
+        },
+        "EXECUTECOUNT": {
+          "val": "6"
+        },
+        "CP_C_STORE_ID": {
+          "val": "[31007]大华店",
+          "reftablename": "CP_C_STORE",
+          "reftableid": 23296,
+          "reftabdesc": "店仓档案",
+          "refobjid": 200126719955,
+          "colid": 148783,
+          "isfk": true
+        },
+        "ISACTIVE": {
+          "val": "未作废"
+        },
+        "OWNERENAME": {
+          "val": "高健"
+        },
+        "CANCELENAME": {
+          "val": ""
+        },
+        "TERMINATEDDATE": {
+          "val": ""
+        },
+        "SOURCE": {
+          "val": "选款平台"
+        },
+        "TERMINATORENAME": {
+          "val": ""
+        },
+        "DOCNO": {
+          "val": "SQ0118042000009A"
+        },
+        "COUNT": {
+          "val": "6"
+        },
+        "EXECUTEPRICE": {
+          "val": "594.00"
+        },
+        "STATUSTIME": {
+          "val": "2018-04-20 14:47:43"
+        }
+      },
+      {
+        "EXECUTEDCOUNT": {
+          "val": "1"
+        },
+        "STATUSERENAME": {
+          "val": "康媛"
+        },
+        "EXECUTESTATUS": {
+          "val": "已执行"
+        },
+        "TERMINATORREASON": {
+          "val": ""
+        },
+        "ORDERDATE": {
+          "val": "20180420"
+        },
+        "EXECUTORENAME": {
+          "val": "康媛"
+        },
+        "LESSEXECUTE": {
+          "val": "0"
+        },
+        "ID": {
+          "val": "480"
+        },
+        "REMARK": {
+          "val": ""
+        },
+        "STOPSTATUS": {
+          "val": "未终止"
+        },
+        "EXECUTEDDATE": {
+          "val": "2018-04-20 14:05:54"
+        },
+        "CREATIONDATE": {
+          "val": "2018-04-20 14:05:53"
+        },
+        "PRICE": {
+          "val": "129.00"
+        },
+        "SUBMITSTATUS": {
+          "val": "已提交"
+        },
+        "RECYCLE_WH_ID": {
+          "val": "东2正品仓",
+          "reftablename": "CP_C_WAREHOUSE",
+          "reftableid": 23451,
+          "reftabdesc": "仓库档案",
+          "refobjid": 206598864990,
+          "colid": 148905,
+          "isfk": true
+        },
+        "CANCELDATE": {
+          "val": ""
+        },
+        "EXECUTECOUNT": {
+          "val": "1"
+        },
+        "CP_C_STORE_ID": {
+          "val": "[31007]大华店",
+          "reftablename": "CP_C_STORE",
+          "reftableid": 23296,
+          "reftabdesc": "店仓档案",
+          "refobjid": 200126719955,
+          "colid": 148783,
+          "isfk": true
+        },
+        "ISACTIVE": {
+          "val": "未作废"
+        },
+        "OWNERENAME": {
+          "val": "康媛"
+        },
+        "CANCELENAME": {
+          "val": ""
+        },
+        "TERMINATEDDATE": {
+          "val": ""
+        },
+        "SOURCE": {
+          "val": "选款平台"
+        },
+        "TERMINATORENAME": {
+          "val": ""
+        },
+        "DOCNO": {
+          "val": "SQ0118042000008A"
+        },
+        "COUNT": {
+          "val": "1"
+        },
+        "EXECUTEPRICE": {
+          "val": "129.00"
+        },
+        "STATUSTIME": {
+          "val": "2018-04-20 14:05:54"
+        }
+      },
+      {
+        "EXECUTEDCOUNT": {
+          "val": "3"
+        },
+        "STATUSERENAME": {
+          "val": "高健"
+        },
+        "EXECUTESTATUS": {
+          "val": "已执行"
+        },
+        "TERMINATORREASON": {
+          "val": ""
+        },
+        "ORDERDATE": {
+          "val": "20180420"
+        },
+        "EXECUTORENAME": {
+          "val": "高健"
+        },
+        "LESSEXECUTE": {
+          "val": "0"
+        },
+        "ID": {
+          "val": "467"
+        },
+        "REMARK": {
+          "val": ""
+        },
+        "STOPSTATUS": {
+          "val": "未终止"
+        },
+        "EXECUTEDDATE": {
+          "val": "2018-04-20 13:19:20"
+        },
+        "CREATIONDATE": {
+          "val": "2018-04-20 13:19:20"
+        },
+        "PRICE": {
+          "val": "297.00"
+        },
+        "SUBMITSTATUS": {
+          "val": "已提交"
+        },
+        "RECYCLE_WH_ID": {
+          "val": "东2正品仓",
+          "reftablename": "CP_C_WAREHOUSE",
+          "reftableid": 23451,
+          "reftabdesc": "仓库档案",
+          "refobjid": 206598864990,
+          "colid": 148905,
+          "isfk": true
+        },
+        "CANCELDATE": {
+          "val": ""
+        },
+        "EXECUTECOUNT": {
+          "val": "3"
+        },
+        "CP_C_STORE_ID": {
+          "val": "[31007]大华店",
+          "reftablename": "CP_C_STORE",
+          "reftableid": 23296,
+          "reftabdesc": "店仓档案",
+          "refobjid": 200126719955,
+          "colid": 148783,
+          "isfk": true
+        },
+        "ISACTIVE": {
+          "val": "未作废"
+        },
+        "OWNERENAME": {
+          "val": "高健"
+        },
+        "CANCELENAME": {
+          "val": ""
+        },
+        "TERMINATEDDATE": {
+          "val": ""
+        },
+        "SOURCE": {
+          "val": "选款平台"
+        },
+        "TERMINATORENAME": {
+          "val": ""
+        },
+        "DOCNO": {
+          "val": "SQ0118042000007A"
+        },
+        "COUNT": {
+          "val": "3"
+        },
+        "EXECUTEPRICE": {
+          "val": "297.00"
+        },
+        "STATUSTIME": {
+          "val": "2018-04-20 13:19:20"
+        }
+      },
+      {
+        "EXECUTEDCOUNT": {
+          "val": "1"
+        },
+        "STATUSERENAME": {
+          "val": "康媛"
+        },
+        "EXECUTESTATUS": {
+          "val": "已执行"
+        },
+        "TERMINATORREASON": {
+          "val": ""
+        },
+        "ORDERDATE": {
+          "val": "20180420"
+        },
+        "EXECUTORENAME": {
+          "val": "康媛"
+        },
+        "LESSEXECUTE": {
+          "val": "0"
+        },
+        "ID": {
+          "val": "466"
+        },
+        "REMARK": {
+          "val": ""
+        },
+        "STOPSTATUS": {
+          "val": "未终止"
+        },
+        "EXECUTEDDATE": {
+          "val": "2018-04-20 13:23:15"
+        },
+        "CREATIONDATE": {
+          "val": "2018-04-20 13:14:52"
+        },
+        "PRICE": {
+          "val": "79.00"
+        },
+        "SUBMITSTATUS": {
+          "val": "已提交"
+        },
+        "RECYCLE_WH_ID": {
+          "val": "东2正品仓",
+          "reftablename": "CP_C_WAREHOUSE",
+          "reftableid": 23451,
+          "reftabdesc": "仓库档案",
+          "refobjid": 206598864990,
+          "colid": 148905,
+          "isfk": true
+        },
+        "CANCELDATE": {
+          "val": ""
+        },
+        "EXECUTECOUNT": {
+          "val": "1"
+        },
+        "CP_C_STORE_ID": {
+          "val": "[31007]大华店",
+          "reftablename": "CP_C_STORE",
+          "reftableid": 23296,
+          "reftabdesc": "店仓档案",
+          "refobjid": 200126719955,
+          "colid": 148783,
+          "isfk": true
+        },
+        "ISACTIVE": {
+          "val": "未作废"
+        },
+        "OWNERENAME": {
+          "val": "康媛"
+        },
+        "CANCELENAME": {
+          "val": ""
+        },
+        "TERMINATEDDATE": {
+          "val": ""
+        },
+        "SOURCE": {
+          "val": "选款平台"
+        },
+        "TERMINATORENAME": {
+          "val": ""
+        },
+        "DOCNO": {
+          "val": "SQ0118042000006A"
+        },
+        "COUNT": {
+          "val": "1"
+        },
+        "EXECUTEPRICE": {
+          "val": "79.00"
+        },
+        "STATUSTIME": {
+          "val": "2018-04-20 13:14:52"
+        }
+      },
+      {
+        "EXECUTEDCOUNT": {
+          "val": "1"
+        },
+        "STATUSERENAME": {
+          "val": "ANA"
+        },
+        "EXECUTESTATUS": {
+          "val": "已执行"
+        },
+        "TERMINATORREASON": {
+          "val": ""
+        },
+        "ORDERDATE": {
+          "val": "20180420"
+        },
+        "EXECUTORENAME": {
+          "val": "ANA"
+        },
+        "LESSEXECUTE": {
+          "val": "0"
+        },
+        "ID": {
+          "val": "461"
+        },
+        "REMARK": {
+          "val": ""
+        },
+        "STOPSTATUS": {
+          "val": "未终止"
+        },
+        "EXECUTEDDATE": {
+          "val": "2018-04-20 11:22:01"
+        },
+        "CREATIONDATE": {
+          "val": "2018-04-20 11:22:01"
+        },
+        "PRICE": {
+          "val": "99.00"
+        },
+        "SUBMITSTATUS": {
+          "val": "已提交"
+        },
+        "RECYCLE_WH_ID": {
+          "val": "东2正品仓",
+          "reftablename": "CP_C_WAREHOUSE",
+          "reftableid": 23451,
+          "reftabdesc": "仓库档案",
+          "refobjid": 206598864990,
+          "colid": 148905,
+          "isfk": true
+        },
+        "CANCELDATE": {
+          "val": ""
+        },
+        "EXECUTECOUNT": {
+          "val": "1"
+        },
+        "CP_C_STORE_ID": {
+          "val": "[31007]大华店",
+          "reftablename": "CP_C_STORE",
+          "reftableid": 23296,
+          "reftabdesc": "店仓档案",
+          "refobjid": 200126719955,
+          "colid": 148783,
+          "isfk": true
+        },
+        "ISACTIVE": {
+          "val": "未作废"
+        },
+        "OWNERENAME": {
+          "val": "ANA"
+        },
+        "CANCELENAME": {
+          "val": ""
+        },
+        "TERMINATEDDATE": {
+          "val": ""
+        },
+        "SOURCE": {
+          "val": "选款平台"
+        },
+        "TERMINATORENAME": {
+          "val": ""
+        },
+        "DOCNO": {
+          "val": "SQ0118042000004A"
+        },
+        "COUNT": {
+          "val": "1"
+        },
+        "EXECUTEPRICE": {
+          "val": "99.00"
+        },
+        "STATUSTIME": {
+          "val": "2018-04-20 11:22:01"
+        }
+      },
+      {
+        "EXECUTEDCOUNT": {
+          "val": "1"
+        },
+        "STATUSERENAME": {
+          "val": "ANA"
+        },
+        "EXECUTESTATUS": {
+          "val": "已执行"
+        },
+        "TERMINATORREASON": {
+          "val": ""
+        },
+        "ORDERDATE": {
+          "val": "20180420"
+        },
+        "EXECUTORENAME": {
+          "val": "ANA"
+        },
+        "LESSEXECUTE": {
+          "val": "0"
+        },
+        "ID": {
+          "val": "460"
+        },
+        "REMARK": {
+          "val": ""
+        },
+        "STOPSTATUS": {
+          "val": "未终止"
+        },
+        "EXECUTEDDATE": {
+          "val": "2018-04-20 11:22:01"
+        },
+        "CREATIONDATE": {
+          "val": "2018-04-20 11:21:59"
+        },
+        "PRICE": {
+          "val": "99.00"
+        },
+        "SUBMITSTATUS": {
+          "val": "已提交"
+        },
+        "RECYCLE_WH_ID": {
+          "val": "东2正品仓",
+          "reftablename": "CP_C_WAREHOUSE",
+          "reftableid": 23451,
+          "reftabdesc": "仓库档案",
+          "refobjid": 206598864990,
+          "colid": 148905,
+          "isfk": true
+        },
+        "CANCELDATE": {
+          "val": ""
+        },
+        "EXECUTECOUNT": {
+          "val": "1"
+        },
+        "CP_C_STORE_ID": {
+          "val": "[31007]大华店",
+          "reftablename": "CP_C_STORE",
+          "reftableid": 23296,
+          "reftabdesc": "店仓档案",
+          "refobjid": 200126719955,
+          "colid": 148783,
+          "isfk": true
+        },
+        "ISACTIVE": {
+          "val": "未作废"
+        },
+        "OWNERENAME": {
+          "val": "ANA"
+        },
+        "CANCELENAME": {
+          "val": ""
+        },
+        "TERMINATEDDATE": {
+          "val": ""
+        },
+        "SOURCE": {
+          "val": "选款平台"
+        },
+        "TERMINATORENAME": {
+          "val": ""
+        },
+        "DOCNO": {
+          "val": "SQ0118042000003A"
+        },
+        "COUNT": {
+          "val": "1"
+        },
+        "EXECUTEPRICE": {
+          "val": "99.00"
+        },
+        "STATUSTIME": {
+          "val": "2018-04-20 11:21:59"
+        }
+      },
+      {
+        "EXECUTEDCOUNT": {
+          "val": "1"
+        },
+        "STATUSERENAME": {
+          "val": "康媛"
+        },
+        "EXECUTESTATUS": {
+          "val": "已执行"
+        },
+        "TERMINATORREASON": {
+          "val": ""
+        },
+        "ORDERDATE": {
+          "val": "20180420"
+        },
+        "EXECUTORENAME": {
+          "val": "康媛"
+        },
+        "LESSEXECUTE": {
+          "val": "0"
+        },
+        "ID": {
+          "val": "454"
+        },
+        "REMARK": {
+          "val": ""
+        },
+        "STOPSTATUS": {
+          "val": "未终止"
+        },
+        "EXECUTEDDATE": {
+          "val": "2018-04-20 11:16:11"
+        },
+        "CREATIONDATE": {
+          "val": "2018-04-20 11:16:10"
+        },
+        "PRICE": {
+          "val": "149.00"
+        },
+        "SUBMITSTATUS": {
+          "val": "已提交"
+        },
+        "RECYCLE_WH_ID": {
+          "val": "东2正品仓",
+          "reftablename": "CP_C_WAREHOUSE",
+          "reftableid": 23451,
+          "reftabdesc": "仓库档案",
+          "refobjid": 206598864990,
+          "colid": 148905,
+          "isfk": true
+        },
+        "CANCELDATE": {
+          "val": ""
+        },
+        "EXECUTECOUNT": {
+          "val": "1"
+        },
+        "CP_C_STORE_ID": {
+          "val": "[31007]大华店",
+          "reftablename": "CP_C_STORE",
+          "reftableid": 23296,
+          "reftabdesc": "店仓档案",
+          "refobjid": 200126719955,
+          "colid": 148783,
+          "isfk": true
+        },
+        "ISACTIVE": {
+          "val": "未作废"
+        },
+        "OWNERENAME": {
+          "val": "康媛"
+        },
+        "CANCELENAME": {
+          "val": ""
+        },
+        "TERMINATEDDATE": {
+          "val": ""
+        },
+        "SOURCE": {
+          "val": "选款平台"
+        },
+        "TERMINATORENAME": {
+          "val": ""
+        },
+        "DOCNO": {
+          "val": "SQ0118042000002A"
+        },
+        "COUNT": {
+          "val": "1"
+        },
+        "EXECUTEPRICE": {
+          "val": "149.00"
+        },
+        "STATUSTIME": {
+          "val": "2018-04-20 11:16:11"
+        }
+      },
+      {
+        "EXECUTEDCOUNT": {
+          "val": "1"
+        },
+        "STATUSERENAME": {
+          "val": "康媛"
+        },
+        "EXECUTESTATUS": {
+          "val": "已执行"
+        },
+        "TERMINATORREASON": {
+          "val": ""
+        },
+        "ORDERDATE": {
+          "val": "20180420"
+        },
+        "EXECUTORENAME": {
+          "val": "康媛"
+        },
+        "LESSEXECUTE": {
+          "val": "0"
+        },
+        "ID": {
+          "val": "450"
+        },
+        "REMARK": {
+          "val": ""
+        },
+        "STOPSTATUS": {
+          "val": "未终止"
+        },
+        "EXECUTEDDATE": {
+          "val": "2018-04-20 11:00:12"
+        },
+        "CREATIONDATE": {
+          "val": "2018-04-20 11:00:11"
+        },
+        "PRICE": {
+          "val": "149.00"
+        },
+        "SUBMITSTATUS": {
+          "val": "已提交"
+        },
+        "RECYCLE_WH_ID": {
+          "val": "东2正品仓",
+          "reftablename": "CP_C_WAREHOUSE",
+          "reftableid": 23451,
+          "reftabdesc": "仓库档案",
+          "refobjid": 206598864990,
+          "colid": 148905,
+          "isfk": true
+        },
+        "CANCELDATE": {
+          "val": ""
+        },
+        "EXECUTECOUNT": {
+          "val": "1"
+        },
+        "CP_C_STORE_ID": {
+          "val": "[31007]大华店",
+          "reftablename": "CP_C_STORE",
+          "reftableid": 23296,
+          "reftabdesc": "店仓档案",
+          "refobjid": 200126719955,
+          "colid": 148783,
+          "isfk": true
+        },
+        "ISACTIVE": {
+          "val": "未作废"
+        },
+        "OWNERENAME": {
+          "val": "康媛"
+        },
+        "CANCELENAME": {
+          "val": ""
+        },
+        "TERMINATEDDATE": {
+          "val": ""
+        },
+        "SOURCE": {
+          "val": "选款平台"
+        },
+        "TERMINATORENAME": {
+          "val": ""
+        },
+        "DOCNO": {
+          "val": "SQ0118042000001A"
+        },
+        "COUNT": {
+          "val": "1"
+        },
+        "EXECUTEPRICE": {
+          "val": "149.00"
+        },
+        "STATUSTIME": {
+          "val": "2018-04-20 11:00:11"
+        }
+      },
+      {
+        "EXECUTEDCOUNT": {
+          "val": "0"
+        },
+        "STATUSERENAME": {
+          "val": "系统管理员"
+        },
+        "EXECUTESTATUS": {
+          "val": "未执行"
+        },
+        "TERMINATORREASON": {
+          "val": ""
+        },
+        "ORDERDATE": {
+          "val": "20180413"
+        },
+        "EXECUTORENAME": {
+          "val": ""
+        },
+        "LESSEXECUTE": {
+          "val": "1"
+        },
+        "ID": {
+          "val": "445"
+        },
+        "REMARK": {
+          "val": ""
+        },
+        "STOPSTATUS": {
+          "val": "未终止"
+        },
+        "EXECUTEDDATE": {
+          "val": ""
+        },
+        "CREATIONDATE": {
+          "val": "2018-04-13 10:28:53"
+        },
+        "PRICE": {
+          "val": "79.00"
+        },
+        "SUBMITSTATUS": {
+          "val": "已提交"
+        },
+        "RECYCLE_WH_ID": {
+          "val": "杭州正品仓",
+          "reftablename": "CP_C_WAREHOUSE",
+          "reftableid": 23451,
+          "reftabdesc": "仓库档案",
+          "refobjid": 200126625845,
+          "colid": 148905,
+          "isfk": true
+        },
+        "CANCELDATE": {
+          "val": ""
+        },
+        "EXECUTECOUNT": {
+          "val": "1"
+        },
+        "CP_C_STORE_ID": {
+          "val": "[31005]环城1店",
+          "reftablename": "CP_C_STORE",
+          "reftableid": 23296,
+          "reftabdesc": "店仓档案",
+          "refobjid": 200000244130,
+          "colid": 148783,
+          "isfk": true
+        },
+        "ISACTIVE": {
+          "val": "未作废"
+        },
+        "OWNERENAME": {
+          "val": "系统管理员"
+        },
+        "CANCELENAME": {
+          "val": ""
+        },
+        "TERMINATEDDATE": {
+          "val": ""
+        },
+        "SOURCE": {
+          "val": "选款平台"
+        },
+        "TERMINATORENAME": {
+          "val": ""
+        },
+        "DOCNO": {
+          "val": "SQ0118041300001A"
+        },
+        "COUNT": {
+          "val": "1"
+        },
+        "EXECUTEPRICE": {
+          "val": "79.00"
+        },
+        "STATUSTIME": {
+          "val": "2018-04-13 10:28:53"
+        }
+      },
+      {
+        "EXECUTEDCOUNT": {
+          "val": "0"
+        },
+        "STATUSERENAME": {
+          "val": "秋涛店长"
+        },
+        "EXECUTESTATUS": {
+          "val": "未执行"
+        },
+        "TERMINATORREASON": {
+          "val": ""
+        },
+        "ORDERDATE": {
+          "val": "20180410"
+        },
+        "EXECUTORENAME": {
+          "val": ""
+        },
+        "LESSEXECUTE": {
+          "val": "4"
+        },
+        "ID": {
+          "val": "444"
+        },
+        "REMARK": {
+          "val": ""
+        },
+        "STOPSTATUS": {
+          "val": "未终止"
+        },
+        "EXECUTEDDATE": {
+          "val": ""
+        },
+        "CREATIONDATE": {
+          "val": "2018-04-10 10:30:18"
+        },
+        "PRICE": {
+          "val": "316.00"
+        },
+        "SUBMITSTATUS": {
+          "val": "已提交"
+        },
+        "RECYCLE_WH_ID": {
+          "val": "杭州正品仓",
+          "reftablename": "CP_C_WAREHOUSE",
+          "reftableid": 23451,
+          "reftabdesc": "仓库档案",
+          "refobjid": 200126625845,
+          "colid": 148905,
+          "isfk": true
+        },
+        "CANCELDATE": {
+          "val": ""
+        },
+        "EXECUTECOUNT": {
+          "val": "4"
+        },
+        "CP_C_STORE_ID": {
+          "val": "[33124]秋涛店",
+          "reftablename": "CP_C_STORE",
+          "reftableid": 23296,
+          "reftabdesc": "店仓档案",
+          "refobjid": 200000243731,
+          "colid": 148783,
+          "isfk": true
+        },
+        "ISACTIVE": {
+          "val": "未作废"
+        },
+        "OWNERENAME": {
+          "val": "秋涛店长"
+        },
+        "CANCELENAME": {
+          "val": ""
+        },
+        "TERMINATEDDATE": {
+          "val": ""
+        },
+        "SOURCE": {
+          "val": "选款平台"
+        },
+        "TERMINATORENAME": {
+          "val": ""
+        },
+        "DOCNO": {
+          "val": "SQ0118041000003A"
+        },
+        "COUNT": {
+          "val": "4"
+        },
+        "EXECUTEPRICE": {
+          "val": "316.00"
+        },
+        "STATUSTIME": {
+          "val": "2018-04-10 10:30:18"
+        }
+      },
+      {
+        "EXECUTEDCOUNT": {
+          "val": "0"
+        },
+        "STATUSERENAME": {
+          "val": "秋涛店长"
+        },
+        "EXECUTESTATUS": {
+          "val": "未执行"
+        },
+        "TERMINATORREASON": {
+          "val": ""
+        },
+        "ORDERDATE": {
+          "val": "20180410"
+        },
+        "EXECUTORENAME": {
+          "val": ""
+        },
+        "LESSEXECUTE": {
+          "val": "6"
+        },
+        "ID": {
+          "val": "443"
+        },
+        "REMARK": {
+          "val": ""
+        },
+        "STOPSTATUS": {
+          "val": "未终止"
+        },
+        "EXECUTEDDATE": {
+          "val": ""
+        },
+        "CREATIONDATE": {
+          "val": "2018-04-10 10:28:50"
+        },
+        "PRICE": {
+          "val": "474.00"
+        },
+        "SUBMITSTATUS": {
+          "val": "已提交"
+        },
+        "RECYCLE_WH_ID": {
+          "val": "杭州正品仓",
+          "reftablename": "CP_C_WAREHOUSE",
+          "reftableid": 23451,
+          "reftabdesc": "仓库档案",
+          "refobjid": 200126625845,
+          "colid": 148905,
+          "isfk": true
+        },
+        "CANCELDATE": {
+          "val": ""
+        },
+        "EXECUTECOUNT": {
+          "val": "6"
+        },
+        "CP_C_STORE_ID": {
+          "val": "[33124]秋涛店",
+          "reftablename": "CP_C_STORE",
+          "reftableid": 23296,
+          "reftabdesc": "店仓档案",
+          "refobjid": 200000243731,
+          "colid": 148783,
+          "isfk": true
+        },
+        "ISACTIVE": {
+          "val": "未作废"
+        },
+        "OWNERENAME": {
+          "val": "秋涛店长"
+        },
+        "CANCELENAME": {
+          "val": ""
+        },
+        "TERMINATEDDATE": {
+          "val": ""
+        },
+        "SOURCE": {
+          "val": "选款平台"
+        },
+        "TERMINATORENAME": {
+          "val": ""
+        },
+        "DOCNO": {
+          "val": "SQ0118041000002A"
+        },
+        "COUNT": {
+          "val": "6"
+        },
+        "EXECUTEPRICE": {
+          "val": "474.00"
+        },
+        "STATUSTIME": {
+          "val": "2018-04-10 10:28:51"
+        }
+      },
+      {
+        "EXECUTEDCOUNT": {
+          "val": "12"
+        },
+        "STATUSERENAME": {
+          "val": "高健"
+        },
+        "EXECUTESTATUS": {
+          "val": "已执行"
+        },
+        "TERMINATORREASON": {
+          "val": ""
+        },
+        "ORDERDATE": {
+          "val": "20180329"
+        },
+        "EXECUTORENAME": {
+          "val": "高健"
+        },
+        "LESSEXECUTE": {
+          "val": "0"
+        },
+        "ID": {
+          "val": "439"
+        },
+        "REMARK": {
+          "val": ""
+        },
+        "STOPSTATUS": {
+          "val": "未终止"
+        },
+        "EXECUTEDDATE": {
+          "val": "2018-03-29 18:12:46"
+        },
+        "CREATIONDATE": {
+          "val": "2018-03-29 18:12:28"
+        },
+        "PRICE": {
+          "val": "948.00"
+        },
+        "SUBMITSTATUS": {
+          "val": "已提交"
+        },
+        "RECYCLE_WH_ID": {
+          "val": "杭州正品仓",
+          "reftablename": "CP_C_WAREHOUSE",
+          "reftableid": 23451,
+          "reftabdesc": "仓库档案",
+          "refobjid": 200126625845,
+          "colid": 148905,
+          "isfk": true
+        },
+        "CANCELDATE": {
+          "val": ""
+        },
+        "EXECUTECOUNT": {
+          "val": "12"
+        },
+        "CP_C_STORE_ID": {
+          "val": "[31004]城中店",
+          "reftablename": "CP_C_STORE",
+          "reftableid": 23296,
+          "reftabdesc": "店仓档案",
+          "refobjid": 200000244070,
+          "colid": 148783,
+          "isfk": true
+        },
+        "ISACTIVE": {
+          "val": "未作废"
+        },
+        "OWNERENAME": {
+          "val": "高健"
+        },
+        "CANCELENAME": {
+          "val": ""
+        },
+        "TERMINATEDDATE": {
+          "val": ""
+        },
+        "SOURCE": {
+          "val": "选款平台"
+        },
+        "TERMINATORENAME": {
+          "val": ""
+        },
+        "DOCNO": {
+          "val": "SQ0118032900003A"
+        },
+        "COUNT": {
+          "val": "12"
+        },
+        "EXECUTEPRICE": {
+          "val": "948.00"
+        },
+        "STATUSTIME": {
+          "val": "2018-03-29 18:12:28"
+        }
+      },
+      {
+        "EXECUTEDCOUNT": {
+          "val": "15"
+        },
+        "STATUSERENAME": {
+          "val": "高健"
+        },
+        "EXECUTESTATUS": {
+          "val": "已执行"
+        },
+        "TERMINATORREASON": {
+          "val": ""
+        },
+        "ORDERDATE": {
+          "val": "20180329"
+        },
+        "EXECUTORENAME": {
+          "val": "高健"
+        },
+        "LESSEXECUTE": {
+          "val": "0"
+        },
+        "ID": {
+          "val": "438"
+        },
+        "REMARK": {
+          "val": ""
+        },
+        "STOPSTATUS": {
+          "val": "未终止"
+        },
+        "EXECUTEDDATE": {
+          "val": "2018-03-29 18:08:32"
+        },
+        "CREATIONDATE": {
+          "val": "2018-03-29 18:07:55"
+        },
+        "PRICE": {
+          "val": "1,185.00"
+        },
+        "SUBMITSTATUS": {
+          "val": "已提交"
+        },
+        "RECYCLE_WH_ID": {
+          "val": "杭州正品仓",
+          "reftablename": "CP_C_WAREHOUSE",
+          "reftableid": 23451,
+          "reftabdesc": "仓库档案",
+          "refobjid": 200126625845,
+          "colid": 148905,
+          "isfk": true
+        },
+        "CANCELDATE": {
+          "val": ""
+        },
+        "EXECUTECOUNT": {
+          "val": "15"
+        },
+        "CP_C_STORE_ID": {
+          "val": "[31004]城中店",
+          "reftablename": "CP_C_STORE",
+          "reftableid": 23296,
+          "reftabdesc": "店仓档案",
+          "refobjid": 200000244070,
+          "colid": 148783,
+          "isfk": true
+        },
+        "ISACTIVE": {
+          "val": "未作废"
+        },
+        "OWNERENAME": {
+          "val": "高健"
+        },
+        "CANCELENAME": {
+          "val": ""
+        },
+        "TERMINATEDDATE": {
+          "val": ""
+        },
+        "SOURCE": {
+          "val": "选款平台"
+        },
+        "TERMINATORENAME": {
+          "val": ""
+        },
+        "DOCNO": {
+          "val": "SQ0118032900002A"
+        },
+        "COUNT": {
+          "val": "15"
+        },
+        "EXECUTEPRICE": {
+          "val": "1,185.00"
+        },
+        "STATUSTIME": {
+          "val": "2018-03-29 18:07:56"
+        }
+      },
+      {
+        "EXECUTEDCOUNT": {
+          "val": "1"
+        },
+        "STATUSERENAME": {
+          "val": "高健"
+        },
+        "EXECUTESTATUS": {
+          "val": "已执行"
+        },
+        "TERMINATORREASON": {
+          "val": ""
+        },
+        "ORDERDATE": {
+          "val": "20180329"
+        },
+        "EXECUTORENAME": {
+          "val": "系统管理员"
+        },
+        "LESSEXECUTE": {
+          "val": "0"
+        },
+        "ID": {
+          "val": "437"
+        },
+        "REMARK": {
+          "val": ""
+        },
+        "STOPSTATUS": {
+          "val": "未终止"
+        },
+        "EXECUTEDDATE": {
+          "val": "2018-03-29 14:34:00"
+        },
+        "CREATIONDATE": {
+          "val": "2018-03-29 08:39:27"
+        },
+        "PRICE": {
+          "val": "79.00"
+        },
+        "SUBMITSTATUS": {
+          "val": "已提交"
+        },
+        "RECYCLE_WH_ID": {
+          "val": "杭州正品仓",
+          "reftablename": "CP_C_WAREHOUSE",
+          "reftableid": 23451,
+          "reftabdesc": "仓库档案",
+          "refobjid": 200126625845,
+          "colid": 148905,
+          "isfk": true
+        },
+        "CANCELDATE": {
+          "val": ""
+        },
+        "EXECUTECOUNT": {
+          "val": "1"
+        },
+        "CP_C_STORE_ID": {
+          "val": "[31004]城中店",
+          "reftablename": "CP_C_STORE",
+          "reftableid": 23296,
+          "reftabdesc": "店仓档案",
+          "refobjid": 200000244070,
+          "colid": 148783,
+          "isfk": true
+        },
+        "ISACTIVE": {
+          "val": "未作废"
+        },
+        "OWNERENAME": {
+          "val": "高健"
+        },
+        "CANCELENAME": {
+          "val": ""
+        },
+        "TERMINATEDDATE": {
+          "val": ""
+        },
+        "SOURCE": {
+          "val": "选款平台"
+        },
+        "TERMINATORENAME": {
+          "val": ""
+        },
+        "DOCNO": {
+          "val": "SQ0118032900001A"
+        },
+        "COUNT": {
+          "val": "1"
+        },
+        "EXECUTEPRICE": {
+          "val": "79.00"
+        },
+        "STATUSTIME": {
+          "val": "2018-03-29 08:39:28"
+        }
+      },
+      {
+        "EXECUTEDCOUNT": {
+          "val": "0"
+        },
+        "STATUSERENAME": {
+          "val": "徐丽君"
+        },
+        "EXECUTESTATUS": {
+          "val": "未执行"
+        },
+        "TERMINATORREASON": {
+          "val": "1"
+        },
+        "ORDERDATE": {
+          "val": "20180328"
+        },
+        "EXECUTORENAME": {
+          "val": ""
+        },
+        "LESSEXECUTE": {
+          "val": "4443"
+        },
+        "ID": {
+          "val": "435"
+        },
+        "REMARK": {
+          "val": ""
+        },
+        "STOPSTATUS": {
+          "val": "已终止"
+        },
+        "EXECUTEDDATE": {
+          "val": ""
+        },
+        "CREATIONDATE": {
+          "val": "2018-03-28 15:56:26"
+        },
+        "PRICE": {
+          "val": "350,997.00"
+        },
+        "SUBMITSTATUS": {
+          "val": "已提交"
+        },
+        "RECYCLE_WH_ID": {
+          "val": "杭州正品仓",
+          "reftablename": "CP_C_WAREHOUSE",
+          "reftableid": 23451,
+          "reftabdesc": "仓库档案",
+          "refobjid": 200126625845,
+          "colid": 148905,
+          "isfk": true
+        },
+        "CANCELDATE": {
+          "val": ""
+        },
+        "EXECUTECOUNT": {
+          "val": "4,443"
+        },
+        "CP_C_STORE_ID": {
+          "val": "[31050]金汇店",
+          "reftablename": "CP_C_STORE",
+          "reftableid": 23296,
+          "reftabdesc": "店仓档案",
+          "refobjid": 200000244133,
+          "colid": 148783,
+          "isfk": true
+        },
+        "ISACTIVE": {
+          "val": "未作废"
+        },
+        "OWNERENAME": {
+          "val": "徐丽君"
+        },
+        "CANCELENAME": {
+          "val": ""
+        },
+        "TERMINATEDDATE": {
+          "val": "2018-03-29 19:14:31"
+        },
+        "SOURCE": {
+          "val": "选款平台"
+        },
+        "TERMINATORENAME": {
+          "val": "系统管理员"
+        },
+        "DOCNO": {
+          "val": "SQ0118032800023A"
+        },
+        "COUNT": {
+          "val": "4,443"
+        },
+        "EXECUTEPRICE": {
+          "val": "350,997.00"
+        },
+        "STATUSTIME": {
+          "val": "2018-03-28 15:56:26"
+        }
+      },
+      {
+        "EXECUTEDCOUNT": {
+          "val": "0"
+        },
+        "STATUSERENAME": {
+          "val": "徐丽君"
+        },
+        "EXECUTESTATUS": {
+          "val": "未执行"
+        },
+        "TERMINATORREASON": {
+          "val": ""
+        },
+        "ORDERDATE": {
+          "val": "20180328"
+        },
+        "EXECUTORENAME": {
+          "val": ""
+        },
+        "LESSEXECUTE": {
+          "val": "12"
+        },
+        "ID": {
+          "val": "436"
+        },
+        "REMARK": {
+          "val": ""
+        },
+        "STOPSTATUS": {
+          "val": "未终止"
+        },
+        "EXECUTEDDATE": {
+          "val": ""
+        },
+        "CREATIONDATE": {
+          "val": "2018-03-28 15:56:26"
+        },
+        "PRICE": {
+          "val": "948.00"
+        },
+        "SUBMITSTATUS": {
+          "val": "已提交"
+        },
+        "RECYCLE_WH_ID": {
+          "val": "杭州正品仓",
+          "reftablename": "CP_C_WAREHOUSE",
+          "reftableid": 23451,
+          "reftabdesc": "仓库档案",
+          "refobjid": 200126625845,
+          "colid": 148905,
+          "isfk": true
+        },
+        "CANCELDATE": {
+          "val": ""
+        },
+        "EXECUTECOUNT": {
+          "val": "12"
+        },
+        "CP_C_STORE_ID": {
+          "val": "[31053]闻喜店",
+          "reftablename": "CP_C_STORE",
+          "reftableid": 23296,
+          "reftabdesc": "店仓档案",
+          "refobjid": 200000244214,
+          "colid": 148783,
+          "isfk": true
+        },
+        "ISACTIVE": {
+          "val": "未作废"
+        },
+        "OWNERENAME": {
+          "val": "徐丽君"
+        },
+        "CANCELENAME": {
+          "val": ""
+        },
+        "TERMINATEDDATE": {
+          "val": ""
+        },
+        "SOURCE": {
+          "val": "选款平台"
+        },
+        "TERMINATORENAME": {
+          "val": ""
+        },
+        "DOCNO": {
+          "val": "SQ0118032800024A"
+        },
+        "COUNT": {
+          "val": "12"
+        },
+        "EXECUTEPRICE": {
+          "val": "948.00"
+        },
+        "STATUSTIME": {
+          "val": "2018-03-28 15:56:27"
+        }
+      },
+      {
+        "EXECUTEDCOUNT": {
+          "val": "1"
+        },
+        "STATUSERENAME": {
+          "val": "徐丽君"
+        },
+        "EXECUTESTATUS": {
+          "val": "已执行"
+        },
+        "TERMINATORREASON": {
+          "val": ""
+        },
+        "ORDERDATE": {
+          "val": "20180328"
+        },
+        "EXECUTORENAME": {
+          "val": "系统管理员"
+        },
+        "LESSEXECUTE": {
+          "val": "0"
+        },
+        "ID": {
+          "val": "432"
+        },
+        "REMARK": {
+          "val": ""
+        },
+        "STOPSTATUS": {
+          "val": "未终止"
+        },
+        "EXECUTEDDATE": {
+          "val": "2018-04-13 13:26:43"
+        },
+        "CREATIONDATE": {
+          "val": "2018-03-28 15:55:20"
+        },
+        "PRICE": {
+          "val": "79.00"
+        },
+        "SUBMITSTATUS": {
+          "val": "已提交"
+        },
+        "RECYCLE_WH_ID": {
+          "val": "杭州正品仓",
+          "reftablename": "CP_C_WAREHOUSE",
+          "reftableid": 23451,
+          "reftabdesc": "仓库档案",
+          "refobjid": 200126625845,
+          "colid": 148905,
+          "isfk": true
+        },
+        "CANCELDATE": {
+          "val": ""
+        },
+        "EXECUTECOUNT": {
+          "val": "1"
+        },
+        "CP_C_STORE_ID": {
+          "val": "[33105]沙桥店",
+          "reftablename": "CP_C_STORE",
+          "reftableid": 23296,
+          "reftabdesc": "店仓档案",
+          "refobjid": 200000244054,
+          "colid": 148783,
+          "isfk": true
+        },
+        "ISACTIVE": {
+          "val": "未作废"
+        },
+        "OWNERENAME": {
+          "val": "徐丽君"
+        },
+        "CANCELENAME": {
+          "val": ""
+        },
+        "TERMINATEDDATE": {
+          "val": ""
+        },
+        "SOURCE": {
+          "val": "选款平台"
+        },
+        "TERMINATORENAME": {
+          "val": ""
+        },
+        "DOCNO": {
+          "val": "SQ0118032800021A"
+        },
+        "COUNT": {
+          "val": "1"
+        },
+        "EXECUTEPRICE": {
+          "val": "79.00"
+        },
+        "STATUSTIME": {
+          "val": "2018-03-28 15:55:20"
+        }
+      },
+      {
+        "EXECUTEDCOUNT": {
+          "val": "1"
+        },
+        "STATUSERENAME": {
+          "val": "徐丽君"
+        },
+        "EXECUTESTATUS": {
+          "val": "已执行"
+        },
+        "TERMINATORREASON": {
+          "val": ""
+        },
+        "ORDERDATE": {
+          "val": "20180328"
+        },
+        "EXECUTORENAME": {
+          "val": "徐丽君"
+        },
+        "LESSEXECUTE": {
+          "val": "0"
+        },
+        "ID": {
+          "val": "423"
+        },
+        "REMARK": {
+          "val": ""
+        },
+        "STOPSTATUS": {
+          "val": "未终止"
+        },
+        "EXECUTEDDATE": {
+          "val": "2018-03-28 15:14:06"
+        },
+        "CREATIONDATE": {
+          "val": "2018-03-28 15:12:16"
+        },
+        "PRICE": {
+          "val": "79.00"
+        },
+        "SUBMITSTATUS": {
+          "val": "已提交"
+        },
+        "RECYCLE_WH_ID": {
+          "val": "杭州正品仓",
+          "reftablename": "CP_C_WAREHOUSE",
+          "reftableid": 23451,
+          "reftabdesc": "仓库档案",
+          "refobjid": 200126625845,
+          "colid": 148905,
+          "isfk": true
+        },
+        "CANCELDATE": {
+          "val": ""
+        },
+        "EXECUTECOUNT": {
+          "val": "1"
+        },
+        "CP_C_STORE_ID": {
+          "val": "[31058]雪松店",
+          "reftablename": "CP_C_STORE",
+          "reftableid": 23296,
+          "reftabdesc": "店仓档案",
+          "refobjid": 200000244173,
+          "colid": 148783,
+          "isfk": true
+        },
+        "ISACTIVE": {
+          "val": "未作废"
+        },
+        "OWNERENAME": {
+          "val": "徐丽君"
+        },
+        "CANCELENAME": {
+          "val": ""
+        },
+        "TERMINATEDDATE": {
+          "val": ""
+        },
+        "SOURCE": {
+          "val": "选款平台"
+        },
+        "TERMINATORENAME": {
+          "val": ""
+        },
+        "DOCNO": {
+          "val": "SQ0118032800016A"
+        },
+        "COUNT": {
+          "val": "1"
+        },
+        "EXECUTEPRICE": {
+          "val": "79.00"
+        },
+        "STATUSTIME": {
+          "val": "2018-03-28 15:12:16"
+        }
+      },
+      {
+        "EXECUTEDCOUNT": {
+          "val": "0"
+        },
+        "STATUSERENAME": {
+          "val": "康媛"
+        },
+        "EXECUTESTATUS": {
+          "val": "已执行"
+        },
+        "TERMINATORREASON": {
+          "val": ""
+        },
+        "ORDERDATE": {
+          "val": "20180328"
+        },
+        "EXECUTORENAME": {
+          "val": "康媛"
+        },
+        "LESSEXECUTE": {
+          "val": "0"
+        },
+        "ID": {
+          "val": "413"
+        },
+        "REMARK": {
+          "val": ""
+        },
+        "STOPSTATUS": {
+          "val": "未终止"
+        },
+        "EXECUTEDDATE": {
+          "val": "2018-03-28 14:26:19"
+        },
+        "CREATIONDATE": {
+          "val": "2018-03-28 14:23:49"
+        },
+        "PRICE": {
+          "val": "396.00"
+        },
+        "SUBMITSTATUS": {
+          "val": "已提交"
+        },
+        "RECYCLE_WH_ID": {
+          "val": "杭州正品仓",
+          "reftablename": "CP_C_WAREHOUSE",
+          "reftableid": 23451,
+          "reftabdesc": "仓库档案",
+          "refobjid": 200126625845,
+          "colid": 148905,
+          "isfk": true
+        },
+        "CANCELDATE": {
+          "val": ""
+        },
+        "EXECUTECOUNT": {
+          "val": "0"
+        },
+        "CP_C_STORE_ID": {
+          "val": "[31064]新南店",
+          "reftablename": "CP_C_STORE",
+          "reftableid": 23296,
+          "reftabdesc": "店仓档案",
+          "refobjid": 200000244136,
+          "colid": 148783,
+          "isfk": true
+        },
+        "ISACTIVE": {
+          "val": "未作废"
+        },
+        "OWNERENAME": {
+          "val": "康媛"
+        },
+        "CANCELENAME": {
+          "val": ""
+        },
+        "TERMINATEDDATE": {
+          "val": ""
+        },
+        "SOURCE": {
+          "val": "选款平台"
+        },
+        "TERMINATORENAME": {
+          "val": ""
+        },
+        "DOCNO": {
+          "val": "SQ0118032800010A"
+        },
+        "COUNT": {
+          "val": "4"
+        },
+        "EXECUTEPRICE": {
+          "val": "198.00"
+        },
+        "STATUSTIME": {
+          "val": "2018-03-28 14:23:49"
+        }
+      },
+      {
+        "EXECUTEDCOUNT": {
+          "val": "0"
+        },
+        "STATUSERENAME": {
+          "val": "康媛"
+        },
+        "EXECUTESTATUS": {
+          "val": "未执行"
+        },
+        "TERMINATORREASON": {
+          "val": "0"
+        },
+        "ORDERDATE": {
+          "val": "20180328"
+        },
+        "EXECUTORENAME": {
+          "val": ""
+        },
+        "LESSEXECUTE": {
+          "val": "1"
+        },
+        "ID": {
+          "val": "410"
+        },
+        "REMARK": {
+          "val": ""
+        },
+        "STOPSTATUS": {
+          "val": "已终止"
+        },
+        "EXECUTEDDATE": {
+          "val": ""
+        },
+        "CREATIONDATE": {
+          "val": "2018-03-28 10:47:43"
+        },
+        "PRICE": {
+          "val": "129.00"
+        },
+        "SUBMITSTATUS": {
+          "val": "已提交"
+        },
+        "RECYCLE_WH_ID": {
+          "val": "杭州正品仓",
+          "reftablename": "CP_C_WAREHOUSE",
+          "reftableid": 23451,
+          "reftabdesc": "仓库档案",
+          "refobjid": 200126625845,
+          "colid": 148905,
+          "isfk": true
+        },
+        "CANCELDATE": {
+          "val": ""
+        },
+        "EXECUTECOUNT": {
+          "val": "1"
+        },
+        "CP_C_STORE_ID": {
+          "val": "[31064]新南店",
+          "reftablename": "CP_C_STORE",
+          "reftableid": 23296,
+          "reftabdesc": "店仓档案",
+          "refobjid": 200000244136,
+          "colid": 148783,
+          "isfk": true
+        },
+        "ISACTIVE": {
+          "val": "未作废"
+        },
+        "OWNERENAME": {
+          "val": "康媛"
+        },
+        "CANCELENAME": {
+          "val": ""
+        },
+        "TERMINATEDDATE": {
+          "val": "2018-03-28 10:48:05"
+        },
+        "SOURCE": {
+          "val": "选款平台"
+        },
+        "TERMINATORENAME": {
+          "val": "康媛"
+        },
+        "DOCNO": {
+          "val": "SQ0118032800009A"
+        },
+        "COUNT": {
+          "val": "1"
+        },
+        "EXECUTEPRICE": {
+          "val": "129.00"
+        },
+        "STATUSTIME": {
+          "val": "2018-03-28 10:47:43"
+        }
+      },
+      {
+        "EXECUTEDCOUNT": {
+          "val": "14"
+        },
+        "STATUSERENAME": {
+          "val": "康媛"
+        },
+        "EXECUTESTATUS": {
+          "val": "已执行"
+        },
+        "TERMINATORREASON": {
+          "val": ""
+        },
+        "ORDERDATE": {
+          "val": "20180328"
+        },
+        "EXECUTORENAME": {
+          "val": "康媛"
+        },
+        "LESSEXECUTE": {
+          "val": "0"
+        },
+        "ID": {
+          "val": "409"
+        },
+        "REMARK": {
+          "val": ""
+        },
+        "STOPSTATUS": {
+          "val": "未终止"
+        },
+        "EXECUTEDDATE": {
+          "val": "2018-03-28 10:44:56"
+        },
+        "CREATIONDATE": {
+          "val": "2018-03-28 10:23:50"
+        },
+        "PRICE": {
+          "val": "1,106.00"
+        },
+        "SUBMITSTATUS": {
+          "val": "已提交"
+        },
+        "RECYCLE_WH_ID": {
+          "val": "杭州正品仓",
+          "reftablename": "CP_C_WAREHOUSE",
+          "reftableid": 23451,
+          "reftabdesc": "仓库档案",
+          "refobjid": 200126625845,
+          "colid": 148905,
+          "isfk": true
+        },
+        "CANCELDATE": {
+          "val": ""
+        },
+        "EXECUTECOUNT": {
+          "val": "14"
+        },
+        "CP_C_STORE_ID": {
+          "val": "[31064]新南店",
+          "reftablename": "CP_C_STORE",
+          "reftableid": 23296,
+          "reftabdesc": "店仓档案",
+          "refobjid": 200000244136,
+          "colid": 148783,
+          "isfk": true
+        },
+        "ISACTIVE": {
+          "val": "未作废"
+        },
+        "OWNERENAME": {
+          "val": "康媛"
+        },
+        "CANCELENAME": {
+          "val": ""
+        },
+        "TERMINATEDDATE": {
+          "val": ""
+        },
+        "SOURCE": {
+          "val": "选款平台"
+        },
+        "TERMINATORENAME": {
+          "val": ""
+        },
+        "DOCNO": {
+          "val": "SQ0118032800008A"
+        },
+        "COUNT": {
+          "val": "14"
+        },
+        "EXECUTEPRICE": {
+          "val": "1,106.00"
+        },
+        "STATUSTIME": {
+          "val": "2018-03-28 10:23:50"
+        }
+      },
+      {
+        "EXECUTEDCOUNT": {
+          "val": "11"
+        },
+        "STATUSERENAME": {
+          "val": "康媛"
+        },
+        "EXECUTESTATUS": {
+          "val": "已执行"
+        },
+        "TERMINATORREASON": {
+          "val": ""
+        },
+        "ORDERDATE": {
+          "val": "20180328"
+        },
+        "EXECUTORENAME": {
+          "val": "系统管理员"
+        },
+        "LESSEXECUTE": {
+          "val": "0"
+        },
+        "ID": {
+          "val": "408"
+        },
+        "REMARK": {
+          "val": ""
+        },
+        "STOPSTATUS": {
+          "val": "未终止"
+        },
+        "EXECUTEDDATE": {
+          "val": "2018-03-28 10:35:25"
+        },
+        "CREATIONDATE": {
+          "val": "2018-03-28 10:19:35"
+        },
+        "PRICE": {
+          "val": "869.00"
+        },
+        "SUBMITSTATUS": {
+          "val": "已提交"
+        },
+        "RECYCLE_WH_ID": {
+          "val": "杭州正品仓",
+          "reftablename": "CP_C_WAREHOUSE",
+          "reftableid": 23451,
+          "reftabdesc": "仓库档案",
+          "refobjid": 200126625845,
+          "colid": 148905,
+          "isfk": true
+        },
+        "CANCELDATE": {
+          "val": ""
+        },
+        "EXECUTECOUNT": {
+          "val": "11"
+        },
+        "CP_C_STORE_ID": {
+          "val": "[31065]东靖店",
+          "reftablename": "CP_C_STORE",
+          "reftableid": 23296,
+          "reftabdesc": "店仓档案",
+          "refobjid": 200000244157,
+          "colid": 148783,
+          "isfk": true
+        },
+        "ISACTIVE": {
+          "val": "未作废"
+        },
+        "OWNERENAME": {
+          "val": "康媛"
+        },
+        "CANCELENAME": {
+          "val": ""
+        },
+        "TERMINATEDDATE": {
+          "val": ""
+        },
+        "SOURCE": {
+          "val": "选款平台"
+        },
+        "TERMINATORENAME": {
+          "val": ""
+        },
+        "DOCNO": {
+          "val": "SQ0118032800007A"
+        },
+        "COUNT": {
+          "val": "11"
+        },
+        "EXECUTEPRICE": {
+          "val": "869.00"
+        },
+        "STATUSTIME": {
+          "val": "2018-03-28 10:19:35"
+        }
+      },
+      {
+        "EXECUTEDCOUNT": {
+          "val": "7"
+        },
+        "STATUSERENAME": {
+          "val": "康媛"
+        },
+        "EXECUTESTATUS": {
+          "val": "已执行"
+        },
+        "TERMINATORREASON": {
+          "val": ""
+        },
+        "ORDERDATE": {
+          "val": "20180328"
+        },
+        "EXECUTORENAME": {
+          "val": "康媛"
+        },
+        "LESSEXECUTE": {
+          "val": "0"
+        },
+        "ID": {
+          "val": "407"
+        },
+        "REMARK": {
+          "val": ""
+        },
+        "STOPSTATUS": {
+          "val": "未终止"
+        },
+        "EXECUTEDDATE": {
+          "val": "2018-03-28 09:55:43"
+        },
+        "CREATIONDATE": {
+          "val": "2018-03-28 09:54:06"
+        },
+        "PRICE": {
+          "val": "553.00"
+        },
+        "SUBMITSTATUS": {
+          "val": "已提交"
+        },
+        "RECYCLE_WH_ID": {
+          "val": "杭州正品仓",
+          "reftablename": "CP_C_WAREHOUSE",
+          "reftableid": 23451,
+          "reftabdesc": "仓库档案",
+          "refobjid": 200126625845,
+          "colid": 148905,
+          "isfk": true
+        },
+        "CANCELDATE": {
+          "val": ""
+        },
+        "EXECUTECOUNT": {
+          "val": "7"
+        },
+        "CP_C_STORE_ID": {
+          "val": "[31065]东靖店",
+          "reftablename": "CP_C_STORE",
+          "reftableid": 23296,
+          "reftabdesc": "店仓档案",
+          "refobjid": 200000244157,
+          "colid": 148783,
+          "isfk": true
+        },
+        "ISACTIVE": {
+          "val": "未作废"
+        },
+        "OWNERENAME": {
+          "val": "康媛"
+        },
+        "CANCELENAME": {
+          "val": ""
+        },
+        "TERMINATEDDATE": {
+          "val": ""
+        },
+        "SOURCE": {
+          "val": "选款平台"
+        },
+        "TERMINATORENAME": {
+          "val": ""
+        },
+        "DOCNO": {
+          "val": "SQ0118032800006A"
+        },
+        "COUNT": {
+          "val": "7"
+        },
+        "EXECUTEPRICE": {
+          "val": "553.00"
+        },
+        "STATUSTIME": {
+          "val": "2018-03-28 09:54:06"
+        }
+      },
+      {
+        "EXECUTEDCOUNT": {
+          "val": "0"
+        },
+        "STATUSERENAME": {
+          "val": "徐丽君"
+        },
+        "EXECUTESTATUS": {
+          "val": "未执行"
+        },
+        "TERMINATORREASON": {
+          "val": "12"
+        },
+        "ORDERDATE": {
+          "val": "20180328"
+        },
+        "EXECUTORENAME": {
+          "val": ""
+        },
+        "LESSEXECUTE": {
+          "val": "1"
+        },
+        "ID": {
+          "val": "406"
+        },
+        "REMARK": {
+          "val": ""
+        },
+        "STOPSTATUS": {
+          "val": "已终止"
+        },
+        "EXECUTEDDATE": {
+          "val": ""
+        },
+        "CREATIONDATE": {
+          "val": "2018-03-28 09:06:34"
+        },
+        "PRICE": {
+          "val": "79.00"
+        },
+        "SUBMITSTATUS": {
+          "val": "已提交"
+        },
+        "RECYCLE_WH_ID": {
+          "val": "杭州正品仓",
+          "reftablename": "CP_C_WAREHOUSE",
+          "reftableid": 23451,
+          "reftabdesc": "仓库档案",
+          "refobjid": 200126625845,
+          "colid": 148905,
+          "isfk": true
+        },
+        "CANCELDATE": {
+          "val": ""
+        },
+        "EXECUTECOUNT": {
+          "val": "1"
+        },
+        "CP_C_STORE_ID": {
+          "val": "[31056]大昌店",
+          "reftablename": "CP_C_STORE",
+          "reftableid": 23296,
+          "reftabdesc": "店仓档案",
+          "refobjid": 200000244134,
+          "colid": 148783,
+          "isfk": true
+        },
+        "ISACTIVE": {
+          "val": "未作废"
+        },
+        "OWNERENAME": {
+          "val": "徐丽君"
+        },
+        "CANCELENAME": {
+          "val": ""
+        },
+        "TERMINATEDDATE": {
+          "val": "2018-03-28 10:23:24"
+        },
+        "SOURCE": {
+          "val": "选款平台"
+        },
+        "TERMINATORENAME": {
+          "val": "系统管理员"
+        },
+        "DOCNO": {
+          "val": "SQ0118032800005A"
+        },
+        "COUNT": {
+          "val": "1"
+        },
+        "EXECUTEPRICE": {
+          "val": "79.00"
+        },
+        "STATUSTIME": {
+          "val": "2018-03-28 09:06:34"
+        }
+      },
+      {
+        "EXECUTEDCOUNT": {
+          "val": "0"
+        },
+        "STATUSERENAME": {
+          "val": "徐丽君"
+        },
+        "EXECUTESTATUS": {
+          "val": "未执行"
+        },
+        "TERMINATORREASON": {
+          "val": ""
+        },
+        "ORDERDATE": {
+          "val": "20180328"
+        },
+        "EXECUTORENAME": {
+          "val": ""
+        },
+        "LESSEXECUTE": {
+          "val": "100000"
+        },
+        "ID": {
+          "val": "404"
+        },
+        "REMARK": {
+          "val": ""
+        },
+        "STOPSTATUS": {
+          "val": "未终止"
+        },
+        "EXECUTEDDATE": {
+          "val": ""
+        },
+        "CREATIONDATE": {
+          "val": "2018-03-28 09:05:41"
+        },
+        "PRICE": {
+          "val": "7,900,000.00"
+        },
+        "SUBMITSTATUS": {
+          "val": "已提交"
+        },
+        "RECYCLE_WH_ID": {
+          "val": "杭州正品仓",
+          "reftablename": "CP_C_WAREHOUSE",
+          "reftableid": 23451,
+          "reftabdesc": "仓库档案",
+          "refobjid": 200126625845,
+          "colid": 148905,
+          "isfk": true
+        },
+        "CANCELDATE": {
+          "val": ""
+        },
+        "EXECUTECOUNT": {
+          "val": "100,000"
+        },
+        "CP_C_STORE_ID": {
+          "val": "[31050]金汇店",
+          "reftablename": "CP_C_STORE",
+          "reftableid": 23296,
+          "reftabdesc": "店仓档案",
+          "refobjid": 200000244133,
+          "colid": 148783,
+          "isfk": true
+        },
+        "ISACTIVE": {
+          "val": "未作废"
+        },
+        "OWNERENAME": {
+          "val": "徐丽君"
+        },
+        "CANCELENAME": {
+          "val": ""
+        },
+        "TERMINATEDDATE": {
+          "val": ""
+        },
+        "SOURCE": {
+          "val": "选款平台"
+        },
+        "TERMINATORENAME": {
+          "val": ""
+        },
+        "DOCNO": {
+          "val": "SQ0118032800004A"
+        },
+        "COUNT": {
+          "val": "100,000"
+        },
+        "EXECUTEPRICE": {
+          "val": "7,900,000.00"
+        },
+        "STATUSTIME": {
+          "val": "2018-03-28 09:05:41"
+        }
+      },
+      {
+        "EXECUTEDCOUNT": {
+          "val": "0"
+        },
+        "STATUSERENAME": {
+          "val": "徐丽君"
+        },
+        "EXECUTESTATUS": {
+          "val": "已执行"
+        },
+        "TERMINATORREASON": {
+          "val": ""
+        },
+        "ORDERDATE": {
+          "val": "20180326"
+        },
+        "EXECUTORENAME": {
+          "val": "徐丽君"
+        },
+        "LESSEXECUTE": {
+          "val": "0"
+        },
+        "ID": {
+          "val": "300"
+        },
+        "REMARK": {
+          "val": ""
+        },
+        "STOPSTATUS": {
+          "val": "未终止"
+        },
+        "EXECUTEDDATE": {
+          "val": "2018-03-28 15:14:27"
+        },
+        "CREATIONDATE": {
+          "val": "2018-03-26 10:37:43"
+        },
+        "PRICE": {
+          "val": "129.00"
+        },
+        "SUBMITSTATUS": {
+          "val": "已提交"
+        },
+        "RECYCLE_WH_ID": {
+          "val": "杭州正品仓",
+          "reftablename": "CP_C_WAREHOUSE",
+          "reftableid": 23451,
+          "reftabdesc": "仓库档案",
+          "refobjid": 200126625845,
+          "colid": 148905,
+          "isfk": true
+        },
+        "CANCELDATE": {
+          "val": ""
+        },
+        "EXECUTECOUNT": {
+          "val": "0"
+        },
+        "CP_C_STORE_ID": {
+          "val": "[31053]闻喜店",
+          "reftablename": "CP_C_STORE",
+          "reftableid": 23296,
+          "reftabdesc": "店仓档案",
+          "refobjid": 200000244214,
+          "colid": 148783,
+          "isfk": true
+        },
+        "ISACTIVE": {
+          "val": "未作废"
+        },
+        "OWNERENAME": {
+          "val": "徐丽君"
+        },
+        "CANCELENAME": {
+          "val": ""
+        },
+        "TERMINATEDDATE": {
+          "val": ""
+        },
+        "SOURCE": {
+          "val": "选款平台"
+        },
+        "TERMINATORENAME": {
+          "val": ""
+        },
+        "DOCNO": {
+          "val": "SQ0118032600004A"
+        },
+        "COUNT": {
+          "val": "1"
+        },
+        "EXECUTEPRICE": {
+          "val": "0.00"
+        },
+        "STATUSTIME": {
+          "val": "2018-03-26 10:37:44"
+        }
+      },
+      {
+        "EXECUTEDCOUNT": {
+          "val": "0"
+        },
+        "STATUSERENAME": {
+          "val": "徐丽君"
+        },
+        "EXECUTESTATUS": {
+          "val": "未执行"
+        },
+        "TERMINATORREASON": {
+          "val": ""
+        },
+        "ORDERDATE": {
+          "val": "20180326"
+        },
+        "EXECUTORENAME": {
+          "val": ""
+        },
+        "LESSEXECUTE": {
+          "val": "1"
+        },
+        "ID": {
+          "val": "297"
+        },
+        "REMARK": {
+          "val": ""
+        },
+        "STOPSTATUS": {
+          "val": "未终止"
+        },
+        "EXECUTEDDATE": {
+          "val": ""
+        },
+        "CREATIONDATE": {
+          "val": "2018-03-26 10:35:00"
+        },
+        "PRICE": {
+          "val": "129.00"
+        },
+        "SUBMITSTATUS": {
+          "val": "已提交"
+        },
+        "RECYCLE_WH_ID": {
+          "val": "杭州正品仓",
+          "reftablename": "CP_C_WAREHOUSE",
+          "reftableid": 23451,
+          "reftabdesc": "仓库档案",
+          "refobjid": 200126625845,
+          "colid": 148905,
+          "isfk": true
+        },
+        "CANCELDATE": {
+          "val": ""
+        },
+        "EXECUTECOUNT": {
+          "val": "1"
+        },
+        "CP_C_STORE_ID": {
+          "val": "[31053]闻喜店",
+          "reftablename": "CP_C_STORE",
+          "reftableid": 23296,
+          "reftabdesc": "店仓档案",
+          "refobjid": 200000244214,
+          "colid": 148783,
+          "isfk": true
+        },
+        "ISACTIVE": {
+          "val": "未作废"
+        },
+        "OWNERENAME": {
+          "val": "徐丽君"
+        },
+        "CANCELENAME": {
+          "val": ""
+        },
+        "TERMINATEDDATE": {
+          "val": ""
+        },
+        "SOURCE": {
+          "val": "选款平台"
+        },
+        "TERMINATORENAME": {
+          "val": ""
+        },
+        "DOCNO": {
+          "val": "SQ0118032600003A"
+        },
+        "COUNT": {
+          "val": "1"
+        },
+        "EXECUTEPRICE": {
+          "val": "129.00"
+        },
+        "STATUSTIME": {
+          "val": "2018-03-26 10:35:00"
+        }
+      },
+      {
+        "EXECUTEDCOUNT": {
+          "val": "0"
+        },
+        "STATUSERENAME": {
+          "val": "徐丽君"
+        },
+        "EXECUTESTATUS": {
+          "val": "未执行"
+        },
+        "TERMINATORREASON": {
+          "val": ""
+        },
+        "ORDERDATE": {
+          "val": "20180326"
+        },
+        "EXECUTORENAME": {
+          "val": ""
+        },
+        "LESSEXECUTE": {
+          "val": "1"
+        },
+        "ID": {
+          "val": "294"
+        },
+        "REMARK": {
+          "val": ""
+        },
+        "STOPSTATUS": {
+          "val": "未终止"
+        },
+        "EXECUTEDDATE": {
+          "val": ""
+        },
+        "CREATIONDATE": {
+          "val": "2018-03-26 09:47:59"
+        },
+        "PRICE": {
+          "val": "79.00"
+        },
+        "SUBMITSTATUS": {
+          "val": "已提交"
+        },
+        "RECYCLE_WH_ID": {
+          "val": "杭州正品仓",
+          "reftablename": "CP_C_WAREHOUSE",
+          "reftableid": 23451,
+          "reftabdesc": "仓库档案",
+          "refobjid": 200126625845,
+          "colid": 148905,
+          "isfk": true
+        },
+        "CANCELDATE": {
+          "val": ""
+        },
+        "EXECUTECOUNT": {
+          "val": "1"
+        },
+        "CP_C_STORE_ID": {
+          "val": "[31053]闻喜店",
+          "reftablename": "CP_C_STORE",
+          "reftableid": 23296,
+          "reftabdesc": "店仓档案",
+          "refobjid": 200000244214,
+          "colid": 148783,
+          "isfk": true
+        },
+        "ISACTIVE": {
+          "val": "未作废"
+        },
+        "OWNERENAME": {
+          "val": "徐丽君"
+        },
+        "CANCELENAME": {
+          "val": ""
+        },
+        "TERMINATEDDATE": {
+          "val": ""
+        },
+        "SOURCE": {
+          "val": "选款平台"
+        },
+        "TERMINATORENAME": {
+          "val": ""
+        },
+        "DOCNO": {
+          "val": "SQ0118032600002A"
+        },
+        "COUNT": {
+          "val": "1"
+        },
+        "EXECUTEPRICE": {
+          "val": "79.00"
+        },
+        "STATUSTIME": {
+          "val": "2018-03-26 09:47:59"
+        }
+      },
+      {
+        "EXECUTEDCOUNT": {
+          "val": "0"
+        },
+        "STATUSERENAME": {
+          "val": "徐丽君"
+        },
+        "EXECUTESTATUS": {
+          "val": "未执行"
+        },
+        "TERMINATORREASON": {
+          "val": ""
+        },
+        "ORDERDATE": {
+          "val": "20180326"
+        },
+        "EXECUTORENAME": {
+          "val": ""
+        },
+        "LESSEXECUTE": {
+          "val": "1"
+        },
+        "ID": {
+          "val": "293"
+        },
+        "REMARK": {
+          "val": ""
+        },
+        "STOPSTATUS": {
+          "val": "未终止"
+        },
+        "EXECUTEDDATE": {
+          "val": ""
+        },
+        "CREATIONDATE": {
+          "val": "2018-03-26 09:34:41"
+        },
+        "PRICE": {
+          "val": "79.00"
+        },
+        "SUBMITSTATUS": {
+          "val": "已提交"
+        },
+        "RECYCLE_WH_ID": {
+          "val": "杭州正品仓",
+          "reftablename": "CP_C_WAREHOUSE",
+          "reftableid": 23451,
+          "reftabdesc": "仓库档案",
+          "refobjid": 200126625845,
+          "colid": 148905,
+          "isfk": true
+        },
+        "CANCELDATE": {
+          "val": ""
+        },
+        "EXECUTECOUNT": {
+          "val": "1"
+        },
+        "CP_C_STORE_ID": {
+          "val": "[31053]闻喜店",
+          "reftablename": "CP_C_STORE",
+          "reftableid": 23296,
+          "reftabdesc": "店仓档案",
+          "refobjid": 200000244214,
+          "colid": 148783,
+          "isfk": true
+        },
+        "ISACTIVE": {
+          "val": "未作废"
+        },
+        "OWNERENAME": {
+          "val": "徐丽君"
+        },
+        "CANCELENAME": {
+          "val": ""
+        },
+        "TERMINATEDDATE": {
+          "val": ""
+        },
+        "SOURCE": {
+          "val": "选款平台"
+        },
+        "TERMINATORENAME": {
+          "val": ""
+        },
+        "DOCNO": {
+          "val": "SQ0118032600001A"
+        },
+        "COUNT": {
+          "val": "1"
+        },
+        "EXECUTEPRICE": {
+          "val": "79.00"
+        },
+        "STATUSTIME": {
+          "val": "2018-03-26 09:34:41"
+        }
+      },
+      {
+        "EXECUTEDCOUNT": {
+          "val": "0"
+        },
+        "STATUSERENAME": {
+          "val": "张莉霞"
+        },
+        "EXECUTESTATUS": {
+          "val": "未执行"
+        },
+        "TERMINATORREASON": {
+          "val": ""
+        },
+        "ORDERDATE": {
+          "val": "20180324"
+        },
+        "EXECUTORENAME": {
+          "val": ""
+        },
+        "LESSEXECUTE": {
+          "val": "4"
+        },
+        "ID": {
+          "val": "292"
+        },
+        "REMARK": {
+          "val": ""
+        },
+        "STOPSTATUS": {
+          "val": "未终止"
+        },
+        "EXECUTEDDATE": {
+          "val": ""
+        },
+        "CREATIONDATE": {
+          "val": "2018-03-24 13:29:12"
+        },
+        "PRICE": {
+          "val": "316.00"
+        },
+        "SUBMITSTATUS": {
+          "val": "已提交"
+        },
+        "RECYCLE_WH_ID": {
+          "val": "杭州正品仓",
+          "reftablename": "CP_C_WAREHOUSE",
+          "reftableid": 23451,
+          "reftabdesc": "仓库档案",
+          "refobjid": 200126625845,
+          "colid": 148905,
+          "isfk": true
+        },
+        "CANCELDATE": {
+          "val": ""
+        },
+        "EXECUTECOUNT": {
+          "val": "4"
+        },
+        "CP_C_STORE_ID": {
+          "val": "[31005]环城1店",
+          "reftablename": "CP_C_STORE",
+          "reftableid": 23296,
+          "reftabdesc": "店仓档案",
+          "refobjid": 200000244130,
+          "colid": 148783,
+          "isfk": true
+        },
+        "ISACTIVE": {
+          "val": "未作废"
+        },
+        "OWNERENAME": {
+          "val": "张莉霞"
+        },
+        "CANCELENAME": {
+          "val": ""
+        },
+        "TERMINATEDDATE": {
+          "val": ""
+        },
+        "SOURCE": {
+          "val": "选款平台"
+        },
+        "TERMINATORENAME": {
+          "val": ""
+        },
+        "DOCNO": {
+          "val": "SQ0118032400001A"
+        },
+        "COUNT": {
+          "val": "4"
+        },
+        "EXECUTEPRICE": {
+          "val": "316.00"
+        },
+        "STATUSTIME": {
+          "val": "2018-03-24 13:29:12"
+        }
+      },
+      {
+        "EXECUTEDCOUNT": {
+          "val": "0"
+        },
+        "STATUSERENAME": {
+          "val": "系统管理员"
+        },
+        "EXECUTESTATUS": {
+          "val": "未执行"
+        },
+        "TERMINATORREASON": {
+          "val": ""
+        },
+        "ORDERDATE": {
+          "val": "20180323"
+        },
+        "EXECUTORENAME": {
+          "val": ""
+        },
+        "LESSEXECUTE": {
+          "val": "1"
+        },
+        "ID": {
+          "val": "291"
+        },
+        "REMARK": {
+          "val": ""
+        },
+        "STOPSTATUS": {
+          "val": "未终止"
+        },
+        "EXECUTEDDATE": {
+          "val": ""
+        },
+        "CREATIONDATE": {
+          "val": "2018-03-23 19:24:22"
+        },
+        "PRICE": {
+          "val": "79.00"
+        },
+        "SUBMITSTATUS": {
+          "val": "已提交"
+        },
+        "RECYCLE_WH_ID": {
+          "val": "杭州正品仓",
+          "reftablename": "CP_C_WAREHOUSE",
+          "reftableid": 23451,
+          "reftabdesc": "仓库档案",
+          "refobjid": 200126625845,
+          "colid": 148905,
+          "isfk": true
+        },
+        "CANCELDATE": {
+          "val": ""
+        },
+        "EXECUTECOUNT": {
+          "val": "1"
+        },
+        "CP_C_STORE_ID": {
+          "val": "[31003]东川店",
+          "reftablename": "CP_C_STORE",
+          "reftableid": 23296,
+          "reftabdesc": "店仓档案",
+          "refobjid": 200000244112,
+          "colid": 148783,
+          "isfk": true
+        },
+        "ISACTIVE": {
+          "val": "未作废"
+        },
+        "OWNERENAME": {
+          "val": "系统管理员"
+        },
+        "CANCELENAME": {
+          "val": ""
+        },
+        "TERMINATEDDATE": {
+          "val": ""
+        },
+        "SOURCE": {
+          "val": "选款平台"
+        },
+        "TERMINATORENAME": {
+          "val": ""
+        },
+        "DOCNO": {
+          "val": "SQ0118032300023A"
+        },
+        "COUNT": {
+          "val": "1"
+        },
+        "EXECUTEPRICE": {
+          "val": "79.00"
+        },
+        "STATUSTIME": {
+          "val": "2018-03-23 19:24:24"
+        }
+      },
+      {
+        "EXECUTEDCOUNT": {
+          "val": "0"
+        },
+        "STATUSERENAME": {
+          "val": "张莉霞"
+        },
+        "EXECUTESTATUS": {
+          "val": "未执行"
+        },
+        "TERMINATORREASON": {
+          "val": ""
+        },
+        "ORDERDATE": {
+          "val": "20180323"
+        },
+        "EXECUTORENAME": {
+          "val": ""
+        },
+        "LESSEXECUTE": {
+          "val": "3"
+        },
+        "ID": {
+          "val": "290"
+        },
+        "REMARK": {
+          "val": ""
+        },
+        "STOPSTATUS": {
+          "val": "未终止"
+        },
+        "EXECUTEDDATE": {
+          "val": ""
+        },
+        "CREATIONDATE": {
+          "val": "2018-03-23 18:05:13"
+        },
+        "PRICE": {
+          "val": "237.00"
+        },
+        "SUBMITSTATUS": {
+          "val": "已提交"
+        },
+        "RECYCLE_WH_ID": {
+          "val": "杭州正品仓",
+          "reftablename": "CP_C_WAREHOUSE",
+          "reftableid": 23451,
+          "reftabdesc": "仓库档案",
+          "refobjid": 200126625845,
+          "colid": 148905,
+          "isfk": true
+        },
+        "CANCELDATE": {
+          "val": ""
+        },
+        "EXECUTECOUNT": {
+          "val": "3"
+        },
+        "CP_C_STORE_ID": {
+          "val": "[31012]西乐店",
+          "reftablename": "CP_C_STORE",
+          "reftableid": 23296,
+          "reftabdesc": "店仓档案",
+          "refobjid": 200000244149,
+          "colid": 148783,
+          "isfk": true
+        },
+        "ISACTIVE": {
+          "val": "未作废"
+        },
+        "OWNERENAME": {
+          "val": "张莉霞"
+        },
+        "CANCELENAME": {
+          "val": ""
+        },
+        "TERMINATEDDATE": {
+          "val": ""
+        },
+        "SOURCE": {
+          "val": "选款平台"
+        },
+        "TERMINATORENAME": {
+          "val": ""
+        },
+        "DOCNO": {
+          "val": "SQ0118032300022A"
+        },
+        "COUNT": {
+          "val": "3"
+        },
+        "EXECUTEPRICE": {
+          "val": "237.00"
+        },
+        "STATUSTIME": {
+          "val": "2018-03-23 18:05:13"
+        }
+      },
+      {
+        "EXECUTEDCOUNT": {
+          "val": "0"
+        },
+        "STATUSERENAME": {
+          "val": "徐丽君"
+        },
+        "EXECUTESTATUS": {
+          "val": "未执行"
+        },
+        "TERMINATORREASON": {
+          "val": ""
+        },
+        "ORDERDATE": {
+          "val": "20180323"
+        },
+        "EXECUTORENAME": {
+          "val": ""
+        },
+        "LESSEXECUTE": {
+          "val": "1"
+        },
+        "ID": {
+          "val": "288"
+        },
+        "REMARK": {
+          "val": ""
+        },
+        "STOPSTATUS": {
+          "val": "未终止"
+        },
+        "EXECUTEDDATE": {
+          "val": ""
+        },
+        "CREATIONDATE": {
+          "val": "2018-03-23 17:52:02"
+        },
+        "PRICE": {
+          "val": "79.00"
+        },
+        "SUBMITSTATUS": {
+          "val": "已提交"
+        },
+        "RECYCLE_WH_ID": {
+          "val": "杭州正品仓",
+          "reftablename": "CP_C_WAREHOUSE",
+          "reftableid": 23451,
+          "reftabdesc": "仓库档案",
+          "refobjid": 200126625845,
+          "colid": 148905,
+          "isfk": true
+        },
+        "CANCELDATE": {
+          "val": ""
+        },
+        "EXECUTECOUNT": {
+          "val": "1"
+        },
+        "CP_C_STORE_ID": {
+          "val": "[31058]雪松店",
+          "reftablename": "CP_C_STORE",
+          "reftableid": 23296,
+          "reftabdesc": "店仓档案",
+          "refobjid": 200000244173,
+          "colid": 148783,
+          "isfk": true
+        },
+        "ISACTIVE": {
+          "val": "未作废"
+        },
+        "OWNERENAME": {
+          "val": "徐丽君"
+        },
+        "CANCELENAME": {
+          "val": ""
+        },
+        "TERMINATEDDATE": {
+          "val": ""
+        },
+        "SOURCE": {
+          "val": "选款平台"
+        },
+        "TERMINATORENAME": {
+          "val": ""
+        },
+        "DOCNO": {
+          "val": "SQ0118032300020A"
+        },
+        "COUNT": {
+          "val": "1"
+        },
+        "EXECUTEPRICE": {
+          "val": "79.00"
+        },
+        "STATUSTIME": {
+          "val": "2018-03-23 17:52:02"
+        }
+      },
+      {
+        "EXECUTEDCOUNT": {
+          "val": "0"
+        },
+        "STATUSERENAME": {
+          "val": "徐丽君"
+        },
+        "EXECUTESTATUS": {
+          "val": "未执行"
+        },
+        "TERMINATORREASON": {
+          "val": ""
+        },
+        "ORDERDATE": {
+          "val": "20180323"
+        },
+        "EXECUTORENAME": {
+          "val": ""
+        },
+        "LESSEXECUTE": {
+          "val": "10"
+        },
+        "ID": {
+          "val": "286"
+        },
+        "REMARK": {
+          "val": ""
+        },
+        "STOPSTATUS": {
+          "val": "未终止"
+        },
+        "EXECUTEDDATE": {
+          "val": ""
+        },
+        "CREATIONDATE": {
+          "val": "2018-03-23 17:14:15"
+        },
+        "PRICE": {
+          "val": "790.00"
+        },
+        "SUBMITSTATUS": {
+          "val": "已提交"
+        },
+        "RECYCLE_WH_ID": {
+          "val": "杭州正品仓",
+          "reftablename": "CP_C_WAREHOUSE",
+          "reftableid": 23451,
+          "reftabdesc": "仓库档案",
+          "refobjid": 200126625845,
+          "colid": 148905,
+          "isfk": true
+        },
+        "CANCELDATE": {
+          "val": ""
+        },
+        "EXECUTECOUNT": {
+          "val": "10"
+        },
+        "CP_C_STORE_ID": {
+          "val": "[31019]年家店",
+          "reftablename": "CP_C_STORE",
+          "reftableid": 23296,
+          "reftabdesc": "店仓档案",
+          "refobjid": 200000244151,
+          "colid": 148783,
+          "isfk": true
+        },
+        "ISACTIVE": {
+          "val": "未作废"
+        },
+        "OWNERENAME": {
+          "val": "徐丽君"
+        },
+        "CANCELENAME": {
+          "val": ""
+        },
+        "TERMINATEDDATE": {
+          "val": ""
+        },
+        "SOURCE": {
+          "val": "选款平台"
+        },
+        "TERMINATORENAME": {
+          "val": ""
+        },
+        "DOCNO": {
+          "val": "SQ0118032300018A"
+        },
+        "COUNT": {
+          "val": "10"
+        },
+        "EXECUTEPRICE": {
+          "val": "790.00"
+        },
+        "STATUSTIME": {
+          "val": "2018-03-23 17:14:15"
+        }
+      },
+      {
+        "EXECUTEDCOUNT": {
+          "val": "0"
+        },
+        "STATUSERENAME": {
+          "val": "系统管理员"
+        },
+        "EXECUTESTATUS": {
+          "val": "未执行"
+        },
+        "TERMINATORREASON": {
+          "val": ""
+        },
+        "ORDERDATE": {
+          "val": "20180323"
+        },
+        "EXECUTORENAME": {
+          "val": ""
+        },
+        "LESSEXECUTE": {
+          "val": "3"
+        },
+        "ID": {
+          "val": "285"
+        },
+        "REMARK": {
+          "val": ""
+        },
+        "STOPSTATUS": {
+          "val": "未终止"
+        },
+        "EXECUTEDDATE": {
+          "val": ""
+        },
+        "CREATIONDATE": {
+          "val": "2018-03-23 17:10:00"
+        },
+        "PRICE": {
+          "val": "237.00"
+        },
+        "SUBMITSTATUS": {
+          "val": "已提交"
+        },
+        "RECYCLE_WH_ID": {
+          "val": "杭州正品仓",
+          "reftablename": "CP_C_WAREHOUSE",
+          "reftableid": 23451,
+          "reftabdesc": "仓库档案",
+          "refobjid": 200126625845,
+          "colid": 148905,
+          "isfk": true
+        },
+        "CANCELDATE": {
+          "val": ""
+        },
+        "EXECUTECOUNT": {
+          "val": "3"
+        },
+        "CP_C_STORE_ID": {
+          "val": "[31058]雪松店",
+          "reftablename": "CP_C_STORE",
+          "reftableid": 23296,
+          "reftabdesc": "店仓档案",
+          "refobjid": 200000244173,
+          "colid": 148783,
+          "isfk": true
+        },
+        "ISACTIVE": {
+          "val": "未作废"
+        },
+        "OWNERENAME": {
+          "val": "系统管理员"
+        },
+        "CANCELENAME": {
+          "val": ""
+        },
+        "TERMINATEDDATE": {
+          "val": ""
+        },
+        "SOURCE": {
+          "val": "选款平台"
+        },
+        "TERMINATORENAME": {
+          "val": ""
+        },
+        "DOCNO": {
+          "val": "SQ0118032300017A"
+        },
+        "COUNT": {
+          "val": "3"
+        },
+        "EXECUTEPRICE": {
+          "val": "237.00"
+        },
+        "STATUSTIME": {
+          "val": "2018-03-23 17:10:00"
+        }
+      },
+      {
+        "EXECUTEDCOUNT": {
+          "val": "0"
+        },
+        "STATUSERENAME": {
+          "val": "系统管理员"
+        },
+        "EXECUTESTATUS": {
+          "val": "未执行"
+        },
+        "TERMINATORREASON": {
+          "val": ""
+        },
+        "ORDERDATE": {
+          "val": "20180323"
+        },
+        "EXECUTORENAME": {
+          "val": ""
+        },
+        "LESSEXECUTE": {
+          "val": "5"
+        },
+        "ID": {
+          "val": "284"
+        },
+        "REMARK": {
+          "val": ""
+        },
+        "STOPSTATUS": {
+          "val": "未终止"
+        },
+        "EXECUTEDDATE": {
+          "val": ""
+        },
+        "CREATIONDATE": {
+          "val": "2018-03-23 17:08:24"
+        },
+        "PRICE": {
+          "val": "395.00"
+        },
+        "SUBMITSTATUS": {
+          "val": "已提交"
+        },
+        "RECYCLE_WH_ID": {
+          "val": "杭州正品仓",
+          "reftablename": "CP_C_WAREHOUSE",
+          "reftableid": 23451,
+          "reftabdesc": "仓库档案",
+          "refobjid": 200126625845,
+          "colid": 148905,
+          "isfk": true
+        },
+        "CANCELDATE": {
+          "val": ""
+        },
+        "EXECUTECOUNT": {
+          "val": "5"
+        },
+        "CP_C_STORE_ID": {
+          "val": "[000]快鱼连锁",
+          "reftablename": "CP_C_STORE",
+          "reftableid": 23296,
+          "reftabdesc": "店仓档案",
+          "refobjid": 200126342809,
+          "colid": 148783,
+          "isfk": true
+        },
+        "ISACTIVE": {
+          "val": "未作废"
+        },
+        "OWNERENAME": {
+          "val": "系统管理员"
+        },
+        "CANCELENAME": {
+          "val": ""
+        },
+        "TERMINATEDDATE": {
+          "val": ""
+        },
+        "SOURCE": {
+          "val": "选款平台"
+        },
+        "TERMINATORENAME": {
+          "val": ""
+        },
+        "DOCNO": {
+          "val": "SQ0118032300016A"
+        },
+        "COUNT": {
+          "val": "5"
+        },
+        "EXECUTEPRICE": {
+          "val": "395.00"
+        },
+        "STATUSTIME": {
+          "val": "2018-03-23 17:08:24"
+        }
+      },
+      {
+        "EXECUTEDCOUNT": {
+          "val": "0"
+        },
+        "STATUSERENAME": {
+          "val": "系统管理员"
+        },
+        "EXECUTESTATUS": {
+          "val": "未执行"
+        },
+        "TERMINATORREASON": {
+          "val": ""
+        },
+        "ORDERDATE": {
+          "val": "20180323"
+        },
+        "EXECUTORENAME": {
+          "val": ""
+        },
+        "LESSEXECUTE": {
+          "val": "1"
+        },
+        "ID": {
+          "val": "283"
+        },
+        "REMARK": {
+          "val": ""
+        },
+        "STOPSTATUS": {
+          "val": "未终止"
+        },
+        "EXECUTEDDATE": {
+          "val": ""
+        },
+        "CREATIONDATE": {
+          "val": "2018-03-23 17:07:38"
+        },
+        "PRICE": {
+          "val": "79.00"
+        },
+        "SUBMITSTATUS": {
+          "val": "已提交"
+        },
+        "RECYCLE_WH_ID": {
+          "val": "杭州正品仓",
+          "reftablename": "CP_C_WAREHOUSE",
+          "reftableid": 23451,
+          "reftabdesc": "仓库档案",
+          "refobjid": 200126625845,
+          "colid": 148905,
+          "isfk": true
+        },
+        "CANCELDATE": {
+          "val": ""
+        },
+        "EXECUTECOUNT": {
+          "val": "1"
+        },
+        "CP_C_STORE_ID": {
+          "val": "[31058]雪松店",
+          "reftablename": "CP_C_STORE",
+          "reftableid": 23296,
+          "reftabdesc": "店仓档案",
+          "refobjid": 200000244173,
+          "colid": 148783,
+          "isfk": true
+        },
+        "ISACTIVE": {
+          "val": "未作废"
+        },
+        "OWNERENAME": {
+          "val": "系统管理员"
+        },
+        "CANCELENAME": {
+          "val": ""
+        },
+        "TERMINATEDDATE": {
+          "val": ""
+        },
+        "SOURCE": {
+          "val": "选款平台"
+        },
+        "TERMINATORENAME": {
+          "val": ""
+        },
+        "DOCNO": {
+          "val": "SQ0118032300015A"
+        },
+        "COUNT": {
+          "val": "1"
+        },
+        "EXECUTEPRICE": {
+          "val": "79.00"
+        },
+        "STATUSTIME": {
+          "val": "2018-03-23 17:07:38"
+        }
+      },
+      {
+        "EXECUTEDCOUNT": {
+          "val": "3"
+        },
+        "STATUSERENAME": {
+          "val": "系统管理员"
+        },
+        "EXECUTESTATUS": {
+          "val": "已执行"
+        },
+        "TERMINATORREASON": {
+          "val": ""
+        },
+        "ORDERDATE": {
+          "val": "20180323"
+        },
+        "EXECUTORENAME": {
+          "val": "徐丽君"
+        },
+        "LESSEXECUTE": {
+          "val": "0"
+        },
+        "ID": {
+          "val": "282"
+        },
+        "REMARK": {
+          "val": ""
+        },
+        "STOPSTATUS": {
+          "val": "未终止"
+        },
+        "EXECUTEDDATE": {
+          "val": "2018-03-23 17:49:28"
+        },
+        "CREATIONDATE": {
+          "val": "2018-03-23 17:05:16"
+        },
+        "PRICE": {
+          "val": "237.00"
+        },
+        "SUBMITSTATUS": {
+          "val": "已提交"
+        },
+        "RECYCLE_WH_ID": {
+          "val": "杭州正品仓",
+          "reftablename": "CP_C_WAREHOUSE",
+          "reftableid": 23451,
+          "reftabdesc": "仓库档案",
+          "refobjid": 200126625845,
+          "colid": 148905,
+          "isfk": true
+        },
+        "CANCELDATE": {
+          "val": ""
+        },
+        "EXECUTECOUNT": {
+          "val": "3"
+        },
+        "CP_C_STORE_ID": {
+          "val": "[31050]金汇店",
+          "reftablename": "CP_C_STORE",
+          "reftableid": 23296,
+          "reftabdesc": "店仓档案",
+          "refobjid": 200000244133,
+          "colid": 148783,
+          "isfk": true
+        },
+        "ISACTIVE": {
+          "val": "未作废"
+        },
+        "OWNERENAME": {
+          "val": "系统管理员"
+        },
+        "CANCELENAME": {
+          "val": ""
+        },
+        "TERMINATEDDATE": {
+          "val": ""
+        },
+        "SOURCE": {
+          "val": "选款平台"
+        },
+        "TERMINATORENAME": {
+          "val": ""
+        },
+        "DOCNO": {
+          "val": "SQ0118032300014A"
+        },
+        "COUNT": {
+          "val": "3"
+        },
+        "EXECUTEPRICE": {
+          "val": "237.00"
+        },
+        "STATUSTIME": {
+          "val": "2018-03-23 17:05:17"
+        }
+      },
+      {
+        "EXECUTEDCOUNT": {
+          "val": "0"
+        },
+        "STATUSERENAME": {
+          "val": "系统管理员"
+        },
+        "EXECUTESTATUS": {
+          "val": "未执行"
+        },
+        "TERMINATORREASON": {
+          "val": ""
+        },
+        "ORDERDATE": {
+          "val": "20180323"
+        },
+        "EXECUTORENAME": {
+          "val": ""
+        },
+        "LESSEXECUTE": {
+          "val": "2"
+        },
+        "ID": {
+          "val": "281"
+        },
+        "REMARK": {
+          "val": ""
+        },
+        "STOPSTATUS": {
+          "val": "未终止"
+        },
+        "EXECUTEDDATE": {
+          "val": ""
+        },
+        "CREATIONDATE": {
+          "val": "2018-03-23 16:17:25"
+        },
+        "PRICE": {
+          "val": "158.00"
+        },
+        "SUBMITSTATUS": {
+          "val": "已提交"
+        },
+        "RECYCLE_WH_ID": {
+          "val": "杭州正品仓",
+          "reftablename": "CP_C_WAREHOUSE",
+          "reftableid": 23451,
+          "reftabdesc": "仓库档案",
+          "refobjid": 200126625845,
+          "colid": 148905,
+          "isfk": true
+        },
+        "CANCELDATE": {
+          "val": ""
+        },
+        "EXECUTECOUNT": {
+          "val": "2"
+        },
+        "CP_C_STORE_ID": {
+          "val": "[31039]奉城店",
+          "reftablename": "CP_C_STORE",
+          "reftableid": 23296,
+          "reftabdesc": "店仓档案",
+          "refobjid": 200000244132,
+          "colid": 148783,
+          "isfk": true
+        },
+        "ISACTIVE": {
+          "val": "未作废"
+        },
+        "OWNERENAME": {
+          "val": "系统管理员"
+        },
+        "CANCELENAME": {
+          "val": ""
+        },
+        "TERMINATEDDATE": {
+          "val": ""
+        },
+        "SOURCE": {
+          "val": "选款平台"
+        },
+        "TERMINATORENAME": {
+          "val": ""
+        },
+        "DOCNO": {
+          "val": "SQ0118032300013A"
+        },
+        "COUNT": {
+          "val": "2"
+        },
+        "EXECUTEPRICE": {
+          "val": "158.00"
+        },
+        "STATUSTIME": {
+          "val": "2018-03-23 16:17:26"
+        }
+      },
+      {
+        "EXECUTEDCOUNT": {
+          "val": "3"
+        },
+        "STATUSERENAME": {
+          "val": "系统管理员"
+        },
+        "EXECUTESTATUS": {
+          "val": "已执行"
+        },
+        "TERMINATORREASON": {
+          "val": ""
+        },
+        "ORDERDATE": {
+          "val": "20180323"
+        },
+        "EXECUTORENAME": {
+          "val": "系统管理员"
+        },
+        "LESSEXECUTE": {
+          "val": "0"
+        },
+        "ID": {
+          "val": "280"
+        },
+        "REMARK": {
+          "val": ""
+        },
+        "STOPSTATUS": {
+          "val": "未终止"
+        },
+        "EXECUTEDDATE": {
+          "val": "2018-03-23 13:27:19"
+        },
+        "CREATIONDATE": {
+          "val": "2018-03-23 13:26:30"
+        },
+        "PRICE": {
+          "val": "1,027.00"
+        },
+        "SUBMITSTATUS": {
+          "val": "已提交"
+        },
+        "RECYCLE_WH_ID": {
+          "val": "杭州正品仓",
+          "reftablename": "CP_C_WAREHOUSE",
+          "reftableid": 23451,
+          "reftabdesc": "仓库档案",
+          "refobjid": 200126625845,
+          "colid": 148905,
+          "isfk": true
+        },
+        "CANCELDATE": {
+          "val": ""
+        },
+        "EXECUTECOUNT": {
+          "val": "3"
+        },
+        "CP_C_STORE_ID": {
+          "val": "[31004]城中店",
+          "reftablename": "CP_C_STORE",
+          "reftableid": 23296,
+          "reftabdesc": "店仓档案",
+          "refobjid": 200000244070,
+          "colid": 148783,
+          "isfk": true
+        },
+        "ISACTIVE": {
+          "val": "未作废"
+        },
+        "OWNERENAME": {
+          "val": "系统管理员"
+        },
+        "CANCELENAME": {
+          "val": ""
+        },
+        "TERMINATEDDATE": {
+          "val": ""
+        },
+        "SOURCE": {
+          "val": "选款平台"
+        },
+        "TERMINATORENAME": {
+          "val": ""
+        },
+        "DOCNO": {
+          "val": "SQ0118032300012A"
+        },
+        "COUNT": {
+          "val": "13"
+        },
+        "EXECUTEPRICE": {
+          "val": "237.00"
+        },
+        "STATUSTIME": {
+          "val": "2018-03-23 13:26:30"
+        }
+      },
+      {
+        "EXECUTEDCOUNT": {
+          "val": "0"
+        },
+        "STATUSERENAME": {
+          "val": "高健"
+        },
+        "EXECUTESTATUS": {
+          "val": "未执行"
+        },
+        "TERMINATORREASON": {
+          "val": "123"
+        },
+        "ORDERDATE": {
+          "val": "20180323"
+        },
+        "EXECUTORENAME": {
+          "val": ""
+        },
+        "LESSEXECUTE": {
+          "val": "4"
+        },
+        "ID": {
+          "val": "279"
+        },
+        "REMARK": {
+          "val": ""
+        },
+        "STOPSTATUS": {
+          "val": "已终止"
+        },
+        "EXECUTEDDATE": {
+          "val": ""
+        },
+        "CREATIONDATE": {
+          "val": "2018-03-23 10:55:12"
+        },
+        "PRICE": {
+          "val": "316.00"
+        },
+        "SUBMITSTATUS": {
+          "val": "已提交"
+        },
+        "RECYCLE_WH_ID": {
+          "val": "杭州正品仓",
+          "reftablename": "CP_C_WAREHOUSE",
+          "reftableid": 23451,
+          "reftabdesc": "仓库档案",
+          "refobjid": 200126625845,
+          "colid": 148905,
+          "isfk": true
+        },
+        "CANCELDATE": {
+          "val": ""
+        },
+        "EXECUTECOUNT": {
+          "val": "4"
+        },
+        "CP_C_STORE_ID": {
+          "val": "[33042]学林店",
+          "reftablename": "CP_C_STORE",
+          "reftableid": 23296,
+          "reftabdesc": "店仓档案",
+          "refobjid": 200000243734,
+          "colid": 148783,
+          "isfk": true
+        },
+        "ISACTIVE": {
+          "val": "未作废"
+        },
+        "OWNERENAME": {
+          "val": "高健"
+        },
+        "CANCELENAME": {
+          "val": ""
+        },
+        "TERMINATEDDATE": {
+          "val": "2018-03-23 13:28:09"
+        },
+        "SOURCE": {
+          "val": "选款平台"
+        },
+        "TERMINATORENAME": {
+          "val": "系统管理员"
+        },
+        "DOCNO": {
+          "val": "SQ0118032300011A"
+        },
+        "COUNT": {
+          "val": "4"
+        },
+        "EXECUTEPRICE": {
+          "val": "316.00"
+        },
+        "STATUSTIME": {
+          "val": "2018-03-23 10:55:12"
+        }
+      },
+      {
+        "EXECUTEDCOUNT": {
+          "val": "60"
+        },
+        "STATUSERENAME": {
+          "val": "徐丽君"
+        },
+        "EXECUTESTATUS": {
+          "val": "已执行"
+        },
+        "TERMINATORREASON": {
+          "val": ""
+        },
+        "ORDERDATE": {
+          "val": "20180323"
+        },
+        "EXECUTORENAME": {
+          "val": "徐丽君"
+        },
+        "LESSEXECUTE": {
+          "val": "0"
+        },
+        "ID": {
+          "val": "277"
+        },
+        "REMARK": {
+          "val": ""
+        },
+        "STOPSTATUS": {
+          "val": "未终止"
+        },
+        "EXECUTEDDATE": {
+          "val": "2018-03-23 10:25:54"
+        },
+        "CREATIONDATE": {
+          "val": "2018-03-23 10:24:08"
+        },
+        "PRICE": {
+          "val": "7,900.00"
+        },
+        "SUBMITSTATUS": {
+          "val": "已提交"
+        },
+        "RECYCLE_WH_ID": {
+          "val": "杭州正品仓",
+          "reftablename": "CP_C_WAREHOUSE",
+          "reftableid": 23451,
+          "reftabdesc": "仓库档案",
+          "refobjid": 200126625845,
+          "colid": 148905,
+          "isfk": true
+        },
+        "CANCELDATE": {
+          "val": ""
+        },
+        "EXECUTECOUNT": {
+          "val": "60"
+        },
+        "CP_C_STORE_ID": {
+          "val": "[31004]城中店",
+          "reftablename": "CP_C_STORE",
+          "reftableid": 23296,
+          "reftabdesc": "店仓档案",
+          "refobjid": 200000244070,
+          "colid": 148783,
+          "isfk": true
+        },
+        "ISACTIVE": {
+          "val": "未作废"
+        },
+        "OWNERENAME": {
+          "val": "徐丽君"
+        },
+        "CANCELENAME": {
+          "val": ""
+        },
+        "TERMINATEDDATE": {
+          "val": ""
+        },
+        "SOURCE": {
+          "val": "选款平台"
+        },
+        "TERMINATORENAME": {
+          "val": ""
+        },
+        "DOCNO": {
+          "val": "SQ0118032300009A"
+        },
+        "COUNT": {
+          "val": "100"
+        },
+        "EXECUTEPRICE": {
+          "val": "4,740.00"
+        },
+        "STATUSTIME": {
+          "val": "2018-03-23 10:24:08"
+        }
+      }
+    ],
+    "selectrange": [
+      10,
+      20,
+      30,
+      50,
+      100
+    ],
+    "queryDesc": " (作废 = 未作废) ",
+    "defaultrange": 50,
+    "objdistype": "object"
+  }
+}

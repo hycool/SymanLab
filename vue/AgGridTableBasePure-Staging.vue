@@ -219,7 +219,7 @@
        */
       fetchFCData() {
         const self = this;
-        fetch('./assets/fc.data4.json').then(res => {
+        fetch('./assets/fc.data5.json').then(res => {
           res.json().then(data => {
             const { tabth, row } = data.datas;
             data.datas.deleteFailInfo = [

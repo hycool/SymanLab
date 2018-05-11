@@ -251,7 +251,7 @@ sequenceComponent.prototype.init = function(params) {
   const eGui = document.createElement('span');
   this.eGui = eGui;
   const valueOfId = params.data ? params.data.ID.val : '';
-  const template = valueOfId === '合计' || valueOfId === '统计' ? valueOfId :`<span style="color: #0f8ee9" data-target-tag="rowIndex">${params.rowIndex + 1 + params.options.datas.start}</span>`;
+  const template = valueOfId === '合计' || valueOfId === '统计' ? valueOfId :`<span style="color: #0f8ee9" data-target-tag="rowIndex">${params.rowIndex + 1 + parseInt(params.options.datas.start, 10)}</span>`;
   eGui.innerHTML = template;
 
   // for tooltip icon
@@ -854,6 +854,11 @@ const agTable = (agGridTableContainer, options) => {
   const { api, columnApi } = gridOptions;
   agTable.api = api;
   agTable.columnApi = columnApi;
+
+  // 清空数据
+  agTable.cleanRows = () => {
+    api.setRowData([]);
+  };
 
   // 设置columnDefs
   agTable.setCols = (data) => {
