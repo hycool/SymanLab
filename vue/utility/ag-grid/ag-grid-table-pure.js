@@ -10,8 +10,10 @@ LicenseManager.setLicenseKey("Evaluation_License_Valid_Until_6_June_2018__MTUyOD
 const cssFeatures = {
   hover: 'ag-syman-hover',
   imagePreviewBox: 'image-preview-box',
-  tooltipBox: 'tooltip-box'
+  tooltipBox: 'tooltip-box',
 };
+
+const AG_SEQUENCE_COLUMN_NAME = '__ag_sequence_column_name__';
 
 const config = {
   smallImageSize: 20, // 图片缩略图最小尺寸
@@ -104,6 +106,7 @@ const localeText = {
 const setCommonStyles = (options) => {
   const commonStyles = document.createElement('style');
   const styleArray = [
+    `.fc-ag-table-container span { font-family: 'Microsoft YaHei' !important; }`,
     `${options && options.showAgToolPanelItem ? '' : '.ag-column-tool-panel-item { display: none; } .ag-filter-body { padding-left: 4px }'}`, // 禁止隐藏全部列
     `.${cssFeatures.hover} { cursor: pointer; }`,
     `.${cssFeatures.imagePreviewBox} {
@@ -216,9 +219,13 @@ fkComponent.prototype.init = function(params) {
   const template = value !== null && value !== '' ?
     `<i class="iconfont ${ cssFeatures.hover }" data-target-tag="fkIcon" style="color: #0f8ee9">&#xe625;</i> ${params.value || ''}` :
     '';
-  if (params.data && params.data.ID.val !== '合计' && params.data.ID.val !== '统计') {
-    // 当前模式如果为非分组模式，则判断当前行是否是“合计行”、“统计行”
+
+  if (params.data && params.data.ID.val !== '合计' && params.data.ID.val !== '总计') {
+    // 当前模式如果为非分组模式，则判断当前行是否是“合计行”、“总计行”
     eGui.innerHTML = template;
+  } else if (params.data && params.data.ID.val === '合计' || params.data.ID.val === '总计') {
+    // 如果是fk 并且返回了总计行，则直接显示值
+    eGui.innerHTML = params.value;
   } else if (params.columnApi.getRowGroupColumns().length !== 0) {
     // 当前模式如果为分组模式，则不考虑特殊情况，所有行正常渲染。
     eGui.innerHTML = template;
@@ -235,7 +242,7 @@ const customerUrlComponent = function() {};
 customerUrlComponent.prototype.init = function(params) {
   const eGui = document.createElement('span');
   this.eGui = eGui;
-  const template = `<span class="${cssFeatures.hover}" style="text-decoration: underline" data-target-tag="customerUrlText">${params.value || ''}</span>`;
+  const template = `<span class="${cssFeatures.hover}" style="text-decoration: underline; color: #0F8EE9; " data-target-tag="customerUrlText">${params.value || ''}</span>`;
   eGui.innerHTML = template;
 };
 
@@ -251,7 +258,7 @@ sequenceComponent.prototype.init = function(params) {
   const eGui = document.createElement('span');
   this.eGui = eGui;
   const valueOfId = params.data ? params.data.ID.val : '';
-  const template = valueOfId === '合计' || valueOfId === '统计' ? valueOfId :`<span style="color: #0f8ee9" data-target-tag="rowIndex">${params.rowIndex + 1 + parseInt(params.options.datas.start, 10)}</span>`;
+  const template = valueOfId === '合计' || valueOfId === '总计' ? valueOfId :`<span style="color: #0f8ee9" data-target-tag="rowIndex">${params.data[AG_SEQUENCE_COLUMN_NAME].val + parseInt(params.options.datas.start, 10)}</span>`;
   eGui.innerHTML = template;
 
   // for tooltip icon
@@ -426,8 +433,19 @@ const agTable = (agGridTableContainer, options) => {
   let updateColumnPositionDelay = -1; // column move 延迟计时器
   let updateColumnVisibleDelay = -1; // column visible 延迟计时器
   if (!(agGridTableContainer instanceof HTMLElement)) {
-    alert('agGridTableContainer is not a HTMLElement');
-    return null;
+    console.log('agGridTableContainer is not a HTMLElement: agGridTableContainer = ', agGridTableContainer);
+    agTable.containerIsNull = true;
+    return agTable;
+  } else {
+    agTable.containerIsNull = false;
+    // 重置agGridTableContainer高度
+    agGridTableContainer.style.height = `${document.body.clientHeight - agGridTableContainer.getBoundingClientRect().top - 30}px`;
+
+    window.onresize = function() {
+      // console.log('window.resize', document.body.clientHeight);
+      agGridTableContainer.style.height = `${document.body.clientHeight - agGridTableContainer.getBoundingClientRect().top - 30}px`;
+    }
+
   }
   cleanChildNode(agGridTableContainer); // 清空agGridTableContainer节点
 
@@ -458,7 +476,7 @@ const agTable = (agGridTableContainer, options) => {
   agGridDiv.style.height = '100%';
   agGridDiv.style.margin = '0 auto';
   agGridDiv.style.position = 'relative';
-  agGridDiv.setAttribute('class', 'ag-theme-balham');  // 设置主题
+  agGridDiv.setAttribute('class', 'ag-theme-balham fc-ag-table-container');  // 设置主题
   agGridTableContainer.appendChild(agGridDiv);
   // 设置通用样式
   agGridDiv.appendChild(setCommonStyles(options));
@@ -470,7 +488,7 @@ const agTable = (agGridTableContainer, options) => {
       return 'sequenceComponent';
       /*
        return function (params) {
-       return params.value === '合计' || params.value === '统计' ?
+       return params.value === '合计' || params.value === '总计' ?
        params.value :
        `<span style="color: #0f8ee9" data-target-tag="rowIndex">${params.rowIndex + 1 + options.datas.start}</span>`
        }
@@ -485,7 +503,14 @@ const agTable = (agGridTableContainer, options) => {
     if (columnItem.display === 'image') {
       return 'imageComponent'
     }
-    return null;
+    // 默认返回字符串的时候，要判断其字符长度
+    return function(params) {
+      if (params.colDef.type.toLocaleLowerCase() === 'string' && params.value && params.value.length > 1000) {
+        return `${params.value.substring(0, 50)}...`
+      } else {
+        return params.value;
+      }
+    };
   };
 
   // 处理列数据
@@ -554,7 +579,7 @@ const agTable = (agGridTableContainer, options) => {
         item.filter = 'agTextColumnFilter'
       }
       item.checkboxSelection = d.colname === 'ID' ? function (params) {
-        return params.columnApi.getRowGroupColumns().length === 0 && params.data.ID.val !== '合计' && params.data.ID.val !== '统计';
+        return params.columnApi.getRowGroupColumns().length === 0 && params.data.ID.val !== '合计' && params.data.ID.val !== '总计';
       } : null;
       item.headerCheckboxSelection = d.colname === 'ID' ? function (params) {
         return params.columnApi.getRowGroupColumns().length === 0;
@@ -615,16 +640,18 @@ const agTable = (agGridTableContainer, options) => {
       pinnedBottomRowData.push(subtotalRowData);
     }
 
-    // 计算统计值
+    // 计算总计值
     if(isFullRangeSubTotalEnabled) {
       const fullRangeSubTotalRowData = {};
       columnApi.getAllColumns().forEach((d, i) => {
         const { colname } = d.colDef;
-        const columnFullRangeValue = (fullRangeSubTotalRow[0] ? (fullRangeSubTotalRow[0][i] || '') : '')
-        fullRangeSubTotalRowData[colname] = { val: colname === 'ID' ? '统计' : columnFullRangeValue };
+        // const columnFullRangeValue = (fullRangeSubTotalRow[0] ? (fullRangeSubTotalRow[0][i] || '') : '');
+        fullRangeSubTotalRowData[colname] = { val: colname === 'ID' ? '总计' : fullRangeSubTotalRow[colname] ? fullRangeSubTotalRow[colname].val || '' : '' };
       });
       // rowData = rowData.concat([fullRangeSubTotalRowData]);
-      pinnedBottomRowData.push(fullRangeSubTotalRowData);
+      if (JSON.stringify(fullRangeSubTotalRow) !== '{}') {
+        pinnedBottomRowData.push(fullRangeSubTotalRowData);
+      }
     }
 
     return { rowData, pinnedBottomRowData };
@@ -650,6 +677,7 @@ const agTable = (agGridTableContainer, options) => {
     enableStatusBar: options && options.enableStatusBar !== undefined ? options.enableStatusBar : true, // 当用户在视图区进行区域选择的时候，是否显示所有可计算数据的[平均、求和、计数、最大、最小]等值
     enableRangeSelection: options && options.enableRangeSelection !== undefined ? options.enableRangeSelection : false, // 是否允许进行单元格区域选择
     rowSelection: "multiple", // 行选择模式
+    suppressRowClickSelection: true, // 禁用单击事件选中行
     rowDeselection: options && options.rowDeselection !== undefined ? options.rowDeselection : false, // 是否允许按住ctrl + click 取消选中某个已经选中的行
     quickFilterText: null,
     groupSelectsChildren: options && options.groupSelectsChildren !== undefined? options.groupSelectsChildren : false, // 当进行分组的时候，控制选择分组的行为，是否连带其children一起选中
@@ -688,7 +716,7 @@ const agTable = (agGridTableContainer, options) => {
         'copy',
         'copyWithHeaders',
         'paste',
-        'export',
+        // 'export',
         {
           name: '显示所有列',
           action: function() {
@@ -719,7 +747,7 @@ const agTable = (agGridTableContainer, options) => {
         'autoSizeAll',
         'separator',
         {
-          name: '重置有所列位置信息',
+          name: '重置所有列位置信息',
           action: function() {
             if (typeof options.onColumnMoved === 'function') {
               const visibleColumns = [];
@@ -763,7 +791,7 @@ const agTable = (agGridTableContainer, options) => {
         const ids = [];
         params.api.getSelectedRows().forEach(d => {
           const { val } = d.ID;
-          if (val !== '合计' && val !== '统计') {
+          if (val !== '合计' && val !== '总计') {
             ids.push(val);
           }
         });
@@ -900,6 +928,10 @@ const agTable = (agGridTableContainer, options) => {
       return agTable;
     }
     const { rowData, pinnedBottomRowData } = transformRowData(data);
+    // 为每行增加序号值
+    rowData.forEach((d, i) => {
+      d[AG_SEQUENCE_COLUMN_NAME] = { val: i + 1 }
+    });
     api.setRowData(rowData);
     api.setPinnedBottomRowData(pinnedBottomRowData);
     return agTable;
