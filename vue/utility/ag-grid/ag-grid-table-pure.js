@@ -106,6 +106,7 @@ const localeText = {
 const setCommonStyles = (options) => {
   const commonStyles = document.createElement('style');
   const styleArray = [
+    `.ag-menu { overflow: hidden; }`,
     `.fc-ag-table-container span { font-family: 'Microsoft YaHei' !important; }`,
     `${options && options.showAgToolPanelItem ? '' : '.ag-column-tool-panel-item { display: none; } .ag-filter-body { padding-left: 4px }'}`, // 禁止隐藏全部列
     `.${cssFeatures.hover} { cursor: pointer; }`,
@@ -575,7 +576,8 @@ const agTable = (agGridTableContainer, options) => {
       item.unSortIcon = item.isorder; // 设置未排序图表Icon
       item.hide = hideColumn.indexOf(item.colname) > -1;
       item.suppressMenu = d.colname === 'ID'; // 是否禁用每一列的菜单选择
-      if (item.type.toLocaleLowerCase() === 'string') {
+      if (item.display !== 'check') {
+        // 只有不为check的才允许文本筛选
         item.filter = 'agTextColumnFilter'
       }
       item.checkboxSelection = d.colname === 'ID' ? function (params) {
@@ -599,13 +601,11 @@ const agTable = (agGridTableContainer, options) => {
     let fullRangeSubTotalRow = null;
     let isFullRangeSubTotalEnabled = null;
     let isSubTotalEnabled = null;
-    let subtotalRow = null;
     if (options.datas) {
       const { datas } = options;
       fullRangeSubTotalRow = datas.fullRangeSubTotalRow;
       isFullRangeSubTotalEnabled = datas.isFullRangeSubTotalEnabled;
       isSubTotalEnabled = datas.isSubTotalEnabled;
-      subtotalRow = datas.subtotalRow;
     }
 
     // 计算合计值
@@ -627,16 +627,7 @@ const agTable = (agGridTableContainer, options) => {
         subtotalRowData[field].val = currencyFormat(subtotalRowData[field].val.toFixed(2));
       });
       subtotalRowData.ID.val = '合计';
-
-
-      //subtotalRow 计算合计值
-      /*
-       columnApi.getAllColumns().forEach((d, i) => {
-       const { colname } = d.colDef;
-       subtotalRowData[colname] = { val: colname === 'ID' ? '合计' : (subtotalRow[i] || '') };
-       });
-       */
-      // rowData = rowData.concat([subtotalRowData]);
+      subtotalRowData.__ag_is_statistic_row__ = true;
       pinnedBottomRowData.push(subtotalRowData);
     }
 
@@ -645,11 +636,10 @@ const agTable = (agGridTableContainer, options) => {
       const fullRangeSubTotalRowData = {};
       columnApi.getAllColumns().forEach((d, i) => {
         const { colname } = d.colDef;
-        // const columnFullRangeValue = (fullRangeSubTotalRow[0] ? (fullRangeSubTotalRow[0][i] || '') : '');
         fullRangeSubTotalRowData[colname] = { val: colname === 'ID' ? '总计' : fullRangeSubTotalRow[colname] ? fullRangeSubTotalRow[colname].val || '' : '' };
       });
-      // rowData = rowData.concat([fullRangeSubTotalRowData]);
       if (JSON.stringify(fullRangeSubTotalRow) !== '{}') {
+        fullRangeSubTotalRowData.__ag_is_statistic_row__ = true;
         pinnedBottomRowData.push(fullRangeSubTotalRowData);
       }
     }
@@ -763,6 +753,7 @@ const agTable = (agGridTableContainer, options) => {
                 clearTimeout(updateColumnPositionDelay);
               }, 0);
               options.onColumnMoved('');
+              agTable.colPosition = '';
             }
           }
         },
@@ -770,22 +761,32 @@ const agTable = (agGridTableContainer, options) => {
     }, // 设置每列的general menu item
     onCellClicked(params) {
       const { colDef, data, event } = params;
-      if (typeof options.cellSingleClick === 'function') {
+      const { __ag_is_statistic_row__ } = data;
+      if (typeof options.cellSingleClick === 'function' && !__ag_is_statistic_row__) {
         options.cellSingleClick(colDef, data, event.target);
       }
     }, // 单元格单击
     onCellDoubleClicked(params) {
       const { colDef, data, event } = params;
-      if (typeof options.cellSingleClick === 'function') {
+      const { __ag_is_statistic_row__ } = data;
+      if (typeof options.cellSingleClick === 'function' && !__ag_is_statistic_row__) {
         options.cellDoubleClick(colDef, data, event.target);
       }
     }, // 单元格双击
     onRowClicked(params) {
       const { colDef, data, event } = params;
-      if (typeof options.rowSingleClick === 'function') {
+      const { __ag_is_statistic_row__ } = data;
+      if (typeof options.rowSingleClick === 'function' && !__ag_is_statistic_row__) {
         options.rowSingleClick(colDef, data, event.target);
       }
     }, // 行单击,
+    onRowDoubleClicked(params) {
+      const { colDef, data, event } = params;
+      const { __ag_is_statistic_row__ } = data;
+      if (typeof options.rowDoubleClick === 'function' && !__ag_is_statistic_row__) {
+        options.rowDoubleClick(colDef, data, event.target);
+      }
+    }, // 行双击
     onSelectionChanged(params) {
       if (typeof options.onSelectionChanged === 'function') {
         const ids = [];
@@ -798,12 +799,6 @@ const agTable = (agGridTableContainer, options) => {
         options.onSelectionChanged(ids);
       }
     }, // 行选中事件
-    onRowDoubleClicked(params) {
-      const { colDef, data, event } = params;
-      if (typeof options.rowDoubleClick === 'function') {
-        options.rowDoubleClick(colDef, data, event.target);
-      }
-    }, // 行双击
     onSortChanged(params) {
       const { api } = params;
       if (typeof options.onSortChanged === 'function') {
@@ -823,6 +818,7 @@ const agTable = (agGridTableContainer, options) => {
     }, // 当表格渲染好之后，触发onGridReady
     onBodyScroll(params) {
       const { columnApi, direction } = params;
+      options.autoSizeWhenScroll = true;
       if (direction === 'horizontal' && options.autoSizeWhenScroll) {
         setTimeout(() => {
           columnApi.autoSizeAllColumns();

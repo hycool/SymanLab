@@ -219,7 +219,7 @@
        */
       fetchFCData() {
         const self = this;
-        fetch('./assets/fc.data6.json').then(res => {
+        fetch('./assets/fc.data2.json').then(res => {
           res.json().then(data => {
             const { tabth, row } = data.datas;
             data.datas.deleteFailInfo = [
@@ -353,7 +353,7 @@
     },
     mounted() {
       console.log('Vue组件渲染用时：', Date.now() - beforeMountTime);
-      this.fetchCsv();
+      // this.fetchCsv();
       this.fetchFCData();
       // this.convertCsvToExcel();
       // this.mockDemo();

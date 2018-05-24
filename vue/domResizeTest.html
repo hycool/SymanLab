@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    html, body { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden;}
+  </style>
+</head>
+<body>
+  <div id="div" style="border: 1px solid black; height: 100px; width: 80%; margin: 15px auto; position: relative"></div>
+  <script>
+    const listenDomResize = (dom, callback) => {
+      const className = '__obj_element_resize_listener_class__';
+      const createObjElement = () => {
+        const objElement = document.createElement('object');
+        objElement.setAttribute('style', 'display: block; position: absolute; top: 0; left: 0; height: 100%; width: 100%; overflow: hidden;opacity: 1; pointer-events: none; z-index: -1;');
+        objElement.type = 'text/html';
+        objElement.data = 'about:blank';
+        objElement.classList.add(className);
+        dom.appendChild(objElement);
+        return objElement;
+      };
+      let objElement = dom.querySelector(`.${className}`);
+      if (!objElement) {
+        objElement = createObjElement();
+      }
+      setTimeout(() => {
+        objElement.contentDocument.defaultView.onresize = function() {
+          if (typeof callback === 'function') {
+            clearTimeout(this.resizeDelay);
+            this.resizeDelay = setTimeout(callback, 100);
+          }
+        }
+      }, 0);
+      return objElement;
+    };
+    listenDomResize(document.getElementById('div'), function() { console.log('1'); });
+  </script>
+</body>
+</html>
