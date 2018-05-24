@@ -11,6 +11,7 @@ const cssFeatures = {
   hover: 'ag-syman-hover',
   imagePreviewBox: 'image-preview-box',
   tooltipBox: 'tooltip-box',
+  tooltipTopBox: 'tooltip-top-box',
 };
 
 const AG_SEQUENCE_COLUMN_NAME = '__ag_sequence_column_name__';
@@ -106,8 +107,14 @@ const localeText = {
 const setCommonStyles = (options) => {
   const commonStyles = document.createElement('style');
   const styleArray = [
-    `.ag-menu { overflow: hidden; }`,
-    `.fc-ag-table-container span { font-family: 'Microsoft YaHei' !important; }`,
+    '.ag-theme-balham .ag-header { background-color: #F5F6FA; border-bottom: 1px solid #d8d8d8; }',
+    '.ag-theme-balham .ag-icon-checkbox-unchecked, .ag-theme-balham .ag-icon-checkbox-checked, .ag-theme-balham .ag-icon-checkbox-indeterminate { background-size: 14px 14px; }',
+    '.ag-theme-balham .ag-header-cell-label .ag-header-cell-text { font-weight: normal; color: #575757; }',
+    '.ag-theme-balham .ag-root { border: none; }',
+    '.ag-theme-balham .ag-header-select-all { margin-right: 4px; }',
+    '.ag-theme-balham .ag-selection-checkbox span { margin-right: 4px; }',
+    '.ag-menu { overflow: hidden; }',
+    '.fc-ag-table-container span { font-family: \'Microsoft YaHei\' !important; }',
     `${options && options.showAgToolPanelItem ? '' : '.ag-column-tool-panel-item { display: none; } .ag-filter-body { padding-left: 4px }'}`, // 禁止隐藏全部列
     `.${cssFeatures.hover} { cursor: pointer; }`,
     `.${cssFeatures.imagePreviewBox} {
@@ -123,6 +130,7 @@ const setCommonStyles = (options) => {
       transition-duration: 0.3s;
     }`,
     `.${cssFeatures.tooltipBox} {
+        pointer-events: none;
         background-color: black;
         position: absolute;
         z-index: 99999;
@@ -138,6 +146,7 @@ const setCommonStyles = (options) => {
         left: -10000px;
     }`,
     `.${cssFeatures.tooltipBox}::before {
+        pointer-events: none;
         display: block;
         content: '';
         top: 8px;
@@ -148,6 +157,41 @@ const setCommonStyles = (options) => {
         border-left: 5px solid transparent;
         border-top: 5px solid transparent;
         border-bottom: 5px solid transparent;
+    }`,
+    `.${cssFeatures.tooltipTopBox} {
+        pointer-events: none;
+        background-color: #fff;
+        position: absolute;
+        z-index: 99999;
+        color: #575757;
+        font-size: 12px;
+        padding: 5px 10px;
+        border-radius: 4px;
+        display: block;
+        box-shadow: 0px 2px 2px lightgrey;
+        max-width: 200px;
+        word-break: break-all;
+        text-align: center;
+        left: -10000px;
+    }`,
+    `.arrow-down:before, .arrow-down:after {
+        pointer-events: none;
+        display: block;
+        content: '';
+        width: 0;
+        height: 0;
+        position: absolute;
+        border: 6px solid transparent;
+     }
+     .arrow-down:before {
+        top: 100%;
+        left: 48%;
+        border-top-color: lightgray;
+     }
+    .arrow-down:after {
+        top: calc(100% - 1px);
+        left: 48%;
+        border-top-color: #fff;
     }`
   ];
   commonStyles.innerHTML = styleArray.join('\r\n');
@@ -273,7 +317,7 @@ sequenceComponent.prototype.init = function(params) {
       const offsetLeft = target.getBoundingClientRect().left - agGridDiv.getBoundingClientRect().left;
       const offsetTop = target.getBoundingClientRect().top - agGridDiv.getBoundingClientRect().top;
       tooltipBox.style.display = '';
-      tooltipBox.style.left = `${offsetLeft + 20}px`;
+      tooltipBox.style.left = `${offsetLeft + 22}px`;
       tooltipBox.style.top = `${offsetTop - (target.offsetHeight / 2)}px`;
       if (options && options.datas && options.datas.deleteFailInfo && Object.prototype.toString.call(options.datas.deleteFailInfo) === '[object Array]') {
         tooltipBox.innerText = options.datas.deleteFailInfo[failIds.indexOf(value)].message;
@@ -296,16 +340,16 @@ const customHeader = function() {
 };
 
 customHeader.prototype.init = function(params) {
-  const { displayName, enableMenu, enableSorting, column, agGridDiv, tooltipBox } = params;
+  const { displayName, enableMenu, enableSorting, column, agGridDiv, tooltipTopBox } = params;
   this.params = params;
   const eGui = document.createElement('div');
   this.eGui = eGui;
   eGui.setAttribute('class', 'ag-cell-label-container');
   eGui.innerHTML = `
-    <span ref="eMenu" class="ag-header-icon ag-header-cell-menu-button" style="opacity: 0">
+    <span ref="eMenu" class="ag-header-icon ag-header-cell-menu-button" style="opacity: 0; ${enableMenu ? '' : 'display: none;'}} ">
       <span class="ag-icon ag-icon-menu"></span>
     </span>
-    <div ref="eLabel" class="ag-header-cell-label" role="presentation">
+    <div ref="eLabel" class="ag-header-cell-label" role="presentation" style="${ enableMenu ? '' : 'width: 100%;' }">
         <span ref="eText" class="ag-header-cell-text" role="columnheader">
           ${params.column.colDef.comment ? `<i class="iconfont comment ${cssFeatures.hover}" style="color: orangered">&#xe640;</i> ` : ''} ${displayName}
         </span>
@@ -330,15 +374,15 @@ customHeader.prototype.init = function(params) {
   if (this.eComment) {
     this.eComment.onmouseenter = (e) => {
       const { target } = e;
-      const offsetLeft = target.getBoundingClientRect().left - agGridDiv.getBoundingClientRect().left;
-      const offsetTop = target.getBoundingClientRect().top - agGridDiv.getBoundingClientRect().top;
-      tooltipBox.style.display = '';
-      tooltipBox.style.left = `${offsetLeft + 20}px`;
-      tooltipBox.style.top = `${offsetTop - 5}px`;
-      tooltipBox.innerText = column.colDef.comment;
+      const offsetLeft = target.getBoundingClientRect().left;
+      const offsetTop = target.getBoundingClientRect().top;
+      tooltipTopBox.innerText = column.colDef.comment;
+      tooltipTopBox.style.display = '';
+      tooltipTopBox.style.top = `${offsetTop - tooltipTopBox.offsetHeight - 7}px`;
+      tooltipTopBox.style.left = `${offsetLeft - (tooltipTopBox.offsetWidth / 2)}px`;
     };
     this.eComment.onmouseleave = () => {
-      tooltipBox.style.display = 'none';
+      tooltipTopBox.style.display = 'none';
     };
   }
 
@@ -433,6 +477,7 @@ const currencyFormat = (value) => {
 const agTable = (agGridTableContainer, options) => {
   let updateColumnPositionDelay = -1; // column move 延迟计时器
   let updateColumnVisibleDelay = -1; // column visible 延迟计时器
+  let updateBodyScrollDelay = -1; // 横向滚动延迟计时器
   if (!(agGridTableContainer instanceof HTMLElement)) {
     console.log('agGridTableContainer is not a HTMLElement: agGridTableContainer = ', agGridTableContainer);
     agTable.containerIsNull = true;
@@ -466,18 +511,24 @@ const agTable = (agGridTableContainer, options) => {
   // 图片预览框
   const imagePreviewBox = document.createElement('div');
   imagePreviewBox.innerHTML = '<img alt="" style="width: 100%; height: 100%" />'
-  imagePreviewBox.setAttribute('class', cssFeatures.imagePreviewBox);
+  imagePreviewBox.classList.add(cssFeatures.imagePreviewBox);
 
   // 自定义tooltip
   const tooltipBox = document.createElement('div');
-  tooltipBox.setAttribute('class', cssFeatures.tooltipBox);
+  tooltipBox.classList.add(cssFeatures.tooltipBox);
+
+  // 自定义toolTipTop
+  const tooltipTopBox = document.createElement('div');
+  tooltipTopBox.classList.add(cssFeatures.tooltipTopBox);
+  tooltipTopBox.classList.add('arrow-down');
 
   agGridDiv.style.width = `100%`;
   // agGridDiv.style.height = `${agGridTableContainer.offsetHeight}px`;
   agGridDiv.style.height = '100%';
   agGridDiv.style.margin = '0 auto';
   agGridDiv.style.position = 'relative';
-  agGridDiv.setAttribute('class', 'ag-theme-balham fc-ag-table-container');  // 设置主题
+  agGridDiv.classList.add('ag-theme-balham');
+  agGridDiv.classList.add('fc-ag-table-container');
   agGridTableContainer.appendChild(agGridDiv);
   // 设置通用样式
   agGridDiv.appendChild(setCommonStyles(options));
@@ -512,6 +563,16 @@ const agTable = (agGridTableContainer, options) => {
         return params.value;
       }
     };
+  };
+
+  const getPinnedState = (colId) => {
+    const { pinnedLeft, pinnedRight } = JSON.parse(decodeURI(agGridTableContainer.getAttribute('data-pinned-status'))) || { pinnedLeft: [], pinnedRight: [] };
+    if (pinnedLeft.indexOf(colId) > -1) {
+      return 'left';
+    } else if (pinnedRight.indexOf(colId) > -1) {
+      return 'right';
+    }
+    return null;
   };
 
   // 处理列数据
@@ -552,14 +613,14 @@ const agTable = (agGridTableContainer, options) => {
       const item = JSON.parse(decodeURI(encodeURI(JSON.stringify(d))));
       item.headerName = d.colname === 'ID' ? '序号' : d.name || '未定义';
       item.lockVisible = d.colname === 'ID'; // 锁定序号列的隐藏功能
-      item.pinned = d.colname === 'ID' ? 'left' : null;
-      item.maxWidth = d.colname === 'ID' ? 100 : null; // 为ID列预设最大宽度
+      item.pinned = d.colname === 'ID' ? 'left' : getPinnedState(d.colname);
+      item.maxWidth = d.colname === 'ID' ? 80 : null; // 为ID列预设最大宽度
       item.suppressResize = d.colname === 'ID'; // 禁止拖动ID列边缘以改变其列宽
       item.suppressMovable = d.colname === 'ID'; // 禁用ID列拖拽
       item.lockPinned = true; // 锁定序号列的pinned功能
       item.lockPosition = d.colanme === 'ID'; //  锁定ID列的位置
       item.headerComponent = options && options.useDefaultHeader ? null :'customHeader'; // 如果外界传值useDefaultHeader = true，则不适用headerComponent
-      item.headerComponentParams = { agGridDiv, tooltipBox };
+      item.headerComponentParams = { agGridDiv, tooltipBox, tooltipTopBox };
       item.field = `${d.colname}.val`; // 参与显示和计算的列值
       item.colId = d.colname; // 每一列的ID，默认和item.field一致。
       item.sort = defaultSortKeyMap[d.colname]; // 设置默认排序列
@@ -570,6 +631,7 @@ const agTable = (agGridTableContainer, options) => {
         imagePreviewBox,
         options,
         tooltipBox,
+        tooltipTopBox,
         failIds,
       }; // 在cell rendering 中自定义一个agGridDiv 用于以后的寻根定位
       item.sortingOrder = item.isorder ? ['asc', 'desc'] : [null]; // 处理每列默认的单击后的排序顺序
@@ -749,6 +811,13 @@ const agTable = (agGridTableContainer, options) => {
               visibleColumns.forEach((d, i) => {
                 params.columnApi.moveColumn(d, i);
               });
+              ((params.columnApi.getDisplayedLeftColumns().map(d => d.colId))
+                .concat(params.columnApi.getDisplayedRightColumns().map(d => d.colId)))
+                .forEach(colId => {
+                  if (colId !== 'ID') {
+                    params.columnApi.setColumnPinned(colId, false);
+                  }
+                });
               setTimeout(() => {
                 clearTimeout(updateColumnPositionDelay);
               }, 0);
@@ -815,14 +884,17 @@ const agTable = (agGridTableContainer, options) => {
       columnApi.autoSizeAllColumns();
       agGridDiv.appendChild(imagePreviewBox);
       agGridDiv.appendChild(tooltipBox);
+      document.body.appendChild(tooltipTopBox);
+      // 移除ag-tool-panel
+      agGridDiv.querySelector('.ag-tool-panel').remove();
     }, // 当表格渲染好之后，触发onGridReady
     onBodyScroll(params) {
       const { columnApi, direction } = params;
-      options.autoSizeWhenScroll = true;
-      if (direction === 'horizontal' && options.autoSizeWhenScroll) {
-        setTimeout(() => {
+      clearTimeout(updateBodyScrollDelay);
+      if (direction === 'horizontal') {
+        updateBodyScrollDelay = setTimeout(() => {
           columnApi.autoSizeAllColumns();
-        }, 0); // 当检测到滚动条为横向滚动时，自适应当前视口范围内的所有列
+        }, 10); // 当检测到滚动条为横向滚动时，自适应当前视口范围内的所有列
       }
       agGridTableContainer.setAttribute('data-scroll-left', params.left);
     }, // 当表体发生滚动时候触发该事件
@@ -865,6 +937,11 @@ const agTable = (agGridTableContainer, options) => {
         }
       }, 500);
     },
+    onColumnPinned(params) {
+      const pinnedLeft = params.columnApi.getDisplayedLeftColumns().map(d => d.colId);
+      const pinnedRight = params.columnApi.getDisplayedRightColumns().map(d => d.colId);
+      agGridTableContainer.setAttribute('data-pinned-status', encodeURI(JSON.stringify({ pinnedLeft, pinnedRight })));
+    },
     getRowClass(params) {
       let className = '';
       const { data } = params;
@@ -901,17 +978,35 @@ const agTable = (agGridTableContainer, options) => {
       alert('agTable.setCols requires Array as first param');
       return agTable;
     }
-    api.setColumnDefs(transformColumnDefs(data));
 
     // 移动列的顺序
     const { colPosition } = options.datas;
     if (colPosition && colPosition !== '') {
       // 初始化的时候，记录colPosition，以便点击“显示所有列”按钮时，可以还原已经排序列的顺序
       agTable.colPosition = colPosition;
-      colPosition.split(',').forEach((d, i) => {
-        columnApi.moveColumn(d, i);
+      const positionColumns = colPosition.split(',');
+      const columnMap = {};
+      const visibleColumns = [];
+      const unVisibleColumns = [];
+
+      data.forEach(d => {
+        columnMap[d.colname] = d;
+        if (positionColumns.indexOf(d.colname) === -1) {
+          unVisibleColumns.push(d);
+        }
       });
-      setTimeout(() => { clearTimeout(updateColumnPositionDelay) }, 0);
+
+      positionColumns.forEach(columnName => {
+        visibleColumns.push(columnMap[columnName]);
+      });
+
+      // console.table(positionColumns.map(colname => ({ name: columnMap[colname].name, colname })));
+      // console.table(visibleColumns.map(d => ({ name: d.name, colname: d.colname })));
+      // console.table(unVisibleColumns.map(d => ({ name: d.name, colname: d.colname })));
+
+      api.setColumnDefs(transformColumnDefs(visibleColumns.concat(unVisibleColumns)));
+    } else {
+      api.setColumnDefs(transformColumnDefs(data));
     }
     return agTable;
   };
