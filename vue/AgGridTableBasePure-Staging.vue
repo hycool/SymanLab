@@ -1,11 +1,11 @@
 <!-- 本组件内的ag-Grid采用pure javascript 实现 -->
 <template>
   <div>
-    <div ref="agGridTableContainer2" style="width: 100%; height: 540px;border: 0px solid black; margin: 0 auto; display: flex;">
+    <div v-if="enableAgTable" ref="agGridTableContainer2" style="width: 100%; height: 540px;border: 0px solid black; margin: 0 auto; display: flex;">
       <p style="margin-top: 30px; text-align: center;">Loading...</p>
     </div>
-    <div style="width: 100%; height: 30px;"></div>
-    <div ref="agGridReport" style="width: 100%; height: 600px; border: 0px solid black; margin: 0 auto;">
+    <div v-if="enableAgTable" style="width: 100%; height: 30px;"></div>
+    <div v-if="enableAgReport" ref="agGridReport" style="width: 100%; height: 700px; border: 0px solid black; margin: 0 auto;">
       <p style="margin-top: 30px; text-align: center;">Loading...</p>
     </div>
   </div>
@@ -28,6 +28,8 @@
     name: 'AgGridTableBasePure-Staging',
     data() {
       return {
+        enableAgTable: false,
+        enableAgReport: true,
         cols: [],
         rows: [],
         agInstance: null,
@@ -149,8 +151,6 @@
           columnDefs.push({
             headerName: d,
             field: 'field' + i,
-            allowedAggFuncs: ['count', 'sum'],
-            // suppressToolPanel: true,
             valueGetter(params) {
               if (parseFloat(params.data[params.colDef.field])) {
                 return parseFloat(params.data[params.colDef.field]);
@@ -160,13 +160,6 @@
             }
           });
         });
-        columnDefs[2].rowGroupIndex = 0;
-        columnDefs[66].rowGroupIndex = 1;
-        columnDefs[6].rowGroupIndex = 2;
-        
-        columnDefs[5].pivotIndex = 0;
-        columnDefs[19].aggFunc = 'sum';
-        columnDefs[20].aggFunc = 'sum';
         return columnDefs;
       },
       
@@ -205,6 +198,8 @@
                 const rowData = self.transformRowData(result.data);
                 const columnDefs = self.transformColumnDefs();
                 agReport(self.$refs.agGridReport, {
+                  defaultGroupColumns: ["field2", "field6", "field5", "field15"],
+                  aggregationColumns: ['field9', 'field17', 'field26', 'field27'],
                 })
                   .setCols(columnDefs)
                   .setRows(rowData);
@@ -353,8 +348,12 @@
     },
     mounted() {
       console.log('Vue组件渲染用时：', Date.now() - beforeMountTime);
-      // this.fetchCsv();
-      this.fetchFCData();
+      if (this.enableAgTable) {
+        this.fetchFCData();
+      }
+      if (this.enableAgReport) {
+        this.fetchCsv();
+      }
       // this.convertCsvToExcel();
       // this.mockDemo();
       // this.fetchFCDataOrigin();

@@ -21,8 +21,6 @@ const localeText = {
   to: '到',
   of: '共',
   next: 'Next',
-  last: 'Last',
-  first: 'First',
   previous: 'Previous',
   loadingOoo: '加 载 中 ...',
   // setFilter
@@ -97,10 +95,17 @@ const localeText = {
   ctrlV: 'ctrl+V'
 };
 
-const setCommonStyles = (options) => {
+const setCommonStyles = () => {
   const commonStyles = document.createElement('style');
   const styleArray = [
-    `${options && options.showAgToolPanelItem ? '' : '.ag-column-tool-panel-item { display: none; } .ag-filter-body { padding-left: 4px }'}`, // 禁止隐藏全部列
+    `.pos-ag-report-container { font-family: 'Microsoft YaHei', 'Hiragino Sans GB', !important; }`,
+    '.ag-pinned-left-cols-container .ag-row { background-color: rgba(0, 145, 234, 0.3); }',
+    '.ag-row-footer { background-color: #f7f7f7 !important; }',
+    '.ag-tool-panel .ag-column-select-panel { flex-grow: 1; }',
+    '.ag-theme-balham .ag-header { font-weight: 500 }',
+    '.ag-body-viewport::-webkit-scrollbar, .ag-column-container::-webkit-scrollbar, .ag-column-drop-list::-webkit-scrollbar { width: 8px; height: 8px; }',
+    '.ag-body-viewport::-webkit-scrollbar-thumb, .ag-column-container::-webkit-scrollbar-thumb, .ag-column-drop-list::-webkit-scrollbar-thumb { background-color: #c5c2c2; border-radius: 5px; }',
+    '.ag-body-viewport::-webkit-scrollbar-track, .ag-column-container::-webkit-scrollbar-track, .ag-column-drop-list::-webkit-scrollbar-track { box-shadow: inset 0 0 15px lightgray; background-color: #f8f7f7; border-radius: 5px; }',
     `.${cssFeatures.hover} { cursor: pointer; }`,
   ];
   commonStyles.innerHTML = styleArray.join('\r\n');
@@ -114,10 +119,13 @@ const cleanChildNode = (node) => {
 };
 
 // 替换Html Dom
-const replaceNode = (node) => {
+const replaceNode = (node, callback) => {
   const clone = node.cloneNode(true);
   node.parentNode.appendChild(clone);
   node.remove();
+  if (typeof callback === 'function') {
+    callback();
+  }
   return clone;
 };
 
@@ -159,161 +167,206 @@ const exportCustomExcel = (csvData, groupState) => {
 };
 
 /**
- * @param agGridTableContainer // 容器
- * @param options // 配置项
+ * @param container // 容器
+ * @param opt // 配置项
  * @returns {function(*=, *=)} 函数
  */
-const agReport = (agGridTableContainer, options) => {
-  if (!(agGridTableContainer instanceof HTMLElement)) {
-    alert('agGridTableContainer is not a HTMLElement');
-    return null;
-  }
-  cleanChildNode(agGridTableContainer); // 清空agGridTableContainer节点
+const initializeAgReport = (container, opt) => {
+  const agReport = (agGridTableContainer, options) => {
+    let updateBodyScrollDelay = -1; // 横向滚动延迟计时器
+    if (!(agGridTableContainer instanceof HTMLElement)) {
+      console.log('agGridTableContainer is not a HTMLElement: agGridTableContainer = ', agGridTableContainer);
+      agReport.containerIsNull = true;
+      return agReport;
+    } else {
+      agReport.containerIsNull = false;
 
-  // create normal gird for top
-  const agGridDiv = document.createElement('div');
-  agGridDiv.style.width = '100%';
-  agGridDiv.style.height = '100%';
-  agGridDiv.style.margin = '0 auto';
-  agGridDiv.style.position = 'relative';
-  agGridDiv.setAttribute('class', 'ag-theme-balham');  // 设置主题
-  agGridTableContainer.appendChild(agGridDiv);
+      if(opt) {
+        agReport.allVisibleColumns = options.allVisibleColumns; // 所有允许可见的列
+        agReport.displayedColumns = options.displayedColumns; // 默认展示的列
+        agReport.groupAllowedColumns = options.groupAllowedColumns; // 所有允许分组查看的列
+        agReport.defaultGroupColumns = options.defaultGroupColumns; // 当前默认的分组情况
+        agReport.aggregationColumns = options.aggregationColumns; // 所有聚合列的信息
+      }
 
-  // create bottom grid as total footer
-  // const agGridDivBottom = document.createElement('div');
-  // agGridDivBottom.style.width = '100%';
-  // agGridDivBottom.style.height = '40px';
-  // agGridDivBottom.style.margin = '0 auto';
-  // agGridDivBottom.style.position = 'relative';
-  // agGridDivBottom.setAttribute('class', 'ag-theme-balham');  // 设置主题
-  // agGridTableContainer.appendChild(agGridDivBottom);
+      // 判断agGridTableContainer是否已经被ag实例化
+      if (agGridTableContainer.agReport) {
+        agGridTableContainer.agReport.customizeOptions = options;
+        return agGridTableContainer.agReport;
+      }
+    }
+    cleanChildNode(agGridTableContainer); // 清空agGridTableContainer节点
 
-  // 为agGridDiv设置通用样式
-  agGridDiv.appendChild(setCommonStyles(options));
+    // create normal gird for top
+    const agGridDiv = document.createElement('div');
+    agGridDiv.style.width = '100%';
+    agGridDiv.style.height = '100%';
+    agGridDiv.style.margin = '0 auto';
+    agGridDiv.style.position = 'relative';
+    agGridDiv.classList.add('ag-theme-balham'); // 设置主题
+    agGridDiv.classList.add('pos-ag-report-container');
+    agGridTableContainer.appendChild(agGridDiv);
 
-  const gridOptions = {
-    columnDefs: options && options.columnDefs ? options.columnDefs : [], // 列定义
-    rowData : options && options.rowData ? options.rowData : [],// 行数据
-    multiSortKey: 'ctrl', // 多列排序组合键（按下ctrl + 鼠标点击某一列）
-    animateRows: false, // 显示row动画
-    pagination: options && options.pagination !== undefined ? options.pagination : false, // 是否启用分页
-    paginationPageSize: 10,
-    enableColResize: options && options.enableColResize !== undefined ? options.enableColResize : true, // 允许用户调整列宽
-    enableFilter: options && options.enableFilter !== undefined ? options.enableFilter : true, // 是否允许过滤
-    enableStatusBar: true, // 当用户在视图区进行区域选择的时候，是否显示所有可计算数据的[平均、求和、计数、最大、最小]等值
-    enableRangeSelection: false, // 是否允许进行单元格区域选择
-    rowSelection: "multiple", // 行选择模式
-    rowDeselection: options && options.rowDeselection !== undefined ? options.rowDeselection : false, // 是否允许按住ctrl + click 取消选中某个已经选中的行
-    groupSelectsChildren: options && options.groupSelectsChildren !== undefined? options.groupSelectsChildren : false, // 当进行分组的时候，控制选择分组的行为，是否连带其children一起选中
-    defaultColDef: {
-      comparator: options && options.sortByLocal ? null : function() {return 0; },
-      enableRowGroup: true,
-      enablePivot: true,
-      enableValue: true,
-    }, // 默认列配置
-    enableCellChangeFlash: true,
-    pivotPanelShow: 'always', // on of ['always','onlyWhenPivoting'] 表头上方可用于拖拽pivot列的区域
-    pivotMode: true,
-    pivotTotals: false,
-    showToolPanel: true, // 显示工具栏
-    toolPanelSuppressValues: true, // 引用aggregate value section 面板
-    floatingFilter: options && options.floatingFilter ? options.floatingFilter : true, // 是否显表头下方的浮动筛选框
-    rowDragManaged: true,
-    rowGroupPanelShow: options && options.rowGroupPanelShow ? options.rowGroupPanelShow : 'always', // 是否显最顶部的group panel ['always', 'onlyWhenGrouping']
-    enterMovesDownAfterEdit: true,
-    localeText,
-    groupDefaultExpanded: 9, //
-    groupMultiAutoColumn: true, // 分组时，显示分组原字段
-    autoGroupColumnDef: {
-      cellRendererParams:{
-        suppressCount: true, // 禁用分组状态下，各个分组行的计数统计
+    // 为agGridDiv设置通用样式
+    agGridDiv.appendChild(setCommonStyles(options));
+
+
+
+    const gridOptions = {
+      columnDefs: options && options.columnDefs ? options.columnDefs : [], // 列定义
+      rowData : options && options.rowData ? options.rowData : [],// 行数据
+      multiSortKey: 'ctrl', // 多列排序组合键（按下ctrl + 鼠标点击某一列）
+      animateRows: false, // 显示row动画
+      pagination: options && options.pagination !== undefined ? options.pagination : false, // 是否启用分页
+      paginationPageSize: 10,
+      enableColResize: options && options.enableColResize !== undefined ? options.enableColResize : true, // 允许用户调整列宽
+      enableFilter: options && options.enableFilter !== undefined ? options.enableFilter : true, // 是否允许过滤
+      enableStatusBar: true, // 当用户在视图区进行区域选择的时候，是否显示所有可计算数据的[平均、求和、计数、最大、最小]等值
+      enableRangeSelection: false, // 是否允许进行单元格区域选择
+      rowSelection: "multiple", // 行选择模式
+      suppressRowClickSelection: true, // 禁用单击事件选中行
+      rowDeselection: options && options.rowDeselection !== undefined ? options.rowDeselection : false, // 是否允许按住ctrl + click 取消选中某个已经选中的行
+      groupSelectsChildren: options && options.groupSelectsChildren !== undefined? options.groupSelectsChildren : false, // 当进行分组的时候，控制选择分组的行为，是否连带其children一起选中
+      defaultColDef: {
+        comparator: options && options.sortByLocal ? null : function() {return 0; },
+        enableRowGroup: true,
+        enablePivot: true,
+        enableValue: true,
+      }, // 默认列配置
+      enableCellChangeFlash: true,
+      pivotPanelShow: 'onlyWhenPivoting', // on of ['always','onlyWhenPivoting'] 表头上方可用于拖拽pivot列的区域
+      pivotMode: false,
+      pivotTotals: false,
+      showToolPanel: true, // 显示工具栏
+      toolPanelSuppressPivotMode: true, // 禁用pivote mode
+      toolPanelSuppressValues: true, // 禁用aggregate value section 面板
+      toolPanelSuppressPivots: true, // 禁用 pivot section 面板
+      groupIncludeFooter: true, // 是否显示分组的footer
+      floatingFilter: options && options.floatingFilter ? options.floatingFilter : false, // 是否显表头下方的浮动筛选框
+      rowDragManaged: true,
+      rowGroupPanelShow: options && options.rowGroupPanelShow ? options.rowGroupPanelShow : 'onlyWhenGrouping', // 是否显最顶部的group panel ['always', 'onlyWhenGrouping']
+      enterMovesDownAfterEdit: true,
+      localeText,
+      groupDefaultExpanded: 1, // 默认展开几层分组
+      groupMultiAutoColumn: true, // 分组时，显示分组原字段
+      autoGroupColumnDef: {
+        cellRendererParams:{
+          suppressCount: true, // 禁用分组状态下，各个分组行的计数统计
+        },
       },
-    },
-    groupHideOpenParents: true, // 分组隐藏
-    onGridReady(params) {
-      const { columnApi, api } = params;
-      // 自适应所有列
+      groupHideOpenParents: true, // 分组隐藏
+      onGridReady(params) {
+        const defaultGroups = agReport.defaultGroupColumns;
+        const { columnApi } = params;
+        // 自适应所有列
+        columnApi.autoSizeAllColumns();
+        // 处理分组情况
+        columnApi.setColumnsPinned(defaultGroups.map(d => `ag-Grid-AutoColumn-${d}`), true);
+        // replaceNode(document.querySelector('.ag-pivot-mode-select')).innerText = '工具栏';
+
+      }, // 当表格渲染好之后，触发onGridReady
+      onColumnRowGroupChanged(params) {
+        const { columnApi } = params;
+        columnApi.autoSizeAllColumns();
+      }, // 分组变化
+      onBodyScroll(params) {
+        const { columnApi, direction } = params;
+        clearTimeout(updateBodyScrollDelay);
+        if (direction === 'horizontal') {
+          updateBodyScrollDelay = setTimeout(() => {
+            columnApi.autoSizeAllColumns();
+          }, 10); // 当检测到滚动条为横向滚动时，自适应当前视口范围内的所有列
+        }
+        agGridTableContainer.setAttribute('data-scroll-left', params.left);
+      }, // 当表体发生滚动时候触发该事件
+      onColumnPivotChanged(params) {
+        const { columnApi } = params;
+        columnApi.getColumnState().forEach(d => {
+          const { pivotIndex } = d;
+          if (pivotIndex !== undefined && pivotIndex !== null) {
+            // console.log('column pivot changed', pivotIndex, d.colId);
+          }
+        });
+      }, // 透视变化
+      onColumnValueChanged(params) {
+        const { columnApi } = params;
+        columnApi.autoSizeAllColumns();
+      }, // aggregation 变化
+      onColumnPivotModeChanged(params) {
+        // console.log('onColumnPivotModeChanged', params);
+      }, // pivot mode 变化
+      onModelUpdated(params) {
+        const { columnApi } = params;
+        columnApi.autoSizeAllColumns();
+      },
+    };
+
+    // 初始化ag grid
+    new Grid(agGridDiv, gridOptions);
+
+    const { api, columnApi } = gridOptions;
+    agReport.api = api;
+    agReport.columnApi = columnApi;
+
+    // 处理分组情况
+    agReport.dealGroupInfo = () => {
+      const defaultGroups = agReport.defaultGroupColumns;
+      if (defaultGroups) {
+        columnApi.setRowGroupColumns(defaultGroups);
+      }
+      return agReport;
+    };
+
+    // 设置columnDefs
+    agReport.setCols = (data) => {
+      const defaultGroups = agReport.defaultGroupColumns;
+      const displayedColumns = agReport.displayedColumns;
+      const aggregationColumns = agReport.aggregationColumns;
+      if (!data) { return agReport; } // 如果未传参，则返回。
+      if (!(Object.prototype.toString.call(data) === '[object Array]')) {
+        alert('agReport.setCols requires Array as first param');
+        return agReport;
+      }
+      // 处理suppressToolPanel
+      data.forEach(d => {
+        if (defaultGroups && defaultGroups.indexOf(d.field) === -1) {
+          d.suppressToolPanel = true;
+        }
+      });
+      api.setColumnDefs(data);
+      // 处理显示隐藏列
+      columnApi.setColumnsVisible(data.map(d => d.field), false);
+      columnApi.setColumnsVisible(displayedColumns || [], true);
+      // 处理汇总计算列
+      columnApi.setValueColumns(aggregationColumns || []);
+      columnApi.setColumnsVisible(aggregationColumns || [], true);
+      agReport.dealGroupInfo();
+      return agReport;
+    };
+
+    // 设置rowData
+    agReport.setRows = (data) => {
+      if (!data) { return agReport; } // 如果未传参，则返回。
+      if (!(Object.prototype.toString.call(data) === '[object Array]')) {
+        alert('agReport.setRows requires Array as first param');
+        return agReport;
+      }
+      const beginSetRow = Date.now();
+      api.setRowData(data);
+      console.log('渲染耗时 ', Date.now() - beginSetRow);
+      console.log('总耗时 ', Date.now() - window.beforeMountTime);
+      return agReport;
+    };
+
+    // autoSizeAllColumns
+    agReport.autoSizeAllColumns = () => {
       columnApi.autoSizeAllColumns();
-      exportCustomExcel(api.getDataAsCsv(), columnApi.getColumnGroupState());
-      // clone [span.ag-pivot-mode-select] and replace it in order to disable its event listeners
-      const clone = replaceNode(document.querySelector('span.ag-pivot-mode-select'));
-      clone.querySelector('span.ag-checkbox-checked').style.display = 'none'; // 隐藏checkbox
-    }, // 当表格渲染好之后，触发onGridReady
-    onColumnRowGroupChanged(params) {
-      const { columnApi } = params;
-      columnApi.getColumnState().forEach(d => {
-        const { rowGroupIndex } = d;
-        if (rowGroupIndex !== undefined && rowGroupIndex !== null) {
-          // console.log('column group changed', rowGroupIndex, d.colId);
-        }
-      });
-    }, // 分组变化
-    onColumnPivotChanged(params) {
-      const { columnApi } = params;
-      columnApi.getColumnState().forEach(d => {
-        const { pivotIndex } = d;
-        if (pivotIndex !== undefined && pivotIndex !== null) {
-          // console.log('column pivot changed', pivotIndex, d.colId);
-        }
-      });
-    }, // 透视变化
-    onColumnValueChanged(params) {
-      const { columnApi } = params;
-      columnApi.getColumnState().forEach(d => {
-        const { aggFunc } = d;
-        if (aggFunc !== undefined && aggFunc !== null) {
-          // console.log('column value changed', aggFunc, d.colId, d);
-        }
-      });
-    }, // aggregation 变化
-    onColumnPivotModeChanged(params) {
-      // console.log('onColumnPivotModeChanged', params);
-    } // pivot mode 变化
-  };
+    };
 
-  // 初始化ag grid
-  new Grid(agGridDiv, gridOptions);
-
-  const { api, columnApi } = gridOptions;
-  agReport.api = api;
-  agReport.columnApi = columnApi;
-  // 设置columnDefs
-  agReport.setCols = (data) => {
-    if (!data) { return agReport; } // 如果未传参，则返回。
-    if (!(Object.prototype.toString.call(data) === '[object Array]')) {
-      alert('agReport.setCols requires Array as first param');
-      return agReport;
-    }
-    api.setColumnDefs(data);
+    agGridTableContainer.agReport = agReport;
     return agReport;
   };
-
-  // 设置rowData
-  agReport.setRows = (data) => {
-    if (!data) { return agReport; } // 如果未传参，则返回。
-    if (!(Object.prototype.toString.call(data) === '[object Array]')) {
-      alert('agReport.setRows requires Array as first param');
-      return agReport;
-    }
-    const beginSetRow = Date.now();
-    api.setRowData(data);
-    console.log('渲染耗时 ', Date.now() - beginSetRow);
-    console.log('总耗时 ', Date.now() - window.beforeMountTime);
-    return agReport;
-  };
-
-  // 设置默认排序规则
-  agReport.setSortModel = (data) => {
-    if (!data) { return agReport; } // 如果未传参，则返回。
-    // data: [{ colId: 'IMAGE', sort: 'asc' }]
-    if (!(Object.prototype.toString.call(data) === '[object Array]')) {
-      alert('agReport.setSortModel requires Array as first param');
-      return agReport;
-    }
-    api.setSortModel(data);
-  };
-
-  return agReport;
+  return agReport(container, opt);
 };
 
-export default agReport;
+export default initializeAgReport;
