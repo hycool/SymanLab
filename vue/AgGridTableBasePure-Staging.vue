@@ -151,13 +151,6 @@
           columnDefs.push({
             headerName: d,
             field: 'field' + i,
-            valueGetter(params) {
-              if (parseFloat(params.data[params.colDef.field])) {
-                return parseFloat(params.data[params.colDef.field]);
-              } else {
-                return params.data[params.colDef.field] === '' ? '[未知]' : params.data[params.colDef.field];
-              }
-            }
           });
         });
         return columnDefs;

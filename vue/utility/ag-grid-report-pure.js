@@ -20,8 +20,8 @@ const localeText = {
   more: '更多',
   to: '到',
   of: '共',
-  next: 'Next',
-  previous: 'Previous',
+  next: '向后',
+  previous: '向前',
   loadingOoo: '加 载 中 ...',
   // setFilter
   selectAll: '全选',
@@ -36,7 +36,7 @@ const localeText = {
   notContains: '不包含',
   lessThanOrEqual: '小于等于',
   greaterThanOrEqual: '大于等于',
-  inRange:'daInRange',
+  inRange:'在...范围内',
   lessThan: '小于',
   greaterThan: '大于',
   // textFilter
@@ -47,12 +47,12 @@ const localeText = {
   group: '当前分组',
   // toolPanel
   columns: '工具栏',
-  rowGroupColumns: 'Pivot Cols',
+  rowGroupColumns: '透视列',
   rowGroupColumnsEmptyMessage: '将需要分组查询的“列”拖拽至此处',
-  valueColumns: 'Value Cols',
+  valueColumns: '聚合列',
   pivotMode: '透视模式',
   groups: '分组详情',
-  values: '聚合分析列',
+  values: '聚合分析值',
   pivots: '透视列',
   valueColumnsEmptyMessage: '将需要聚合分析的‘列’拖拽到此处',
   pivotColumnsEmptyMessage: '将需要透视分析的‘列’拖拽至此处',
@@ -65,8 +65,8 @@ const localeText = {
   autosizeAllColumns: '自适应所有列',
   groupBy: '分组',
   ungroupBy: '取消分组',
-  resetColumns: '重置所有列',
-  destroyColumnComps: '重置所有列',
+  resetColumns: '重置所有列位置信息',
+  destroyColumnComps: '重置所有列位置信息',
   expandAll: '展开所有',
   collapseAll: '收缩所有',
   toolPanel: '工具栏',
@@ -78,14 +78,14 @@ const localeText = {
   pinRight: '向右固定',
   noPin: '取消固定',
   // enterPriseAggregationAndStatusPanel
-  sum: 'Sum',
-  min: 'Min',
-  max: 'Max',
-  first: 'First',
-  last: 'Last',
+  sum: '求和',
+  min: '最小值',
+  max: '最大值',
+  first: '首值',
+  last: '末值',
   none: 'None',
-  count: 'Count',
-  avg: 'Avg',
+  count: '计数',
+  avg: '平均',
   average: '平均值',
   // standardMenu
   copyWithHeaders: '复制（含表头）',
@@ -99,8 +99,8 @@ const setCommonStyles = () => {
   const commonStyles = document.createElement('style');
   const styleArray = [
     `.pos-ag-report-container { font-family: 'Microsoft YaHei', 'Hiragino Sans GB', !important; }`,
-    '.ag-pinned-left-cols-container .ag-row { background-color: rgba(0, 145, 234, 0.3); }',
-    '.ag-row-footer { background-color: #f7f7f7 !important; }',
+    '.ag-pinned-left-cols-container .ag-row { background-color: #f6f8f9; }',
+    '.ag-row-footer { background-color: rgba(206, 218, 216, 0.5) !important; font-weight: 600; color: #3b3771;}',
     '.ag-tool-panel .ag-column-select-panel { flex-grow: 1; }',
     '.ag-theme-balham .ag-header { font-weight: 500 }',
     '.ag-body-viewport::-webkit-scrollbar, .ag-column-container::-webkit-scrollbar, .ag-column-drop-list::-webkit-scrollbar { width: 8px; height: 8px; }',
@@ -173,7 +173,9 @@ const exportCustomExcel = (csvData, groupState) => {
  */
 const initializeAgReport = (container, opt) => {
   const agReport = (agGridTableContainer, options) => {
-    let updateBodyScrollDelay = -1; // 横向滚动延迟计时器
+    agReport.updateBodyScrollDelay = -1; // 横向滚动延迟计时器
+    agReport.autoSizeAllClumnsDelay = -1;
+    agReport.autoSizeAllColumnsDelay = -1;
     if (!(agGridTableContainer instanceof HTMLElement)) {
       console.log('agGridTableContainer is not a HTMLElement: agGridTableContainer = ', agGridTableContainer);
       agReport.containerIsNull = true;
@@ -210,8 +212,6 @@ const initializeAgReport = (container, opt) => {
     // 为agGridDiv设置通用样式
     agGridDiv.appendChild(setCommonStyles(options));
 
-
-
     const gridOptions = {
       columnDefs: options && options.columnDefs ? options.columnDefs : [], // 列定义
       rowData : options && options.rowData ? options.rowData : [],// 行数据
@@ -234,17 +234,20 @@ const initializeAgReport = (container, opt) => {
         enableValue: true,
       }, // 默认列配置
       enableCellChangeFlash: true,
-      pivotPanelShow: 'onlyWhenPivoting', // on of ['always','onlyWhenPivoting'] 表头上方可用于拖拽pivot列的区域
-      pivotMode: false,
-      pivotTotals: false,
+      pivotPanelShow: 'onlyWhenPivoting', // one of ['always','onlyWhenPivoting', 'never'] 表头上方可用于拖拽pivot列的区域
+      pivotMode: false, // 透视模式开启
+      pivotTotals: false, //透视合计值
       showToolPanel: true, // 显示工具栏
       toolPanelSuppressPivotMode: true, // 禁用pivote mode
       toolPanelSuppressValues: true, // 禁用aggregate value section 面板
       toolPanelSuppressPivots: true, // 禁用 pivot section 面板
-      groupIncludeFooter: true, // 是否显示分组的footer
+      toolPanelSuppressColumnFilter: true, // 禁用columns filter
+      toolPanelSuppressColumnSelectAll: true, // 禁用ColumnSelectAll checkbox
+      toolPanelSuppressSideButtons: false, // 禁用侧边栏的开关按钮
+      groupIncludeFooter: true, // 是否显示分组的footer 合计行
       floatingFilter: options && options.floatingFilter ? options.floatingFilter : false, // 是否显表头下方的浮动筛选框
       rowDragManaged: true,
-      rowGroupPanelShow: options && options.rowGroupPanelShow ? options.rowGroupPanelShow : 'onlyWhenGrouping', // 是否显最顶部的group panel ['always', 'onlyWhenGrouping']
+      rowGroupPanelShow: options && options.rowGroupPanelShow ? options.rowGroupPanelShow : 'onlyWhenGrouping', // 是否显最顶部的group panel ['always', 'onlyWhenGrouping', 'never']
       enterMovesDownAfterEdit: true,
       localeText,
       groupDefaultExpanded: 1, // 默认展开几层分组
@@ -256,57 +259,101 @@ const initializeAgReport = (container, opt) => {
       },
       groupHideOpenParents: true, // 分组隐藏
       onGridReady(params) {
-        const defaultGroups = agReport.defaultGroupColumns;
         const { columnApi } = params;
-        // 自适应所有列
         columnApi.autoSizeAllColumns();
-        // 处理分组情况
-        columnApi.setColumnsPinned(defaultGroups.map(d => `ag-Grid-AutoColumn-${d}`), true);
-        // replaceNode(document.querySelector('.ag-pivot-mode-select')).innerText = '工具栏';
+
+        // 替换class = '.ag-column-select-label'的内容，以禁用点击label显示和隐藏列的功能
+        document.querySelectorAll('.ag-column-select-label').forEach(d => {
+          replaceNode(d);
+        });
+
+        // 移除class = '.ag-column-select-checkbox' 以免给用户造成困扰
+        document.querySelectorAll('.ag-column-select-checkbox').forEach(d => {
+          d.style.opacity = 0;
+          d.style.width = '0';
+          d.style.overflow = 'hidden';
+        })
 
       }, // 当表格渲染好之后，触发onGridReady
-      onColumnRowGroupChanged(params) {
-        const { columnApi } = params;
-        columnApi.autoSizeAllColumns();
+      onColumnRowGroupChanged() {
+        agReport.dealWithPinnedColumns();
+        agReport.dealWithShowedColumns();
+        agReport.autoSizeAllColumns();
       }, // 分组变化
       onBodyScroll(params) {
         const { columnApi, direction } = params;
-        clearTimeout(updateBodyScrollDelay);
+        clearTimeout(agReport.updateBodyScrollDelay);
         if (direction === 'horizontal') {
-          updateBodyScrollDelay = setTimeout(() => {
+          agReport.updateBodyScrollDelay = setTimeout(() => {
             columnApi.autoSizeAllColumns();
           }, 10); // 当检测到滚动条为横向滚动时，自适应当前视口范围内的所有列
         }
         agGridTableContainer.setAttribute('data-scroll-left', params.left);
       }, // 当表体发生滚动时候触发该事件
-      onColumnPivotChanged(params) {
-        const { columnApi } = params;
-        columnApi.getColumnState().forEach(d => {
-          const { pivotIndex } = d;
-          if (pivotIndex !== undefined && pivotIndex !== null) {
-            // console.log('column pivot changed', pivotIndex, d.colId);
-          }
-        });
-      }, // 透视变化
-      onColumnValueChanged(params) {
-        const { columnApi } = params;
-        columnApi.autoSizeAllColumns();
+      onColumnValueChanged() {
+        agReport.autoSizeAllColumns();
       }, // aggregation 变化
-      onColumnPivotModeChanged(params) {
-        // console.log('onColumnPivotModeChanged', params);
-      }, // pivot mode 变化
-      onModelUpdated(params) {
-        const { columnApi } = params;
-        columnApi.autoSizeAllColumns();
+      onRowGroupOpened() {
+        agReport.autoSizeAllColumns();
       },
+      onGridSizeChanged() {
+        agReport.autoSizeAllColumns();
+      }
     };
 
     // 初始化ag grid
     new Grid(agGridDiv, gridOptions);
 
+    const transformColumnDefs = (data) => {
+      const defaultGroups = agReport.defaultGroupColumns;
+      const aggregationColumns = agReport.aggregationColumns;
+      return data.map(d => {
+        const item = {};
+
+        item.headerName = d.headerName;
+        item.field = d.field;
+
+        // 处理suppressToolPanel，只有在defaultGroups中的列，允许出现在toolPanel 面板
+        if (defaultGroups && defaultGroups.indexOf(item.field) === -1) {
+          item.suppressToolPanel = true;  // 禁用工具栏显示
+        } else {
+          item.lockVisible = true;
+        }
+
+        // 处理allowedAggFuncs | aggFunc | valueGetter
+        if (aggregationColumns && aggregationColumns.indexOf(item.field) === -1) {
+          item.enableValue = false;
+        } else {
+          item.enableRowGroup = false;
+          item.enableValue = true;
+          item.allowedAggFuncs = ['sum'];
+          item.aggFunc = 'sum';
+          item.valueGetter = (params) => {
+            if (parseFloat(params.data[params.colDef.field])) {
+              return parseFloat(params.data[params.colDef.field]);
+            } else {
+              return params.data[params.colDef.field] === '' ? '[未知]' : params.data[params.colDef.field];
+            }
+          };
+        }
+
+        return item;
+      });
+    };
+
     const { api, columnApi } = gridOptions;
     agReport.api = api;
     agReport.columnApi = columnApi;
+
+    // autoSizeAllColumns
+    agReport.autoSizeAllColumns = () => {
+      clearTimeout(agReport.autoSizeAllColumnsDelay);
+      agReport.autoSizeAllColumnsDelay = setTimeout(() => {
+        if (columnApi) {
+          columnApi.autoSizeAllColumns();
+        }
+      }, 10);
+    };
 
     // 处理分组情况
     agReport.dealGroupInfo = () => {
@@ -317,29 +364,38 @@ const initializeAgReport = (container, opt) => {
       return agReport;
     };
 
-    // 设置columnDefs
-    agReport.setCols = (data) => {
-      const defaultGroups = agReport.defaultGroupColumns;
+    // 处理应该显示或应该隐藏的信息
+    agReport.dealWithShowedColumns = () => {
       const displayedColumns = agReport.displayedColumns;
       const aggregationColumns = agReport.aggregationColumns;
+
+      // 处理显示隐藏列
+      columnApi.setColumnsVisible(columnApi.getColumnState().map(d => d.colId), false);
+      columnApi.setColumnsVisible(displayedColumns || [], true);
+      columnApi.setColumnsVisible(aggregationColumns || [], true);
+    };
+
+    // 处理pinned columns
+    agReport.dealWithPinnedColumns = () => {
+      // 获取分组详情
+      const tmpArray = [];
+      columnApi.getColumnState().forEach(d => {
+        if (d.rowGroupIndex !== null && d.rowGroupIndex !== undefined) {
+          tmpArray.push(d);
+        }
+      });
+      const columnGroups = tmpArray.sort((a, b) => a.rowGroupIndex - b.rowGroupIndex ).map(d => d.colId);
+      columnApi.setColumnsPinned(columnGroups.map(d => `ag-Grid-AutoColumn-${d}`), true);
+    };
+
+    // 设置columnDefs
+    agReport.setCols = (data) => {
       if (!data) { return agReport; } // 如果未传参，则返回。
       if (!(Object.prototype.toString.call(data) === '[object Array]')) {
         alert('agReport.setCols requires Array as first param');
         return agReport;
       }
-      // 处理suppressToolPanel
-      data.forEach(d => {
-        if (defaultGroups && defaultGroups.indexOf(d.field) === -1) {
-          d.suppressToolPanel = true;
-        }
-      });
-      api.setColumnDefs(data);
-      // 处理显示隐藏列
-      columnApi.setColumnsVisible(data.map(d => d.field), false);
-      columnApi.setColumnsVisible(displayedColumns || [], true);
-      // 处理汇总计算列
-      columnApi.setValueColumns(aggregationColumns || []);
-      columnApi.setColumnsVisible(aggregationColumns || [], true);
+      api.setColumnDefs(transformColumnDefs(data));
       agReport.dealGroupInfo();
       return agReport;
     };
@@ -351,10 +407,7 @@ const initializeAgReport = (container, opt) => {
         alert('agReport.setRows requires Array as first param');
         return agReport;
       }
-      const beginSetRow = Date.now();
       api.setRowData(data);
-      console.log('渲染耗时 ', Date.now() - beginSetRow);
-      console.log('总耗时 ', Date.now() - window.beforeMountTime);
       return agReport;
     };
 
