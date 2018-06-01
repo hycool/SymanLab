@@ -232,6 +232,8 @@ const initializeAgReport = (container, opt) => {
         enableRowGroup: true,
         enablePivot: true,
         enableValue: true,
+        menuTabs: ['generalMenuTab', 'filterMenuTab'],
+        suppressMovable: true, // 默认禁用拖拽移动
       }, // 默认列配置
       enableCellChangeFlash: true,
       pivotPanelShow: 'onlyWhenPivoting', // one of ['always','onlyWhenPivoting', 'never'] 表头上方可用于拖拽pivot列的区域
@@ -247,17 +249,30 @@ const initializeAgReport = (container, opt) => {
       groupIncludeFooter: true, // 是否显示分组的footer 合计行
       floatingFilter: options && options.floatingFilter ? options.floatingFilter : false, // 是否显表头下方的浮动筛选框
       rowDragManaged: true,
-      rowGroupPanelShow: options && options.rowGroupPanelShow ? options.rowGroupPanelShow : 'onlyWhenGrouping', // 是否显最顶部的group panel ['always', 'onlyWhenGrouping', 'never']
+      rowGroupPanelShow: options && options.rowGroupPanelShow ? options.rowGroupPanelShow : 'never', // 是否显最顶部的group panel ['always', 'onlyWhenGrouping', 'never']
       enterMovesDownAfterEdit: true,
       localeText,
       groupDefaultExpanded: 1, // 默认展开几层分组
-      groupMultiAutoColumn: true, // 分组时，显示分组原字段
       autoGroupColumnDef: {
         cellRendererParams:{
           suppressCount: true, // 禁用分组状态下，各个分组行的计数统计
         },
       },
       groupHideOpenParents: true, // 分组隐藏
+      groupMultiAutoColumn: true, // 分组时，显示分组原字段
+      suppressDragLeaveHidesColumns: true, // 禁用拖拽某列离开表区的时候隐藏该列
+      suppressMakeColumnVisibleAfterUnGroup: true, // 顾名思义
+      getMainMenuItems() {
+        return [
+          'pinSubMenu',
+          'separator',
+          'autoSizeThis',
+          'autoSizeAll',
+          'separator',
+          'expandAll',
+          'contractAll'
+        ];
+      }, // 设置每列的general menu item
       onGridReady(params) {
         const { columnApi } = params;
         columnApi.autoSizeAllColumns();
@@ -277,7 +292,6 @@ const initializeAgReport = (container, opt) => {
       }, // 当表格渲染好之后，触发onGridReady
       onColumnRowGroupChanged() {
         agReport.dealWithPinnedColumns();
-        agReport.dealWithShowedColumns();
         agReport.autoSizeAllColumns();
       }, // 分组变化
       onBodyScroll(params) {
@@ -298,7 +312,7 @@ const initializeAgReport = (container, opt) => {
       },
       onGridSizeChanged() {
         agReport.autoSizeAllColumns();
-      }
+      },
     };
 
     // 初始化ag grid
@@ -324,6 +338,7 @@ const initializeAgReport = (container, opt) => {
         if (aggregationColumns && aggregationColumns.indexOf(item.field) === -1) {
           item.enableValue = false;
         } else {
+          item.suppressMovable = false; // 只有聚合计算列允许拖拽移动
           item.enableRowGroup = false;
           item.enableValue = true;
           item.allowedAggFuncs = ['sum'];
@@ -378,13 +393,10 @@ const initializeAgReport = (container, opt) => {
     // 处理pinned columns
     agReport.dealWithPinnedColumns = () => {
       // 获取分组详情
-      const tmpArray = [];
-      columnApi.getColumnState().forEach(d => {
-        if (d.rowGroupIndex !== null && d.rowGroupIndex !== undefined) {
-          tmpArray.push(d);
-        }
-      });
-      const columnGroups = tmpArray.sort((a, b) => a.rowGroupIndex - b.rowGroupIndex ).map(d => d.colId);
+      const columnGroups = columnApi.getColumnState()
+        .filter(d => d.rowGroupIndex !== null && d.rowGroupIndex !== undefined)
+        .sort((a, b) => a.rowGroupIndex - b.rowGroupIndex )
+        .map(d => d.colId);
       columnApi.setColumnsPinned(columnGroups.map(d => `ag-Grid-AutoColumn-${d}`), true);
     };
 
@@ -396,6 +408,7 @@ const initializeAgReport = (container, opt) => {
         return agReport;
       }
       api.setColumnDefs(transformColumnDefs(data));
+      agReport.dealWithShowedColumns();
       agReport.dealGroupInfo();
       return agReport;
     };

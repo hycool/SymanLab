@@ -191,6 +191,7 @@
                 const rowData = self.transformRowData(result.data);
                 const columnDefs = self.transformColumnDefs();
                 agReport(self.$refs.agGridReport, {
+                  groupAllowedColumns: ["field2", "field6", "field5", "field15"],
                   defaultGroupColumns: ["field2", "field6", "field5", "field15"],
                   aggregationColumns: ['field9', 'field17', 'field26', 'field27'],
                 })
