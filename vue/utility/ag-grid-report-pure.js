@@ -268,11 +268,19 @@ const initializeAgReport = (container, opt) => {
           'separator',
           'autoSizeThis',
           'autoSizeAll',
+        ];
+      }, // 设置每列的general menu item
+      getContextMenuItems() {
+        return [
+          'copy',
+          'copyWithHeaders',
+          'paste',
+          'export',
           'separator',
           'expandAll',
           'contractAll'
         ];
-      }, // 设置每列的general menu item
+      }, // 表体右击菜单
       onGridReady(params) {
         const { columnApi } = params;
         columnApi.autoSizeAllColumns();
@@ -338,6 +346,7 @@ const initializeAgReport = (container, opt) => {
         if (aggregationColumns && aggregationColumns.indexOf(item.field) === -1) {
           item.enableValue = false;
         } else {
+          item.filter = 'agNumberColumnFilter';
           item.suppressMovable = false; // 只有聚合计算列允许拖拽移动
           item.enableRowGroup = false;
           item.enableValue = true;
