@@ -100,6 +100,7 @@ const setCommonStyles = () => {
   const styleArray = [
     `.pos-ag-report-container { font-family: 'Microsoft YaHei', 'Hiragino Sans GB', !important; }`,
     '.ag-pinned-left-cols-container .ag-row { background-color: #f6f8f9; }',
+    '.ag-floating-bottom-viewport { font-weight: 600; color: #3b3771; }',
     '.ag-row-footer { background-color: rgba(206, 218, 216, 0.5) !important; font-weight: 600; color: #3b3771;}',
     '.ag-tool-panel .ag-column-select-panel { flex-grow: 1; }',
     '.ag-theme-balham .ag-header { font-weight: 500 }',
@@ -185,11 +186,12 @@ const initializeAgReport = (container, opt) => {
 
       if(opt) {
         agReport.reportMode = options.reportMode || 'normal'; // 默认为普通模式
-        agReport.allVisibleColumns = options.allVisibleColumns; // 所有允许可见的列
-        agReport.displayedColumns = options.displayedColumns; // 默认展示的列
-        agReport.groupAllowedColumns = options.groupAllowedColumns; // 所有允许分组查看的列
-        agReport.defaultGroupColumns = options.defaultGroupColumns; // 当前默认的分组情况
-        agReport.aggregationColumns = options.aggregationColumns; // 所有聚合列的信息
+        agReport.allVisibleColumns = options.allVisibleColumns || []; // 所有允许可见的列
+        agReport.displayedColumns = options.displayedColumns || []; // 默认展示的列
+        agReport.groupAllowedColumns = options.groupAllowedColumns || []; // 所有允许分组查看的列
+        agReport.defaultGroupColumns = options.defaultGroupColumns || []; // 当前默认的分组情况
+        agReport.aggregationColumns = options.aggregationColumns || []; // 所有聚合列的信息
+        agReport.subTotalColumns = options.subTotalColumns || []; // 哪些列需要在页面内计算合计值
       }
 
       // 判断agGridTableContainer是否已经被ag实例化
@@ -224,7 +226,7 @@ const initializeAgReport = (container, opt) => {
       enableSorting: true, // 允许排序
       enableFilter: options && options.enableFilter !== undefined ? options.enableFilter : true, // 是否允许过滤
       enableStatusBar: true, // 当用户在视图区进行区域选择的时候，是否显示所有可计算数据的[平均、求和、计数、最大、最小]等值
-      enableRangeSelection: true, // 是否允许进行单元格区域选择
+      enableRangeSelection: false, // 是否允许进行单元格区域选择
       rowSelection: "multiple", // 行选择模式
       suppressRowClickSelection: true, // 禁用单击事件选中行
       rowDeselection: options && options.rowDeselection !== undefined ? options.rowDeselection : false, // 是否允许按住ctrl + click 取消选中某个已经选中的行
@@ -322,6 +324,9 @@ const initializeAgReport = (container, opt) => {
       onGridSizeChanged() {
         agReport.autoSizeAllColumns();
       }, // 顾名思义
+      onModelUpdated(params) {
+        params.columnApi.autoSizeAllColumns();
+      },
     };
 
     // 初始化ag grid
@@ -366,6 +371,21 @@ const initializeAgReport = (container, opt) => {
 
         return item;
       });
+    };
+
+    const transformRowData = (data) => {
+      const { subTotalColumns } = agReport;
+      let rowData = [].concat(data);
+      let pinnedBottomRowData = [];
+      const subTotalRowObj = {};
+      columnApi.getAllColumns().map(d => d.colId).forEach(d => {
+        subTotalRowObj[d] = null;
+      });
+      subTotalColumns.forEach(d => {
+        subTotalRowObj[d] = data.reduce((accumulator, currentValue) => accumulator + parseFloat(currentValue[d]), 0);
+      });
+      pinnedBottomRowData.push(subTotalRowObj);
+      return { rowData, pinnedBottomRowData };
     };
 
     const { api, columnApi } = gridOptions;
@@ -435,7 +455,9 @@ const initializeAgReport = (container, opt) => {
         alert('agReport.setRows requires Array as first param');
         return agReport;
       }
-      api.setRowData(data);
+      const { rowData, pinnedBottomRowData } = transformRowData(data);
+      api.setRowData(rowData);
+      api.setPinnedBottomRowData(pinnedBottomRowData);
       return agReport;
     };
 
@@ -465,14 +487,12 @@ const initializeAgReport = (container, opt) => {
     // 展开所有
     agReport.expandAll = () => {
       api.expandAll();
-      columnApi.autoSizeAllColumns();
       return agReport;
     };
 
     // 收缩所有
     agReport.collapseAll = () => {
       api.collapseAll();
-      columnApi.autoSizeAllColumns();
       return agReport;
     };
 

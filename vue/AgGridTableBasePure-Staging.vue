@@ -322,6 +322,7 @@
               groupAllowedColumns: ["ecode", "sku", "color", "size"],
               defaultGroupColumns: ["ecode", "sku", "color", "size"],
               aggregationColumns: ['amount', 'tagprice', 'retailprice'],
+              subTotalColumns: ['amount', 'tagprice', 'retailprice'],
             })
               .setCols(columnDefs)
               .setRows(rowData);
