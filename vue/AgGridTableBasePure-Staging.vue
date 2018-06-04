@@ -8,6 +8,10 @@
     <div v-if="enableAgReport" ref="agGridReport" style="width: 100%; height: 700px; border: 0px solid black; margin: 0 auto;">
       <p style="margin-top: 30px; text-align: center;">Loading...</p>
     </div>
+    <div v-if="enableAgReport" style="width: 100%; height: 30px;"></div>
+    <div v-if="enablePosReport" ref="posGridReport" style="width: 100%; height: 700px; border: 0px solid black; margin: 0 auto;">
+      <p style="margin-top: 30px; text-align: center;">Loading...</p>
+    </div>
   </div>
 </template>
 
@@ -29,7 +33,8 @@
     data() {
       return {
         enableAgTable: false,
-        enableAgReport: true,
+        enableAgReport: false,
+        enablePosReport: true,
         cols: [],
         rows: [],
         agInstance: null,
@@ -299,6 +304,32 @@
         });
       },
       
+      fetchPosData() {
+        const self = this;
+        const columnDefs = [
+          { field: 'ecode', headerName: '商品编码', },
+          { field: 'sku', headerName: 'SKU', },
+          { field: 'color', headerName: '颜色', },
+          { field: 'size', headerName: '尺寸', },
+          { field: 'amount', headerName: '库存数量', },
+          { field: 'tagprice', headerName: '吊牌价', },
+          { field: 'retailprice', headerName: '零售价', },
+        ];
+        fetch('./assets/inventory.json').then((res) => {
+          res.json().then(rowData => {
+            agReport(self.$refs.posGridReport, {
+              reportMode: 'rowGroup', // one of ['normal', 'rowGroup']
+              groupAllowedColumns: ["ecode", "sku", "color", "size"],
+              defaultGroupColumns: ["ecode", "sku", "color", "size"],
+              aggregationColumns: ['amount', 'tagprice', 'retailprice'],
+            })
+              .setCols(columnDefs)
+              .setRows(rowData);
+            
+          })
+        })
+      },
+      
       fetchFCDataForWrapper() {
         const self = this;
         fetch('./assets/fc.data.json').then(res => {
@@ -347,6 +378,9 @@
       }
       if (this.enableAgReport) {
         this.fetchCsv();
+      }
+      if (this.enablePosReport) {
+        this.fetchPosData();
       }
       // this.convertCsvToExcel();
       // this.mockDemo();

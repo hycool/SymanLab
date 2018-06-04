@@ -184,6 +184,7 @@ const initializeAgReport = (container, opt) => {
       agReport.containerIsNull = false;
 
       if(opt) {
+        agReport.reportMode = options.reportMode || 'normal'; // 默认为普通模式
         agReport.allVisibleColumns = options.allVisibleColumns; // 所有允许可见的列
         agReport.displayedColumns = options.displayedColumns; // 默认展示的列
         agReport.groupAllowedColumns = options.groupAllowedColumns; // 所有允许分组查看的列
@@ -220,15 +221,15 @@ const initializeAgReport = (container, opt) => {
       pagination: options && options.pagination !== undefined ? options.pagination : false, // 是否启用分页
       paginationPageSize: 10,
       enableColResize: options && options.enableColResize !== undefined ? options.enableColResize : true, // 允许用户调整列宽
+      enableSorting: true, // 允许排序
       enableFilter: options && options.enableFilter !== undefined ? options.enableFilter : true, // 是否允许过滤
       enableStatusBar: true, // 当用户在视图区进行区域选择的时候，是否显示所有可计算数据的[平均、求和、计数、最大、最小]等值
-      enableRangeSelection: false, // 是否允许进行单元格区域选择
+      enableRangeSelection: true, // 是否允许进行单元格区域选择
       rowSelection: "multiple", // 行选择模式
       suppressRowClickSelection: true, // 禁用单击事件选中行
       rowDeselection: options && options.rowDeselection !== undefined ? options.rowDeselection : false, // 是否允许按住ctrl + click 取消选中某个已经选中的行
       groupSelectsChildren: options && options.groupSelectsChildren !== undefined? options.groupSelectsChildren : false, // 当进行分组的时候，控制选择分组的行为，是否连带其children一起选中
       defaultColDef: {
-        comparator: options && options.sortByLocal ? null : function() {return 0; },
         enableRowGroup: true,
         enablePivot: true,
         enableValue: true,
@@ -239,20 +240,20 @@ const initializeAgReport = (container, opt) => {
       pivotPanelShow: 'onlyWhenPivoting', // one of ['always','onlyWhenPivoting', 'never'] 表头上方可用于拖拽pivot列的区域
       pivotMode: false, // 透视模式开启
       pivotTotals: false, //透视合计值
-      showToolPanel: true, // 显示工具栏
+      showToolPanel: options.reportMode && options.reportMode !== 'normal', // 显示工具栏
       toolPanelSuppressPivotMode: true, // 禁用pivote mode
       toolPanelSuppressValues: true, // 禁用aggregate value section 面板
       toolPanelSuppressPivots: true, // 禁用 pivot section 面板
       toolPanelSuppressColumnFilter: true, // 禁用columns filter
       toolPanelSuppressColumnSelectAll: true, // 禁用ColumnSelectAll checkbox
-      toolPanelSuppressSideButtons: false, // 禁用侧边栏的开关按钮
-      groupIncludeFooter: true, // 是否显示分组的footer 合计行
-      floatingFilter: options && options.floatingFilter ? options.floatingFilter : false, // 是否显表头下方的浮动筛选框
+      toolPanelSuppressSideButtons: !(options.reportMode && options.reportMode !== 'normal'), // 禁用侧边栏的开关按钮
+      groupIncludeFooter: false, // 是否显示分组的footer 合计行
+      floatingFilter: options && options.floatingFilter ? options.floatingFilter : true, // 是否显表头下方的浮动筛选框
       rowDragManaged: true,
       rowGroupPanelShow: options && options.rowGroupPanelShow ? options.rowGroupPanelShow : 'never', // 是否显最顶部的group panel ['always', 'onlyWhenGrouping', 'never']
       enterMovesDownAfterEdit: true,
       localeText,
-      groupDefaultExpanded: 1, // 默认展开几层分组
+      groupDefaultExpanded: options && options.groupDefaultExpanded ? options.groupDefaultExpanded : 1, // 默认展开几层分组
       autoGroupColumnDef: {
         cellRendererParams:{
           suppressCount: true, // 禁用分组状态下，各个分组行的计数统计
@@ -317,10 +318,10 @@ const initializeAgReport = (container, opt) => {
       }, // aggregation 变化
       onRowGroupOpened() {
         agReport.autoSizeAllColumns();
-      },
+      }, // 分组展开
       onGridSizeChanged() {
         agReport.autoSizeAllColumns();
-      },
+      }, // 顾名思义
     };
 
     // 初始化ag grid
@@ -334,6 +335,8 @@ const initializeAgReport = (container, opt) => {
 
         item.headerName = d.headerName;
         item.field = d.field;
+        item.filter = 'agTextColumnFilter';
+        item.unSortIcon = true; // 默认显示unSortIcon 表示此列可以被排序
 
         // 处理suppressToolPanel，只有在defaultGroups中的列，允许出现在toolPanel 面板
         if (defaultGroups && defaultGroups.indexOf(item.field) === -1) {
@@ -411,14 +414,17 @@ const initializeAgReport = (container, opt) => {
 
     // 设置columnDefs
     agReport.setCols = (data) => {
+      const reportMode = agReport.reportMode;
       if (!data) { return agReport; } // 如果未传参，则返回。
       if (!(Object.prototype.toString.call(data) === '[object Array]')) {
         alert('agReport.setCols requires Array as first param');
         return agReport;
       }
       api.setColumnDefs(transformColumnDefs(data));
-      agReport.dealWithShowedColumns();
-      agReport.dealGroupInfo();
+      if (reportMode && reportMode !== 'normal') {
+        agReport.dealWithShowedColumns();
+        agReport.dealGroupInfo();
+      }
       return agReport;
     };
 
@@ -433,9 +439,47 @@ const initializeAgReport = (container, opt) => {
       return agReport;
     };
 
+    // 暴露quickFilter 方法
+    agReport.quickFilter = (content) => {
+      api.setQuickFilter(content);
+      return agReport;
+    };
+
     // autoSizeAllColumns
     agReport.autoSizeAllColumns = () => {
       columnApi.autoSizeAllColumns();
+    };
+
+    // 暴露showLoading
+    agReport.showLoading = () => {
+      api.showLoadingOverlay();
+      return agReport;
+    };
+
+    // 暴露hideLoading
+    agReport.hideLoading = () => {
+      api.hideOverlay();
+      return agReport;
+    };
+
+    // 展开所有
+    agReport.expandAll = () => {
+      api.expandAll();
+      columnApi.autoSizeAllColumns();
+      return agReport;
+    };
+
+    // 收缩所有
+    agReport.collapseAll = () => {
+      api.collapseAll();
+      columnApi.autoSizeAllColumns();
+      return agReport;
+    };
+
+    // 暴露销毁方法，释放内存
+    agReport.destroy = () => {
+      api.destroy();
+      return agReport;
     };
 
     agGridTableContainer.agReport = agReport;

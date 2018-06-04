@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    html, body {
+      overflow: hidden;
+    }
+    html, body, div {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    div, textarea {
+      box-sizing: border-box;
+    }
+    textarea {
+      font-family: "Microsoft YaHei UI";
+      padding: 15px;
+    }
+    .json-validator {
+      position: absolute;
+      right: -1000000px;
+      bottom: -1000000px;
+      tab-size: 4;
+      border: 1px solid green;
+      background: rgba(100,255,0,0.5);
+      color: #080;
+      overflow: auto;
+      min-height: 200px;
+      max-height: 350px;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <textarea id="demo" cols="40" rows="10" oninput="doValidate(event)" style="width: 50%"></textarea>
+  </div>
+  <textarea class="json-validator" readonly></textarea>
+  <script src="neatjson.js"></script>
+  <script>
+    const doValidate = function(e) {
+      if (e) { doValidate.dom = e.target; }
+      const validatorWidth = 300;
+      const validator = document.querySelector('.json-validator');
+      validator.style.display = '';
+      if (doValidate.dom) {
+        const targetWidth = doValidate.dom.offsetWidth;
+        const targetHeight = doValidate.dom.offsetHeight;
+        const leftDistance = doValidate.dom.getBoundingClientRect().left;
+        const rightDistance = document.body.clientWidth - leftDistance - targetWidth;
+        const topDistance = doValidate.dom.getBoundingClientRect().top;
+        const bottomDistance = document.body.clientHeight - topDistance - targetHeight;
+        let top = 0;
+        let left = 0;
+        if (leftDistance >= rightDistance) {
+          left = leftDistance - 300 - 10;
+          if (left >= validator.offsetWidth) {
+            top = topDistance;
+          } else {
+          
+          }
+        } else {
+          left = leftDistance + targetWidth + 10;
+          if (rightDistance >= validator.offsetWidth) {
+            top = topDistance;
+          } else {
+            if (topDistance >= bottomDistance) {
+              top = topDistance - validator.offsetHeight - 10;
+            } else {
+              top = topDistance + targetHeight + 10;
+            }
+          }
+        }
+        
+        // 处理样式
+        validator.style.width = `${validatorWidth}px`;
+        validator.style.top = `${top}px`;
+        validator.style.left = `${left}px`;
+      }
+      let obj;
+      let result = '';
+      const text = document.getElementById('demo').value;
+      try {
+        obj = JSON.parse(text);
+        const json = neatJSON(obj,{
+          wrap: 40,
+          indent:"        ",
+          aligned:true,
+          arrayPadding:2,
+          objectPadding:2,
+          afterComma:2,
+          beforeColon1:2,
+          aroundColonN:2,
+          padding: 2
+        });
+        result = json.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+        doValidate.dom.value = result;
+
+      } catch(e){
+        console.log(e);
+        result = e;
+      }
+      validator.innerHTML = result;
+    };
+    
+    window.onresize = function() {
+      doValidate()
+    };
+    
+  </script>
+  <script>
+    window.onload =function() {
+      document.getElementById('demo').value = '{"field_one":"field_one","field_two":{"field_two_child":["array value one","array value two","array value three"]}}';
+      doValidate();
+    }
+  </script>
+</body>
+</html>
