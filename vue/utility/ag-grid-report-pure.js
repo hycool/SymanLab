@@ -382,7 +382,7 @@ const initializeAgReport = (container, opt) => {
         subTotalRowObj[d] = null;
       });
       subTotalColumns.forEach(d => {
-        subTotalRowObj[d] = data.reduce((accumulator, currentValue) => accumulator + parseFloat(currentValue[d]), 0);
+        subTotalRowObj[d] = data.reduce((accumulator, currentValue) => accumulator + (parseFloat(currentValue[d]) || 0), 0);
       });
       pinnedBottomRowData.push(subTotalRowObj);
       return { rowData, pinnedBottomRowData };
