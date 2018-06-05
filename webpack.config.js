@@ -2,6 +2,7 @@ const path = require('path');
 
 module.exports = () => ({
   entry: {
+    table: './vue/table.js',
     agGridIndex: './vue/agGrid.js',
     crossTable: './vue/crossTable.js',
     entryReportPreview: './vue/entryReportPreview.js',
