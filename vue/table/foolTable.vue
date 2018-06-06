@@ -3,7 +3,9 @@
     <table ref="shadowTable" class="shadowTable"></table>
     <table>
       <thead ref="thead">
-        <tr ><th v-for="column in cols" >{{ column.name }}</th></tr>
+        <tr >
+          <th v-for="column in cols" >{{ column.name }}</th>
+        </tr>
       </thead>
       <tbody>
         <tr v-for="(row, rowIndex) in rows">
@@ -13,7 +15,22 @@
             :rowspan="colSpanAndRowSpanRules(rowIndex, column.colname, row).rowSpan || ''"
             :colspan="colSpanAndRowSpanRules(rowIndex, column.colname, row).colSpan || ''"
           >
-            {{ row[column.colname] }}
+            {{ column.displayType === undefined || getDisplayType(column.displayType, rowIndex, column.colname, row) === 'text' ? row[column.colname] : '' }}
+            <input
+              v-if="getDisplayType(column.displayType, rowIndex, column.colname, row) === 'input'"
+              :value="row[column.colname]"
+              :data-init-value="encodeURI(row[column.colname])"
+              type="number"
+              min="0"
+            />
+            <textarea
+              v-if="getDisplayType(column.displayType, rowIndex, column.colname, row) === 'textarea'"
+              :value="row[column.colname]"
+              :data-init-value="encodeURI(row[column.colname])"
+              spellcheck="false"
+              rows="3"
+            >
+            </textarea>
           </td>
         </tr>
       </tbody>
@@ -38,6 +55,14 @@
         type: Function,
         default: () => {
           return () => ({ display: true, rowSpan: 0, colSpan: 0 })
+        }
+      },
+    },
+    methods: {
+      getDisplayType(displayType, rowIndex, columnName, rowData) {
+        if (typeof displayType === 'string') { return displayType }
+        if (typeof displayType === 'function') {
+          return displayType(rowIndex, columnName, rowData);
         }
       }
     },
@@ -86,12 +111,39 @@
       white-space: nowrap;
     }
     td {
-      padding: 5px 15px;
+      padding: 5px;
       white-space: nowrap;
       color: #575757;
     }
     td, th {
       border-right: 1px solid lightgray;
+      text-align: center;
+    }
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+    }
+    input[type="number"]{
+      -moz-appearance: textfield;
+    }
+    td input {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      padding: 2px;
+      text-align: center;
+      width: 80px;
+      color: #575757;
+    }
+    td textarea {
+      font-family: "Microsoft YaHei UI", "Microsoft YaHei";
+      font-size: 13px;
+      padding: 5px;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      resize: none;
+      color: #575757;
     }
     p {
       text-align: center;
