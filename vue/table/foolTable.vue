@@ -6,8 +6,15 @@
         <tr ><th v-for="column in cols" >{{ column.name }}</th></tr>
       </thead>
       <tbody>
-        <tr v-for="row in rows">
-          <td v-for="columnValue in row">{{ columnValue }}</td>
+        <tr v-for="(row, rowIndex) in rows">
+          <td
+            v-for="column in cols"
+            v-if="colSpanAndRowSpanRules(rowIndex, column.colname, row).display"
+            :rowspan="colSpanAndRowSpanRules(rowIndex, column.colname, row).rowSpan || ''"
+            :colspan="colSpanAndRowSpanRules(rowIndex, column.colname, row).colSpan || ''"
+          >
+            {{ row[column.colname] }}
+          </td>
         </tr>
       </tbody>
       <tfoot></tfoot>
@@ -26,9 +33,17 @@
       rows: {
         type: Array,
         default: () => []
+      },
+      colSpanAndRowSpanRules: {
+        type: Function,
+        default: () => {
+          return () => ({ display: true, rowSpan: 0, colSpan: 0 })
+        }
       }
     },
     mounted() {
+      // console.log('typeof this.colSpanAndRowSpanRules', typeof this.colSpanAndRowSpanRules);
+      // console.log(this.colSpanAndRowSpanRules());
     },
   }
 </script>
@@ -55,6 +70,7 @@
       border-spacing: 0;
       border: 0;
       font-size: 13px;
+      user-select: none;
     }
     thead {
       border-bottom: 1px solid lightgray;
@@ -73,6 +89,9 @@
       padding: 5px 15px;
       white-space: nowrap;
       color: #575757;
+    }
+    td, th {
+      border-right: 1px solid lightgray;
     }
     p {
       text-align: center;
