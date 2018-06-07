@@ -11,6 +11,7 @@
         :cols="cols"
         :rows="rows"
         :colSpanAndRowSpanRules="colSpanAndRowSpanRules"
+        :rowAggregateColumns="['XS', 'S', 'M', 'L', 'XL', '2XL', '3XL', '4XL']"
       >
       </fool-table>
     </div>

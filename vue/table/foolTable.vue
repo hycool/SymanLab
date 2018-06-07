@@ -5,6 +5,8 @@
       <thead ref="thead">
         <tr >
           <th v-for="column in cols" >{{ column.name }}</th>
+          <!-- 处理行级合计列 -->
+          <th v-if="rowAggregateColumns.length > 0">合计</th>
         </tr>
       </thead>
       <tbody>
@@ -32,6 +34,10 @@
             >
             </textarea>
           </td>
+          <!-- 处理行级合计列 -->
+          <td v-if="rowAggregateColumns.length > 0">
+            {{ rowAggregateColumns.reduce((acc, value) => acc + (parseFloat(row[value]) || 0), 0) }}
+          </td>
         </tr>
       </tbody>
       <tfoot></tfoot>
@@ -43,20 +49,28 @@
   export default {
     name: 'foolTable',
     props: {
-      cols: {
+      cols: { // 列信息
         type: Array,
         default: () => []
       },
-      rows: {
+      rows: { // 行信息
         type: Array,
         default: () => []
       },
-      colSpanAndRowSpanRules: {
+      colSpanAndRowSpanRules: { // 合并单元格规则函数
         type: Function,
         default: () => {
           return () => ({ display: true, rowSpan: 0, colSpan: 0 })
         }
       },
+      rowAggregateColumns: { // 需要进行行级合计的列
+        type: Array,
+        default: () => [],
+      },
+      columnAggregateColumns: { // 需要进行列级合计的列
+        type: Array,
+        default: () => [],
+      }
     },
     methods: {
       getDisplayType(displayType, rowIndex, columnName, rowData) {
