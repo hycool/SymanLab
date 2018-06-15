@@ -335,39 +335,47 @@ const initializeAgReport = (container, opt) => {
     const transformColumnDefs = (data) => {
       const defaultGroups = agReport.defaultGroupColumns;
       const aggregationColumns = agReport.aggregationColumns;
+      const groupAllowedColumns = agReport.groupAllowedColumns;
       return data.map(d => {
         const item = {};
 
-        item.headerName = d.headerName;
-        item.field = d.field;
+        item.headerName = d.name;
+        item.field = d.colname;
         item.filter = 'agTextColumnFilter';
         item.unSortIcon = true; // 默认显示unSortIcon 表示此列可以被排序
+        item.suppressMovable = true; // 默认禁止拖拽移动
+        item.enableRowGroup = false; // 默认禁止row group
+        item.suppressToolPanel = true; // 默认禁用所有列的tool panel
 
-        // 处理suppressToolPanel，只有在defaultGroups中的列，允许出现在toolPanel 面板
+        // 处理groupAllowedColumns
+        if (groupAllowedColumns && groupAllowedColumns.indexOf(item.field) > -1) {
+          item.enableRowGroup = true;
+        }
+
+        // defaultGroups
         if (defaultGroups && defaultGroups.indexOf(item.field) === -1) {
-          item.suppressToolPanel = true;  // 禁用工具栏显示
-        } else {
-          item.lockVisible = true;
+          item.enableRowGroup = true;
+          // item.lockVisible = true;
         }
 
         // 处理allowedAggFuncs | aggFunc | valueGetter
-        if (aggregationColumns && aggregationColumns.indexOf(item.field) === -1) {
-          item.enableValue = false;
-        } else {
-          item.filter = 'agNumberColumnFilter';
-          item.suppressMovable = false; // 只有聚合计算列允许拖拽移动
-          item.enableRowGroup = false;
+        if (aggregationColumns && aggregationColumns.map(d => d.colname).indexOf(item.field) > -1) {
           item.enableValue = true;
-          item.allowedAggFuncs = ['sum'];
-          item.aggFunc = 'sum';
-          item.valueGetter = (params) => {
-            if (parseFloat(params.data[params.colDef.field])) {
-              return parseFloat(params.data[params.colDef.field]);
-            } else {
-              return params.data[params.colDef.field] === '' ? '[未知]' : params.data[params.colDef.field];
-            }
-          };
+          item.filter = 'agNumberColumnFilter';
+          item.allowedAggFuncs = ['sum', 'count', 'avg', 'max', 'min'];
+          item.aggFunc = d.aggType;
+          item.suppressMovable = false;
         }
+
+        item.valueGetter = (params) => {
+          if (aggregationColumns.map(d => d.colname).indexOf(params.colDef.field) > -1) {
+            console.log('agg: ', params.colDef.field, params.data);
+            return parseFloat(params.data[params.colDef.field]);
+          } else {
+            console.log(params.colDef.field, params.data);
+            return params.data[params.colDef.field]
+          }
+        };
 
         return item;
       });
@@ -417,9 +425,9 @@ const initializeAgReport = (container, opt) => {
       const aggregationColumns = agReport.aggregationColumns;
 
       // 处理显示隐藏列
-      columnApi.setColumnsVisible(columnApi.getColumnState().map(d => d.colId), false);
-      columnApi.setColumnsVisible(displayedColumns || [], true);
-      columnApi.setColumnsVisible(aggregationColumns || [], true);
+      columnApi.setColumnsVisible(columnApi.getColumnState().map(d => d.colId), false); // 隐藏所有列
+      columnApi.setColumnsVisible(displayedColumns || [], true); // 显示displayedColumns
+      columnApi.setColumnsVisible(aggregationColumns.map(d => d.colname) || [], true); // 显示聚合计算列aggregationColumns
     };
 
     // 处理pinned columns

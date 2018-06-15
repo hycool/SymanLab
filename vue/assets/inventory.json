@@ -1,1 +1,6186 @@
-[{"ecode":"18C5057","sku":"18C50571105","color":"粉红色","size":"M","amount":1,"tagprice":79,"retailprice":10},{"ecode":"18C5057","sku":"18C50571107","color":"粉红色","size":"XL","amount":1,"tagprice":79,"retailprice":10},{"ecode":"18S1002","sku":"18S10029000","color":"杂色1","size":"M（均）","amount":14,"tagprice":10,"retailprice":10},{"ecode":"18S1004","sku":"18S10049000","color":"杂色1","size":"M（均）","amount":15,"tagprice":10,"retailprice":10},{"ecode":"18S1005","sku":"18S10059000","color":"杂色1","size":"M（均）","amount":10,"tagprice":10,"retailprice":10},{"ecode":"18S1009","sku":"18S10099005","color":"杂色1","size":"M","amount":14,"tagprice":10,"retailprice":10},{"ecode":"18S5003","sku":"18S50039000","color":"杂色1","size":"M（均）","amount":15,"tagprice":10,"retailprice":10},{"ecode":"18S5004","sku":"18S50049000","color":"杂色1","size":"M（均）","amount":1,"tagprice":10,"retailprice":10},{"ecode":"18S5006","sku":"18S50069000","color":"杂色1","size":"M（均）","amount":15,"tagprice":10,"retailprice":10},{"ecode":"18S5012","sku":"18S50129005","color":"杂色1","size":"M","amount":12,"tagprice":10,"retailprice":10},{"ecode":"7S5141","sku":"7S51419000","color":"杂色1","size":"M（均）","amount":1,"tagprice":10,"retailprice":10},{"ecode":"8K5006","sku":"8K50060904","color":"黑色","size":"S","amount":9,"tagprice":29,"retailprice":10},{"ecode":"8K5006","sku":"8K50060905","color":"黑色","size":"M","amount":10,"tagprice":29,"retailprice":10},{"ecode":"8K5006","sku":"8K50060906","color":"黑色","size":"L","amount":3,"tagprice":29,"retailprice":10},{"ecode":"8K5006","sku":"8K50060907","color":"黑色","size":"XL","amount":1,"tagprice":29,"retailprice":10},{"ecode":"8S1000","sku":"8S10009000","color":"杂色1","size":"M（均）","amount":14,"tagprice":10,"retailprice":10},{"ecode":"8S1005","sku":"8S10059000","color":"杂色1","size":"M（均）","amount":6,"tagprice":10,"retailprice":10},{"ecode":"8T5107","sku":"8T51079105","color":"杂色2","size":"M","amount":1,"tagprice":19,"retailprice":10},{"ecode":"8T5107","sku":"8T51079106","color":"杂色2","size":"L","amount":2,"tagprice":19,"retailprice":10},{"ecode":"8T5107","sku":"8T51079107","color":"杂色2","size":"XL","amount":2,"tagprice":19,"retailprice":10},{"ecode":"18K5076","sku":"18K50761107","color":"粉红色","size":"XL","amount":2,"tagprice":19,"retailprice":19},{"ecode":"18K5076","sku":"18K50761108","color":"粉红色","size":"2XL","amount":5,"tagprice":19,"retailprice":19},{"ecode":"18K5076","sku":"18K50765108","color":"粉绿色","size":"2XL","amount":2,"tagprice":19,"retailprice":19},{"ecode":"18T5033","sku":"18T50330105","color":"白色","size":"M","amount":7,"tagprice":19,"retailprice":19},{"ecode":"18T5033","sku":"18T50330106","color":"白色","size":"L","amount":9,"tagprice":19,"retailprice":19},{"ecode":"18T5033","sku":"18T50330107","color":"白色","size":"XL","amount":8,"tagprice":19,"retailprice":19},{"ecode":"18T5033","sku":"18T50330108","color":"白色","size":"2XL","amount":2,"tagprice":19,"retailprice":19},{"ecode":"18T5033","sku":"18T50334305","color":"蛋黄","size":"M","amount":7,"tagprice":19,"retailprice":19},{"ecode":"18T5033","sku":"18T50334306","color":"蛋黄","size":"L","amount":10,"tagprice":19,"retailprice":19},{"ecode":"18T5033","sku":"18T50334307","color":"蛋黄","size":"XL","amount":7,"tagprice":19,"retailprice":19},{"ecode":"18T5033","sku":"18T50334308","color":"蛋黄","size":"2XL","amount":3,"tagprice":19,"retailprice":19},{"ecode":"18T5033","sku":"18T50336105","color":"粉蓝色","size":"M","amount":6,"tagprice":19,"retailprice":19},{"ecode":"18T5033","sku":"18T50336106","color":"粉蓝色","size":"L","amount":8,"tagprice":19,"retailprice":19},{"ecode":"18T5033","sku":"18T50336107","color":"粉蓝色","size":"XL","amount":5,"tagprice":19,"retailprice":19},{"ecode":"18T5033","sku":"18T50336108","color":"粉蓝色","size":"2XL","amount":1,"tagprice":19,"retailprice":19},{"ecode":"18C1007","sku":"18C10076604","color":"牛仔蓝","size":"S","amount":-6,"tagprice":99,"retailprice":29},{"ecode":"18C1007","sku":"18C10076606","color":"牛仔蓝","size":"L","amount":-4,"tagprice":99,"retailprice":29},{"ecode":"18C1007","sku":"18C10076607","color":"牛仔蓝","size":"XL","amount":10,"tagprice":99,"retailprice":29},{"ecode":"18K5044","sku":"18K50440904","color":"黑色","size":"S","amount":14,"tagprice":29,"retailprice":29},{"ecode":"18K5044","sku":"18K50440905","color":"黑色","size":"M","amount":13,"tagprice":29,"retailprice":29},{"ecode":"18K5044","sku":"18K50440906","color":"黑色","size":"L","amount":14,"tagprice":29,"retailprice":29},{"ecode":"18K5044","sku":"18K50440907","color":"黑色","size":"XL","amount":14,"tagprice":29,"retailprice":29},{"ecode":"18K5044","sku":"18K50441104","color":"粉红色","size":"S","amount":8,"tagprice":29,"retailprice":29},{"ecode":"18K5044","sku":"18K50441105","color":"粉红色","size":"M","amount":8,"tagprice":29,"retailprice":29},{"ecode":"18K5044","sku":"18K50441106","color":"粉红色","size":"L","amount":6,"tagprice":29,"retailprice":29},{"ecode":"18K5044","sku":"18K50441107","color":"粉红色","size":"XL","amount":8,"tagprice":29,"retailprice":29},{"ecode":"18K5044","sku":"18K50442104","color":"杏色","size":"S","amount":6,"tagprice":29,"retailprice":29},{"ecode":"18K5044","sku":"18K50442105","color":"杏色","size":"M","amount":7,"tagprice":29,"retailprice":29},{"ecode":"18K5044","sku":"18K50442106","color":"杏色","size":"L","amount":8,"tagprice":29,"retailprice":29},{"ecode":"18K5044","sku":"18K50442107","color":"杏色","size":"XL","amount":8,"tagprice":29,"retailprice":29},{"ecode":"18N5033","sku":"18N50336627","color":"牛仔蓝","size":"27","amount":-1,"tagprice":99,"retailprice":29},{"ecode":"18N5033","sku":"18N50336628","color":"牛仔蓝","size":"28","amount":1,"tagprice":99,"retailprice":29},{"ecode":"18Q5025","sku":"18Q50250905","color":"黑色","size":"M","amount":7,"tagprice":79,"retailprice":29},{"ecode":"18Q5025","sku":"18Q50250906","color":"黑色","size":"L","amount":5,"tagprice":79,"retailprice":29},{"ecode":"18Q5025","sku":"18Q50250907","color":"黑色","size":"XL","amount":5,"tagprice":79,"retailprice":29},{"ecode":"18T1065","sku":"18T10650105","color":"白色","size":"M","amount":10,"tagprice":29,"retailprice":29},{"ecode":"18T1065","sku":"18T10650106","color":"白色","size":"L","amount":6,"tagprice":29,"retailprice":29},{"ecode":"18T1065","sku":"18T10650107","color":"白色","size":"XL","amount":6,"tagprice":29,"retailprice":29},{"ecode":"18T1065","sku":"18T10650108","color":"白色","size":"2XL","amount":9,"tagprice":29,"retailprice":29},{"ecode":"18T1065","sku":"18T10650505","color":"花灰色","size":"M","amount":5,"tagprice":29,"retailprice":29},{"ecode":"18T1065","sku":"18T10650506","color":"花灰色","size":"L","amount":6,"tagprice":29,"retailprice":29},{"ecode":"18T1065","sku":"18T10650507","color":"花灰色","size":"XL","amount":9,"tagprice":29,"retailprice":29},{"ecode":"18T1065","sku":"18T10650508","color":"花灰色","size":"2XL","amount":9,"tagprice":29,"retailprice":29},{"ecode":"18T1065","sku":"18T10656005","color":"淡蓝色","size":"M","amount":5,"tagprice":29,"retailprice":29},{"ecode":"18T1065","sku":"18T10656006","color":"淡蓝色","size":"L","amount":5,"tagprice":29,"retailprice":29},{"ecode":"18T1065","sku":"18T10656007","color":"淡蓝色","size":"XL","amount":3,"tagprice":29,"retailprice":29},{"ecode":"18T1065","sku":"18T10656008","color":"淡蓝色","size":"2XL","amount":6,"tagprice":29,"retailprice":29},{"ecode":"18TA002","sku":"18TA0020105","color":"白色","size":"M","amount":5,"tagprice":29,"retailprice":29},{"ecode":"18TA002","sku":"18TA0020106","color":"白色","size":"L","amount":22,"tagprice":29,"retailprice":29},{"ecode":"18TA002","sku":"18TA0020107","color":"白色","size":"XL","amount":8,"tagprice":29,"retailprice":29},{"ecode":"18TA002","sku":"18TA0020108","color":"白色","size":"2XL","amount":6,"tagprice":29,"retailprice":29},{"ecode":"18TA002","sku":"18TA0020908","color":"黑色","size":"2XL","amount":7,"tagprice":29,"retailprice":29},{"ecode":"18TB002","sku":"18TB0020105","color":"白色","size":"M","amount":16,"tagprice":29,"retailprice":29},{"ecode":"18TB002","sku":"18TB0020106","color":"白色","size":"L","amount":16,"tagprice":29,"retailprice":29},{"ecode":"18TB002","sku":"18TB0020107","color":"白色","size":"XL","amount":15,"tagprice":29,"retailprice":29},{"ecode":"18TC001","sku":"18TC00114130","color":"大红色","size":"130","amount":2,"tagprice":29,"retailprice":29},{"ecode":"18TC001","sku":"18TC00114140","color":"大红色","size":"140","amount":-1,"tagprice":29,"retailprice":29},{"ecode":"18TC004","sku":"18TC00401110","color":"白色","size":"110","amount":2,"tagprice":29,"retailprice":29},{"ecode":"18TC004","sku":"18TC00401120","color":"白色","size":"120","amount":3,"tagprice":29,"retailprice":29},{"ecode":"18TC004","sku":"18TC00401130","color":"白色","size":"130","amount":3,"tagprice":29,"retailprice":29},{"ecode":"18TC004","sku":"18TC00401140","color":"白色","size":"140","amount":2,"tagprice":29,"retailprice":29},{"ecode":"18TC004","sku":"18TC00411110","color":"粉红色","size":"110","amount":5,"tagprice":29,"retailprice":29},{"ecode":"18TC004","sku":"18TC00411120","color":"粉红色","size":"120","amount":6,"tagprice":29,"retailprice":29},{"ecode":"18TC004","sku":"18TC00411130","color":"粉红色","size":"130","amount":6,"tagprice":29,"retailprice":29},{"ecode":"18TC004","sku":"18TC00411140","color":"粉红色","size":"140","amount":5,"tagprice":29,"retailprice":29},{"ecode":"18TC004","sku":"18TC00460110","color":"淡蓝色","size":"110","amount":5,"tagprice":29,"retailprice":29},{"ecode":"18TC004","sku":"18TC00460120","color":"淡蓝色","size":"120","amount":6,"tagprice":29,"retailprice":29},{"ecode":"18TC004","sku":"18TC00460130","color":"淡蓝色","size":"130","amount":6,"tagprice":29,"retailprice":29},{"ecode":"18TC004","sku":"18TC00460140","color":"淡蓝色","size":"140","amount":5,"tagprice":29,"retailprice":29},{"ecode":"18K5068","sku":"18K50680904","color":"黑色","size":"S","amount":4,"tagprice":39,"retailprice":39},{"ecode":"18K5068","sku":"18K50680905","color":"黑色","size":"M","amount":6,"tagprice":39,"retailprice":39},{"ecode":"18K5068","sku":"18K50680906","color":"黑色","size":"L","amount":2,"tagprice":39,"retailprice":39},{"ecode":"18K5068","sku":"18K50680907","color":"黑色","size":"XL","amount":7,"tagprice":39,"retailprice":39},{"ecode":"18K5068","sku":"18K50680908","color":"黑色","size":"2XL","amount":2,"tagprice":39,"retailprice":39},{"ecode":"18K5068","sku":"18K50685104","color":"粉绿色","size":"S","amount":5,"tagprice":39,"retailprice":39},{"ecode":"18K5068","sku":"18K50685105","color":"粉绿色","size":"M","amount":11,"tagprice":39,"retailprice":39},{"ecode":"18K5068","sku":"18K50685106","color":"粉绿色","size":"L","amount":15,"tagprice":39,"retailprice":39},{"ecode":"18K5068","sku":"18K50685107","color":"粉绿色","size":"XL","amount":8,"tagprice":39,"retailprice":39},{"ecode":"18K5068","sku":"18K50685108","color":"粉绿色","size":"2XL","amount":3,"tagprice":39,"retailprice":39},{"ecode":"8K1112","sku":"8K11120629","color":"灰色","size":"29","amount":2,"tagprice":39,"retailprice":39},{"ecode":"8K1112","sku":"8K11120630","color":"灰色","size":"30","amount":3,"tagprice":39,"retailprice":39},{"ecode":"8K1112","sku":"8K11120631","color":"灰色","size":"31","amount":6,"tagprice":39,"retailprice":39},{"ecode":"8K1112","sku":"8K11120632","color":"灰色","size":"32","amount":5,"tagprice":39,"retailprice":39},{"ecode":"8K1112","sku":"8K11120633","color":"灰色","size":"33","amount":3,"tagprice":39,"retailprice":39},{"ecode":"8K1112","sku":"8K11120634","color":"灰色","size":"34","amount":3,"tagprice":39,"retailprice":39},{"ecode":"8K1112","sku":"8K11120636","color":"灰色","size":"36","amount":3,"tagprice":39,"retailprice":39},{"ecode":"8K1112","sku":"8K11120638","color":"灰色","size":"38","amount":2,"tagprice":39,"retailprice":39},{"ecode":"8K1112","sku":"8K11120929","color":"黑色","size":"29","amount":2,"tagprice":39,"retailprice":39},{"ecode":"8K1112","sku":"8K11120930","color":"黑色","size":"30","amount":1,"tagprice":39,"retailprice":39},{"ecode":"8K1112","sku":"8K11120931","color":"黑色","size":"31","amount":3,"tagprice":39,"retailprice":39},{"ecode":"8K1112","sku":"8K11120932","color":"黑色","size":"32","amount":2,"tagprice":39,"retailprice":39},{"ecode":"8K1112","sku":"8K11120933","color":"黑色","size":"33","amount":2,"tagprice":39,"retailprice":39},{"ecode":"8K1112","sku":"8K11120934","color":"黑色","size":"34","amount":2,"tagprice":39,"retailprice":39},{"ecode":"8K1112","sku":"8K11120936","color":"黑色","size":"36","amount":3,"tagprice":39,"retailprice":39},{"ecode":"8K1112","sku":"8K11120938","color":"黑色","size":"38","amount":2,"tagprice":39,"retailprice":39},{"ecode":"8K1112","sku":"8K11121229","color":"皮红色","size":"29","amount":4,"tagprice":39,"retailprice":39},{"ecode":"8K1112","sku":"8K11121230","color":"皮红色","size":"30","amount":4,"tagprice":39,"retailprice":39},{"ecode":"8K1112","sku":"8K11121231","color":"皮红色","size":"31","amount":4,"tagprice":39,"retailprice":39},{"ecode":"8K1112","sku":"8K11121232","color":"皮红色","size":"32","amount":4,"tagprice":39,"retailprice":39},{"ecode":"8K1112","sku":"8K11121233","color":"皮红色","size":"33","amount":4,"tagprice":39,"retailprice":39},{"ecode":"8K1112","sku":"8K11121234","color":"皮红色","size":"34","amount":3,"tagprice":39,"retailprice":39},{"ecode":"8K1112","sku":"8K11121236","color":"皮红色","size":"36","amount":4,"tagprice":39,"retailprice":39},{"ecode":"18C5076","sku":"18C50760105","color":"白色","size":"M","amount":4,"tagprice":79,"retailprice":49},{"ecode":"18C5076","sku":"18C50760106","color":"白色","size":"L","amount":4,"tagprice":79,"retailprice":49},{"ecode":"18C5076","sku":"18C50760107","color":"白色","size":"XL","amount":3,"tagprice":79,"retailprice":49},{"ecode":"18C5076","sku":"18C50761405","color":"大红色","size":"M","amount":3,"tagprice":79,"retailprice":49},{"ecode":"18C5076","sku":"18C50761406","color":"大红色","size":"L","amount":3,"tagprice":79,"retailprice":49},{"ecode":"18C5076","sku":"18C50761407","color":"大红色","size":"XL","amount":2,"tagprice":79,"retailprice":49},{"ecode":"7HB001","sku":"7HB0010135","color":"白色","size":"35","amount":1,"tagprice":49,"retailprice":49},{"ecode":"7HB001","sku":"7HB0010136","color":"白色","size":"36","amount":2,"tagprice":49,"retailprice":49},{"ecode":"7HB001","sku":"7HB0010137","color":"白色","size":"37","amount":3,"tagprice":49,"retailprice":49},{"ecode":"7HB001","sku":"7HB0010138","color":"白色","size":"38","amount":3,"tagprice":49,"retailprice":49},{"ecode":"7HB001","sku":"7HB0010139","color":"白色","size":"39","amount":1,"tagprice":49,"retailprice":49},{"ecode":"7HB001","sku":"7HB0010935","color":"黑色","size":"35","amount":1,"tagprice":49,"retailprice":49},{"ecode":"7HB001","sku":"7HB0010936","color":"黑色","size":"36","amount":4,"tagprice":49,"retailprice":49},{"ecode":"7HB001","sku":"7HB0010937","color":"黑色","size":"37","amount":3,"tagprice":49,"retailprice":49},{"ecode":"7HB001","sku":"7HB0010938","color":"黑色","size":"38","amount":6,"tagprice":49,"retailprice":49},{"ecode":"7HB001","sku":"7HB0010939","color":"黑色","size":"39","amount":2,"tagprice":49,"retailprice":49},{"ecode":"18K1075","sku":"18K10750629","color":"灰色","size":"29","amount":2,"tagprice":59,"retailprice":59},{"ecode":"18K1075","sku":"18K10750630","color":"灰色","size":"30","amount":2,"tagprice":59,"retailprice":59},{"ecode":"18K1075","sku":"18K10750631","color":"灰色","size":"31","amount":2,"tagprice":59,"retailprice":59},{"ecode":"18K1075","sku":"18K10750632","color":"灰色","size":"32","amount":2,"tagprice":59,"retailprice":59},{"ecode":"18K1075","sku":"18K10750633","color":"灰色","size":"33","amount":2,"tagprice":59,"retailprice":59},{"ecode":"18K1075","sku":"18K10750634","color":"灰色","size":"34","amount":2,"tagprice":59,"retailprice":59},{"ecode":"18K1075","sku":"18K10750636","color":"灰色","size":"36","amount":2,"tagprice":59,"retailprice":59},{"ecode":"18K1075","sku":"18K10750929","color":"黑色","size":"29","amount":3,"tagprice":59,"retailprice":59},{"ecode":"18K1075","sku":"18K10750930","color":"黑色","size":"30","amount":4,"tagprice":59,"retailprice":59},{"ecode":"18K1075","sku":"18K10750931","color":"黑色","size":"31","amount":4,"tagprice":59,"retailprice":59},{"ecode":"18K1075","sku":"18K10750932","color":"黑色","size":"32","amount":4,"tagprice":59,"retailprice":59},{"ecode":"18K1075","sku":"18K10750933","color":"黑色","size":"33","amount":4,"tagprice":59,"retailprice":59},{"ecode":"18K1075","sku":"18K10750934","color":"黑色","size":"34","amount":2,"tagprice":59,"retailprice":59},{"ecode":"18K1075","sku":"18K10750936","color":"黑色","size":"36","amount":4,"tagprice":59,"retailprice":59},{"ecode":"18K5107","sku":"18K51070105","color":"白色","size":"M","amount":1,"tagprice":59,"retailprice":59},{"ecode":"18K5107","sku":"18K51070106","color":"白色","size":"L","amount":2,"tagprice":59,"retailprice":59},{"ecode":"18K5107","sku":"18K51070107","color":"白色","size":"XL","amount":2,"tagprice":59,"retailprice":59},{"ecode":"18K5107","sku":"18K51070904","color":"黑色","size":"S","amount":3,"tagprice":59,"retailprice":59},{"ecode":"18K5107","sku":"18K51070905","color":"黑色","size":"M","amount":4,"tagprice":59,"retailprice":59},{"ecode":"18K5107","sku":"18K51070906","color":"黑色","size":"L","amount":3,"tagprice":59,"retailprice":59},{"ecode":"18K5107","sku":"18K51070907","color":"黑色","size":"XL","amount":2,"tagprice":59,"retailprice":59},{"ecode":"18N1071","sku":"18N10716629","color":"牛仔蓝","size":"29","amount":4,"tagprice":59,"retailprice":59},{"ecode":"18N1071","sku":"18N10716630","color":"牛仔蓝","size":"30","amount":5,"tagprice":59,"retailprice":59},{"ecode":"18N1071","sku":"18N10716631","color":"牛仔蓝","size":"31","amount":4,"tagprice":59,"retailprice":59},{"ecode":"18N1071","sku":"18N10716632","color":"牛仔蓝","size":"32","amount":4,"tagprice":59,"retailprice":59},{"ecode":"18N1071","sku":"18N10716633","color":"牛仔蓝","size":"33","amount":3,"tagprice":59,"retailprice":59},{"ecode":"18N1071","sku":"18N10716634","color":"牛仔蓝","size":"34","amount":3,"tagprice":59,"retailprice":59},{"ecode":"18N1071","sku":"18N10716636","color":"牛仔蓝","size":"36","amount":2,"tagprice":59,"retailprice":59},{"ecode":"18T1059","sku":"18T10590104","color":"白色","size":"S","amount":3,"tagprice":59,"retailprice":59},{"ecode":"18T1059","sku":"18T10590105","color":"白色","size":"M","amount":2,"tagprice":59,"retailprice":59},{"ecode":"18T1059","sku":"18T10590106","color":"白色","size":"L","amount":2,"tagprice":59,"retailprice":59},{"ecode":"18T1059","sku":"18T10590107","color":"白色","size":"XL","amount":4,"tagprice":59,"retailprice":59},{"ecode":"18T1059","sku":"18T10590108","color":"白色","size":"2XL","amount":2,"tagprice":59,"retailprice":59},{"ecode":"18T1059","sku":"18T10592104","color":"杏色","size":"S","amount":4,"tagprice":59,"retailprice":59},{"ecode":"18T1059","sku":"18T10592105","color":"杏色","size":"M","amount":4,"tagprice":59,"retailprice":59},{"ecode":"18T1059","sku":"18T10592106","color":"杏色","size":"L","amount":1,"tagprice":59,"retailprice":59},{"ecode":"18T1059","sku":"18T10592107","color":"杏色","size":"XL","amount":4,"tagprice":59,"retailprice":59},{"ecode":"18T1059","sku":"18T10592108","color":"杏色","size":"2XL","amount":2,"tagprice":59,"retailprice":59},{"ecode":"18T1059","sku":"18T10597104","color":"粉紫色","size":"S","amount":4,"tagprice":59,"retailprice":59},{"ecode":"18T1059","sku":"18T10597105","color":"粉紫色","size":"M","amount":3,"tagprice":59,"retailprice":59},{"ecode":"18T1059","sku":"18T10597106","color":"粉紫色","size":"L","amount":2,"tagprice":59,"retailprice":59},{"ecode":"18T1059","sku":"18T10597107","color":"粉紫色","size":"XL","amount":2,"tagprice":59,"retailprice":59},{"ecode":"18T1059","sku":"18T10597108","color":"粉紫色","size":"2XL","amount":5,"tagprice":59,"retailprice":59},{"ecode":"18T5067","sku":"18T50670105","color":"白色","size":"M","amount":6,"tagprice":59,"retailprice":59},{"ecode":"18T5067","sku":"18T50670106","color":"白色","size":"L","amount":5,"tagprice":59,"retailprice":59},{"ecode":"18T5067","sku":"18T50670107","color":"白色","size":"XL","amount":5,"tagprice":59,"retailprice":59},{"ecode":"18T5067","sku":"18T50674605","color":"芥黄色","size":"M","amount":5,"tagprice":59,"retailprice":59},{"ecode":"18T5067","sku":"18T50674606","color":"芥黄色","size":"L","amount":5,"tagprice":59,"retailprice":59},{"ecode":"18T5114","sku":"18T51140105","color":"白色","size":"M","amount":3,"tagprice":59,"retailprice":59},{"ecode":"18T5114","sku":"18T51140106","color":"白色","size":"L","amount":4,"tagprice":59,"retailprice":59},{"ecode":"18T5114","sku":"18T51140107","color":"白色","size":"XL","amount":5,"tagprice":59,"retailprice":59},{"ecode":"18T5114","sku":"18T51141405","color":"大红色","size":"M","amount":4,"tagprice":59,"retailprice":59},{"ecode":"18T5114","sku":"18T51141406","color":"大红色","size":"L","amount":3,"tagprice":59,"retailprice":59},{"ecode":"18T5114","sku":"18T51141407","color":"大红色","size":"XL","amount":3,"tagprice":59,"retailprice":59},{"ecode":"18T5124","sku":"18T51240106","color":"白色","size":"L","amount":1,"tagprice":59,"retailprice":59},{"ecode":"18T5124","sku":"18T51240107","color":"白色","size":"XL","amount":2,"tagprice":59,"retailprice":59},{"ecode":"18T5124","sku":"18T51244306","color":"蛋黄","size":"L","amount":3,"tagprice":59,"retailprice":59},{"ecode":"18T5124","sku":"18T51244307","color":"蛋黄","size":"XL","amount":1,"tagprice":59,"retailprice":59},{"ecode":"18T5145","sku":"18T51450105","color":"白色","size":"M","amount":6,"tagprice":59,"retailprice":59},{"ecode":"18T5145","sku":"18T51450106","color":"白色","size":"L","amount":3,"tagprice":59,"retailprice":59},{"ecode":"18T5145","sku":"18T51450107","color":"白色","size":"XL","amount":2,"tagprice":59,"retailprice":59},{"ecode":"18T5145","sku":"18T51454705","color":"土黄色","size":"M","amount":4,"tagprice":59,"retailprice":59},{"ecode":"18T5145","sku":"18T51454706","color":"土黄色","size":"L","amount":3,"tagprice":59,"retailprice":59},{"ecode":"18T5145","sku":"18T51454707","color":"土黄色","size":"XL","amount":2,"tagprice":59,"retailprice":59},{"ecode":"18T5145","sku":"18T51456405","color":"湖蓝","size":"M","amount":2,"tagprice":59,"retailprice":59},{"ecode":"18T5145","sku":"18T51456406","color":"湖蓝","size":"L","amount":2,"tagprice":59,"retailprice":59},{"ecode":"18T5145","sku":"18T51456407","color":"湖蓝","size":"XL","amount":2,"tagprice":59,"retailprice":59},{"ecode":"18T5146","sku":"18T51460105","color":"白色","size":"M","amount":3,"tagprice":59,"retailprice":59},{"ecode":"18T5146","sku":"18T51460106","color":"白色","size":"L","amount":3,"tagprice":59,"retailprice":59},{"ecode":"18T5146","sku":"18T51460107","color":"白色","size":"XL","amount":2,"tagprice":59,"retailprice":59},{"ecode":"18T5146","sku":"18T51461405","color":"大红色","size":"M","amount":3,"tagprice":59,"retailprice":59},{"ecode":"18T5146","sku":"18T51461406","color":"大红色","size":"L","amount":2,"tagprice":59,"retailprice":59},{"ecode":"18T5146","sku":"18T51461407","color":"大红色","size":"XL","amount":2,"tagprice":59,"retailprice":59},{"ecode":"18T5146","sku":"18T51464705","color":"土黄色","size":"M","amount":3,"tagprice":59,"retailprice":59},{"ecode":"18T5146","sku":"18T51464706","color":"土黄色","size":"L","amount":3,"tagprice":59,"retailprice":59},{"ecode":"18T5146","sku":"18T51464707","color":"土黄色","size":"XL","amount":1,"tagprice":59,"retailprice":59},{"ecode":"18T5152","sku":"18T51520105","color":"白色","size":"M","amount":4,"tagprice":59,"retailprice":59},{"ecode":"18T5152","sku":"18T51520106","color":"白色","size":"L","amount":3,"tagprice":59,"retailprice":59},{"ecode":"18T5152","sku":"18T51520107","color":"白色","size":"XL","amount":4,"tagprice":59,"retailprice":59},{"ecode":"18T5152","sku":"18T51521105","color":"粉红色","size":"M","amount":2,"tagprice":59,"retailprice":59},{"ecode":"18T5152","sku":"18T51521106","color":"粉红色","size":"L","amount":2,"tagprice":59,"retailprice":59},{"ecode":"18T5152","sku":"18T51521107","color":"粉红色","size":"XL","amount":3,"tagprice":59,"retailprice":59},{"ecode":"18T5152","sku":"18T51526805","color":"宝蓝色","size":"M","amount":2,"tagprice":59,"retailprice":59},{"ecode":"18T5152","sku":"18T51526806","color":"宝蓝色","size":"L","amount":2,"tagprice":59,"retailprice":59},{"ecode":"18T5152","sku":"18T51526807","color":"宝蓝色","size":"XL","amount":2,"tagprice":59,"retailprice":59},{"ecode":"18D5004","sku":"18D50040105","color":"白色","size":"M","amount":8,"tagprice":129,"retailprice":65},{"ecode":"18D5004","sku":"18D50040106","color":"白色","size":"L","amount":8,"tagprice":129,"retailprice":65},{"ecode":"18D5004","sku":"18D50040107","color":"白色","size":"XL","amount":8,"tagprice":129,"retailprice":65},{"ecode":"18H1004","sku":"18H10040939","color":"黑色","size":"39","amount":1,"tagprice":79,"retailprice":65},{"ecode":"18H1004","sku":"18H10040940","color":"黑色","size":"40","amount":2,"tagprice":79,"retailprice":65},{"ecode":"18H1004","sku":"18H10040941","color":"黑色","size":"41","amount":2,"tagprice":79,"retailprice":65},{"ecode":"18H1004","sku":"18H10040942","color":"黑色","size":"42","amount":2,"tagprice":79,"retailprice":65},{"ecode":"18H1004","sku":"18H10040943","color":"黑色","size":"43","amount":2,"tagprice":79,"retailprice":65},{"ecode":"18H5002","sku":"18H50020935","color":"黑色","size":"35","amount":1,"tagprice":79,"retailprice":65},{"ecode":"18H5002","sku":"18H50020936","color":"黑色","size":"36","amount":2,"tagprice":79,"retailprice":65},{"ecode":"18H5002","sku":"18H50020937","color":"黑色","size":"37","amount":2,"tagprice":79,"retailprice":65},{"ecode":"18H5002","sku":"18H50020938","color":"黑色","size":"38","amount":2,"tagprice":79,"retailprice":65},{"ecode":"18H5002","sku":"18H50020939","color":"黑色","size":"39","amount":1,"tagprice":79,"retailprice":65},{"ecode":"18N1024","sku":"18N10246628","color":"牛仔蓝","size":"28","amount":2,"tagprice":129,"retailprice":65},{"ecode":"18N1024","sku":"18N10246629","color":"牛仔蓝","size":"29","amount":2,"tagprice":129,"retailprice":65},{"ecode":"18N1024","sku":"18N10246630","color":"牛仔蓝","size":"30","amount":3,"tagprice":129,"retailprice":65},{"ecode":"18N1024","sku":"18N10246631","color":"牛仔蓝","size":"31","amount":1,"tagprice":129,"retailprice":65},{"ecode":"18N1024","sku":"18N10246632","color":"牛仔蓝","size":"32","amount":3,"tagprice":129,"retailprice":65},{"ecode":"18N1024","sku":"18N10246633","color":"牛仔蓝","size":"33","amount":1,"tagprice":129,"retailprice":65},{"ecode":"18N1024","sku":"18N10246634","color":"牛仔蓝","size":"34","amount":1,"tagprice":129,"retailprice":65},{"ecode":"18N1024","sku":"18N10246636","color":"牛仔蓝","size":"36","amount":2,"tagprice":129,"retailprice":65},{"ecode":"8K1122","sku":"8K11220906","color":"黑色","size":"L","amount":2,"tagprice":129,"retailprice":65},{"ecode":"8K1122","sku":"8K11220908","color":"黑色","size":"2XL","amount":3,"tagprice":129,"retailprice":65},{"ecode":"8N1072","sku":"8N10726636","color":"牛仔蓝","size":"36","amount":1,"tagprice":149,"retailprice":65},{"ecode":"18C5082","sku":"18C50821105","color":"粉红色","size":"M","amount":3,"tagprice":69,"retailprice":69},{"ecode":"18C5082","sku":"18C50821106","color":"粉红色","size":"L","amount":1,"tagprice":69,"retailprice":69},{"ecode":"18C5082","sku":"18C50821107","color":"粉红色","size":"XL","amount":2,"tagprice":69,"retailprice":69},{"ecode":"18C5082","sku":"18C50823005","color":"米白","size":"M","amount":3,"tagprice":69,"retailprice":69},{"ecode":"18C5082","sku":"18C50823006","color":"米白","size":"L","amount":4,"tagprice":69,"retailprice":69},{"ecode":"18C5082","sku":"18C50823007","color":"米白","size":"XL","amount":2,"tagprice":69,"retailprice":69},{"ecode":"18C5092","sku":"18C50920105","color":"白色","size":"M","amount":8,"tagprice":69,"retailprice":69},{"ecode":"18C5092","sku":"18C50920106","color":"白色","size":"L","amount":5,"tagprice":69,"retailprice":69},{"ecode":"18C5092","sku":"18C50920107","color":"白色","size":"XL","amount":4,"tagprice":69,"retailprice":69},{"ecode":"18C5092","sku":"18C50924505","color":"亮黄","size":"M","amount":4,"tagprice":69,"retailprice":69},{"ecode":"18C5092","sku":"18C50924506","color":"亮黄","size":"L","amount":4,"tagprice":69,"retailprice":69},{"ecode":"18C5092","sku":"18C50924507","color":"亮黄","size":"XL","amount":4,"tagprice":69,"retailprice":69},{"ecode":"18T1124","sku":"18T11240605","color":"灰色","size":"M","amount":1,"tagprice":69,"retailprice":69},{"ecode":"18T1124","sku":"18T11240606","color":"灰色","size":"L","amount":3,"tagprice":69,"retailprice":69},{"ecode":"18T1124","sku":"18T11240607","color":"灰色","size":"XL","amount":2,"tagprice":69,"retailprice":69},{"ecode":"18T1124","sku":"18T11240608","color":"灰色","size":"2XL","amount":2,"tagprice":69,"retailprice":69},{"ecode":"18T1124","sku":"18T11245605","color":"绿色","size":"M","amount":2,"tagprice":69,"retailprice":69},{"ecode":"18T1124","sku":"18T11245606","color":"绿色","size":"L","amount":3,"tagprice":69,"retailprice":69},{"ecode":"18T1124","sku":"18T11245607","color":"绿色","size":"XL","amount":2,"tagprice":69,"retailprice":69},{"ecode":"18T1124","sku":"18T11245608","color":"绿色","size":"2XL","amount":3,"tagprice":69,"retailprice":69},{"ecode":"18T1143","sku":"18T11430105","color":"白色","size":"M","amount":3,"tagprice":69,"retailprice":69},{"ecode":"18T1143","sku":"18T11430106","color":"白色","size":"L","amount":3,"tagprice":69,"retailprice":69},{"ecode":"18T1143","sku":"18T11430107","color":"白色","size":"XL","amount":3,"tagprice":69,"retailprice":69},{"ecode":"18T1143","sku":"18T11430108","color":"白色","size":"2XL","amount":3,"tagprice":69,"retailprice":69},{"ecode":"18T1143","sku":"18T11432105","color":"杏色","size":"M","amount":2,"tagprice":69,"retailprice":69},{"ecode":"18T1143","sku":"18T11432106","color":"杏色","size":"L","amount":2,"tagprice":69,"retailprice":69},{"ecode":"18T1143","sku":"18T11432107","color":"杏色","size":"XL","amount":2,"tagprice":69,"retailprice":69},{"ecode":"18T1143","sku":"18T11432108","color":"杏色","size":"2XL","amount":2,"tagprice":69,"retailprice":69},{"ecode":"18T1159","sku":"18T11590105","color":"白色","size":"M","amount":3,"tagprice":69,"retailprice":69},{"ecode":"18T1159","sku":"18T11590106","color":"白色","size":"L","amount":5,"tagprice":69,"retailprice":69},{"ecode":"18T1159","sku":"18T11590107","color":"白色","size":"XL","amount":4,"tagprice":69,"retailprice":69},{"ecode":"18T1159","sku":"18T11590108","color":"白色","size":"2XL","amount":3,"tagprice":69,"retailprice":69},{"ecode":"18T1159","sku":"18T11596505","color":"彩蓝","size":"M","amount":3,"tagprice":69,"retailprice":69},{"ecode":"18T1159","sku":"18T11596506","color":"彩蓝","size":"L","amount":3,"tagprice":69,"retailprice":69},{"ecode":"18T1159","sku":"18T11596507","color":"彩蓝","size":"XL","amount":2,"tagprice":69,"retailprice":69},{"ecode":"18T1159","sku":"18T11596508","color":"彩蓝","size":"2XL","amount":2,"tagprice":69,"retailprice":69},{"ecode":"18T5139","sku":"18T51390105","color":"白色","size":"M","amount":4,"tagprice":69,"retailprice":69},{"ecode":"18T5139","sku":"18T51390106","color":"白色","size":"L","amount":4,"tagprice":69,"retailprice":69},{"ecode":"18T5139","sku":"18T51390107","color":"白色","size":"XL","amount":4,"tagprice":69,"retailprice":69},{"ecode":"18T5139","sku":"18T51394505","color":"亮黄","size":"M","amount":4,"tagprice":69,"retailprice":69},{"ecode":"18T5139","sku":"18T51394506","color":"亮黄","size":"L","amount":3,"tagprice":69,"retailprice":69},{"ecode":"18T5173","sku":"18T51730105","color":"白色","size":"M","amount":3,"tagprice":69,"retailprice":69},{"ecode":"18T5173","sku":"18T51730106","color":"白色","size":"L","amount":2,"tagprice":69,"retailprice":69},{"ecode":"18T5173","sku":"18T51730107","color":"白色","size":"XL","amount":4,"tagprice":69,"retailprice":69},{"ecode":"18T5173","sku":"18T51731105","color":"粉红色","size":"M","amount":2,"tagprice":69,"retailprice":69},{"ecode":"18T5173","sku":"18T51731106","color":"粉红色","size":"L","amount":3,"tagprice":69,"retailprice":69},{"ecode":"18T5173","sku":"18T51731107","color":"粉红色","size":"XL","amount":2,"tagprice":69,"retailprice":69},{"ecode":"18T5173","sku":"18T51737005","color":"淡紫色","size":"M","amount":4,"tagprice":69,"retailprice":69},{"ecode":"18T5173","sku":"18T51737006","color":"淡紫色","size":"L","amount":4,"tagprice":69,"retailprice":69},{"ecode":"18T5173","sku":"18T51737007","color":"淡紫色","size":"XL","amount":3,"tagprice":69,"retailprice":69},{"ecode":"18T5179","sku":"18T51790105","color":"白色","size":"M","amount":8,"tagprice":69,"retailprice":69},{"ecode":"18T5179","sku":"18T51790106","color":"白色","size":"L","amount":7,"tagprice":69,"retailprice":69},{"ecode":"18T5179","sku":"18T51790107","color":"白色","size":"XL","amount":5,"tagprice":69,"retailprice":69},{"ecode":"18C1026","sku":"18C10260104","color":"白色","size":"S","amount":3,"tagprice":79,"retailprice":79},{"ecode":"18C1026","sku":"18C10260105","color":"白色","size":"M","amount":3,"tagprice":79,"retailprice":79},{"ecode":"18C1026","sku":"18C10260106","color":"白色","size":"L","amount":4,"tagprice":79,"retailprice":79},{"ecode":"18C1026","sku":"18C10260107","color":"白色","size":"XL","amount":3,"tagprice":79,"retailprice":79},{"ecode":"18C1026","sku":"18C10264804","color":"卡其","size":"S","amount":4,"tagprice":79,"retailprice":79},{"ecode":"18C1026","sku":"18C10264805","color":"卡其","size":"M","amount":4,"tagprice":79,"retailprice":79},{"ecode":"18C1026","sku":"18C10264806","color":"卡其","size":"L","amount":4,"tagprice":79,"retailprice":79},{"ecode":"18C1026","sku":"18C10264807","color":"卡其","size":"XL","amount":4,"tagprice":79,"retailprice":79},{"ecode":"18C1060","sku":"18C10600105","color":"白色","size":"M","amount":3,"tagprice":79,"retailprice":79},{"ecode":"18C1060","sku":"18C10600106","color":"白色","size":"L","amount":3,"tagprice":79,"retailprice":79},{"ecode":"18C1060","sku":"18C10600107","color":"白色","size":"XL","amount":3,"tagprice":79,"retailprice":79},{"ecode":"18C1060","sku":"18C10600108","color":"白色","size":"2XL","amount":3,"tagprice":79,"retailprice":79},{"ecode":"18C1060","sku":"18C10601205","color":"皮红色","size":"M","amount":2,"tagprice":79,"retailprice":79},{"ecode":"18C1060","sku":"18C10601206","color":"皮红色","size":"L","amount":3,"tagprice":79,"retailprice":79},{"ecode":"18C1060","sku":"18C10601207","color":"皮红色","size":"XL","amount":2,"tagprice":79,"retailprice":79},{"ecode":"18C1060","sku":"18C10601208","color":"皮红色","size":"2XL","amount":2,"tagprice":79,"retailprice":79},{"ecode":"18C1060","sku":"18C10602105","color":"杏色","size":"M","amount":2,"tagprice":79,"retailprice":79},{"ecode":"18C1060","sku":"18C10602106","color":"杏色","size":"L","amount":2,"tagprice":79,"retailprice":79},{"ecode":"18C1060","sku":"18C10602107","color":"杏色","size":"XL","amount":2,"tagprice":79,"retailprice":79},{"ecode":"18C1060","sku":"18C10602108","color":"杏色","size":"2XL","amount":2,"tagprice":79,"retailprice":79},{"ecode":"18C5080","sku":"18C50800105","color":"白色","size":"M","amount":7,"tagprice":79,"retailprice":79},{"ecode":"18C5080","sku":"18C50800106","color":"白色","size":"L","amount":8,"tagprice":79,"retailprice":79},{"ecode":"18C5080","sku":"18C50800107","color":"白色","size":"XL","amount":14,"tagprice":79,"retailprice":79},{"ecode":"18C5080","sku":"18C50804505","color":"亮黄","size":"M","amount":10,"tagprice":79,"retailprice":79},{"ecode":"18C5080","sku":"18C50804506","color":"亮黄","size":"L","amount":8,"tagprice":79,"retailprice":79},{"ecode":"18C5080","sku":"18C50804507","color":"亮黄","size":"XL","amount":9,"tagprice":79,"retailprice":79},{"ecode":"18C5080","sku":"18C50806305","color":"天蓝","size":"M","amount":9,"tagprice":79,"retailprice":79},{"ecode":"18C5080","sku":"18C50806306","color":"天蓝","size":"L","amount":3,"tagprice":79,"retailprice":79},{"ecode":"18C5080","sku":"18C50806307","color":"天蓝","size":"XL","amount":3,"tagprice":79,"retailprice":79},{"ecode":"18D5001","sku":"18D50010105","color":"白色","size":"M","amount":4,"tagprice":129,"retailprice":79},{"ecode":"18D5001","sku":"18D50010106","color":"白色","size":"L","amount":4,"tagprice":129,"retailprice":79},{"ecode":"18D5001","sku":"18D50010107","color":"白色","size":"XL","amount":4,"tagprice":129,"retailprice":79},{"ecode":"18D5001","sku":"18D50014805","color":"卡其","size":"M","amount":3,"tagprice":129,"retailprice":79},{"ecode":"18D5001","sku":"18D50014806","color":"卡其","size":"L","amount":4,"tagprice":129,"retailprice":79},{"ecode":"18D5001","sku":"18D50014807","color":"卡其","size":"XL","amount":1,"tagprice":129,"retailprice":79},{"ecode":"18D5016","sku":"18D50160105","color":"白色","size":"M","amount":12,"tagprice":99,"retailprice":79},{"ecode":"18D5016","sku":"18D50160106","color":"白色","size":"L","amount":16,"tagprice":99,"retailprice":79},{"ecode":"18D5016","sku":"18D50160107","color":"白色","size":"XL","amount":11,"tagprice":99,"retailprice":79},{"ecode":"18H1001","sku":"18H10010640","color":"灰色","size":"40","amount":2,"tagprice":99,"retailprice":79},{"ecode":"18H1001","sku":"18H10010641","color":"灰色","size":"41","amount":2,"tagprice":99,"retailprice":79},{"ecode":"18H1001","sku":"18H10010642","color":"灰色","size":"42","amount":2,"tagprice":99,"retailprice":79},{"ecode":"18K1067","sku":"18K10670429","color":"浅灰","size":"29","amount":4,"tagprice":79,"retailprice":79},{"ecode":"18K1067","sku":"18K10670430","color":"浅灰","size":"30","amount":4,"tagprice":79,"retailprice":79},{"ecode":"18K1067","sku":"18K10670431","color":"浅灰","size":"31","amount":4,"tagprice":79,"retailprice":79},{"ecode":"18K1067","sku":"18K10670432","color":"浅灰","size":"32","amount":4,"tagprice":79,"retailprice":79},{"ecode":"18K1067","sku":"18K10670433","color":"浅灰","size":"33","amount":4,"tagprice":79,"retailprice":79},{"ecode":"18K1067","sku":"18K10670434","color":"浅灰","size":"34","amount":4,"tagprice":79,"retailprice":79},{"ecode":"18K1067","sku":"18K10670436","color":"浅灰","size":"36","amount":4,"tagprice":79,"retailprice":79},{"ecode":"18K1067","sku":"18K10670929","color":"黑色","size":"29","amount":2,"tagprice":79,"retailprice":79},{"ecode":"18K1067","sku":"18K10670930","color":"黑色","size":"30","amount":2,"tagprice":79,"retailprice":79},{"ecode":"18K1067","sku":"18K10670931","color":"黑色","size":"31","amount":2,"tagprice":79,"retailprice":79},{"ecode":"18K1067","sku":"18K10670932","color":"黑色","size":"32","amount":2,"tagprice":79,"retailprice":79},{"ecode":"18K1067","sku":"18K10670933","color":"黑色","size":"33","amount":2,"tagprice":79,"retailprice":79},{"ecode":"18K1067","sku":"18K10670934","color":"黑色","size":"34","amount":2,"tagprice":79,"retailprice":79},{"ecode":"18K1067","sku":"18K10670936","color":"黑色","size":"36","amount":2,"tagprice":79,"retailprice":79},{"ecode":"18K1067","sku":"18K10675629","color":"绿色","size":"29","amount":4,"tagprice":79,"retailprice":79},{"ecode":"18K1067","sku":"18K10675630","color":"绿色","size":"30","amount":4,"tagprice":79,"retailprice":79},{"ecode":"18K1067","sku":"18K10675631","color":"绿色","size":"31","amount":4,"tagprice":79,"retailprice":79},{"ecode":"18K1067","sku":"18K10675632","color":"绿色","size":"32","amount":4,"tagprice":79,"retailprice":79},{"ecode":"18K1067","sku":"18K10675633","color":"绿色","size":"33","amount":4,"tagprice":79,"retailprice":79},{"ecode":"18K1067","sku":"18K10675634","color":"绿色","size":"34","amount":4,"tagprice":79,"retailprice":79},{"ecode":"18K1067","sku":"18K10675636","color":"绿色","size":"36","amount":4,"tagprice":79,"retailprice":79},{"ecode":"18K1077","sku":"18K10770929","color":"黑色","size":"29","amount":3,"tagprice":79,"retailprice":79},{"ecode":"18K1077","sku":"18K10770930","color":"黑色","size":"30","amount":3,"tagprice":79,"retailprice":79},{"ecode":"18K1077","sku":"18K10770931","color":"黑色","size":"31","amount":3,"tagprice":79,"retailprice":79},{"ecode":"18K1077","sku":"18K10770932","color":"黑色","size":"32","amount":3,"tagprice":79,"retailprice":79},{"ecode":"18K1077","sku":"18K10770933","color":"黑色","size":"33","amount":3,"tagprice":79,"retailprice":79},{"ecode":"18K1077","sku":"18K10770934","color":"黑色","size":"34","amount":3,"tagprice":79,"retailprice":79},{"ecode":"18K1077","sku":"18K10770936","color":"黑色","size":"36","amount":3,"tagprice":79,"retailprice":79},{"ecode":"18K1144","sku":"18K11440929","color":"黑色","size":"29","amount":3,"tagprice":79,"retailprice":79},{"ecode":"18K1144","sku":"18K11440930","color":"黑色","size":"30","amount":3,"tagprice":79,"retailprice":79},{"ecode":"18K1144","sku":"18K11440931","color":"黑色","size":"31","amount":3,"tagprice":79,"retailprice":79},{"ecode":"18K1144","sku":"18K11440932","color":"黑色","size":"32","amount":2,"tagprice":79,"retailprice":79},{"ecode":"18K1144","sku":"18K11440933","color":"黑色","size":"33","amount":2,"tagprice":79,"retailprice":79},{"ecode":"18K1144","sku":"18K11440934","color":"黑色","size":"34","amount":2,"tagprice":79,"retailprice":79},{"ecode":"18K1144","sku":"18K11440936","color":"黑色","size":"36","amount":2,"tagprice":79,"retailprice":79},{"ecode":"18K5072","sku":"18K50720904","color":"黑色","size":"S","amount":18,"tagprice":79,"retailprice":79},{"ecode":"18K5072","sku":"18K50720905","color":"黑色","size":"M","amount":21,"tagprice":79,"retailprice":79},{"ecode":"18K5072","sku":"18K50720906","color":"黑色","size":"L","amount":18,"tagprice":79,"retailprice":79},{"ecode":"18K5072","sku":"18K50720907","color":"黑色","size":"XL","amount":11,"tagprice":79,"retailprice":79},{"ecode":"18K5072","sku":"18K50722504","color":"橙红色","size":"S","amount":9,"tagprice":79,"retailprice":79},{"ecode":"18K5072","sku":"18K50722505","color":"橙红色","size":"M","amount":4,"tagprice":79,"retailprice":79},{"ecode":"18K5072","sku":"18K50722506","color":"橙红色","size":"L","amount":4,"tagprice":79,"retailprice":79},{"ecode":"18K5072","sku":"18K50722507","color":"橙红色","size":"XL","amount":6,"tagprice":79,"retailprice":79},{"ecode":"18K5074","sku":"18K50745606","color":"绿色","size":"L","amount":-1,"tagprice":79,"retailprice":79},{"ecode":"18K5105","sku":"18K51050904","color":"黑色","size":"S","amount":4,"tagprice":79,"retailprice":79},{"ecode":"18K5105","sku":"18K51050905","color":"黑色","size":"M","amount":6,"tagprice":79,"retailprice":79},{"ecode":"18K5105","sku":"18K51050906","color":"黑色","size":"L","amount":6,"tagprice":79,"retailprice":79},{"ecode":"18K5105","sku":"18K51050907","color":"黑色","size":"XL","amount":2,"tagprice":79,"retailprice":79},{"ecode":"18K5109","sku":"18K51090904","color":"黑色","size":"S","amount":4,"tagprice":79,"retailprice":79},{"ecode":"18K5109","sku":"18K51090905","color":"黑色","size":"M","amount":4,"tagprice":79,"retailprice":79},{"ecode":"18K5109","sku":"18K51090906","color":"黑色","size":"L","amount":3,"tagprice":79,"retailprice":79},{"ecode":"18K5109","sku":"18K51090907","color":"黑色","size":"XL","amount":4,"tagprice":79,"retailprice":79},{"ecode":"18K5109","sku":"18K51090908","color":"黑色","size":"2XL","amount":2,"tagprice":79,"retailprice":79},{"ecode":"18K5109","sku":"18K51095604","color":"绿色","size":"S","amount":2,"tagprice":79,"retailprice":79},{"ecode":"18K5109","sku":"18K51095605","color":"绿色","size":"M","amount":3,"tagprice":79,"retailprice":79},{"ecode":"18K5109","sku":"18K51095606","color":"绿色","size":"L","amount":3,"tagprice":79,"retailprice":79},{"ecode":"18K5109","sku":"18K51095607","color":"绿色","size":"XL","amount":4,"tagprice":79,"retailprice":79},{"ecode":"18K5115","sku":"18K51150904","color":"黑色","size":"S","amount":3,"tagprice":79,"retailprice":79},{"ecode":"18K5115","sku":"18K51150905","color":"黑色","size":"M","amount":4,"tagprice":79,"retailprice":79},{"ecode":"18K5115","sku":"18K51150906","color":"黑色","size":"L","amount":4,"tagprice":79,"retailprice":79},{"ecode":"18K5115","sku":"18K51150907","color":"黑色","size":"XL","amount":3,"tagprice":79,"retailprice":79},{"ecode":"18K5115","sku":"18K51154804","color":"卡其","size":"S","amount":2,"tagprice":79,"retailprice":79},{"ecode":"18K5115","sku":"18K51154805","color":"卡其","size":"M","amount":2,"tagprice":79,"retailprice":79},{"ecode":"18K5115","sku":"18K51154806","color":"卡其","size":"L","amount":3,"tagprice":79,"retailprice":79},{"ecode":"18K5115","sku":"18K51154807","color":"卡其","size":"XL","amount":2,"tagprice":79,"retailprice":79},{"ecode":"18N5057","sku":"18N50576626","color":"牛仔蓝","size":"26","amount":3,"tagprice":79,"retailprice":79},{"ecode":"18N5057","sku":"18N50576627","color":"牛仔蓝","size":"27","amount":4,"tagprice":79,"retailprice":79},{"ecode":"18N5057","sku":"18N50576628","color":"牛仔蓝","size":"28","amount":3,"tagprice":79,"retailprice":79},{"ecode":"18N5057","sku":"18N50576629","color":"牛仔蓝","size":"29","amount":3,"tagprice":79,"retailprice":79},{"ecode":"18N5057","sku":"18N50576630","color":"牛仔蓝","size":"30","amount":3,"tagprice":79,"retailprice":79},{"ecode":"18N5057","sku":"18N50576631","color":"牛仔蓝","size":"31","amount":3,"tagprice":79,"retailprice":79},{"ecode":"18N5058","sku":"18N50586626","color":"牛仔蓝","size":"26","amount":5,"tagprice":79,"retailprice":79},{"ecode":"18N5058","sku":"18N50586627","color":"牛仔蓝","size":"27","amount":6,"tagprice":79,"retailprice":79},{"ecode":"18N5058","sku":"18N50586628","color":"牛仔蓝","size":"28","amount":6,"tagprice":79,"retailprice":79},{"ecode":"18N5058","sku":"18N50586629","color":"牛仔蓝","size":"29","amount":3,"tagprice":79,"retailprice":79},{"ecode":"18N5058","sku":"18N50586630","color":"牛仔蓝","size":"30","amount":3,"tagprice":79,"retailprice":79},{"ecode":"18N5058","sku":"18N50586631","color":"牛仔蓝","size":"31","amount":3,"tagprice":79,"retailprice":79},{"ecode":"18T1037","sku":"18T10370105","color":"白色","size":"M","amount":4,"tagprice":79,"retailprice":79},{"ecode":"18T1037","sku":"18T10370106","color":"白色","size":"L","amount":4,"tagprice":79,"retailprice":79},{"ecode":"18T1037","sku":"18T10370107","color":"白色","size":"XL","amount":3,"tagprice":79,"retailprice":79},{"ecode":"18T1037","sku":"18T10370108","color":"白色","size":"2XL","amount":3,"tagprice":79,"retailprice":79},{"ecode":"18T1037","sku":"18T10370905","color":"黑色","size":"M","amount":2,"tagprice":79,"retailprice":79},{"ecode":"18T1037","sku":"18T10370907","color":"黑色","size":"XL","amount":3,"tagprice":79,"retailprice":79},{"ecode":"18T1037","sku":"18T10370908","color":"黑色","size":"2XL","amount":3,"tagprice":79,"retailprice":79},{"ecode":"18T1081","sku":"18T10810104","color":"白色","size":"S","amount":2,"tagprice":79,"retailprice":79},{"ecode":"18T1081","sku":"18T10810105","color":"白色","size":"M","amount":4,"tagprice":79,"retailprice":79},{"ecode":"18T1081","sku":"18T10810106","color":"白色","size":"L","amount":4,"tagprice":79,"retailprice":79},{"ecode":"18T1081","sku":"18T10810107","color":"白色","size":"XL","amount":2,"tagprice":79,"retailprice":79},{"ecode":"18T1081","sku":"18T10812104","color":"杏色","size":"S","amount":2,"tagprice":79,"retailprice":79},{"ecode":"18T1081","sku":"18T10812105","color":"杏色","size":"M","amount":3,"tagprice":79,"retailprice":79},{"ecode":"18T1081","sku":"18T10812106","color":"杏色","size":"L","amount":3,"tagprice":79,"retailprice":79},{"ecode":"18T1081","sku":"18T10812107","color":"杏色","size":"XL","amount":2,"tagprice":79,"retailprice":79},{"ecode":"18T1082","sku":"18T10820104","color":"白色","size":"S","amount":3,"tagprice":79,"retailprice":79},{"ecode":"18T1082","sku":"18T10820105","color":"白色","size":"M","amount":3,"tagprice":79,"retailprice":79},{"ecode":"18T1082","sku":"18T10820106","color":"白色","size":"L","amount":3,"tagprice":79,"retailprice":79},{"ecode":"18T1082","sku":"18T10820107","color":"白色","size":"XL","amount":3,"tagprice":79,"retailprice":79},{"ecode":"18T1082","sku":"18T10822104","color":"杏色","size":"S","amount":2,"tagprice":79,"retailprice":79},{"ecode":"18T1082","sku":"18T10822105","color":"杏色","size":"M","amount":3,"tagprice":79,"retailprice":79},{"ecode":"18T1082","sku":"18T10822106","color":"杏色","size":"L","amount":4,"tagprice":79,"retailprice":79},{"ecode":"18T1082","sku":"18T10822107","color":"杏色","size":"XL","amount":3,"tagprice":79,"retailprice":79},{"ecode":"18T1123","sku":"18T11230105","color":"白色","size":"M","amount":7,"tagprice":79,"retailprice":79},{"ecode":"18T1123","sku":"18T11230106","color":"白色","size":"L","amount":4,"tagprice":79,"retailprice":79},{"ecode":"18T1123","sku":"18T11230107","color":"白色","size":"XL","amount":8,"tagprice":79,"retailprice":79},{"ecode":"18T1123","sku":"18T11230108","color":"白色","size":"2XL","amount":5,"tagprice":79,"retailprice":79},{"ecode":"18T1123","sku":"18T11232105","color":"杏色","size":"M","amount":6,"tagprice":79,"retailprice":79},{"ecode":"18T1123","sku":"18T11232106","color":"杏色","size":"L","amount":11,"tagprice":79,"retailprice":79},{"ecode":"18T1123","sku":"18T11232107","color":"杏色","size":"XL","amount":6,"tagprice":79,"retailprice":79},{"ecode":"18T1123","sku":"18T11232108","color":"杏色","size":"2XL","amount":2,"tagprice":79,"retailprice":79},{"ecode":"7H1012","sku":"7H10120942","color":"黑色","size":"42","amount":1,"tagprice":159,"retailprice":79},{"ecode":"18C1055","sku":"18C10550105","color":"白色","size":"M","amount":2,"tagprice":89,"retailprice":89},{"ecode":"18C1055","sku":"18C10550106","color":"白色","size":"L","amount":3,"tagprice":89,"retailprice":89},{"ecode":"18C1055","sku":"18C10550107","color":"白色","size":"XL","amount":3,"tagprice":89,"retailprice":89},{"ecode":"18C1055","sku":"18C10550108","color":"白色","size":"2XL","amount":3,"tagprice":89,"retailprice":89},{"ecode":"18C1055","sku":"18C10552105","color":"杏色","size":"M","amount":2,"tagprice":89,"retailprice":89},{"ecode":"18C1055","sku":"18C10552106","color":"杏色","size":"L","amount":2,"tagprice":89,"retailprice":89},{"ecode":"18C1055","sku":"18C10552107","color":"杏色","size":"XL","amount":2,"tagprice":89,"retailprice":89},{"ecode":"18C1055","sku":"18C10552108","color":"杏色","size":"2XL","amount":2,"tagprice":89,"retailprice":89},{"ecode":"18C1063","sku":"18C10630105","color":"白色","size":"M","amount":3,"tagprice":89,"retailprice":89},{"ecode":"18C1063","sku":"18C10630106","color":"白色","size":"L","amount":4,"tagprice":89,"retailprice":89},{"ecode":"18C1063","sku":"18C10630107","color":"白色","size":"XL","amount":4,"tagprice":89,"retailprice":89},{"ecode":"18C1063","sku":"18C10630108","color":"白色","size":"2XL","amount":3,"tagprice":89,"retailprice":89},{"ecode":"18C1063","sku":"18C10635605","color":"绿色","size":"M","amount":2,"tagprice":89,"retailprice":89},{"ecode":"18C1063","sku":"18C10635606","color":"绿色","size":"L","amount":2,"tagprice":89,"retailprice":89},{"ecode":"18C1063","sku":"18C10635607","color":"绿色","size":"XL","amount":2,"tagprice":89,"retailprice":89},{"ecode":"18C1063","sku":"18C10635608","color":"绿色","size":"2XL","amount":2,"tagprice":89,"retailprice":89},{"ecode":"18C5060","sku":"18C50600105","color":"白色","size":"M","amount":1,"tagprice":89,"retailprice":89},{"ecode":"18K1116","sku":"18K11160929","color":"黑色","size":"29","amount":3,"tagprice":89,"retailprice":89},{"ecode":"18K1116","sku":"18K11160930","color":"黑色","size":"30","amount":3,"tagprice":89,"retailprice":89},{"ecode":"18K1116","sku":"18K11160931","color":"黑色","size":"31","amount":3,"tagprice":89,"retailprice":89},{"ecode":"18K1116","sku":"18K11160932","color":"黑色","size":"32","amount":3,"tagprice":89,"retailprice":89},{"ecode":"18K1116","sku":"18K11160933","color":"黑色","size":"33","amount":3,"tagprice":89,"retailprice":89},{"ecode":"18K1116","sku":"18K11160934","color":"黑色","size":"34","amount":3,"tagprice":89,"retailprice":89},{"ecode":"18K1116","sku":"18K11160936","color":"黑色","size":"36","amount":3,"tagprice":89,"retailprice":89},{"ecode":"18K1116","sku":"18K11165229","color":"浅绿","size":"29","amount":2,"tagprice":89,"retailprice":89},{"ecode":"18K1116","sku":"18K11165230","color":"浅绿","size":"30","amount":2,"tagprice":89,"retailprice":89},{"ecode":"18K1116","sku":"18K11165231","color":"浅绿","size":"31","amount":2,"tagprice":89,"retailprice":89},{"ecode":"18K1116","sku":"18K11165232","color":"浅绿","size":"32","amount":2,"tagprice":89,"retailprice":89},{"ecode":"18K1116","sku":"18K11165233","color":"浅绿","size":"33","amount":2,"tagprice":89,"retailprice":89},{"ecode":"18K1117","sku":"18K11170929","color":"黑色","size":"29","amount":3,"tagprice":89,"retailprice":89},{"ecode":"18K1117","sku":"18K11170930","color":"黑色","size":"30","amount":4,"tagprice":89,"retailprice":89},{"ecode":"18K1117","sku":"18K11170931","color":"黑色","size":"31","amount":4,"tagprice":89,"retailprice":89},{"ecode":"18K1117","sku":"18K11170932","color":"黑色","size":"32","amount":3,"tagprice":89,"retailprice":89},{"ecode":"18K1117","sku":"18K11170933","color":"黑色","size":"33","amount":3,"tagprice":89,"retailprice":89},{"ecode":"18K1117","sku":"18K11170934","color":"黑色","size":"34","amount":3,"tagprice":89,"retailprice":89},{"ecode":"18K1117","sku":"18K11170936","color":"黑色","size":"36","amount":2,"tagprice":89,"retailprice":89},{"ecode":"18K1124","sku":"18K11240930","color":"黑色","size":"30","amount":3,"tagprice":89,"retailprice":89},{"ecode":"18K1124","sku":"18K11240931","color":"黑色","size":"31","amount":2,"tagprice":89,"retailprice":89},{"ecode":"18D1017","sku":"18D10170105","color":"白色","size":"M","amount":5,"tagprice":99,"retailprice":99},{"ecode":"18D1017","sku":"18D10170106","color":"白色","size":"L","amount":6,"tagprice":99,"retailprice":99},{"ecode":"18D1017","sku":"18D10170107","color":"白色","size":"XL","amount":8,"tagprice":99,"retailprice":99},{"ecode":"18D1017","sku":"18D10170108","color":"白色","size":"2XL","amount":7,"tagprice":99,"retailprice":99},{"ecode":"18D5025","sku":"18D50250105","color":"白色","size":"M","amount":5,"tagprice":129,"retailprice":99},{"ecode":"18D5025","sku":"18D50250106","color":"白色","size":"L","amount":8,"tagprice":129,"retailprice":99},{"ecode":"18D5025","sku":"18D50250107","color":"白色","size":"XL","amount":6,"tagprice":129,"retailprice":99},{"ecode":"18D5025","sku":"18D50254505","color":"亮黄","size":"M","amount":4,"tagprice":129,"retailprice":99},{"ecode":"18D5025","sku":"18D50254506","color":"亮黄","size":"L","amount":2,"tagprice":129,"retailprice":99},{"ecode":"18D5025","sku":"18D50254507","color":"亮黄","size":"XL","amount":5,"tagprice":129,"retailprice":99},{"ecode":"18D5025","sku":"18D50254805","color":"卡其","size":"M","amount":5,"tagprice":129,"retailprice":99},{"ecode":"18D5025","sku":"18D50254806","color":"卡其","size":"L","amount":7,"tagprice":129,"retailprice":99},{"ecode":"18D5025","sku":"18D50254807","color":"卡其","size":"XL","amount":6,"tagprice":129,"retailprice":99},{"ecode":"18H1008","sku":"18H10080139","color":"白色","size":"39","amount":2,"tagprice":99,"retailprice":99},{"ecode":"18H1008","sku":"18H10080142","color":"白色","size":"42","amount":1,"tagprice":99,"retailprice":99},{"ecode":"18H1008","sku":"18H10080143","color":"白色","size":"43","amount":1,"tagprice":99,"retailprice":99},{"ecode":"18H5003","sku":"18H50030135","color":"白色","size":"35","amount":1,"tagprice":129,"retailprice":99},{"ecode":"18H5003","sku":"18H50030136","color":"白色","size":"36","amount":-1,"tagprice":129,"retailprice":99},{"ecode":"18K1083","sku":"18K10830905","color":"黑色","size":"M","amount":4,"tagprice":99,"retailprice":99},{"ecode":"18K1083","sku":"18K10830906","color":"黑色","size":"L","amount":5,"tagprice":99,"retailprice":99},{"ecode":"18K1083","sku":"18K10830907","color":"黑色","size":"XL","amount":4,"tagprice":99,"retailprice":99},{"ecode":"18K1083","sku":"18K10830908","color":"黑色","size":"2XL","amount":4,"tagprice":99,"retailprice":99},{"ecode":"18K1083","sku":"18K10835605","color":"绿色","size":"M","amount":2,"tagprice":99,"retailprice":99},{"ecode":"18K1083","sku":"18K10835606","color":"绿色","size":"L","amount":3,"tagprice":99,"retailprice":99},{"ecode":"18K1083","sku":"18K10835607","color":"绿色","size":"XL","amount":3,"tagprice":99,"retailprice":99},{"ecode":"18K1083","sku":"18K10835608","color":"绿色","size":"2XL","amount":2,"tagprice":99,"retailprice":99},{"ecode":"18K1138","sku":"18K11380929","color":"黑色","size":"29","amount":3,"tagprice":99,"retailprice":99},{"ecode":"18K1138","sku":"18K11380930","color":"黑色","size":"30","amount":3,"tagprice":99,"retailprice":99},{"ecode":"18K1138","sku":"18K11380931","color":"黑色","size":"31","amount":2,"tagprice":99,"retailprice":99},{"ecode":"18K1138","sku":"18K11380932","color":"黑色","size":"32","amount":2,"tagprice":99,"retailprice":99},{"ecode":"18K1138","sku":"18K11380933","color":"黑色","size":"33","amount":2,"tagprice":99,"retailprice":99},{"ecode":"18K1138","sku":"18K11380934","color":"黑色","size":"34","amount":2,"tagprice":99,"retailprice":99},{"ecode":"18K1138","sku":"18K11380936","color":"黑色","size":"36","amount":2,"tagprice":99,"retailprice":99},{"ecode":"18K1138","sku":"18K11384829","color":"卡其","size":"29","amount":2,"tagprice":99,"retailprice":99},{"ecode":"18K1138","sku":"18K11384830","color":"卡其","size":"30","amount":2,"tagprice":99,"retailprice":99},{"ecode":"18K1138","sku":"18K11384831","color":"卡其","size":"31","amount":2,"tagprice":99,"retailprice":99},{"ecode":"18K1138","sku":"18K11384832","color":"卡其","size":"32","amount":2,"tagprice":99,"retailprice":99},{"ecode":"18K1138","sku":"18K11384833","color":"卡其","size":"33","amount":2,"tagprice":99,"retailprice":99},{"ecode":"18K1138","sku":"18K11384834","color":"卡其","size":"34","amount":2,"tagprice":99,"retailprice":99},{"ecode":"18K1138","sku":"18K11384836","color":"卡其","size":"36","amount":2,"tagprice":99,"retailprice":99},{"ecode":"18K5063","sku":"18K50630904","color":"黑色","size":"S","amount":4,"tagprice":99,"retailprice":99},{"ecode":"18K5063","sku":"18K50630905","color":"黑色","size":"M","amount":8,"tagprice":99,"retailprice":99},{"ecode":"18K5063","sku":"18K50630906","color":"黑色","size":"L","amount":3,"tagprice":99,"retailprice":99},{"ecode":"18K5063","sku":"18K50630907","color":"黑色","size":"XL","amount":5,"tagprice":99,"retailprice":99},{"ecode":"18K5063","sku":"18K50635604","color":"绿色","size":"S","amount":4,"tagprice":99,"retailprice":99},{"ecode":"18K5063","sku":"18K50635605","color":"绿色","size":"M","amount":6,"tagprice":99,"retailprice":99},{"ecode":"18K5063","sku":"18K50635606","color":"绿色","size":"L","amount":4,"tagprice":99,"retailprice":99},{"ecode":"18K5063","sku":"18K50635607","color":"绿色","size":"XL","amount":5,"tagprice":99,"retailprice":99},{"ecode":"18K5092","sku":"18K50920904","color":"黑色","size":"S","amount":6,"tagprice":99,"retailprice":99},{"ecode":"18K5092","sku":"18K50920905","color":"黑色","size":"M","amount":9,"tagprice":99,"retailprice":99},{"ecode":"18K5092","sku":"18K50920906","color":"黑色","size":"L","amount":6,"tagprice":99,"retailprice":99},{"ecode":"18K5102","sku":"18K51020904","color":"黑色","size":"S","amount":5,"tagprice":99,"retailprice":99},{"ecode":"18K5102","sku":"18K51020905","color":"黑色","size":"M","amount":10,"tagprice":99,"retailprice":99},{"ecode":"18K5102","sku":"18K51020906","color":"黑色","size":"L","amount":4,"tagprice":99,"retailprice":99},{"ecode":"18K5102","sku":"18K51020907","color":"黑色","size":"XL","amount":3,"tagprice":99,"retailprice":99},{"ecode":"18K5102","sku":"18K51027504","color":"紫色","size":"S","amount":6,"tagprice":99,"retailprice":99},{"ecode":"18K5102","sku":"18K51027505","color":"紫色","size":"M","amount":1,"tagprice":99,"retailprice":99},{"ecode":"18K5102","sku":"18K51027506","color":"紫色","size":"L","amount":2,"tagprice":99,"retailprice":99},{"ecode":"18K5102","sku":"18K51027507","color":"紫色","size":"XL","amount":4,"tagprice":99,"retailprice":99},{"ecode":"18K5108","sku":"18K51080906","color":"黑色","size":"L","amount":-2,"tagprice":99,"retailprice":99},{"ecode":"18K5108","sku":"18K51080907","color":"黑色","size":"XL","amount":-2,"tagprice":99,"retailprice":99},{"ecode":"18K5108","sku":"18K51084806","color":"卡其","size":"L","amount":2,"tagprice":99,"retailprice":99},{"ecode":"18K5108","sku":"18K51084807","color":"卡其","size":"XL","amount":2,"tagprice":99,"retailprice":99},{"ecode":"18N1039","sku":"18N10396629","color":"牛仔蓝","size":"29","amount":3,"tagprice":99,"retailprice":99},{"ecode":"18N1039","sku":"18N10396630","color":"牛仔蓝","size":"30","amount":3,"tagprice":99,"retailprice":99},{"ecode":"18N1039","sku":"18N10396631","color":"牛仔蓝","size":"31","amount":3,"tagprice":99,"retailprice":99},{"ecode":"18N1039","sku":"18N10396632","color":"牛仔蓝","size":"32","amount":4,"tagprice":99,"retailprice":99},{"ecode":"18N1039","sku":"18N10396633","color":"牛仔蓝","size":"33","amount":4,"tagprice":99,"retailprice":99},{"ecode":"18N1039","sku":"18N10396634","color":"牛仔蓝","size":"34","amount":3,"tagprice":99,"retailprice":99},{"ecode":"18N1039","sku":"18N10396636","color":"牛仔蓝","size":"36","amount":3,"tagprice":99,"retailprice":99},{"ecode":"18N1077","sku":"18N10776629","color":"牛仔蓝","size":"29","amount":3,"tagprice":99,"retailprice":99},{"ecode":"18N1077","sku":"18N10776630","color":"牛仔蓝","size":"30","amount":3,"tagprice":99,"retailprice":99},{"ecode":"18N1077","sku":"18N10776631","color":"牛仔蓝","size":"31","amount":3,"tagprice":99,"retailprice":99},{"ecode":"18N1077","sku":"18N10776632","color":"牛仔蓝","size":"32","amount":3,"tagprice":99,"retailprice":99},{"ecode":"18N1077","sku":"18N10776633","color":"牛仔蓝","size":"33","amount":2,"tagprice":99,"retailprice":99},{"ecode":"18N1077","sku":"18N10776634","color":"牛仔蓝","size":"34","amount":2,"tagprice":99,"retailprice":99},{"ecode":"18N1077","sku":"18N10776636","color":"牛仔蓝","size":"36","amount":2,"tagprice":99,"retailprice":99},{"ecode":"18N5063","sku":"18N50636604","color":"牛仔蓝","size":"S","amount":6,"tagprice":99,"retailprice":99},{"ecode":"18N5063","sku":"18N50636605","color":"牛仔蓝","size":"M","amount":6,"tagprice":99,"retailprice":99},{"ecode":"18N5063","sku":"18N50636606","color":"牛仔蓝","size":"L","amount":7,"tagprice":99,"retailprice":99},{"ecode":"18N5063","sku":"18N50636607","color":"牛仔蓝","size":"XL","amount":5,"tagprice":99,"retailprice":99},{"ecode":"18N5088","sku":"18N50886626","color":"牛仔蓝","size":"26","amount":3,"tagprice":99,"retailprice":99},{"ecode":"18N5088","sku":"18N50886627","color":"牛仔蓝","size":"27","amount":4,"tagprice":99,"retailprice":99},{"ecode":"18N5088","sku":"18N50886628","color":"牛仔蓝","size":"28","amount":6,"tagprice":99,"retailprice":99},{"ecode":"18N5088","sku":"18N50886629","color":"牛仔蓝","size":"29","amount":3,"tagprice":99,"retailprice":99},{"ecode":"18N5088","sku":"18N50886630","color":"牛仔蓝","size":"30","amount":3,"tagprice":99,"retailprice":99},{"ecode":"18N5111","sku":"18N51110126","color":"白色","size":"26","amount":3,"tagprice":99,"retailprice":99},{"ecode":"18N5111","sku":"18N51110127","color":"白色","size":"27","amount":2,"tagprice":99,"retailprice":99},{"ecode":"18N5111","sku":"18N51110128","color":"白色","size":"28","amount":3,"tagprice":99,"retailprice":99},{"ecode":"18N5111","sku":"18N51110129","color":"白色","size":"29","amount":2,"tagprice":99,"retailprice":99},{"ecode":"18N5111","sku":"18N51116627","color":"牛仔蓝","size":"27","amount":3,"tagprice":99,"retailprice":99},{"ecode":"18N5111","sku":"18N51116628","color":"牛仔蓝","size":"28","amount":3,"tagprice":99,"retailprice":99},{"ecode":"18N5111","sku":"18N51116629","color":"牛仔蓝","size":"29","amount":3,"tagprice":99,"retailprice":99},{"ecode":"18Q5026","sku":"18Q50266607","color":"牛仔蓝","size":"XL","amount":-1,"tagprice":99,"retailprice":99},{"ecode":"8H5004","sku":"8H50040136","color":"白色","size":"36","amount":-1,"tagprice":99,"retailprice":99},{"ecode":"8T1038","sku":"8T10381005","color":"淡粉色","size":"M","amount":2,"tagprice":99,"retailprice":99},{"ecode":"8T1038","sku":"8T10381006","color":"淡粉色","size":"L","amount":4,"tagprice":99,"retailprice":99},{"ecode":"8T1038","sku":"8T10381007","color":"淡粉色","size":"XL","amount":3,"tagprice":99,"retailprice":99},{"ecode":"8T1038","sku":"8T10381008","color":"淡粉色","size":"2XL","amount":2,"tagprice":99,"retailprice":99},{"ecode":"8T1038","sku":"8T10382105","color":"杏色","size":"M","amount":2,"tagprice":99,"retailprice":99},{"ecode":"8T1038","sku":"8T10382106","color":"杏色","size":"L","amount":4,"tagprice":99,"retailprice":99},{"ecode":"8T1038","sku":"8T10382107","color":"杏色","size":"XL","amount":3,"tagprice":99,"retailprice":99},{"ecode":"8T1038","sku":"8T10382108","color":"杏色","size":"2XL","amount":2,"tagprice":99,"retailprice":99},{"ecode":"18D5049","sku":"18D50490105","color":"白色","size":"M","amount":3,"tagprice":129,"retailprice":129},{"ecode":"18D5049","sku":"18D50490106","color":"白色","size":"L","amount":4,"tagprice":129,"retailprice":129},{"ecode":"18D5049","sku":"18D50490107","color":"白色","size":"XL","amount":3,"tagprice":129,"retailprice":129},{"ecode":"18D5049","sku":"18D50491105","color":"粉红色","size":"M","amount":3,"tagprice":129,"retailprice":129},{"ecode":"18D5049","sku":"18D50491106","color":"粉红色","size":"L","amount":4,"tagprice":129,"retailprice":129},{"ecode":"18D5049","sku":"18D50491107","color":"粉红色","size":"XL","amount":3,"tagprice":129,"retailprice":129},{"ecode":"18H1010","sku":"18H10100643","color":"灰色","size":"43","amount":-1,"tagprice":129,"retailprice":129},{"ecode":"18H1014","sku":"18H10140939","color":"黑色","size":"39","amount":2,"tagprice":129,"retailprice":129},{"ecode":"18H1014","sku":"18H10140940","color":"黑色","size":"40","amount":2,"tagprice":129,"retailprice":129},{"ecode":"18H1014","sku":"18H10140941","color":"黑色","size":"41","amount":2,"tagprice":129,"retailprice":129},{"ecode":"18H1014","sku":"18H10140942","color":"黑色","size":"42","amount":3,"tagprice":129,"retailprice":129},{"ecode":"18H1014","sku":"18H10140943","color":"黑色","size":"43","amount":2,"tagprice":129,"retailprice":129},{"ecode":"18H5006","sku":"18H50060135","color":"白色","size":"35","amount":1,"tagprice":129,"retailprice":129},{"ecode":"18H5006","sku":"18H50060136","color":"白色","size":"36","amount":1,"tagprice":129,"retailprice":129},{"ecode":"18H5006","sku":"18H50060137","color":"白色","size":"37","amount":2,"tagprice":129,"retailprice":129},{"ecode":"18H5006","sku":"18H50060138","color":"白色","size":"38","amount":2,"tagprice":129,"retailprice":129},{"ecode":"18H5006","sku":"18H50060139","color":"白色","size":"39","amount":1,"tagprice":129,"retailprice":129},{"ecode":"18K1061","sku":"18K10610929","color":"黑色","size":"29","amount":9,"tagprice":129,"retailprice":129},{"ecode":"18K1061","sku":"18K10610930","color":"黑色","size":"30","amount":10,"tagprice":129,"retailprice":129},{"ecode":"18K1061","sku":"18K10610931","color":"黑色","size":"31","amount":6,"tagprice":129,"retailprice":129},{"ecode":"18K1061","sku":"18K10610932","color":"黑色","size":"32","amount":3,"tagprice":129,"retailprice":129},{"ecode":"18K1061","sku":"18K10610933","color":"黑色","size":"33","amount":9,"tagprice":129,"retailprice":129},{"ecode":"18K1061","sku":"18K10610934","color":"黑色","size":"34","amount":9,"tagprice":129,"retailprice":129},{"ecode":"18K1061","sku":"18K10610936","color":"黑色","size":"36","amount":4,"tagprice":129,"retailprice":129},{"ecode":"18K1107","sku":"18K11070929","color":"黑色","size":"29","amount":2,"tagprice":129,"retailprice":129},{"ecode":"18K1107","sku":"18K11070930","color":"黑色","size":"30","amount":3,"tagprice":129,"retailprice":129},{"ecode":"18K1107","sku":"18K11070931","color":"黑色","size":"31","amount":4,"tagprice":129,"retailprice":129},{"ecode":"18K1107","sku":"18K11070932","color":"黑色","size":"32","amount":3,"tagprice":129,"retailprice":129},{"ecode":"18K1107","sku":"18K11070933","color":"黑色","size":"33","amount":2,"tagprice":129,"retailprice":129},{"ecode":"18K1107","sku":"18K11070934","color":"黑色","size":"34","amount":2,"tagprice":129,"retailprice":129},{"ecode":"18K1107","sku":"18K11070936","color":"黑色","size":"36","amount":2,"tagprice":129,"retailprice":129},{"ecode":"18K1107","sku":"18K11075229","color":"浅绿","size":"29","amount":2,"tagprice":129,"retailprice":129},{"ecode":"18K1107","sku":"18K11075230","color":"浅绿","size":"30","amount":3,"tagprice":129,"retailprice":129},{"ecode":"18K1107","sku":"18K11075231","color":"浅绿","size":"31","amount":2,"tagprice":129,"retailprice":129},{"ecode":"18K1107","sku":"18K11075232","color":"浅绿","size":"32","amount":2,"tagprice":129,"retailprice":129},{"ecode":"18K1107","sku":"18K11075233","color":"浅绿","size":"33","amount":2,"tagprice":129,"retailprice":129},{"ecode":"18K1107","sku":"18K11075234","color":"浅绿","size":"34","amount":2,"tagprice":129,"retailprice":129},{"ecode":"18K1107","sku":"18K11075236","color":"浅绿","size":"36","amount":2,"tagprice":129,"retailprice":129},{"ecode":"18K1130","sku":"18K11300929","color":"黑色","size":"29","amount":3,"tagprice":129,"retailprice":129},{"ecode":"18K1130","sku":"18K11300930","color":"黑色","size":"30","amount":3,"tagprice":129,"retailprice":129},{"ecode":"18K1130","sku":"18K11300931","color":"黑色","size":"31","amount":2,"tagprice":129,"retailprice":129},{"ecode":"18K1130","sku":"18K11300932","color":"黑色","size":"32","amount":2,"tagprice":129,"retailprice":129},{"ecode":"18K1130","sku":"18K11300933","color":"黑色","size":"33","amount":2,"tagprice":129,"retailprice":129},{"ecode":"18K1130","sku":"18K11300934","color":"黑色","size":"34","amount":2,"tagprice":129,"retailprice":129},{"ecode":"18N1042","sku":"18N10426629","color":"牛仔蓝","size":"29","amount":5,"tagprice":129,"retailprice":129},{"ecode":"18N5084","sku":"18N50846604","color":"牛仔蓝","size":"S","amount":4,"tagprice":129,"retailprice":129},{"ecode":"18N5084","sku":"18N50846605","color":"牛仔蓝","size":"M","amount":4,"tagprice":129,"retailprice":129},{"ecode":"18N5084","sku":"18N50846606","color":"牛仔蓝","size":"L","amount":5,"tagprice":129,"retailprice":129},{"ecode":"18N5084","sku":"18N50846607","color":"牛仔蓝","size":"XL","amount":4,"tagprice":129,"retailprice":129},{"ecode":"18N5084","sku":"18N50846608","color":"牛仔蓝","size":"2XL","amount":3,"tagprice":129,"retailprice":129},{"ecode":"18Q5006","sku":"18Q50060906","color":"黑色","size":"L","amount":6,"tagprice":129,"retailprice":129},{"ecode":"18Q5006","sku":"18Q50060907","color":"黑色","size":"XL","amount":4,"tagprice":129,"retailprice":129},{"ecode":"18Q5006","sku":"18Q50066005","color":"淡蓝色","size":"M","amount":8,"tagprice":129,"retailprice":129},{"ecode":"18Q5006","sku":"18Q50066006","color":"淡蓝色","size":"L","amount":8,"tagprice":129,"retailprice":129},{"ecode":"18Q5006","sku":"18Q50066007","color":"淡蓝色","size":"XL","amount":6,"tagprice":129,"retailprice":129},{"ecode":"8H1015","sku":"8H10150942","color":"黑色","size":"42","amount":1,"tagprice":129,"retailprice":129},{"ecode":"8N5046","sku":"8N50466626","color":"牛仔蓝","size":"26","amount":1,"tagprice":129,"retailprice":129},{"ecode":"8N5046","sku":"8N50466627","color":"牛仔蓝","size":"27","amount":1,"tagprice":129,"retailprice":129},{"ecode":"8N5046","sku":"8N50466631","color":"牛仔蓝","size":"31","amount":-1,"tagprice":129,"retailprice":129},{"ecode":"18N1035","sku":"18N10356629","color":"牛仔蓝","size":"29","amount":3,"tagprice":149,"retailprice":149},{"ecode":"18N1035","sku":"18N10356630","color":"牛仔蓝","size":"30","amount":6,"tagprice":149,"retailprice":149},{"ecode":"18N1035","sku":"18N10356631","color":"牛仔蓝","size":"31","amount":4,"tagprice":149,"retailprice":149},{"ecode":"18N1035","sku":"18N10356632","color":"牛仔蓝","size":"32","amount":2,"tagprice":149,"retailprice":149},{"ecode":"18N1035","sku":"18N10356633","color":"牛仔蓝","size":"33","amount":4,"tagprice":149,"retailprice":149},{"ecode":"18N1035","sku":"18N10356634","color":"牛仔蓝","size":"34","amount":4,"tagprice":149,"retailprice":149},{"ecode":"18N1035","sku":"18N10356636","color":"牛仔蓝","size":"36","amount":3,"tagprice":149,"retailprice":149},{"ecode":"18N1036","sku":"18N10366629","color":"牛仔蓝","size":"29","amount":4,"tagprice":149,"retailprice":149},{"ecode":"18N1036","sku":"18N10366630","color":"牛仔蓝","size":"30","amount":6,"tagprice":149,"retailprice":149},{"ecode":"18N1036","sku":"18N10366631","color":"牛仔蓝","size":"31","amount":4,"tagprice":149,"retailprice":149},{"ecode":"18N1036","sku":"18N10366632","color":"牛仔蓝","size":"32","amount":3,"tagprice":149,"retailprice":149},{"ecode":"18N1036","sku":"18N10366633","color":"牛仔蓝","size":"33","amount":1,"tagprice":149,"retailprice":149},{"ecode":"18N1036","sku":"18N10366634","color":"牛仔蓝","size":"34","amount":3,"tagprice":149,"retailprice":149},{"ecode":"18H1017","sku":"18H10170139","color":"白色","size":"39","amount":2,"tagprice":159,"retailprice":159},{"ecode":"18H1017","sku":"18H10170140","color":"白色","size":"40","amount":3,"tagprice":159,"retailprice":159},{"ecode":"18H1017","sku":"18H10170141","color":"白色","size":"41","amount":3,"tagprice":159,"retailprice":159},{"ecode":"18H1017","sku":"18H10170142","color":"白色","size":"42","amount":3,"tagprice":159,"retailprice":159},{"ecode":"18H1017","sku":"18H10170143","color":"白色","size":"43","amount":2,"tagprice":159,"retailprice":159},{"ecode":"8H1006","sku":"8H10060140","color":"白色","size":"40","amount":2,"tagprice":159,"retailprice":159},{"ecode":"8H1006","sku":"8H10060141","color":"白色","size":"41","amount":2,"tagprice":159,"retailprice":159},{"ecode":"8H1006","sku":"8H10060143","color":"白色","size":"43","amount":2,"tagprice":159,"retailprice":159},{"ecode":"18D5034","sku":"18D50341405","color":"大红色","size":"M","amount":4,"tagprice":169,"retailprice":169},{"ecode":"18D5034","sku":"18D50341406","color":"大红色","size":"L","amount":3,"tagprice":169,"retailprice":169},{"ecode":"18D5034","sku":"18D50341407","color":"大红色","size":"XL","amount":2,"tagprice":169,"retailprice":169},{"ecode":"18D5034","sku":"18D50344505","color":"亮黄","size":"M","amount":5,"tagprice":169,"retailprice":169},{"ecode":"18D5034","sku":"18D50344506","color":"亮黄","size":"L","amount":4,"tagprice":169,"retailprice":169},{"ecode":"18D5034","sku":"18D50344507","color":"亮黄","size":"XL","amount":3,"tagprice":169,"retailprice":169},{"ecode":"18H1005","sku":"18H10050139","color":"白色","size":"39","amount":1,"tagprice":199,"retailprice":199},{"ecode":"18H1005","sku":"18H10050140","color":"白色","size":"40","amount":1,"tagprice":199,"retailprice":199},{"ecode":"18H1005","sku":"18H10050141","color":"白色","size":"41","amount":2,"tagprice":199,"retailprice":199},{"ecode":"18H1005","sku":"18H10050142","color":"白色","size":"42","amount":2,"tagprice":199,"retailprice":199},{"ecode":"18H1005","sku":"18H10050143","color":"白色","size":"43","amount":1,"tagprice":199,"retailprice":199},{"ecode":"18H1005","sku":"18H10050939","color":"黑色","size":"39","amount":1,"tagprice":199,"retailprice":199},{"ecode":"18H1005","sku":"18H10050940","color":"黑色","size":"40","amount":2,"tagprice":199,"retailprice":199},{"ecode":"18H1005","sku":"18H10050941","color":"黑色","size":"41","amount":1,"tagprice":199,"retailprice":199},{"ecode":"18H1005","sku":"18H10050942","color":"黑色","size":"42","amount":1,"tagprice":199,"retailprice":199},{"ecode":"18H1005","sku":"18H10050943","color":"黑色","size":"43","amount":1,"tagprice":199,"retailprice":199}]
+[
+  {
+    "ecode": "18C5057",
+    "sku": "18C50571105",
+    "color": "粉红色",
+    "size": "M",
+    "amount": 1,
+    "tagprice": 79,
+    "retailprice": 10
+  },
+  {
+    "ecode": "18C5057",
+    "sku": "18C50571107",
+    "color": "粉红色",
+    "size": "XL",
+    "amount": 1,
+    "tagprice": 79,
+    "retailprice": 10
+  },
+  {
+    "ecode": "18S1002",
+    "sku": "18S10029000",
+    "color": "杂色1",
+    "size": "M（均）",
+    "amount": 14,
+    "tagprice": 10,
+    "retailprice": 10
+  },
+
+  {
+    "ecode": "18S1004",
+    "sku": "18S10049000",
+    "color": "杂色1",
+    "size": "M（均）",
+    "amount": 15,
+    "tagprice": 10,
+    "retailprice": 10
+  },
+  {
+    "ecode": "18S1005",
+    "sku": "18S10059000",
+    "color": "杂色1",
+    "size": "M（均）",
+    "amount": 10,
+    "tagprice": 10,
+    "retailprice": 10
+  },
+  {
+    "ecode": "18S1009",
+    "sku": "18S10099005",
+    "color": "杂色1",
+    "size": "M",
+    "amount": 14,
+    "tagprice": 10,
+    "retailprice": 10
+  },
+  {
+    "ecode": "18S5003",
+    "sku": "18S50039000",
+    "color": "杂色1",
+    "size": "M（均）",
+    "amount": 15,
+    "tagprice": 10,
+    "retailprice": 10
+  },
+  {
+    "ecode": "18S5004",
+    "sku": "18S50049000",
+    "color": "杂色1",
+    "size": "M（均）",
+    "amount": 1,
+    "tagprice": 10,
+    "retailprice": 10
+  },
+  {
+    "ecode": "18S5006",
+    "sku": "18S50069000",
+    "color": "杂色1",
+    "size": "M（均）",
+    "amount": 15,
+    "tagprice": 10,
+    "retailprice": 10
+  },
+  {
+    "ecode": "18S5012",
+    "sku": "18S50129005",
+    "color": "杂色1",
+    "size": "M",
+    "amount": 12,
+    "tagprice": 10,
+    "retailprice": 10
+  },
+  {
+    "ecode": "7S5141",
+    "sku": "7S51419000",
+    "color": "杂色1",
+    "size": "M（均）",
+    "amount": 1,
+    "tagprice": 10,
+    "retailprice": 10
+  },
+  {
+    "ecode": "8K5006",
+    "sku": "8K50060904",
+    "color": "黑色",
+    "size": "S",
+    "amount": 9,
+    "tagprice": 29,
+    "retailprice": 10
+  },
+  {
+    "ecode": "8K5006",
+    "sku": "8K50060905",
+    "color": "黑色",
+    "size": "M",
+    "amount": 10,
+    "tagprice": 29,
+    "retailprice": 10
+  },
+  {
+    "ecode": "8K5006",
+    "sku": "8K50060906",
+    "color": "黑色",
+    "size": "L",
+    "amount": 3,
+    "tagprice": 29,
+    "retailprice": 10
+  },
+  {
+    "ecode": "8K5006",
+    "sku": "8K50060907",
+    "color": "黑色",
+    "size": "XL",
+    "amount": 1,
+    "tagprice": 29,
+    "retailprice": 10
+  },
+  {
+    "ecode": "8S1000",
+    "sku": "8S10009000",
+    "color": "杂色1",
+    "size": "M（均）",
+    "amount": 14,
+    "tagprice": 10,
+    "retailprice": 10
+  },
+  {
+    "ecode": "8S1005",
+    "sku": "8S10059000",
+    "color": "杂色1",
+    "size": "M（均）",
+    "amount": 6,
+    "tagprice": 10,
+    "retailprice": 10
+  },
+  {
+    "ecode": "8T5107",
+    "sku": "8T51079105",
+    "color": "杂色2",
+    "size": "M",
+    "amount": 1,
+    "tagprice": 19,
+    "retailprice": 10
+  },
+  {
+    "ecode": "8T5107",
+    "sku": "8T51079106",
+    "color": "杂色2",
+    "size": "L",
+    "amount": 2,
+    "tagprice": 19,
+    "retailprice": 10
+  },
+  {
+    "ecode": "8T5107",
+    "sku": "8T51079107",
+    "color": "杂色2",
+    "size": "XL",
+    "amount": 2,
+    "tagprice": 19,
+    "retailprice": 10
+  },
+  {
+    "ecode": "18K5076",
+    "sku": "18K50761107",
+    "color": "粉红色",
+    "size": "XL",
+    "amount": 2,
+    "tagprice": 19,
+    "retailprice": 19
+  },
+  {
+    "ecode": "18K5076",
+    "sku": "18K50761108",
+    "color": "粉红色",
+    "size": "2XL",
+    "amount": 5,
+    "tagprice": 19,
+    "retailprice": 19
+  },
+  {
+    "ecode": "18K5076",
+    "sku": "18K50765108",
+    "color": "粉绿色",
+    "size": "2XL",
+    "amount": 2,
+    "tagprice": 19,
+    "retailprice": 19
+  },
+  {
+    "ecode": "18T5033",
+    "sku": "18T50330105",
+    "color": "白色",
+    "size": "M",
+    "amount": 7,
+    "tagprice": 19,
+    "retailprice": 19
+  },
+  {
+    "ecode": "18T5033",
+    "sku": "18T50330106",
+    "color": "白色",
+    "size": "L",
+    "amount": 9,
+    "tagprice": 19,
+    "retailprice": 19
+  },
+  {
+    "ecode": "18T5033",
+    "sku": "18T50330107",
+    "color": "白色",
+    "size": "XL",
+    "amount": 8,
+    "tagprice": 19,
+    "retailprice": 19
+  },
+  {
+    "ecode": "18T5033",
+    "sku": "18T50330108",
+    "color": "白色",
+    "size": "2XL",
+    "amount": 2,
+    "tagprice": 19,
+    "retailprice": 19
+  },
+  {
+    "ecode": "18T5033",
+    "sku": "18T50334305",
+    "color": "蛋黄",
+    "size": "M",
+    "amount": 7,
+    "tagprice": 19,
+    "retailprice": 19
+  },
+  {
+    "ecode": "18T5033",
+    "sku": "18T50334306",
+    "color": "蛋黄",
+    "size": "L",
+    "amount": 10,
+    "tagprice": 19,
+    "retailprice": 19
+  },
+  {
+    "ecode": "18T5033",
+    "sku": "18T50334307",
+    "color": "蛋黄",
+    "size": "XL",
+    "amount": 7,
+    "tagprice": 19,
+    "retailprice": 19
+  },
+  {
+    "ecode": "18T5033",
+    "sku": "18T50334308",
+    "color": "蛋黄",
+    "size": "2XL",
+    "amount": 3,
+    "tagprice": 19,
+    "retailprice": 19
+  },
+  {
+    "ecode": "18T5033",
+    "sku": "18T50336105",
+    "color": "粉蓝色",
+    "size": "M",
+    "amount": 6,
+    "tagprice": 19,
+    "retailprice": 19
+  },
+  {
+    "ecode": "18T5033",
+    "sku": "18T50336106",
+    "color": "粉蓝色",
+    "size": "L",
+    "amount": 8,
+    "tagprice": 19,
+    "retailprice": 19
+  },
+  {
+    "ecode": "18T5033",
+    "sku": "18T50336107",
+    "color": "粉蓝色",
+    "size": "XL",
+    "amount": 5,
+    "tagprice": 19,
+    "retailprice": 19
+  },
+  {
+    "ecode": "18T5033",
+    "sku": "18T50336108",
+    "color": "粉蓝色",
+    "size": "2XL",
+    "amount": 1,
+    "tagprice": 19,
+    "retailprice": 19
+  },
+  {
+    "ecode": "18C1007",
+    "sku": "18C10076604",
+    "color": "牛仔蓝",
+    "size": "S",
+    "amount": -6,
+    "tagprice": 99,
+    "retailprice": 29
+  },
+  {
+    "ecode": "18C1007",
+    "sku": "18C10076606",
+    "color": "牛仔蓝",
+    "size": "L",
+    "amount": -4,
+    "tagprice": 99,
+    "retailprice": 29
+  },
+  {
+    "ecode": "18C1007",
+    "sku": "18C10076607",
+    "color": "牛仔蓝",
+    "size": "XL",
+    "amount": 10,
+    "tagprice": 99,
+    "retailprice": 29
+  },
+  {
+    "ecode": "18K5044",
+    "sku": "18K50440904",
+    "color": "黑色",
+    "size": "S",
+    "amount": 14,
+    "tagprice": 29,
+    "retailprice": 29
+  },
+  {
+    "ecode": "18K5044",
+    "sku": "18K50440905",
+    "color": "黑色",
+    "size": "M",
+    "amount": 13,
+    "tagprice": 29,
+    "retailprice": 29
+  },
+  {
+    "ecode": "18K5044",
+    "sku": "18K50440906",
+    "color": "黑色",
+    "size": "L",
+    "amount": 14,
+    "tagprice": 29,
+    "retailprice": 29
+  },
+  {
+    "ecode": "18K5044",
+    "sku": "18K50440907",
+    "color": "黑色",
+    "size": "XL",
+    "amount": 14,
+    "tagprice": 29,
+    "retailprice": 29
+  },
+  {
+    "ecode": "18K5044",
+    "sku": "18K50441104",
+    "color": "粉红色",
+    "size": "S",
+    "amount": 8,
+    "tagprice": 29,
+    "retailprice": 29
+  },
+  {
+    "ecode": "18K5044",
+    "sku": "18K50441105",
+    "color": "粉红色",
+    "size": "M",
+    "amount": 8,
+    "tagprice": 29,
+    "retailprice": 29
+  },
+  {
+    "ecode": "18K5044",
+    "sku": "18K50441106",
+    "color": "粉红色",
+    "size": "L",
+    "amount": 6,
+    "tagprice": 29,
+    "retailprice": 29
+  },
+  {
+    "ecode": "18K5044",
+    "sku": "18K50441107",
+    "color": "粉红色",
+    "size": "XL",
+    "amount": 8,
+    "tagprice": 29,
+    "retailprice": 29
+  },
+  {
+    "ecode": "18K5044",
+    "sku": "18K50442104",
+    "color": "杏色",
+    "size": "S",
+    "amount": 6,
+    "tagprice": 29,
+    "retailprice": 29
+  },
+  {
+    "ecode": "18K5044",
+    "sku": "18K50442105",
+    "color": "杏色",
+    "size": "M",
+    "amount": 7,
+    "tagprice": 29,
+    "retailprice": 29
+  },
+  {
+    "ecode": "18K5044",
+    "sku": "18K50442106",
+    "color": "杏色",
+    "size": "L",
+    "amount": 8,
+    "tagprice": 29,
+    "retailprice": 29
+  },
+  {
+    "ecode": "18K5044",
+    "sku": "18K50442107",
+    "color": "杏色",
+    "size": "XL",
+    "amount": 8,
+    "tagprice": 29,
+    "retailprice": 29
+  },
+  {
+    "ecode": "18N5033",
+    "sku": "18N50336627",
+    "color": "牛仔蓝",
+    "size": "27",
+    "amount": -1,
+    "tagprice": 99,
+    "retailprice": 29
+  },
+  {
+    "ecode": "18N5033",
+    "sku": "18N50336628",
+    "color": "牛仔蓝",
+    "size": "28",
+    "amount": 1,
+    "tagprice": 99,
+    "retailprice": 29
+  },
+  {
+    "ecode": "18Q5025",
+    "sku": "18Q50250905",
+    "color": "黑色",
+    "size": "M",
+    "amount": 7,
+    "tagprice": 79,
+    "retailprice": 29
+  },
+  {
+    "ecode": "18Q5025",
+    "sku": "18Q50250906",
+    "color": "黑色",
+    "size": "L",
+    "amount": 5,
+    "tagprice": 79,
+    "retailprice": 29
+  },
+  {
+    "ecode": "18Q5025",
+    "sku": "18Q50250907",
+    "color": "黑色",
+    "size": "XL",
+    "amount": 5,
+    "tagprice": 79,
+    "retailprice": 29
+  },
+  {
+    "ecode": "18T1065",
+    "sku": "18T10650105",
+    "color": "白色",
+    "size": "M",
+    "amount": 10,
+    "tagprice": 29,
+    "retailprice": 29
+  },
+  {
+    "ecode": "18T1065",
+    "sku": "18T10650106",
+    "color": "白色",
+    "size": "L",
+    "amount": 6,
+    "tagprice": 29,
+    "retailprice": 29
+  },
+  {
+    "ecode": "18T1065",
+    "sku": "18T10650107",
+    "color": "白色",
+    "size": "XL",
+    "amount": 6,
+    "tagprice": 29,
+    "retailprice": 29
+  },
+  {
+    "ecode": "18T1065",
+    "sku": "18T10650108",
+    "color": "白色",
+    "size": "2XL",
+    "amount": 9,
+    "tagprice": 29,
+    "retailprice": 29
+  },
+  {
+    "ecode": "18T1065",
+    "sku": "18T10650505",
+    "color": "花灰色",
+    "size": "M",
+    "amount": 5,
+    "tagprice": 29,
+    "retailprice": 29
+  },
+  {
+    "ecode": "18T1065",
+    "sku": "18T10650506",
+    "color": "花灰色",
+    "size": "L",
+    "amount": 6,
+    "tagprice": 29,
+    "retailprice": 29
+  },
+  {
+    "ecode": "18T1065",
+    "sku": "18T10650507",
+    "color": "花灰色",
+    "size": "XL",
+    "amount": 9,
+    "tagprice": 29,
+    "retailprice": 29
+  },
+  {
+    "ecode": "18T1065",
+    "sku": "18T10650508",
+    "color": "花灰色",
+    "size": "2XL",
+    "amount": 9,
+    "tagprice": 29,
+    "retailprice": 29
+  },
+  {
+    "ecode": "18T1065",
+    "sku": "18T10656005",
+    "color": "淡蓝色",
+    "size": "M",
+    "amount": 5,
+    "tagprice": 29,
+    "retailprice": 29
+  },
+  {
+    "ecode": "18T1065",
+    "sku": "18T10656006",
+    "color": "淡蓝色",
+    "size": "L",
+    "amount": 5,
+    "tagprice": 29,
+    "retailprice": 29
+  },
+  {
+    "ecode": "18T1065",
+    "sku": "18T10656007",
+    "color": "淡蓝色",
+    "size": "XL",
+    "amount": 3,
+    "tagprice": 29,
+    "retailprice": 29
+  },
+  {
+    "ecode": "18T1065",
+    "sku": "18T10656008",
+    "color": "淡蓝色",
+    "size": "2XL",
+    "amount": 6,
+    "tagprice": 29,
+    "retailprice": 29
+  },
+  {
+    "ecode": "18TA002",
+    "sku": "18TA0020105",
+    "color": "白色",
+    "size": "M",
+    "amount": 5,
+    "tagprice": 29,
+    "retailprice": 29
+  },
+  {
+    "ecode": "18TA002",
+    "sku": "18TA0020106",
+    "color": "白色",
+    "size": "L",
+    "amount": 22,
+    "tagprice": 29,
+    "retailprice": 29
+  },
+  {
+    "ecode": "18TA002",
+    "sku": "18TA0020107",
+    "color": "白色",
+    "size": "XL",
+    "amount": 8,
+    "tagprice": 29,
+    "retailprice": 29
+  },
+  {
+    "ecode": "18TA002",
+    "sku": "18TA0020108",
+    "color": "白色",
+    "size": "2XL",
+    "amount": 6,
+    "tagprice": 29,
+    "retailprice": 29
+  },
+  {
+    "ecode": "18TA002",
+    "sku": "18TA0020908",
+    "color": "黑色",
+    "size": "2XL",
+    "amount": 7,
+    "tagprice": 29,
+    "retailprice": 29
+  },
+  {
+    "ecode": "18TB002",
+    "sku": "18TB0020105",
+    "color": "白色",
+    "size": "M",
+    "amount": 16,
+    "tagprice": 29,
+    "retailprice": 29
+  },
+  {
+    "ecode": "18TB002",
+    "sku": "18TB0020106",
+    "color": "白色",
+    "size": "L",
+    "amount": 16,
+    "tagprice": 29,
+    "retailprice": 29
+  },
+  {
+    "ecode": "18TB002",
+    "sku": "18TB0020107",
+    "color": "白色",
+    "size": "XL",
+    "amount": 15,
+    "tagprice": 29,
+    "retailprice": 29
+  },
+  {
+    "ecode": "18TC001",
+    "sku": "18TC00114130",
+    "color": "大红色",
+    "size": "130",
+    "amount": 2,
+    "tagprice": 29,
+    "retailprice": 29
+  },
+  {
+    "ecode": "18TC001",
+    "sku": "18TC00114140",
+    "color": "大红色",
+    "size": "140",
+    "amount": -1,
+    "tagprice": 29,
+    "retailprice": 29
+  },
+  {
+    "ecode": "18TC004",
+    "sku": "18TC00401110",
+    "color": "白色",
+    "size": "110",
+    "amount": 2,
+    "tagprice": 29,
+    "retailprice": 29
+  },
+  {
+    "ecode": "18TC004",
+    "sku": "18TC00401120",
+    "color": "白色",
+    "size": "120",
+    "amount": 3,
+    "tagprice": 29,
+    "retailprice": 29
+  },
+  {
+    "ecode": "18TC004",
+    "sku": "18TC00401130",
+    "color": "白色",
+    "size": "130",
+    "amount": 3,
+    "tagprice": 29,
+    "retailprice": 29
+  },
+  {
+    "ecode": "18TC004",
+    "sku": "18TC00401140",
+    "color": "白色",
+    "size": "140",
+    "amount": 2,
+    "tagprice": 29,
+    "retailprice": 29
+  },
+  {
+    "ecode": "18TC004",
+    "sku": "18TC00411110",
+    "color": "粉红色",
+    "size": "110",
+    "amount": 5,
+    "tagprice": 29,
+    "retailprice": 29
+  },
+  {
+    "ecode": "18TC004",
+    "sku": "18TC00411120",
+    "color": "粉红色",
+    "size": "120",
+    "amount": 6,
+    "tagprice": 29,
+    "retailprice": 29
+  },
+  {
+    "ecode": "18TC004",
+    "sku": "18TC00411130",
+    "color": "粉红色",
+    "size": "130",
+    "amount": 6,
+    "tagprice": 29,
+    "retailprice": 29
+  },
+  {
+    "ecode": "18TC004",
+    "sku": "18TC00411140",
+    "color": "粉红色",
+    "size": "140",
+    "amount": 5,
+    "tagprice": 29,
+    "retailprice": 29
+  },
+  {
+    "ecode": "18TC004",
+    "sku": "18TC00460110",
+    "color": "淡蓝色",
+    "size": "110",
+    "amount": 5,
+    "tagprice": 29,
+    "retailprice": 29
+  },
+  {
+    "ecode": "18TC004",
+    "sku": "18TC00460120",
+    "color": "淡蓝色",
+    "size": "120",
+    "amount": 6,
+    "tagprice": 29,
+    "retailprice": 29
+  },
+  {
+    "ecode": "18TC004",
+    "sku": "18TC00460130",
+    "color": "淡蓝色",
+    "size": "130",
+    "amount": 6,
+    "tagprice": 29,
+    "retailprice": 29
+  },
+  {
+    "ecode": "18TC004",
+    "sku": "18TC00460140",
+    "color": "淡蓝色",
+    "size": "140",
+    "amount": 5,
+    "tagprice": 29,
+    "retailprice": 29
+  },
+  {
+    "ecode": "18K5068",
+    "sku": "18K50680904",
+    "color": "黑色",
+    "size": "S",
+    "amount": 4,
+    "tagprice": 39,
+    "retailprice": 39
+  },
+  {
+    "ecode": "18K5068",
+    "sku": "18K50680905",
+    "color": "黑色",
+    "size": "M",
+    "amount": 6,
+    "tagprice": 39,
+    "retailprice": 39
+  },
+  {
+    "ecode": "18K5068",
+    "sku": "18K50680906",
+    "color": "黑色",
+    "size": "L",
+    "amount": 2,
+    "tagprice": 39,
+    "retailprice": 39
+  },
+  {
+    "ecode": "18K5068",
+    "sku": "18K50680907",
+    "color": "黑色",
+    "size": "XL",
+    "amount": 7,
+    "tagprice": 39,
+    "retailprice": 39
+  },
+  {
+    "ecode": "18K5068",
+    "sku": "18K50680908",
+    "color": "黑色",
+    "size": "2XL",
+    "amount": 2,
+    "tagprice": 39,
+    "retailprice": 39
+  },
+  {
+    "ecode": "18K5068",
+    "sku": "18K50685104",
+    "color": "粉绿色",
+    "size": "S",
+    "amount": 5,
+    "tagprice": 39,
+    "retailprice": 39
+  },
+  {
+    "ecode": "18K5068",
+    "sku": "18K50685105",
+    "color": "粉绿色",
+    "size": "M",
+    "amount": 11,
+    "tagprice": 39,
+    "retailprice": 39
+  },
+  {
+    "ecode": "18K5068",
+    "sku": "18K50685106",
+    "color": "粉绿色",
+    "size": "L",
+    "amount": 15,
+    "tagprice": 39,
+    "retailprice": 39
+  },
+  {
+    "ecode": "18K5068",
+    "sku": "18K50685107",
+    "color": "粉绿色",
+    "size": "XL",
+    "amount": 8,
+    "tagprice": 39,
+    "retailprice": 39
+  },
+  {
+    "ecode": "18K5068",
+    "sku": "18K50685108",
+    "color": "粉绿色",
+    "size": "2XL",
+    "amount": 3,
+    "tagprice": 39,
+    "retailprice": 39
+  },
+  {
+    "ecode": "8K1112",
+    "sku": "8K11120629",
+    "color": "灰色",
+    "size": "29",
+    "amount": 2,
+    "tagprice": 39,
+    "retailprice": 39
+  },
+  {
+    "ecode": "8K1112",
+    "sku": "8K11120630",
+    "color": "灰色",
+    "size": "30",
+    "amount": 3,
+    "tagprice": 39,
+    "retailprice": 39
+  },
+  {
+    "ecode": "8K1112",
+    "sku": "8K11120631",
+    "color": "灰色",
+    "size": "31",
+    "amount": 6,
+    "tagprice": 39,
+    "retailprice": 39
+  },
+  {
+    "ecode": "8K1112",
+    "sku": "8K11120632",
+    "color": "灰色",
+    "size": "32",
+    "amount": 5,
+    "tagprice": 39,
+    "retailprice": 39
+  },
+  {
+    "ecode": "8K1112",
+    "sku": "8K11120633",
+    "color": "灰色",
+    "size": "33",
+    "amount": 3,
+    "tagprice": 39,
+    "retailprice": 39
+  },
+  {
+    "ecode": "8K1112",
+    "sku": "8K11120634",
+    "color": "灰色",
+    "size": "34",
+    "amount": 3,
+    "tagprice": 39,
+    "retailprice": 39
+  },
+  {
+    "ecode": "8K1112",
+    "sku": "8K11120636",
+    "color": "灰色",
+    "size": "36",
+    "amount": 3,
+    "tagprice": 39,
+    "retailprice": 39
+  },
+  {
+    "ecode": "8K1112",
+    "sku": "8K11120638",
+    "color": "灰色",
+    "size": "38",
+    "amount": 2,
+    "tagprice": 39,
+    "retailprice": 39
+  },
+  {
+    "ecode": "8K1112",
+    "sku": "8K11120929",
+    "color": "黑色",
+    "size": "29",
+    "amount": 2,
+    "tagprice": 39,
+    "retailprice": 39
+  },
+  {
+    "ecode": "8K1112",
+    "sku": "8K11120930",
+    "color": "黑色",
+    "size": "30",
+    "amount": 1,
+    "tagprice": 39,
+    "retailprice": 39
+  },
+  {
+    "ecode": "8K1112",
+    "sku": "8K11120931",
+    "color": "黑色",
+    "size": "31",
+    "amount": 3,
+    "tagprice": 39,
+    "retailprice": 39
+  },
+  {
+    "ecode": "8K1112",
+    "sku": "8K11120932",
+    "color": "黑色",
+    "size": "32",
+    "amount": 2,
+    "tagprice": 39,
+    "retailprice": 39
+  },
+  {
+    "ecode": "8K1112",
+    "sku": "8K11120933",
+    "color": "黑色",
+    "size": "33",
+    "amount": 2,
+    "tagprice": 39,
+    "retailprice": 39
+  },
+  {
+    "ecode": "8K1112",
+    "sku": "8K11120934",
+    "color": "黑色",
+    "size": "34",
+    "amount": 2,
+    "tagprice": 39,
+    "retailprice": 39
+  },
+  {
+    "ecode": "8K1112",
+    "sku": "8K11120936",
+    "color": "黑色",
+    "size": "36",
+    "amount": 3,
+    "tagprice": 39,
+    "retailprice": 39
+  },
+  {
+    "ecode": "8K1112",
+    "sku": "8K11120938",
+    "color": "黑色",
+    "size": "38",
+    "amount": 2,
+    "tagprice": 39,
+    "retailprice": 39
+  },
+  {
+    "ecode": "8K1112",
+    "sku": "8K11121229",
+    "color": "皮红色",
+    "size": "29",
+    "amount": 4,
+    "tagprice": 39,
+    "retailprice": 39
+  },
+  {
+    "ecode": "8K1112",
+    "sku": "8K11121230",
+    "color": "皮红色",
+    "size": "30",
+    "amount": 4,
+    "tagprice": 39,
+    "retailprice": 39
+  },
+  {
+    "ecode": "8K1112",
+    "sku": "8K11121231",
+    "color": "皮红色",
+    "size": "31",
+    "amount": 4,
+    "tagprice": 39,
+    "retailprice": 39
+  },
+  {
+    "ecode": "8K1112",
+    "sku": "8K11121232",
+    "color": "皮红色",
+    "size": "32",
+    "amount": 4,
+    "tagprice": 39,
+    "retailprice": 39
+  },
+  {
+    "ecode": "8K1112",
+    "sku": "8K11121233",
+    "color": "皮红色",
+    "size": "33",
+    "amount": 4,
+    "tagprice": 39,
+    "retailprice": 39
+  },
+  {
+    "ecode": "8K1112",
+    "sku": "8K11121234",
+    "color": "皮红色",
+    "size": "34",
+    "amount": 3,
+    "tagprice": 39,
+    "retailprice": 39
+  },
+  {
+    "ecode": "8K1112",
+    "sku": "8K11121236",
+    "color": "皮红色",
+    "size": "36",
+    "amount": 4,
+    "tagprice": 39,
+    "retailprice": 39
+  },
+  {
+    "ecode": "18C5076",
+    "sku": "18C50760105",
+    "color": "白色",
+    "size": "M",
+    "amount": 4,
+    "tagprice": 79,
+    "retailprice": 49
+  },
+  {
+    "ecode": "18C5076",
+    "sku": "18C50760106",
+    "color": "白色",
+    "size": "L",
+    "amount": 4,
+    "tagprice": 79,
+    "retailprice": 49
+  },
+  {
+    "ecode": "18C5076",
+    "sku": "18C50760107",
+    "color": "白色",
+    "size": "XL",
+    "amount": 3,
+    "tagprice": 79,
+    "retailprice": 49
+  },
+  {
+    "ecode": "18C5076",
+    "sku": "18C50761405",
+    "color": "大红色",
+    "size": "M",
+    "amount": 3,
+    "tagprice": 79,
+    "retailprice": 49
+  },
+  {
+    "ecode": "18C5076",
+    "sku": "18C50761406",
+    "color": "大红色",
+    "size": "L",
+    "amount": 3,
+    "tagprice": 79,
+    "retailprice": 49
+  },
+  {
+    "ecode": "18C5076",
+    "sku": "18C50761407",
+    "color": "大红色",
+    "size": "XL",
+    "amount": 2,
+    "tagprice": 79,
+    "retailprice": 49
+  },
+  {
+    "ecode": "7HB001",
+    "sku": "7HB0010135",
+    "color": "白色",
+    "size": "35",
+    "amount": 1,
+    "tagprice": 49,
+    "retailprice": 49
+  },
+  {
+    "ecode": "7HB001",
+    "sku": "7HB0010136",
+    "color": "白色",
+    "size": "36",
+    "amount": 2,
+    "tagprice": 49,
+    "retailprice": 49
+  },
+  {
+    "ecode": "7HB001",
+    "sku": "7HB0010137",
+    "color": "白色",
+    "size": "37",
+    "amount": 3,
+    "tagprice": 49,
+    "retailprice": 49
+  },
+  {
+    "ecode": "7HB001",
+    "sku": "7HB0010138",
+    "color": "白色",
+    "size": "38",
+    "amount": 3,
+    "tagprice": 49,
+    "retailprice": 49
+  },
+  {
+    "ecode": "7HB001",
+    "sku": "7HB0010139",
+    "color": "白色",
+    "size": "39",
+    "amount": 1,
+    "tagprice": 49,
+    "retailprice": 49
+  },
+  {
+    "ecode": "7HB001",
+    "sku": "7HB0010935",
+    "color": "黑色",
+    "size": "35",
+    "amount": 1,
+    "tagprice": 49,
+    "retailprice": 49
+  },
+  {
+    "ecode": "7HB001",
+    "sku": "7HB0010936",
+    "color": "黑色",
+    "size": "36",
+    "amount": 4,
+    "tagprice": 49,
+    "retailprice": 49
+  },
+  {
+    "ecode": "7HB001",
+    "sku": "7HB0010937",
+    "color": "黑色",
+    "size": "37",
+    "amount": 3,
+    "tagprice": 49,
+    "retailprice": 49
+  },
+  {
+    "ecode": "7HB001",
+    "sku": "7HB0010938",
+    "color": "黑色",
+    "size": "38",
+    "amount": 6,
+    "tagprice": 49,
+    "retailprice": 49
+  },
+  {
+    "ecode": "7HB001",
+    "sku": "7HB0010939",
+    "color": "黑色",
+    "size": "39",
+    "amount": 2,
+    "tagprice": 49,
+    "retailprice": 49
+  },
+  {
+    "ecode": "18K1075",
+    "sku": "18K10750629",
+    "color": "灰色",
+    "size": "29",
+    "amount": 2,
+    "tagprice": 59,
+    "retailprice": 59
+  },
+  {
+    "ecode": "18K1075",
+    "sku": "18K10750630",
+    "color": "灰色",
+    "size": "30",
+    "amount": 2,
+    "tagprice": 59,
+    "retailprice": 59
+  },
+  {
+    "ecode": "18K1075",
+    "sku": "18K10750631",
+    "color": "灰色",
+    "size": "31",
+    "amount": 2,
+    "tagprice": 59,
+    "retailprice": 59
+  },
+  {
+    "ecode": "18K1075",
+    "sku": "18K10750632",
+    "color": "灰色",
+    "size": "32",
+    "amount": 2,
+    "tagprice": 59,
+    "retailprice": 59
+  },
+  {
+    "ecode": "18K1075",
+    "sku": "18K10750633",
+    "color": "灰色",
+    "size": "33",
+    "amount": 2,
+    "tagprice": 59,
+    "retailprice": 59
+  },
+  {
+    "ecode": "18K1075",
+    "sku": "18K10750634",
+    "color": "灰色",
+    "size": "34",
+    "amount": 2,
+    "tagprice": 59,
+    "retailprice": 59
+  },
+  {
+    "ecode": "18K1075",
+    "sku": "18K10750636",
+    "color": "灰色",
+    "size": "36",
+    "amount": 2,
+    "tagprice": 59,
+    "retailprice": 59
+  },
+  {
+    "ecode": "18K1075",
+    "sku": "18K10750929",
+    "color": "黑色",
+    "size": "29",
+    "amount": 3,
+    "tagprice": 59,
+    "retailprice": 59
+  },
+  {
+    "ecode": "18K1075",
+    "sku": "18K10750930",
+    "color": "黑色",
+    "size": "30",
+    "amount": 4,
+    "tagprice": 59,
+    "retailprice": 59
+  },
+  {
+    "ecode": "18K1075",
+    "sku": "18K10750931",
+    "color": "黑色",
+    "size": "31",
+    "amount": 4,
+    "tagprice": 59,
+    "retailprice": 59
+  },
+  {
+    "ecode": "18K1075",
+    "sku": "18K10750932",
+    "color": "黑色",
+    "size": "32",
+    "amount": 4,
+    "tagprice": 59,
+    "retailprice": 59
+  },
+  {
+    "ecode": "18K1075",
+    "sku": "18K10750933",
+    "color": "黑色",
+    "size": "33",
+    "amount": 4,
+    "tagprice": 59,
+    "retailprice": 59
+  },
+  {
+    "ecode": "18K1075",
+    "sku": "18K10750934",
+    "color": "黑色",
+    "size": "34",
+    "amount": 2,
+    "tagprice": 59,
+    "retailprice": 59
+  },
+  {
+    "ecode": "18K1075",
+    "sku": "18K10750936",
+    "color": "黑色",
+    "size": "36",
+    "amount": 4,
+    "tagprice": 59,
+    "retailprice": 59
+  },
+  {
+    "ecode": "18K5107",
+    "sku": "18K51070105",
+    "color": "白色",
+    "size": "M",
+    "amount": 1,
+    "tagprice": 59,
+    "retailprice": 59
+  },
+  {
+    "ecode": "18K5107",
+    "sku": "18K51070106",
+    "color": "白色",
+    "size": "L",
+    "amount": 2,
+    "tagprice": 59,
+    "retailprice": 59
+  },
+  {
+    "ecode": "18K5107",
+    "sku": "18K51070107",
+    "color": "白色",
+    "size": "XL",
+    "amount": 2,
+    "tagprice": 59,
+    "retailprice": 59
+  },
+  {
+    "ecode": "18K5107",
+    "sku": "18K51070904",
+    "color": "黑色",
+    "size": "S",
+    "amount": 3,
+    "tagprice": 59,
+    "retailprice": 59
+  },
+  {
+    "ecode": "18K5107",
+    "sku": "18K51070905",
+    "color": "黑色",
+    "size": "M",
+    "amount": 4,
+    "tagprice": 59,
+    "retailprice": 59
+  },
+  {
+    "ecode": "18K5107",
+    "sku": "18K51070906",
+    "color": "黑色",
+    "size": "L",
+    "amount": 3,
+    "tagprice": 59,
+    "retailprice": 59
+  },
+  {
+    "ecode": "18K5107",
+    "sku": "18K51070907",
+    "color": "黑色",
+    "size": "XL",
+    "amount": 2,
+    "tagprice": 59,
+    "retailprice": 59
+  },
+  {
+    "ecode": "18N1071",
+    "sku": "18N10716629",
+    "color": "牛仔蓝",
+    "size": "29",
+    "amount": 4,
+    "tagprice": 59,
+    "retailprice": 59
+  },
+  {
+    "ecode": "18N1071",
+    "sku": "18N10716630",
+    "color": "牛仔蓝",
+    "size": "30",
+    "amount": 5,
+    "tagprice": 59,
+    "retailprice": 59
+  },
+  {
+    "ecode": "18N1071",
+    "sku": "18N10716631",
+    "color": "牛仔蓝",
+    "size": "31",
+    "amount": 4,
+    "tagprice": 59,
+    "retailprice": 59
+  },
+  {
+    "ecode": "18N1071",
+    "sku": "18N10716632",
+    "color": "牛仔蓝",
+    "size": "32",
+    "amount": 4,
+    "tagprice": 59,
+    "retailprice": 59
+  },
+  {
+    "ecode": "18N1071",
+    "sku": "18N10716633",
+    "color": "牛仔蓝",
+    "size": "33",
+    "amount": 3,
+    "tagprice": 59,
+    "retailprice": 59
+  },
+  {
+    "ecode": "18N1071",
+    "sku": "18N10716634",
+    "color": "牛仔蓝",
+    "size": "34",
+    "amount": 3,
+    "tagprice": 59,
+    "retailprice": 59
+  },
+  {
+    "ecode": "18N1071",
+    "sku": "18N10716636",
+    "color": "牛仔蓝",
+    "size": "36",
+    "amount": 2,
+    "tagprice": 59,
+    "retailprice": 59
+  },
+  {
+    "ecode": "18T1059",
+    "sku": "18T10590104",
+    "color": "白色",
+    "size": "S",
+    "amount": 3,
+    "tagprice": 59,
+    "retailprice": 59
+  },
+  {
+    "ecode": "18T1059",
+    "sku": "18T10590105",
+    "color": "白色",
+    "size": "M",
+    "amount": 2,
+    "tagprice": 59,
+    "retailprice": 59
+  },
+  {
+    "ecode": "18T1059",
+    "sku": "18T10590106",
+    "color": "白色",
+    "size": "L",
+    "amount": 2,
+    "tagprice": 59,
+    "retailprice": 59
+  },
+  {
+    "ecode": "18T1059",
+    "sku": "18T10590107",
+    "color": "白色",
+    "size": "XL",
+    "amount": 4,
+    "tagprice": 59,
+    "retailprice": 59
+  },
+  {
+    "ecode": "18T1059",
+    "sku": "18T10590108",
+    "color": "白色",
+    "size": "2XL",
+    "amount": 2,
+    "tagprice": 59,
+    "retailprice": 59
+  },
+  {
+    "ecode": "18T1059",
+    "sku": "18T10592104",
+    "color": "杏色",
+    "size": "S",
+    "amount": 4,
+    "tagprice": 59,
+    "retailprice": 59
+  },
+  {
+    "ecode": "18T1059",
+    "sku": "18T10592105",
+    "color": "杏色",
+    "size": "M",
+    "amount": 4,
+    "tagprice": 59,
+    "retailprice": 59
+  },
+  {
+    "ecode": "18T1059",
+    "sku": "18T10592106",
+    "color": "杏色",
+    "size": "L",
+    "amount": 1,
+    "tagprice": 59,
+    "retailprice": 59
+  },
+  {
+    "ecode": "18T1059",
+    "sku": "18T10592107",
+    "color": "杏色",
+    "size": "XL",
+    "amount": 4,
+    "tagprice": 59,
+    "retailprice": 59
+  },
+  {
+    "ecode": "18T1059",
+    "sku": "18T10592108",
+    "color": "杏色",
+    "size": "2XL",
+    "amount": 2,
+    "tagprice": 59,
+    "retailprice": 59
+  },
+  {
+    "ecode": "18T1059",
+    "sku": "18T10597104",
+    "color": "粉紫色",
+    "size": "S",
+    "amount": 4,
+    "tagprice": 59,
+    "retailprice": 59
+  },
+  {
+    "ecode": "18T1059",
+    "sku": "18T10597105",
+    "color": "粉紫色",
+    "size": "M",
+    "amount": 3,
+    "tagprice": 59,
+    "retailprice": 59
+  },
+  {
+    "ecode": "18T1059",
+    "sku": "18T10597106",
+    "color": "粉紫色",
+    "size": "L",
+    "amount": 2,
+    "tagprice": 59,
+    "retailprice": 59
+  },
+  {
+    "ecode": "18T1059",
+    "sku": "18T10597107",
+    "color": "粉紫色",
+    "size": "XL",
+    "amount": 2,
+    "tagprice": 59,
+    "retailprice": 59
+  },
+  {
+    "ecode": "18T1059",
+    "sku": "18T10597108",
+    "color": "粉紫色",
+    "size": "2XL",
+    "amount": 5,
+    "tagprice": 59,
+    "retailprice": 59
+  },
+  {
+    "ecode": "18T5067",
+    "sku": "18T50670105",
+    "color": "白色",
+    "size": "M",
+    "amount": 6,
+    "tagprice": 59,
+    "retailprice": 59
+  },
+  {
+    "ecode": "18T5067",
+    "sku": "18T50670106",
+    "color": "白色",
+    "size": "L",
+    "amount": 5,
+    "tagprice": 59,
+    "retailprice": 59
+  },
+  {
+    "ecode": "18T5067",
+    "sku": "18T50670107",
+    "color": "白色",
+    "size": "XL",
+    "amount": 5,
+    "tagprice": 59,
+    "retailprice": 59
+  },
+  {
+    "ecode": "18T5067",
+    "sku": "18T50674605",
+    "color": "芥黄色",
+    "size": "M",
+    "amount": 5,
+    "tagprice": 59,
+    "retailprice": 59
+  },
+  {
+    "ecode": "18T5067",
+    "sku": "18T50674606",
+    "color": "芥黄色",
+    "size": "L",
+    "amount": 5,
+    "tagprice": 59,
+    "retailprice": 59
+  },
+  {
+    "ecode": "18T5114",
+    "sku": "18T51140105",
+    "color": "白色",
+    "size": "M",
+    "amount": 3,
+    "tagprice": 59,
+    "retailprice": 59
+  },
+  {
+    "ecode": "18T5114",
+    "sku": "18T51140106",
+    "color": "白色",
+    "size": "L",
+    "amount": 4,
+    "tagprice": 59,
+    "retailprice": 59
+  },
+  {
+    "ecode": "18T5114",
+    "sku": "18T51140107",
+    "color": "白色",
+    "size": "XL",
+    "amount": 5,
+    "tagprice": 59,
+    "retailprice": 59
+  },
+  {
+    "ecode": "18T5114",
+    "sku": "18T51141405",
+    "color": "大红色",
+    "size": "M",
+    "amount": 4,
+    "tagprice": 59,
+    "retailprice": 59
+  },
+  {
+    "ecode": "18T5114",
+    "sku": "18T51141406",
+    "color": "大红色",
+    "size": "L",
+    "amount": 3,
+    "tagprice": 59,
+    "retailprice": 59
+  },
+  {
+    "ecode": "18T5114",
+    "sku": "18T51141407",
+    "color": "大红色",
+    "size": "XL",
+    "amount": 3,
+    "tagprice": 59,
+    "retailprice": 59
+  },
+  {
+    "ecode": "18T5124",
+    "sku": "18T51240106",
+    "color": "白色",
+    "size": "L",
+    "amount": 1,
+    "tagprice": 59,
+    "retailprice": 59
+  },
+  {
+    "ecode": "18T5124",
+    "sku": "18T51240107",
+    "color": "白色",
+    "size": "XL",
+    "amount": 2,
+    "tagprice": 59,
+    "retailprice": 59
+  },
+  {
+    "ecode": "18T5124",
+    "sku": "18T51244306",
+    "color": "蛋黄",
+    "size": "L",
+    "amount": 3,
+    "tagprice": 59,
+    "retailprice": 59
+  },
+  {
+    "ecode": "18T5124",
+    "sku": "18T51244307",
+    "color": "蛋黄",
+    "size": "XL",
+    "amount": 1,
+    "tagprice": 59,
+    "retailprice": 59
+  },
+  {
+    "ecode": "18T5145",
+    "sku": "18T51450105",
+    "color": "白色",
+    "size": "M",
+    "amount": 6,
+    "tagprice": 59,
+    "retailprice": 59
+  },
+  {
+    "ecode": "18T5145",
+    "sku": "18T51450106",
+    "color": "白色",
+    "size": "L",
+    "amount": 3,
+    "tagprice": 59,
+    "retailprice": 59
+  },
+  {
+    "ecode": "18T5145",
+    "sku": "18T51450107",
+    "color": "白色",
+    "size": "XL",
+    "amount": 2,
+    "tagprice": 59,
+    "retailprice": 59
+  },
+  {
+    "ecode": "18T5145",
+    "sku": "18T51454705",
+    "color": "土黄色",
+    "size": "M",
+    "amount": 4,
+    "tagprice": 59,
+    "retailprice": 59
+  },
+  {
+    "ecode": "18T5145",
+    "sku": "18T51454706",
+    "color": "土黄色",
+    "size": "L",
+    "amount": 3,
+    "tagprice": 59,
+    "retailprice": 59
+  },
+  {
+    "ecode": "18T5145",
+    "sku": "18T51454707",
+    "color": "土黄色",
+    "size": "XL",
+    "amount": 2,
+    "tagprice": 59,
+    "retailprice": 59
+  },
+  {
+    "ecode": "18T5145",
+    "sku": "18T51456405",
+    "color": "湖蓝",
+    "size": "M",
+    "amount": 2,
+    "tagprice": 59,
+    "retailprice": 59
+  },
+  {
+    "ecode": "18T5145",
+    "sku": "18T51456406",
+    "color": "湖蓝",
+    "size": "L",
+    "amount": 2,
+    "tagprice": 59,
+    "retailprice": 59
+  },
+  {
+    "ecode": "18T5145",
+    "sku": "18T51456407",
+    "color": "湖蓝",
+    "size": "XL",
+    "amount": 2,
+    "tagprice": 59,
+    "retailprice": 59
+  },
+  {
+    "ecode": "18T5146",
+    "sku": "18T51460105",
+    "color": "白色",
+    "size": "M",
+    "amount": 3,
+    "tagprice": 59,
+    "retailprice": 59
+  },
+  {
+    "ecode": "18T5146",
+    "sku": "18T51460106",
+    "color": "白色",
+    "size": "L",
+    "amount": 3,
+    "tagprice": 59,
+    "retailprice": 59
+  },
+  {
+    "ecode": "18T5146",
+    "sku": "18T51460107",
+    "color": "白色",
+    "size": "XL",
+    "amount": 2,
+    "tagprice": 59,
+    "retailprice": 59
+  },
+  {
+    "ecode": "18T5146",
+    "sku": "18T51461405",
+    "color": "大红色",
+    "size": "M",
+    "amount": 3,
+    "tagprice": 59,
+    "retailprice": 59
+  },
+  {
+    "ecode": "18T5146",
+    "sku": "18T51461406",
+    "color": "大红色",
+    "size": "L",
+    "amount": 2,
+    "tagprice": 59,
+    "retailprice": 59
+  },
+  {
+    "ecode": "18T5146",
+    "sku": "18T51461407",
+    "color": "大红色",
+    "size": "XL",
+    "amount": 2,
+    "tagprice": 59,
+    "retailprice": 59
+  },
+  {
+    "ecode": "18T5146",
+    "sku": "18T51464705",
+    "color": "土黄色",
+    "size": "M",
+    "amount": 3,
+    "tagprice": 59,
+    "retailprice": 59
+  },
+  {
+    "ecode": "18T5146",
+    "sku": "18T51464706",
+    "color": "土黄色",
+    "size": "L",
+    "amount": 3,
+    "tagprice": 59,
+    "retailprice": 59
+  },
+  {
+    "ecode": "18T5146",
+    "sku": "18T51464707",
+    "color": "土黄色",
+    "size": "XL",
+    "amount": 1,
+    "tagprice": 59,
+    "retailprice": 59
+  },
+  {
+    "ecode": "18T5152",
+    "sku": "18T51520105",
+    "color": "白色",
+    "size": "M",
+    "amount": 4,
+    "tagprice": 59,
+    "retailprice": 59
+  },
+  {
+    "ecode": "18T5152",
+    "sku": "18T51520106",
+    "color": "白色",
+    "size": "L",
+    "amount": 3,
+    "tagprice": 59,
+    "retailprice": 59
+  },
+  {
+    "ecode": "18T5152",
+    "sku": "18T51520107",
+    "color": "白色",
+    "size": "XL",
+    "amount": 4,
+    "tagprice": 59,
+    "retailprice": 59
+  },
+  {
+    "ecode": "18T5152",
+    "sku": "18T51521105",
+    "color": "粉红色",
+    "size": "M",
+    "amount": 2,
+    "tagprice": 59,
+    "retailprice": 59
+  },
+  {
+    "ecode": "18T5152",
+    "sku": "18T51521106",
+    "color": "粉红色",
+    "size": "L",
+    "amount": 2,
+    "tagprice": 59,
+    "retailprice": 59
+  },
+  {
+    "ecode": "18T5152",
+    "sku": "18T51521107",
+    "color": "粉红色",
+    "size": "XL",
+    "amount": 3,
+    "tagprice": 59,
+    "retailprice": 59
+  },
+  {
+    "ecode": "18T5152",
+    "sku": "18T51526805",
+    "color": "宝蓝色",
+    "size": "M",
+    "amount": 2,
+    "tagprice": 59,
+    "retailprice": 59
+  },
+  {
+    "ecode": "18T5152",
+    "sku": "18T51526806",
+    "color": "宝蓝色",
+    "size": "L",
+    "amount": 2,
+    "tagprice": 59,
+    "retailprice": 59
+  },
+  {
+    "ecode": "18T5152",
+    "sku": "18T51526807",
+    "color": "宝蓝色",
+    "size": "XL",
+    "amount": 2,
+    "tagprice": 59,
+    "retailprice": 59
+  },
+  {
+    "ecode": "18D5004",
+    "sku": "18D50040105",
+    "color": "白色",
+    "size": "M",
+    "amount": 8,
+    "tagprice": 129,
+    "retailprice": 65
+  },
+  {
+    "ecode": "18D5004",
+    "sku": "18D50040106",
+    "color": "白色",
+    "size": "L",
+    "amount": 8,
+    "tagprice": 129,
+    "retailprice": 65
+  },
+  {
+    "ecode": "18D5004",
+    "sku": "18D50040107",
+    "color": "白色",
+    "size": "XL",
+    "amount": 8,
+    "tagprice": 129,
+    "retailprice": 65
+  },
+  {
+    "ecode": "18H1004",
+    "sku": "18H10040939",
+    "color": "黑色",
+    "size": "39",
+    "amount": 1,
+    "tagprice": 79,
+    "retailprice": 65
+  },
+  {
+    "ecode": "18H1004",
+    "sku": "18H10040940",
+    "color": "黑色",
+    "size": "40",
+    "amount": 2,
+    "tagprice": 79,
+    "retailprice": 65
+  },
+  {
+    "ecode": "18H1004",
+    "sku": "18H10040941",
+    "color": "黑色",
+    "size": "41",
+    "amount": 2,
+    "tagprice": 79,
+    "retailprice": 65
+  },
+  {
+    "ecode": "18H1004",
+    "sku": "18H10040942",
+    "color": "黑色",
+    "size": "42",
+    "amount": 2,
+    "tagprice": 79,
+    "retailprice": 65
+  },
+  {
+    "ecode": "18H1004",
+    "sku": "18H10040943",
+    "color": "黑色",
+    "size": "43",
+    "amount": 2,
+    "tagprice": 79,
+    "retailprice": 65
+  },
+  {
+    "ecode": "18H5002",
+    "sku": "18H50020935",
+    "color": "黑色",
+    "size": "35",
+    "amount": 1,
+    "tagprice": 79,
+    "retailprice": 65
+  },
+  {
+    "ecode": "18H5002",
+    "sku": "18H50020936",
+    "color": "黑色",
+    "size": "36",
+    "amount": 2,
+    "tagprice": 79,
+    "retailprice": 65
+  },
+  {
+    "ecode": "18H5002",
+    "sku": "18H50020937",
+    "color": "黑色",
+    "size": "37",
+    "amount": 2,
+    "tagprice": 79,
+    "retailprice": 65
+  },
+  {
+    "ecode": "18H5002",
+    "sku": "18H50020938",
+    "color": "黑色",
+    "size": "38",
+    "amount": 2,
+    "tagprice": 79,
+    "retailprice": 65
+  },
+  {
+    "ecode": "18H5002",
+    "sku": "18H50020939",
+    "color": "黑色",
+    "size": "39",
+    "amount": 1,
+    "tagprice": 79,
+    "retailprice": 65
+  },
+  {
+    "ecode": "18N1024",
+    "sku": "18N10246628",
+    "color": "牛仔蓝",
+    "size": "28",
+    "amount": 2,
+    "tagprice": 129,
+    "retailprice": 65
+  },
+  {
+    "ecode": "18N1024",
+    "sku": "18N10246629",
+    "color": "牛仔蓝",
+    "size": "29",
+    "amount": 2,
+    "tagprice": 129,
+    "retailprice": 65
+  },
+  {
+    "ecode": "18N1024",
+    "sku": "18N10246630",
+    "color": "牛仔蓝",
+    "size": "30",
+    "amount": 3,
+    "tagprice": 129,
+    "retailprice": 65
+  },
+  {
+    "ecode": "18N1024",
+    "sku": "18N10246631",
+    "color": "牛仔蓝",
+    "size": "31",
+    "amount": 1,
+    "tagprice": 129,
+    "retailprice": 65
+  },
+  {
+    "ecode": "18N1024",
+    "sku": "18N10246632",
+    "color": "牛仔蓝",
+    "size": "32",
+    "amount": 3,
+    "tagprice": 129,
+    "retailprice": 65
+  },
+  {
+    "ecode": "18N1024",
+    "sku": "18N10246633",
+    "color": "牛仔蓝",
+    "size": "33",
+    "amount": 1,
+    "tagprice": 129,
+    "retailprice": 65
+  },
+  {
+    "ecode": "18N1024",
+    "sku": "18N10246634",
+    "color": "牛仔蓝",
+    "size": "34",
+    "amount": 1,
+    "tagprice": 129,
+    "retailprice": 65
+  },
+  {
+    "ecode": "18N1024",
+    "sku": "18N10246636",
+    "color": "牛仔蓝",
+    "size": "36",
+    "amount": 2,
+    "tagprice": 129,
+    "retailprice": 65
+  },
+  {
+    "ecode": "8K1122",
+    "sku": "8K11220906",
+    "color": "黑色",
+    "size": "L",
+    "amount": 2,
+    "tagprice": 129,
+    "retailprice": 65
+  },
+  {
+    "ecode": "8K1122",
+    "sku": "8K11220908",
+    "color": "黑色",
+    "size": "2XL",
+    "amount": 3,
+    "tagprice": 129,
+    "retailprice": 65
+  },
+  {
+    "ecode": "8N1072",
+    "sku": "8N10726636",
+    "color": "牛仔蓝",
+    "size": "36",
+    "amount": 1,
+    "tagprice": 149,
+    "retailprice": 65
+  },
+  {
+    "ecode": "18C5082",
+    "sku": "18C50821105",
+    "color": "粉红色",
+    "size": "M",
+    "amount": 3,
+    "tagprice": 69,
+    "retailprice": 69
+  },
+  {
+    "ecode": "18C5082",
+    "sku": "18C50821106",
+    "color": "粉红色",
+    "size": "L",
+    "amount": 1,
+    "tagprice": 69,
+    "retailprice": 69
+  },
+  {
+    "ecode": "18C5082",
+    "sku": "18C50821107",
+    "color": "粉红色",
+    "size": "XL",
+    "amount": 2,
+    "tagprice": 69,
+    "retailprice": 69
+  },
+  {
+    "ecode": "18C5082",
+    "sku": "18C50823005",
+    "color": "米白",
+    "size": "M",
+    "amount": 3,
+    "tagprice": 69,
+    "retailprice": 69
+  },
+  {
+    "ecode": "18C5082",
+    "sku": "18C50823006",
+    "color": "米白",
+    "size": "L",
+    "amount": 4,
+    "tagprice": 69,
+    "retailprice": 69
+  },
+  {
+    "ecode": "18C5082",
+    "sku": "18C50823007",
+    "color": "米白",
+    "size": "XL",
+    "amount": 2,
+    "tagprice": 69,
+    "retailprice": 69
+  },
+  {
+    "ecode": "18C5092",
+    "sku": "18C50920105",
+    "color": "白色",
+    "size": "M",
+    "amount": 8,
+    "tagprice": 69,
+    "retailprice": 69
+  },
+  {
+    "ecode": "18C5092",
+    "sku": "18C50920106",
+    "color": "白色",
+    "size": "L",
+    "amount": 5,
+    "tagprice": 69,
+    "retailprice": 69
+  },
+  {
+    "ecode": "18C5092",
+    "sku": "18C50920107",
+    "color": "白色",
+    "size": "XL",
+    "amount": 4,
+    "tagprice": 69,
+    "retailprice": 69
+  },
+  {
+    "ecode": "18C5092",
+    "sku": "18C50924505",
+    "color": "亮黄",
+    "size": "M",
+    "amount": 4,
+    "tagprice": 69,
+    "retailprice": 69
+  },
+  {
+    "ecode": "18C5092",
+    "sku": "18C50924506",
+    "color": "亮黄",
+    "size": "L",
+    "amount": 4,
+    "tagprice": 69,
+    "retailprice": 69
+  },
+  {
+    "ecode": "18C5092",
+    "sku": "18C50924507",
+    "color": "亮黄",
+    "size": "XL",
+    "amount": 4,
+    "tagprice": 69,
+    "retailprice": 69
+  },
+  {
+    "ecode": "18T1124",
+    "sku": "18T11240605",
+    "color": "灰色",
+    "size": "M",
+    "amount": 1,
+    "tagprice": 69,
+    "retailprice": 69
+  },
+  {
+    "ecode": "18T1124",
+    "sku": "18T11240606",
+    "color": "灰色",
+    "size": "L",
+    "amount": 3,
+    "tagprice": 69,
+    "retailprice": 69
+  },
+  {
+    "ecode": "18T1124",
+    "sku": "18T11240607",
+    "color": "灰色",
+    "size": "XL",
+    "amount": 2,
+    "tagprice": 69,
+    "retailprice": 69
+  },
+  {
+    "ecode": "18T1124",
+    "sku": "18T11240608",
+    "color": "灰色",
+    "size": "2XL",
+    "amount": 2,
+    "tagprice": 69,
+    "retailprice": 69
+  },
+  {
+    "ecode": "18T1124",
+    "sku": "18T11245605",
+    "color": "绿色",
+    "size": "M",
+    "amount": 2,
+    "tagprice": 69,
+    "retailprice": 69
+  },
+  {
+    "ecode": "18T1124",
+    "sku": "18T11245606",
+    "color": "绿色",
+    "size": "L",
+    "amount": 3,
+    "tagprice": 69,
+    "retailprice": 69
+  },
+  {
+    "ecode": "18T1124",
+    "sku": "18T11245607",
+    "color": "绿色",
+    "size": "XL",
+    "amount": 2,
+    "tagprice": 69,
+    "retailprice": 69
+  },
+  {
+    "ecode": "18T1124",
+    "sku": "18T11245608",
+    "color": "绿色",
+    "size": "2XL",
+    "amount": 3,
+    "tagprice": 69,
+    "retailprice": 69
+  },
+  {
+    "ecode": "18T1143",
+    "sku": "18T11430105",
+    "color": "白色",
+    "size": "M",
+    "amount": 3,
+    "tagprice": 69,
+    "retailprice": 69
+  },
+  {
+    "ecode": "18T1143",
+    "sku": "18T11430106",
+    "color": "白色",
+    "size": "L",
+    "amount": 3,
+    "tagprice": 69,
+    "retailprice": 69
+  },
+  {
+    "ecode": "18T1143",
+    "sku": "18T11430107",
+    "color": "白色",
+    "size": "XL",
+    "amount": 3,
+    "tagprice": 69,
+    "retailprice": 69
+  },
+  {
+    "ecode": "18T1143",
+    "sku": "18T11430108",
+    "color": "白色",
+    "size": "2XL",
+    "amount": 3,
+    "tagprice": 69,
+    "retailprice": 69
+  },
+  {
+    "ecode": "18T1143",
+    "sku": "18T11432105",
+    "color": "杏色",
+    "size": "M",
+    "amount": 2,
+    "tagprice": 69,
+    "retailprice": 69
+  },
+  {
+    "ecode": "18T1143",
+    "sku": "18T11432106",
+    "color": "杏色",
+    "size": "L",
+    "amount": 2,
+    "tagprice": 69,
+    "retailprice": 69
+  },
+  {
+    "ecode": "18T1143",
+    "sku": "18T11432107",
+    "color": "杏色",
+    "size": "XL",
+    "amount": 2,
+    "tagprice": 69,
+    "retailprice": 69
+  },
+  {
+    "ecode": "18T1143",
+    "sku": "18T11432108",
+    "color": "杏色",
+    "size": "2XL",
+    "amount": 2,
+    "tagprice": 69,
+    "retailprice": 69
+  },
+  {
+    "ecode": "18T1159",
+    "sku": "18T11590105",
+    "color": "白色",
+    "size": "M",
+    "amount": 3,
+    "tagprice": 69,
+    "retailprice": 69
+  },
+  {
+    "ecode": "18T1159",
+    "sku": "18T11590106",
+    "color": "白色",
+    "size": "L",
+    "amount": 5,
+    "tagprice": 69,
+    "retailprice": 69
+  },
+  {
+    "ecode": "18T1159",
+    "sku": "18T11590107",
+    "color": "白色",
+    "size": "XL",
+    "amount": 4,
+    "tagprice": 69,
+    "retailprice": 69
+  },
+  {
+    "ecode": "18T1159",
+    "sku": "18T11590108",
+    "color": "白色",
+    "size": "2XL",
+    "amount": 3,
+    "tagprice": 69,
+    "retailprice": 69
+  },
+  {
+    "ecode": "18T1159",
+    "sku": "18T11596505",
+    "color": "彩蓝",
+    "size": "M",
+    "amount": 3,
+    "tagprice": 69,
+    "retailprice": 69
+  },
+  {
+    "ecode": "18T1159",
+    "sku": "18T11596506",
+    "color": "彩蓝",
+    "size": "L",
+    "amount": 3,
+    "tagprice": 69,
+    "retailprice": 69
+  },
+  {
+    "ecode": "18T1159",
+    "sku": "18T11596507",
+    "color": "彩蓝",
+    "size": "XL",
+    "amount": 2,
+    "tagprice": 69,
+    "retailprice": 69
+  },
+  {
+    "ecode": "18T1159",
+    "sku": "18T11596508",
+    "color": "彩蓝",
+    "size": "2XL",
+    "amount": 2,
+    "tagprice": 69,
+    "retailprice": 69
+  },
+  {
+    "ecode": "18T5139",
+    "sku": "18T51390105",
+    "color": "白色",
+    "size": "M",
+    "amount": 4,
+    "tagprice": 69,
+    "retailprice": 69
+  },
+  {
+    "ecode": "18T5139",
+    "sku": "18T51390106",
+    "color": "白色",
+    "size": "L",
+    "amount": 4,
+    "tagprice": 69,
+    "retailprice": 69
+  },
+  {
+    "ecode": "18T5139",
+    "sku": "18T51390107",
+    "color": "白色",
+    "size": "XL",
+    "amount": 4,
+    "tagprice": 69,
+    "retailprice": 69
+  },
+  {
+    "ecode": "18T5139",
+    "sku": "18T51394505",
+    "color": "亮黄",
+    "size": "M",
+    "amount": 4,
+    "tagprice": 69,
+    "retailprice": 69
+  },
+  {
+    "ecode": "18T5139",
+    "sku": "18T51394506",
+    "color": "亮黄",
+    "size": "L",
+    "amount": 3,
+    "tagprice": 69,
+    "retailprice": 69
+  },
+  {
+    "ecode": "18T5173",
+    "sku": "18T51730105",
+    "color": "白色",
+    "size": "M",
+    "amount": 3,
+    "tagprice": 69,
+    "retailprice": 69
+  },
+  {
+    "ecode": "18T5173",
+    "sku": "18T51730106",
+    "color": "白色",
+    "size": "L",
+    "amount": 2,
+    "tagprice": 69,
+    "retailprice": 69
+  },
+  {
+    "ecode": "18T5173",
+    "sku": "18T51730107",
+    "color": "白色",
+    "size": "XL",
+    "amount": 4,
+    "tagprice": 69,
+    "retailprice": 69
+  },
+  {
+    "ecode": "18T5173",
+    "sku": "18T51731105",
+    "color": "粉红色",
+    "size": "M",
+    "amount": 2,
+    "tagprice": 69,
+    "retailprice": 69
+  },
+  {
+    "ecode": "18T5173",
+    "sku": "18T51731106",
+    "color": "粉红色",
+    "size": "L",
+    "amount": 3,
+    "tagprice": 69,
+    "retailprice": 69
+  },
+  {
+    "ecode": "18T5173",
+    "sku": "18T51731107",
+    "color": "粉红色",
+    "size": "XL",
+    "amount": 2,
+    "tagprice": 69,
+    "retailprice": 69
+  },
+  {
+    "ecode": "18T5173",
+    "sku": "18T51737005",
+    "color": "淡紫色",
+    "size": "M",
+    "amount": 4,
+    "tagprice": 69,
+    "retailprice": 69
+  },
+  {
+    "ecode": "18T5173",
+    "sku": "18T51737006",
+    "color": "淡紫色",
+    "size": "L",
+    "amount": 4,
+    "tagprice": 69,
+    "retailprice": 69
+  },
+  {
+    "ecode": "18T5173",
+    "sku": "18T51737007",
+    "color": "淡紫色",
+    "size": "XL",
+    "amount": 3,
+    "tagprice": 69,
+    "retailprice": 69
+  },
+  {
+    "ecode": "18T5179",
+    "sku": "18T51790105",
+    "color": "白色",
+    "size": "M",
+    "amount": 8,
+    "tagprice": 69,
+    "retailprice": 69
+  },
+  {
+    "ecode": "18T5179",
+    "sku": "18T51790106",
+    "color": "白色",
+    "size": "L",
+    "amount": 7,
+    "tagprice": 69,
+    "retailprice": 69
+  },
+  {
+    "ecode": "18T5179",
+    "sku": "18T51790107",
+    "color": "白色",
+    "size": "XL",
+    "amount": 5,
+    "tagprice": 69,
+    "retailprice": 69
+  },
+  {
+    "ecode": "18C1026",
+    "sku": "18C10260104",
+    "color": "白色",
+    "size": "S",
+    "amount": 3,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18C1026",
+    "sku": "18C10260105",
+    "color": "白色",
+    "size": "M",
+    "amount": 3,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18C1026",
+    "sku": "18C10260106",
+    "color": "白色",
+    "size": "L",
+    "amount": 4,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18C1026",
+    "sku": "18C10260107",
+    "color": "白色",
+    "size": "XL",
+    "amount": 3,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18C1026",
+    "sku": "18C10264804",
+    "color": "卡其",
+    "size": "S",
+    "amount": 4,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18C1026",
+    "sku": "18C10264805",
+    "color": "卡其",
+    "size": "M",
+    "amount": 4,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18C1026",
+    "sku": "18C10264806",
+    "color": "卡其",
+    "size": "L",
+    "amount": 4,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18C1026",
+    "sku": "18C10264807",
+    "color": "卡其",
+    "size": "XL",
+    "amount": 4,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18C1060",
+    "sku": "18C10600105",
+    "color": "白色",
+    "size": "M",
+    "amount": 3,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18C1060",
+    "sku": "18C10600106",
+    "color": "白色",
+    "size": "L",
+    "amount": 3,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18C1060",
+    "sku": "18C10600107",
+    "color": "白色",
+    "size": "XL",
+    "amount": 3,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18C1060",
+    "sku": "18C10600108",
+    "color": "白色",
+    "size": "2XL",
+    "amount": 3,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18C1060",
+    "sku": "18C10601205",
+    "color": "皮红色",
+    "size": "M",
+    "amount": 2,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18C1060",
+    "sku": "18C10601206",
+    "color": "皮红色",
+    "size": "L",
+    "amount": 3,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18C1060",
+    "sku": "18C10601207",
+    "color": "皮红色",
+    "size": "XL",
+    "amount": 2,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18C1060",
+    "sku": "18C10601208",
+    "color": "皮红色",
+    "size": "2XL",
+    "amount": 2,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18C1060",
+    "sku": "18C10602105",
+    "color": "杏色",
+    "size": "M",
+    "amount": 2,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18C1060",
+    "sku": "18C10602106",
+    "color": "杏色",
+    "size": "L",
+    "amount": 2,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18C1060",
+    "sku": "18C10602107",
+    "color": "杏色",
+    "size": "XL",
+    "amount": 2,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18C1060",
+    "sku": "18C10602108",
+    "color": "杏色",
+    "size": "2XL",
+    "amount": 2,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18C5080",
+    "sku": "18C50800105",
+    "color": "白色",
+    "size": "M",
+    "amount": 7,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18C5080",
+    "sku": "18C50800106",
+    "color": "白色",
+    "size": "L",
+    "amount": 8,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18C5080",
+    "sku": "18C50800107",
+    "color": "白色",
+    "size": "XL",
+    "amount": 14,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18C5080",
+    "sku": "18C50804505",
+    "color": "亮黄",
+    "size": "M",
+    "amount": 10,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18C5080",
+    "sku": "18C50804506",
+    "color": "亮黄",
+    "size": "L",
+    "amount": 8,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18C5080",
+    "sku": "18C50804507",
+    "color": "亮黄",
+    "size": "XL",
+    "amount": 9,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18C5080",
+    "sku": "18C50806305",
+    "color": "天蓝",
+    "size": "M",
+    "amount": 9,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18C5080",
+    "sku": "18C50806306",
+    "color": "天蓝",
+    "size": "L",
+    "amount": 3,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18C5080",
+    "sku": "18C50806307",
+    "color": "天蓝",
+    "size": "XL",
+    "amount": 3,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18D5001",
+    "sku": "18D50010105",
+    "color": "白色",
+    "size": "M",
+    "amount": 4,
+    "tagprice": 129,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18D5001",
+    "sku": "18D50010106",
+    "color": "白色",
+    "size": "L",
+    "amount": 4,
+    "tagprice": 129,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18D5001",
+    "sku": "18D50010107",
+    "color": "白色",
+    "size": "XL",
+    "amount": 4,
+    "tagprice": 129,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18D5001",
+    "sku": "18D50014805",
+    "color": "卡其",
+    "size": "M",
+    "amount": 3,
+    "tagprice": 129,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18D5001",
+    "sku": "18D50014806",
+    "color": "卡其",
+    "size": "L",
+    "amount": 4,
+    "tagprice": 129,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18D5001",
+    "sku": "18D50014807",
+    "color": "卡其",
+    "size": "XL",
+    "amount": 1,
+    "tagprice": 129,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18D5016",
+    "sku": "18D50160105",
+    "color": "白色",
+    "size": "M",
+    "amount": 12,
+    "tagprice": 99,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18D5016",
+    "sku": "18D50160106",
+    "color": "白色",
+    "size": "L",
+    "amount": 16,
+    "tagprice": 99,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18D5016",
+    "sku": "18D50160107",
+    "color": "白色",
+    "size": "XL",
+    "amount": 11,
+    "tagprice": 99,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18H1001",
+    "sku": "18H10010640",
+    "color": "灰色",
+    "size": "40",
+    "amount": 2,
+    "tagprice": 99,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18H1001",
+    "sku": "18H10010641",
+    "color": "灰色",
+    "size": "41",
+    "amount": 2,
+    "tagprice": 99,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18H1001",
+    "sku": "18H10010642",
+    "color": "灰色",
+    "size": "42",
+    "amount": 2,
+    "tagprice": 99,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18K1067",
+    "sku": "18K10670429",
+    "color": "浅灰",
+    "size": "29",
+    "amount": 4,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18K1067",
+    "sku": "18K10670430",
+    "color": "浅灰",
+    "size": "30",
+    "amount": 4,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18K1067",
+    "sku": "18K10670431",
+    "color": "浅灰",
+    "size": "31",
+    "amount": 4,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18K1067",
+    "sku": "18K10670432",
+    "color": "浅灰",
+    "size": "32",
+    "amount": 4,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18K1067",
+    "sku": "18K10670433",
+    "color": "浅灰",
+    "size": "33",
+    "amount": 4,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18K1067",
+    "sku": "18K10670434",
+    "color": "浅灰",
+    "size": "34",
+    "amount": 4,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18K1067",
+    "sku": "18K10670436",
+    "color": "浅灰",
+    "size": "36",
+    "amount": 4,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18K1067",
+    "sku": "18K10670929",
+    "color": "黑色",
+    "size": "29",
+    "amount": 2,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18K1067",
+    "sku": "18K10670930",
+    "color": "黑色",
+    "size": "30",
+    "amount": 2,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18K1067",
+    "sku": "18K10670931",
+    "color": "黑色",
+    "size": "31",
+    "amount": 2,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18K1067",
+    "sku": "18K10670932",
+    "color": "黑色",
+    "size": "32",
+    "amount": 2,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18K1067",
+    "sku": "18K10670933",
+    "color": "黑色",
+    "size": "33",
+    "amount": 2,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18K1067",
+    "sku": "18K10670934",
+    "color": "黑色",
+    "size": "34",
+    "amount": 2,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18K1067",
+    "sku": "18K10670936",
+    "color": "黑色",
+    "size": "36",
+    "amount": 2,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18K1067",
+    "sku": "18K10675629",
+    "color": "绿色",
+    "size": "29",
+    "amount": 4,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18K1067",
+    "sku": "18K10675630",
+    "color": "绿色",
+    "size": "30",
+    "amount": 4,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18K1067",
+    "sku": "18K10675631",
+    "color": "绿色",
+    "size": "31",
+    "amount": 4,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18K1067",
+    "sku": "18K10675632",
+    "color": "绿色",
+    "size": "32",
+    "amount": 4,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18K1067",
+    "sku": "18K10675633",
+    "color": "绿色",
+    "size": "33",
+    "amount": 4,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18K1067",
+    "sku": "18K10675634",
+    "color": "绿色",
+    "size": "34",
+    "amount": 4,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18K1067",
+    "sku": "18K10675636",
+    "color": "绿色",
+    "size": "36",
+    "amount": 4,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18K1077",
+    "sku": "18K10770929",
+    "color": "黑色",
+    "size": "29",
+    "amount": 3,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18K1077",
+    "sku": "18K10770930",
+    "color": "黑色",
+    "size": "30",
+    "amount": 3,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18K1077",
+    "sku": "18K10770931",
+    "color": "黑色",
+    "size": "31",
+    "amount": 3,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18K1077",
+    "sku": "18K10770932",
+    "color": "黑色",
+    "size": "32",
+    "amount": 3,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18K1077",
+    "sku": "18K10770933",
+    "color": "黑色",
+    "size": "33",
+    "amount": 3,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18K1077",
+    "sku": "18K10770934",
+    "color": "黑色",
+    "size": "34",
+    "amount": 3,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18K1077",
+    "sku": "18K10770936",
+    "color": "黑色",
+    "size": "36",
+    "amount": 3,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18K1144",
+    "sku": "18K11440929",
+    "color": "黑色",
+    "size": "29",
+    "amount": 3,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18K1144",
+    "sku": "18K11440930",
+    "color": "黑色",
+    "size": "30",
+    "amount": 3,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18K1144",
+    "sku": "18K11440931",
+    "color": "黑色",
+    "size": "31",
+    "amount": 3,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18K1144",
+    "sku": "18K11440932",
+    "color": "黑色",
+    "size": "32",
+    "amount": 2,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18K1144",
+    "sku": "18K11440933",
+    "color": "黑色",
+    "size": "33",
+    "amount": 2,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18K1144",
+    "sku": "18K11440934",
+    "color": "黑色",
+    "size": "34",
+    "amount": 2,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18K1144",
+    "sku": "18K11440936",
+    "color": "黑色",
+    "size": "36",
+    "amount": 2,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18K5072",
+    "sku": "18K50720904",
+    "color": "黑色",
+    "size": "S",
+    "amount": 18,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18K5072",
+    "sku": "18K50720905",
+    "color": "黑色",
+    "size": "M",
+    "amount": 21,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18K5072",
+    "sku": "18K50720906",
+    "color": "黑色",
+    "size": "L",
+    "amount": 18,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18K5072",
+    "sku": "18K50720907",
+    "color": "黑色",
+    "size": "XL",
+    "amount": 11,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18K5072",
+    "sku": "18K50722504",
+    "color": "橙红色",
+    "size": "S",
+    "amount": 9,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18K5072",
+    "sku": "18K50722505",
+    "color": "橙红色",
+    "size": "M",
+    "amount": 4,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18K5072",
+    "sku": "18K50722506",
+    "color": "橙红色",
+    "size": "L",
+    "amount": 4,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18K5072",
+    "sku": "18K50722507",
+    "color": "橙红色",
+    "size": "XL",
+    "amount": 6,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18K5074",
+    "sku": "18K50745606",
+    "color": "绿色",
+    "size": "L",
+    "amount": -1,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18K5105",
+    "sku": "18K51050904",
+    "color": "黑色",
+    "size": "S",
+    "amount": 4,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18K5105",
+    "sku": "18K51050905",
+    "color": "黑色",
+    "size": "M",
+    "amount": 6,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18K5105",
+    "sku": "18K51050906",
+    "color": "黑色",
+    "size": "L",
+    "amount": 6,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18K5105",
+    "sku": "18K51050907",
+    "color": "黑色",
+    "size": "XL",
+    "amount": 2,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18K5109",
+    "sku": "18K51090904",
+    "color": "黑色",
+    "size": "S",
+    "amount": 4,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18K5109",
+    "sku": "18K51090905",
+    "color": "黑色",
+    "size": "M",
+    "amount": 4,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18K5109",
+    "sku": "18K51090906",
+    "color": "黑色",
+    "size": "L",
+    "amount": 3,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18K5109",
+    "sku": "18K51090907",
+    "color": "黑色",
+    "size": "XL",
+    "amount": 4,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18K5109",
+    "sku": "18K51090908",
+    "color": "黑色",
+    "size": "2XL",
+    "amount": 2,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18K5109",
+    "sku": "18K51095604",
+    "color": "绿色",
+    "size": "S",
+    "amount": 2,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18K5109",
+    "sku": "18K51095605",
+    "color": "绿色",
+    "size": "M",
+    "amount": 3,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18K5109",
+    "sku": "18K51095606",
+    "color": "绿色",
+    "size": "L",
+    "amount": 3,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18K5109",
+    "sku": "18K51095607",
+    "color": "绿色",
+    "size": "XL",
+    "amount": 4,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18K5115",
+    "sku": "18K51150904",
+    "color": "黑色",
+    "size": "S",
+    "amount": 3,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18K5115",
+    "sku": "18K51150905",
+    "color": "黑色",
+    "size": "M",
+    "amount": 4,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18K5115",
+    "sku": "18K51150906",
+    "color": "黑色",
+    "size": "L",
+    "amount": 4,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18K5115",
+    "sku": "18K51150907",
+    "color": "黑色",
+    "size": "XL",
+    "amount": 3,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18K5115",
+    "sku": "18K51154804",
+    "color": "卡其",
+    "size": "S",
+    "amount": 2,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18K5115",
+    "sku": "18K51154805",
+    "color": "卡其",
+    "size": "M",
+    "amount": 2,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18K5115",
+    "sku": "18K51154806",
+    "color": "卡其",
+    "size": "L",
+    "amount": 3,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18K5115",
+    "sku": "18K51154807",
+    "color": "卡其",
+    "size": "XL",
+    "amount": 2,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18N5057",
+    "sku": "18N50576626",
+    "color": "牛仔蓝",
+    "size": "26",
+    "amount": 3,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18N5057",
+    "sku": "18N50576627",
+    "color": "牛仔蓝",
+    "size": "27",
+    "amount": 4,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18N5057",
+    "sku": "18N50576628",
+    "color": "牛仔蓝",
+    "size": "28",
+    "amount": 3,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18N5057",
+    "sku": "18N50576629",
+    "color": "牛仔蓝",
+    "size": "29",
+    "amount": 3,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18N5057",
+    "sku": "18N50576630",
+    "color": "牛仔蓝",
+    "size": "30",
+    "amount": 3,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18N5057",
+    "sku": "18N50576631",
+    "color": "牛仔蓝",
+    "size": "31",
+    "amount": 3,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18N5058",
+    "sku": "18N50586626",
+    "color": "牛仔蓝",
+    "size": "26",
+    "amount": 5,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18N5058",
+    "sku": "18N50586627",
+    "color": "牛仔蓝",
+    "size": "27",
+    "amount": 6,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18N5058",
+    "sku": "18N50586628",
+    "color": "牛仔蓝",
+    "size": "28",
+    "amount": 6,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18N5058",
+    "sku": "18N50586629",
+    "color": "牛仔蓝",
+    "size": "29",
+    "amount": 3,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18N5058",
+    "sku": "18N50586630",
+    "color": "牛仔蓝",
+    "size": "30",
+    "amount": 3,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18N5058",
+    "sku": "18N50586631",
+    "color": "牛仔蓝",
+    "size": "31",
+    "amount": 3,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18T1037",
+    "sku": "18T10370105",
+    "color": "白色",
+    "size": "M",
+    "amount": 4,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18T1037",
+    "sku": "18T10370106",
+    "color": "白色",
+    "size": "L",
+    "amount": 4,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18T1037",
+    "sku": "18T10370107",
+    "color": "白色",
+    "size": "XL",
+    "amount": 3,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18T1037",
+    "sku": "18T10370108",
+    "color": "白色",
+    "size": "2XL",
+    "amount": 3,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18T1037",
+    "sku": "18T10370905",
+    "color": "黑色",
+    "size": "M",
+    "amount": 2,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18T1037",
+    "sku": "18T10370907",
+    "color": "黑色",
+    "size": "XL",
+    "amount": 3,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18T1037",
+    "sku": "18T10370908",
+    "color": "黑色",
+    "size": "2XL",
+    "amount": 3,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18T1081",
+    "sku": "18T10810104",
+    "color": "白色",
+    "size": "S",
+    "amount": 2,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18T1081",
+    "sku": "18T10810105",
+    "color": "白色",
+    "size": "M",
+    "amount": 4,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18T1081",
+    "sku": "18T10810106",
+    "color": "白色",
+    "size": "L",
+    "amount": 4,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18T1081",
+    "sku": "18T10810107",
+    "color": "白色",
+    "size": "XL",
+    "amount": 2,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18T1081",
+    "sku": "18T10812104",
+    "color": "杏色",
+    "size": "S",
+    "amount": 2,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18T1081",
+    "sku": "18T10812105",
+    "color": "杏色",
+    "size": "M",
+    "amount": 3,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18T1081",
+    "sku": "18T10812106",
+    "color": "杏色",
+    "size": "L",
+    "amount": 3,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18T1081",
+    "sku": "18T10812107",
+    "color": "杏色",
+    "size": "XL",
+    "amount": 2,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18T1082",
+    "sku": "18T10820104",
+    "color": "白色",
+    "size": "S",
+    "amount": 3,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18T1082",
+    "sku": "18T10820105",
+    "color": "白色",
+    "size": "M",
+    "amount": 3,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18T1082",
+    "sku": "18T10820106",
+    "color": "白色",
+    "size": "L",
+    "amount": 3,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18T1082",
+    "sku": "18T10820107",
+    "color": "白色",
+    "size": "XL",
+    "amount": 3,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18T1082",
+    "sku": "18T10822104",
+    "color": "杏色",
+    "size": "S",
+    "amount": 2,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18T1082",
+    "sku": "18T10822105",
+    "color": "杏色",
+    "size": "M",
+    "amount": 3,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18T1082",
+    "sku": "18T10822106",
+    "color": "杏色",
+    "size": "L",
+    "amount": 4,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18T1082",
+    "sku": "18T10822107",
+    "color": "杏色",
+    "size": "XL",
+    "amount": 3,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18T1123",
+    "sku": "18T11230105",
+    "color": "白色",
+    "size": "M",
+    "amount": 7,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18T1123",
+    "sku": "18T11230106",
+    "color": "白色",
+    "size": "L",
+    "amount": 4,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18T1123",
+    "sku": "18T11230107",
+    "color": "白色",
+    "size": "XL",
+    "amount": 8,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18T1123",
+    "sku": "18T11230108",
+    "color": "白色",
+    "size": "2XL",
+    "amount": 5,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18T1123",
+    "sku": "18T11232105",
+    "color": "杏色",
+    "size": "M",
+    "amount": 6,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18T1123",
+    "sku": "18T11232106",
+    "color": "杏色",
+    "size": "L",
+    "amount": 11,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18T1123",
+    "sku": "18T11232107",
+    "color": "杏色",
+    "size": "XL",
+    "amount": 6,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18T1123",
+    "sku": "18T11232108",
+    "color": "杏色",
+    "size": "2XL",
+    "amount": 2,
+    "tagprice": 79,
+    "retailprice": 79
+  },
+  {
+    "ecode": "7H1012",
+    "sku": "7H10120942",
+    "color": "黑色",
+    "size": "42",
+    "amount": 1,
+    "tagprice": 159,
+    "retailprice": 79
+  },
+  {
+    "ecode": "18C1055",
+    "sku": "18C10550105",
+    "color": "白色",
+    "size": "M",
+    "amount": 2,
+    "tagprice": 89,
+    "retailprice": 89
+  },
+  {
+    "ecode": "18C1055",
+    "sku": "18C10550106",
+    "color": "白色",
+    "size": "L",
+    "amount": 3,
+    "tagprice": 89,
+    "retailprice": 89
+  },
+  {
+    "ecode": "18C1055",
+    "sku": "18C10550107",
+    "color": "白色",
+    "size": "XL",
+    "amount": 3,
+    "tagprice": 89,
+    "retailprice": 89
+  },
+  {
+    "ecode": "18C1055",
+    "sku": "18C10550108",
+    "color": "白色",
+    "size": "2XL",
+    "amount": 3,
+    "tagprice": 89,
+    "retailprice": 89
+  },
+  {
+    "ecode": "18C1055",
+    "sku": "18C10552105",
+    "color": "杏色",
+    "size": "M",
+    "amount": 2,
+    "tagprice": 89,
+    "retailprice": 89
+  },
+  {
+    "ecode": "18C1055",
+    "sku": "18C10552106",
+    "color": "杏色",
+    "size": "L",
+    "amount": 2,
+    "tagprice": 89,
+    "retailprice": 89
+  },
+  {
+    "ecode": "18C1055",
+    "sku": "18C10552107",
+    "color": "杏色",
+    "size": "XL",
+    "amount": 2,
+    "tagprice": 89,
+    "retailprice": 89
+  },
+  {
+    "ecode": "18C1055",
+    "sku": "18C10552108",
+    "color": "杏色",
+    "size": "2XL",
+    "amount": 2,
+    "tagprice": 89,
+    "retailprice": 89
+  },
+  {
+    "ecode": "18C1063",
+    "sku": "18C10630105",
+    "color": "白色",
+    "size": "M",
+    "amount": 3,
+    "tagprice": 89,
+    "retailprice": 89
+  },
+  {
+    "ecode": "18C1063",
+    "sku": "18C10630106",
+    "color": "白色",
+    "size": "L",
+    "amount": 4,
+    "tagprice": 89,
+    "retailprice": 89
+  },
+  {
+    "ecode": "18C1063",
+    "sku": "18C10630107",
+    "color": "白色",
+    "size": "XL",
+    "amount": 4,
+    "tagprice": 89,
+    "retailprice": 89
+  },
+  {
+    "ecode": "18C1063",
+    "sku": "18C10630108",
+    "color": "白色",
+    "size": "2XL",
+    "amount": 3,
+    "tagprice": 89,
+    "retailprice": 89
+  },
+  {
+    "ecode": "18C1063",
+    "sku": "18C10635605",
+    "color": "绿色",
+    "size": "M",
+    "amount": 2,
+    "tagprice": 89,
+    "retailprice": 89
+  },
+  {
+    "ecode": "18C1063",
+    "sku": "18C10635606",
+    "color": "绿色",
+    "size": "L",
+    "amount": 2,
+    "tagprice": 89,
+    "retailprice": 89
+  },
+  {
+    "ecode": "18C1063",
+    "sku": "18C10635607",
+    "color": "绿色",
+    "size": "XL",
+    "amount": 2,
+    "tagprice": 89,
+    "retailprice": 89
+  },
+  {
+    "ecode": "18C1063",
+    "sku": "18C10635608",
+    "color": "绿色",
+    "size": "2XL",
+    "amount": 2,
+    "tagprice": 89,
+    "retailprice": 89
+  },
+  {
+    "ecode": "18C5060",
+    "sku": "18C50600105",
+    "color": "白色",
+    "size": "M",
+    "amount": 1,
+    "tagprice": 89,
+    "retailprice": 89
+  },
+  {
+    "ecode": "18K1116",
+    "sku": "18K11160929",
+    "color": "黑色",
+    "size": "29",
+    "amount": 3,
+    "tagprice": 89,
+    "retailprice": 89
+  },
+  {
+    "ecode": "18K1116",
+    "sku": "18K11160930",
+    "color": "黑色",
+    "size": "30",
+    "amount": 3,
+    "tagprice": 89,
+    "retailprice": 89
+  },
+  {
+    "ecode": "18K1116",
+    "sku": "18K11160931",
+    "color": "黑色",
+    "size": "31",
+    "amount": 3,
+    "tagprice": 89,
+    "retailprice": 89
+  },
+  {
+    "ecode": "18K1116",
+    "sku": "18K11160932",
+    "color": "黑色",
+    "size": "32",
+    "amount": 3,
+    "tagprice": 89,
+    "retailprice": 89
+  },
+  {
+    "ecode": "18K1116",
+    "sku": "18K11160933",
+    "color": "黑色",
+    "size": "33",
+    "amount": 3,
+    "tagprice": 89,
+    "retailprice": 89
+  },
+  {
+    "ecode": "18K1116",
+    "sku": "18K11160934",
+    "color": "黑色",
+    "size": "34",
+    "amount": 3,
+    "tagprice": 89,
+    "retailprice": 89
+  },
+  {
+    "ecode": "18K1116",
+    "sku": "18K11160936",
+    "color": "黑色",
+    "size": "36",
+    "amount": 3,
+    "tagprice": 89,
+    "retailprice": 89
+  },
+  {
+    "ecode": "18K1116",
+    "sku": "18K11165229",
+    "color": "浅绿",
+    "size": "29",
+    "amount": 2,
+    "tagprice": 89,
+    "retailprice": 89
+  },
+  {
+    "ecode": "18K1116",
+    "sku": "18K11165230",
+    "color": "浅绿",
+    "size": "30",
+    "amount": 2,
+    "tagprice": 89,
+    "retailprice": 89
+  },
+  {
+    "ecode": "18K1116",
+    "sku": "18K11165231",
+    "color": "浅绿",
+    "size": "31",
+    "amount": 2,
+    "tagprice": 89,
+    "retailprice": 89
+  },
+  {
+    "ecode": "18K1116",
+    "sku": "18K11165232",
+    "color": "浅绿",
+    "size": "32",
+    "amount": 2,
+    "tagprice": 89,
+    "retailprice": 89
+  },
+  {
+    "ecode": "18K1116",
+    "sku": "18K11165233",
+    "color": "浅绿",
+    "size": "33",
+    "amount": 2,
+    "tagprice": 89,
+    "retailprice": 89
+  },
+  {
+    "ecode": "18K1117",
+    "sku": "18K11170929",
+    "color": "黑色",
+    "size": "29",
+    "amount": 3,
+    "tagprice": 89,
+    "retailprice": 89
+  },
+  {
+    "ecode": "18K1117",
+    "sku": "18K11170930",
+    "color": "黑色",
+    "size": "30",
+    "amount": 4,
+    "tagprice": 89,
+    "retailprice": 89
+  },
+  {
+    "ecode": "18K1117",
+    "sku": "18K11170931",
+    "color": "黑色",
+    "size": "31",
+    "amount": 4,
+    "tagprice": 89,
+    "retailprice": 89
+  },
+  {
+    "ecode": "18K1117",
+    "sku": "18K11170932",
+    "color": "黑色",
+    "size": "32",
+    "amount": 3,
+    "tagprice": 89,
+    "retailprice": 89
+  },
+  {
+    "ecode": "18K1117",
+    "sku": "18K11170933",
+    "color": "黑色",
+    "size": "33",
+    "amount": 3,
+    "tagprice": 89,
+    "retailprice": 89
+  },
+  {
+    "ecode": "18K1117",
+    "sku": "18K11170934",
+    "color": "黑色",
+    "size": "34",
+    "amount": 3,
+    "tagprice": 89,
+    "retailprice": 89
+  },
+  {
+    "ecode": "18K1117",
+    "sku": "18K11170936",
+    "color": "黑色",
+    "size": "36",
+    "amount": 2,
+    "tagprice": 89,
+    "retailprice": 89
+  },
+  {
+    "ecode": "18K1124",
+    "sku": "18K11240930",
+    "color": "黑色",
+    "size": "30",
+    "amount": 3,
+    "tagprice": 89,
+    "retailprice": 89
+  },
+  {
+    "ecode": "18K1124",
+    "sku": "18K11240931",
+    "color": "黑色",
+    "size": "31",
+    "amount": 2,
+    "tagprice": 89,
+    "retailprice": 89
+  },
+  {
+    "ecode": "18D1017",
+    "sku": "18D10170105",
+    "color": "白色",
+    "size": "M",
+    "amount": 5,
+    "tagprice": 99,
+    "retailprice": 99
+  },
+  {
+    "ecode": "18D1017",
+    "sku": "18D10170106",
+    "color": "白色",
+    "size": "L",
+    "amount": 6,
+    "tagprice": 99,
+    "retailprice": 99
+  },
+  {
+    "ecode": "18D1017",
+    "sku": "18D10170107",
+    "color": "白色",
+    "size": "XL",
+    "amount": 8,
+    "tagprice": 99,
+    "retailprice": 99
+  },
+  {
+    "ecode": "18D1017",
+    "sku": "18D10170108",
+    "color": "白色",
+    "size": "2XL",
+    "amount": 7,
+    "tagprice": 99,
+    "retailprice": 99
+  },
+  {
+    "ecode": "18D5025",
+    "sku": "18D50250105",
+    "color": "白色",
+    "size": "M",
+    "amount": 5,
+    "tagprice": 129,
+    "retailprice": 99
+  },
+  {
+    "ecode": "18D5025",
+    "sku": "18D50250106",
+    "color": "白色",
+    "size": "L",
+    "amount": 8,
+    "tagprice": 129,
+    "retailprice": 99
+  },
+  {
+    "ecode": "18D5025",
+    "sku": "18D50250107",
+    "color": "白色",
+    "size": "XL",
+    "amount": 6,
+    "tagprice": 129,
+    "retailprice": 99
+  },
+  {
+    "ecode": "18D5025",
+    "sku": "18D50254505",
+    "color": "亮黄",
+    "size": "M",
+    "amount": 4,
+    "tagprice": 129,
+    "retailprice": 99
+  },
+  {
+    "ecode": "18D5025",
+    "sku": "18D50254506",
+    "color": "亮黄",
+    "size": "L",
+    "amount": 2,
+    "tagprice": 129,
+    "retailprice": 99
+  },
+  {
+    "ecode": "18D5025",
+    "sku": "18D50254507",
+    "color": "亮黄",
+    "size": "XL",
+    "amount": 5,
+    "tagprice": 129,
+    "retailprice": 99
+  },
+  {
+    "ecode": "18D5025",
+    "sku": "18D50254805",
+    "color": "卡其",
+    "size": "M",
+    "amount": 5,
+    "tagprice": 129,
+    "retailprice": 99
+  },
+  {
+    "ecode": "18D5025",
+    "sku": "18D50254806",
+    "color": "卡其",
+    "size": "L",
+    "amount": 7,
+    "tagprice": 129,
+    "retailprice": 99
+  },
+  {
+    "ecode": "18D5025",
+    "sku": "18D50254807",
+    "color": "卡其",
+    "size": "XL",
+    "amount": 6,
+    "tagprice": 129,
+    "retailprice": 99
+  },
+  {
+    "ecode": "18H1008",
+    "sku": "18H10080139",
+    "color": "白色",
+    "size": "39",
+    "amount": 2,
+    "tagprice": 99,
+    "retailprice": 99
+  },
+  {
+    "ecode": "18H1008",
+    "sku": "18H10080142",
+    "color": "白色",
+    "size": "42",
+    "amount": 1,
+    "tagprice": 99,
+    "retailprice": 99
+  },
+  {
+    "ecode": "18H1008",
+    "sku": "18H10080143",
+    "color": "白色",
+    "size": "43",
+    "amount": 1,
+    "tagprice": 99,
+    "retailprice": 99
+  },
+  {
+    "ecode": "18H5003",
+    "sku": "18H50030135",
+    "color": "白色",
+    "size": "35",
+    "amount": 1,
+    "tagprice": 129,
+    "retailprice": 99
+  },
+  {
+    "ecode": "18H5003",
+    "sku": "18H50030136",
+    "color": "白色",
+    "size": "36",
+    "amount": -1,
+    "tagprice": 129,
+    "retailprice": 99
+  },
+  {
+    "ecode": "18K1083",
+    "sku": "18K10830905",
+    "color": "黑色",
+    "size": "M",
+    "amount": 4,
+    "tagprice": 99,
+    "retailprice": 99
+  },
+  {
+    "ecode": "18K1083",
+    "sku": "18K10830906",
+    "color": "黑色",
+    "size": "L",
+    "amount": 5,
+    "tagprice": 99,
+    "retailprice": 99
+  },
+  {
+    "ecode": "18K1083",
+    "sku": "18K10830907",
+    "color": "黑色",
+    "size": "XL",
+    "amount": 4,
+    "tagprice": 99,
+    "retailprice": 99
+  },
+  {
+    "ecode": "18K1083",
+    "sku": "18K10830908",
+    "color": "黑色",
+    "size": "2XL",
+    "amount": 4,
+    "tagprice": 99,
+    "retailprice": 99
+  },
+  {
+    "ecode": "18K1083",
+    "sku": "18K10835605",
+    "color": "绿色",
+    "size": "M",
+    "amount": 2,
+    "tagprice": 99,
+    "retailprice": 99
+  },
+  {
+    "ecode": "18K1083",
+    "sku": "18K10835606",
+    "color": "绿色",
+    "size": "L",
+    "amount": 3,
+    "tagprice": 99,
+    "retailprice": 99
+  },
+  {
+    "ecode": "18K1083",
+    "sku": "18K10835607",
+    "color": "绿色",
+    "size": "XL",
+    "amount": 3,
+    "tagprice": 99,
+    "retailprice": 99
+  },
+  {
+    "ecode": "18K1083",
+    "sku": "18K10835608",
+    "color": "绿色",
+    "size": "2XL",
+    "amount": 2,
+    "tagprice": 99,
+    "retailprice": 99
+  },
+  {
+    "ecode": "18K1138",
+    "sku": "18K11380929",
+    "color": "黑色",
+    "size": "29",
+    "amount": 3,
+    "tagprice": 99,
+    "retailprice": 99
+  },
+  {
+    "ecode": "18K1138",
+    "sku": "18K11380930",
+    "color": "黑色",
+    "size": "30",
+    "amount": 3,
+    "tagprice": 99,
+    "retailprice": 99
+  },
+  {
+    "ecode": "18K1138",
+    "sku": "18K11380931",
+    "color": "黑色",
+    "size": "31",
+    "amount": 2,
+    "tagprice": 99,
+    "retailprice": 99
+  },
+  {
+    "ecode": "18K1138",
+    "sku": "18K11380932",
+    "color": "黑色",
+    "size": "32",
+    "amount": 2,
+    "tagprice": 99,
+    "retailprice": 99
+  },
+  {
+    "ecode": "18K1138",
+    "sku": "18K11380933",
+    "color": "黑色",
+    "size": "33",
+    "amount": 2,
+    "tagprice": 99,
+    "retailprice": 99
+  },
+  {
+    "ecode": "18K1138",
+    "sku": "18K11380934",
+    "color": "黑色",
+    "size": "34",
+    "amount": 2,
+    "tagprice": 99,
+    "retailprice": 99
+  },
+  {
+    "ecode": "18K1138",
+    "sku": "18K11380936",
+    "color": "黑色",
+    "size": "36",
+    "amount": 2,
+    "tagprice": 99,
+    "retailprice": 99
+  },
+  {
+    "ecode": "18K1138",
+    "sku": "18K11384829",
+    "color": "卡其",
+    "size": "29",
+    "amount": 2,
+    "tagprice": 99,
+    "retailprice": 99
+  },
+  {
+    "ecode": "18K1138",
+    "sku": "18K11384830",
+    "color": "卡其",
+    "size": "30",
+    "amount": 2,
+    "tagprice": 99,
+    "retailprice": 99
+  },
+  {
+    "ecode": "18K1138",
+    "sku": "18K11384831",
+    "color": "卡其",
+    "size": "31",
+    "amount": 2,
+    "tagprice": 99,
+    "retailprice": 99
+  },
+  {
+    "ecode": "18K1138",
+    "sku": "18K11384832",
+    "color": "卡其",
+    "size": "32",
+    "amount": 2,
+    "tagprice": 99,
+    "retailprice": 99
+  },
+  {
+    "ecode": "18K1138",
+    "sku": "18K11384833",
+    "color": "卡其",
+    "size": "33",
+    "amount": 2,
+    "tagprice": 99,
+    "retailprice": 99
+  },
+  {
+    "ecode": "18K1138",
+    "sku": "18K11384834",
+    "color": "卡其",
+    "size": "34",
+    "amount": 2,
+    "tagprice": 99,
+    "retailprice": 99
+  },
+  {
+    "ecode": "18K1138",
+    "sku": "18K11384836",
+    "color": "卡其",
+    "size": "36",
+    "amount": 2,
+    "tagprice": 99,
+    "retailprice": 99
+  },
+  {
+    "ecode": "18K5063",
+    "sku": "18K50630904",
+    "color": "黑色",
+    "size": "S",
+    "amount": 4,
+    "tagprice": 99,
+    "retailprice": 99
+  },
+  {
+    "ecode": "18K5063",
+    "sku": "18K50630905",
+    "color": "黑色",
+    "size": "M",
+    "amount": 8,
+    "tagprice": 99,
+    "retailprice": 99
+  },
+  {
+    "ecode": "18K5063",
+    "sku": "18K50630906",
+    "color": "黑色",
+    "size": "L",
+    "amount": 3,
+    "tagprice": 99,
+    "retailprice": 99
+  },
+  {
+    "ecode": "18K5063",
+    "sku": "18K50630907",
+    "color": "黑色",
+    "size": "XL",
+    "amount": 5,
+    "tagprice": 99,
+    "retailprice": 99
+  },
+  {
+    "ecode": "18K5063",
+    "sku": "18K50635604",
+    "color": "绿色",
+    "size": "S",
+    "amount": 4,
+    "tagprice": 99,
+    "retailprice": 99
+  },
+  {
+    "ecode": "18K5063",
+    "sku": "18K50635605",
+    "color": "绿色",
+    "size": "M",
+    "amount": 6,
+    "tagprice": 99,
+    "retailprice": 99
+  },
+  {
+    "ecode": "18K5063",
+    "sku": "18K50635606",
+    "color": "绿色",
+    "size": "L",
+    "amount": 4,
+    "tagprice": 99,
+    "retailprice": 99
+  },
+  {
+    "ecode": "18K5063",
+    "sku": "18K50635607",
+    "color": "绿色",
+    "size": "XL",
+    "amount": 5,
+    "tagprice": 99,
+    "retailprice": 99
+  },
+  {
+    "ecode": "18K5092",
+    "sku": "18K50920904",
+    "color": "黑色",
+    "size": "S",
+    "amount": 6,
+    "tagprice": 99,
+    "retailprice": 99
+  },
+  {
+    "ecode": "18K5092",
+    "sku": "18K50920905",
+    "color": "黑色",
+    "size": "M",
+    "amount": 9,
+    "tagprice": 99,
+    "retailprice": 99
+  },
+  {
+    "ecode": "18K5092",
+    "sku": "18K50920906",
+    "color": "黑色",
+    "size": "L",
+    "amount": 6,
+    "tagprice": 99,
+    "retailprice": 99
+  },
+  {
+    "ecode": "18K5102",
+    "sku": "18K51020904",
+    "color": "黑色",
+    "size": "S",
+    "amount": 5,
+    "tagprice": 99,
+    "retailprice": 99
+  },
+  {
+    "ecode": "18K5102",
+    "sku": "18K51020905",
+    "color": "黑色",
+    "size": "M",
+    "amount": 10,
+    "tagprice": 99,
+    "retailprice": 99
+  },
+  {
+    "ecode": "18K5102",
+    "sku": "18K51020906",
+    "color": "黑色",
+    "size": "L",
+    "amount": 4,
+    "tagprice": 99,
+    "retailprice": 99
+  },
+  {
+    "ecode": "18K5102",
+    "sku": "18K51020907",
+    "color": "黑色",
+    "size": "XL",
+    "amount": 3,
+    "tagprice": 99,
+    "retailprice": 99
+  },
+  {
+    "ecode": "18K5102",
+    "sku": "18K51027504",
+    "color": "紫色",
+    "size": "S",
+    "amount": 6,
+    "tagprice": 99,
+    "retailprice": 99
+  },
+  {
+    "ecode": "18K5102",
+    "sku": "18K51027505",
+    "color": "紫色",
+    "size": "M",
+    "amount": 1,
+    "tagprice": 99,
+    "retailprice": 99
+  },
+  {
+    "ecode": "18K5102",
+    "sku": "18K51027506",
+    "color": "紫色",
+    "size": "L",
+    "amount": 2,
+    "tagprice": 99,
+    "retailprice": 99
+  },
+  {
+    "ecode": "18K5102",
+    "sku": "18K51027507",
+    "color": "紫色",
+    "size": "XL",
+    "amount": 4,
+    "tagprice": 99,
+    "retailprice": 99
+  },
+  {
+    "ecode": "18K5108",
+    "sku": "18K51080906",
+    "color": "黑色",
+    "size": "L",
+    "amount": -2,
+    "tagprice": 99,
+    "retailprice": 99
+  },
+  {
+    "ecode": "18K5108",
+    "sku": "18K51080907",
+    "color": "黑色",
+    "size": "XL",
+    "amount": -2,
+    "tagprice": 99,
+    "retailprice": 99
+  },
+  {
+    "ecode": "18K5108",
+    "sku": "18K51084806",
+    "color": "卡其",
+    "size": "L",
+    "amount": 2,
+    "tagprice": 99,
+    "retailprice": 99
+  },
+  {
+    "ecode": "18K5108",
+    "sku": "18K51084807",
+    "color": "卡其",
+    "size": "XL",
+    "amount": 2,
+    "tagprice": 99,
+    "retailprice": 99
+  },
+  {
+    "ecode": "18N1039",
+    "sku": "18N10396629",
+    "color": "牛仔蓝",
+    "size": "29",
+    "amount": 3,
+    "tagprice": 99,
+    "retailprice": 99
+  },
+  {
+    "ecode": "18N1039",
+    "sku": "18N10396630",
+    "color": "牛仔蓝",
+    "size": "30",
+    "amount": 3,
+    "tagprice": 99,
+    "retailprice": 99
+  },
+  {
+    "ecode": "18N1039",
+    "sku": "18N10396631",
+    "color": "牛仔蓝",
+    "size": "31",
+    "amount": 3,
+    "tagprice": 99,
+    "retailprice": 99
+  },
+  {
+    "ecode": "18N1039",
+    "sku": "18N10396632",
+    "color": "牛仔蓝",
+    "size": "32",
+    "amount": 4,
+    "tagprice": 99,
+    "retailprice": 99
+  },
+  {
+    "ecode": "18N1039",
+    "sku": "18N10396633",
+    "color": "牛仔蓝",
+    "size": "33",
+    "amount": 4,
+    "tagprice": 99,
+    "retailprice": 99
+  },
+  {
+    "ecode": "18N1039",
+    "sku": "18N10396634",
+    "color": "牛仔蓝",
+    "size": "34",
+    "amount": 3,
+    "tagprice": 99,
+    "retailprice": 99
+  },
+  {
+    "ecode": "18N1039",
+    "sku": "18N10396636",
+    "color": "牛仔蓝",
+    "size": "36",
+    "amount": 3,
+    "tagprice": 99,
+    "retailprice": 99
+  },
+  {
+    "ecode": "18N1077",
+    "sku": "18N10776629",
+    "color": "牛仔蓝",
+    "size": "29",
+    "amount": 3,
+    "tagprice": 99,
+    "retailprice": 99
+  },
+  {
+    "ecode": "18N1077",
+    "sku": "18N10776630",
+    "color": "牛仔蓝",
+    "size": "30",
+    "amount": 3,
+    "tagprice": 99,
+    "retailprice": 99
+  },
+  {
+    "ecode": "18N1077",
+    "sku": "18N10776631",
+    "color": "牛仔蓝",
+    "size": "31",
+    "amount": 3,
+    "tagprice": 99,
+    "retailprice": 99
+  },
+  {
+    "ecode": "18N1077",
+    "sku": "18N10776632",
+    "color": "牛仔蓝",
+    "size": "32",
+    "amount": 3,
+    "tagprice": 99,
+    "retailprice": 99
+  },
+  {
+    "ecode": "18N1077",
+    "sku": "18N10776633",
+    "color": "牛仔蓝",
+    "size": "33",
+    "amount": 2,
+    "tagprice": 99,
+    "retailprice": 99
+  },
+  {
+    "ecode": "18N1077",
+    "sku": "18N10776634",
+    "color": "牛仔蓝",
+    "size": "34",
+    "amount": 2,
+    "tagprice": 99,
+    "retailprice": 99
+  },
+  {
+    "ecode": "18N1077",
+    "sku": "18N10776636",
+    "color": "牛仔蓝",
+    "size": "36",
+    "amount": 2,
+    "tagprice": 99,
+    "retailprice": 99
+  },
+  {
+    "ecode": "18N5063",
+    "sku": "18N50636604",
+    "color": "牛仔蓝",
+    "size": "S",
+    "amount": 6,
+    "tagprice": 99,
+    "retailprice": 99
+  },
+  {
+    "ecode": "18N5063",
+    "sku": "18N50636605",
+    "color": "牛仔蓝",
+    "size": "M",
+    "amount": 6,
+    "tagprice": 99,
+    "retailprice": 99
+  },
+  {
+    "ecode": "18N5063",
+    "sku": "18N50636606",
+    "color": "牛仔蓝",
+    "size": "L",
+    "amount": 7,
+    "tagprice": 99,
+    "retailprice": 99
+  },
+  {
+    "ecode": "18N5063",
+    "sku": "18N50636607",
+    "color": "牛仔蓝",
+    "size": "XL",
+    "amount": 5,
+    "tagprice": 99,
+    "retailprice": 99
+  },
+  {
+    "ecode": "18N5088",
+    "sku": "18N50886626",
+    "color": "牛仔蓝",
+    "size": "26",
+    "amount": 3,
+    "tagprice": 99,
+    "retailprice": 99
+  },
+  {
+    "ecode": "18N5088",
+    "sku": "18N50886627",
+    "color": "牛仔蓝",
+    "size": "27",
+    "amount": 4,
+    "tagprice": 99,
+    "retailprice": 99
+  },
+  {
+    "ecode": "18N5088",
+    "sku": "18N50886628",
+    "color": "牛仔蓝",
+    "size": "28",
+    "amount": 6,
+    "tagprice": 99,
+    "retailprice": 99
+  },
+  {
+    "ecode": "18N5088",
+    "sku": "18N50886629",
+    "color": "牛仔蓝",
+    "size": "29",
+    "amount": 3,
+    "tagprice": 99,
+    "retailprice": 99
+  },
+  {
+    "ecode": "18N5088",
+    "sku": "18N50886630",
+    "color": "牛仔蓝",
+    "size": "30",
+    "amount": 3,
+    "tagprice": 99,
+    "retailprice": 99
+  },
+  {
+    "ecode": "18N5111",
+    "sku": "18N51110126",
+    "color": "白色",
+    "size": "26",
+    "amount": 3,
+    "tagprice": 99,
+    "retailprice": 99
+  },
+  {
+    "ecode": "18N5111",
+    "sku": "18N51110127",
+    "color": "白色",
+    "size": "27",
+    "amount": 2,
+    "tagprice": 99,
+    "retailprice": 99
+  },
+  {
+    "ecode": "18N5111",
+    "sku": "18N51110128",
+    "color": "白色",
+    "size": "28",
+    "amount": 3,
+    "tagprice": 99,
+    "retailprice": 99
+  },
+  {
+    "ecode": "18N5111",
+    "sku": "18N51110129",
+    "color": "白色",
+    "size": "29",
+    "amount": 2,
+    "tagprice": 99,
+    "retailprice": 99
+  },
+  {
+    "ecode": "18N5111",
+    "sku": "18N51116627",
+    "color": "牛仔蓝",
+    "size": "27",
+    "amount": 3,
+    "tagprice": 99,
+    "retailprice": 99
+  },
+  {
+    "ecode": "18N5111",
+    "sku": "18N51116628",
+    "color": "牛仔蓝",
+    "size": "28",
+    "amount": 3,
+    "tagprice": 99,
+    "retailprice": 99
+  },
+  {
+    "ecode": "18N5111",
+    "sku": "18N51116629",
+    "color": "牛仔蓝",
+    "size": "29",
+    "amount": 3,
+    "tagprice": 99,
+    "retailprice": 99
+  },
+  {
+    "ecode": "18Q5026",
+    "sku": "18Q50266607",
+    "color": "牛仔蓝",
+    "size": "XL",
+    "amount": -1,
+    "tagprice": 99,
+    "retailprice": 99
+  },
+  {
+    "ecode": "8H5004",
+    "sku": "8H50040136",
+    "color": "白色",
+    "size": "36",
+    "amount": -1,
+    "tagprice": 99,
+    "retailprice": 99
+  },
+  {
+    "ecode": "8T1038",
+    "sku": "8T10381005",
+    "color": "淡粉色",
+    "size": "M",
+    "amount": 2,
+    "tagprice": 99,
+    "retailprice": 99
+  },
+  {
+    "ecode": "8T1038",
+    "sku": "8T10381006",
+    "color": "淡粉色",
+    "size": "L",
+    "amount": 4,
+    "tagprice": 99,
+    "retailprice": 99
+  },
+  {
+    "ecode": "8T1038",
+    "sku": "8T10381007",
+    "color": "淡粉色",
+    "size": "XL",
+    "amount": 3,
+    "tagprice": 99,
+    "retailprice": 99
+  },
+  {
+    "ecode": "8T1038",
+    "sku": "8T10381008",
+    "color": "淡粉色",
+    "size": "2XL",
+    "amount": 2,
+    "tagprice": 99,
+    "retailprice": 99
+  },
+  {
+    "ecode": "8T1038",
+    "sku": "8T10382105",
+    "color": "杏色",
+    "size": "M",
+    "amount": 2,
+    "tagprice": 99,
+    "retailprice": 99
+  },
+  {
+    "ecode": "8T1038",
+    "sku": "8T10382106",
+    "color": "杏色",
+    "size": "L",
+    "amount": 4,
+    "tagprice": 99,
+    "retailprice": 99
+  },
+  {
+    "ecode": "8T1038",
+    "sku": "8T10382107",
+    "color": "杏色",
+    "size": "XL",
+    "amount": 3,
+    "tagprice": 99,
+    "retailprice": 99
+  },
+  {
+    "ecode": "8T1038",
+    "sku": "8T10382108",
+    "color": "杏色",
+    "size": "2XL",
+    "amount": 2,
+    "tagprice": 99,
+    "retailprice": 99
+  },
+  {
+    "ecode": "18D5049",
+    "sku": "18D50490105",
+    "color": "白色",
+    "size": "M",
+    "amount": 3,
+    "tagprice": 129,
+    "retailprice": 129
+  },
+  {
+    "ecode": "18D5049",
+    "sku": "18D50490106",
+    "color": "白色",
+    "size": "L",
+    "amount": 4,
+    "tagprice": 129,
+    "retailprice": 129
+  },
+  {
+    "ecode": "18D5049",
+    "sku": "18D50490107",
+    "color": "白色",
+    "size": "XL",
+    "amount": 3,
+    "tagprice": 129,
+    "retailprice": 129
+  },
+  {
+    "ecode": "18D5049",
+    "sku": "18D50491105",
+    "color": "粉红色",
+    "size": "M",
+    "amount": 3,
+    "tagprice": 129,
+    "retailprice": 129
+  },
+  {
+    "ecode": "18D5049",
+    "sku": "18D50491106",
+    "color": "粉红色",
+    "size": "L",
+    "amount": 4,
+    "tagprice": 129,
+    "retailprice": 129
+  },
+  {
+    "ecode": "18D5049",
+    "sku": "18D50491107",
+    "color": "粉红色",
+    "size": "XL",
+    "amount": 3,
+    "tagprice": 129,
+    "retailprice": 129
+  },
+  {
+    "ecode": "18H1010",
+    "sku": "18H10100643",
+    "color": "灰色",
+    "size": "43",
+    "amount": -1,
+    "tagprice": 129,
+    "retailprice": 129
+  },
+  {
+    "ecode": "18H1014",
+    "sku": "18H10140939",
+    "color": "黑色",
+    "size": "39",
+    "amount": 2,
+    "tagprice": 129,
+    "retailprice": 129
+  },
+  {
+    "ecode": "18H1014",
+    "sku": "18H10140940",
+    "color": "黑色",
+    "size": "40",
+    "amount": 2,
+    "tagprice": 129,
+    "retailprice": 129
+  },
+  {
+    "ecode": "18H1014",
+    "sku": "18H10140941",
+    "color": "黑色",
+    "size": "41",
+    "amount": 2,
+    "tagprice": 129,
+    "retailprice": 129
+  },
+  {
+    "ecode": "18H1014",
+    "sku": "18H10140942",
+    "color": "黑色",
+    "size": "42",
+    "amount": 3,
+    "tagprice": 129,
+    "retailprice": 129
+  },
+  {
+    "ecode": "18H1014",
+    "sku": "18H10140943",
+    "color": "黑色",
+    "size": "43",
+    "amount": 2,
+    "tagprice": 129,
+    "retailprice": 129
+  },
+  {
+    "ecode": "18H5006",
+    "sku": "18H50060135",
+    "color": "白色",
+    "size": "35",
+    "amount": 1,
+    "tagprice": 129,
+    "retailprice": 129
+  },
+  {
+    "ecode": "18H5006",
+    "sku": "18H50060136",
+    "color": "白色",
+    "size": "36",
+    "amount": 1,
+    "tagprice": 129,
+    "retailprice": 129
+  },
+  {
+    "ecode": "18H5006",
+    "sku": "18H50060137",
+    "color": "白色",
+    "size": "37",
+    "amount": 2,
+    "tagprice": 129,
+    "retailprice": 129
+  },
+  {
+    "ecode": "18H5006",
+    "sku": "18H50060138",
+    "color": "白色",
+    "size": "38",
+    "amount": 2,
+    "tagprice": 129,
+    "retailprice": 129
+  },
+  {
+    "ecode": "18H5006",
+    "sku": "18H50060139",
+    "color": "白色",
+    "size": "39",
+    "amount": 1,
+    "tagprice": 129,
+    "retailprice": 129
+  },
+  {
+    "ecode": "18K1061",
+    "sku": "18K10610929",
+    "color": "黑色",
+    "size": "29",
+    "amount": 9,
+    "tagprice": 129,
+    "retailprice": 129
+  },
+  {
+    "ecode": "18K1061",
+    "sku": "18K10610930",
+    "color": "黑色",
+    "size": "30",
+    "amount": 10,
+    "tagprice": 129,
+    "retailprice": 129
+  },
+  {
+    "ecode": "18K1061",
+    "sku": "18K10610931",
+    "color": "黑色",
+    "size": "31",
+    "amount": 6,
+    "tagprice": 129,
+    "retailprice": 129
+  },
+  {
+    "ecode": "18K1061",
+    "sku": "18K10610932",
+    "color": "黑色",
+    "size": "32",
+    "amount": 3,
+    "tagprice": 129,
+    "retailprice": 129
+  },
+  {
+    "ecode": "18K1061",
+    "sku": "18K10610933",
+    "color": "黑色",
+    "size": "33",
+    "amount": 9,
+    "tagprice": 129,
+    "retailprice": 129
+  },
+  {
+    "ecode": "18K1061",
+    "sku": "18K10610934",
+    "color": "黑色",
+    "size": "34",
+    "amount": 9,
+    "tagprice": 129,
+    "retailprice": 129
+  },
+  {
+    "ecode": "18K1061",
+    "sku": "18K10610936",
+    "color": "黑色",
+    "size": "36",
+    "amount": 4,
+    "tagprice": 129,
+    "retailprice": 129
+  },
+  {
+    "ecode": "18K1107",
+    "sku": "18K11070929",
+    "color": "黑色",
+    "size": "29",
+    "amount": 2,
+    "tagprice": 129,
+    "retailprice": 129
+  },
+  {
+    "ecode": "18K1107",
+    "sku": "18K11070930",
+    "color": "黑色",
+    "size": "30",
+    "amount": 3,
+    "tagprice": 129,
+    "retailprice": 129
+  },
+  {
+    "ecode": "18K1107",
+    "sku": "18K11070931",
+    "color": "黑色",
+    "size": "31",
+    "amount": 4,
+    "tagprice": 129,
+    "retailprice": 129
+  },
+  {
+    "ecode": "18K1107",
+    "sku": "18K11070932",
+    "color": "黑色",
+    "size": "32",
+    "amount": 3,
+    "tagprice": 129,
+    "retailprice": 129
+  },
+  {
+    "ecode": "18K1107",
+    "sku": "18K11070933",
+    "color": "黑色",
+    "size": "33",
+    "amount": 2,
+    "tagprice": 129,
+    "retailprice": 129
+  },
+  {
+    "ecode": "18K1107",
+    "sku": "18K11070934",
+    "color": "黑色",
+    "size": "34",
+    "amount": 2,
+    "tagprice": 129,
+    "retailprice": 129
+  },
+  {
+    "ecode": "18K1107",
+    "sku": "18K11070936",
+    "color": "黑色",
+    "size": "36",
+    "amount": 2,
+    "tagprice": 129,
+    "retailprice": 129
+  },
+  {
+    "ecode": "18K1107",
+    "sku": "18K11075229",
+    "color": "浅绿",
+    "size": "29",
+    "amount": 2,
+    "tagprice": 129,
+    "retailprice": 129
+  },
+  {
+    "ecode": "18K1107",
+    "sku": "18K11075230",
+    "color": "浅绿",
+    "size": "30",
+    "amount": 3,
+    "tagprice": 129,
+    "retailprice": 129
+  },
+  {
+    "ecode": "18K1107",
+    "sku": "18K11075231",
+    "color": "浅绿",
+    "size": "31",
+    "amount": 2,
+    "tagprice": 129,
+    "retailprice": 129
+  },
+  {
+    "ecode": "18K1107",
+    "sku": "18K11075232",
+    "color": "浅绿",
+    "size": "32",
+    "amount": 2,
+    "tagprice": 129,
+    "retailprice": 129
+  },
+  {
+    "ecode": "18K1107",
+    "sku": "18K11075233",
+    "color": "浅绿",
+    "size": "33",
+    "amount": 2,
+    "tagprice": 129,
+    "retailprice": 129
+  },
+  {
+    "ecode": "18K1107",
+    "sku": "18K11075234",
+    "color": "浅绿",
+    "size": "34",
+    "amount": 2,
+    "tagprice": 129,
+    "retailprice": 129
+  },
+  {
+    "ecode": "18K1107",
+    "sku": "18K11075236",
+    "color": "浅绿",
+    "size": "36",
+    "amount": 2,
+    "tagprice": 129,
+    "retailprice": 129
+  },
+  {
+    "ecode": "18K1130",
+    "sku": "18K11300929",
+    "color": "黑色",
+    "size": "29",
+    "amount": 3,
+    "tagprice": 129,
+    "retailprice": 129
+  },
+  {
+    "ecode": "18K1130",
+    "sku": "18K11300930",
+    "color": "黑色",
+    "size": "30",
+    "amount": 3,
+    "tagprice": 129,
+    "retailprice": 129
+  },
+  {
+    "ecode": "18K1130",
+    "sku": "18K11300931",
+    "color": "黑色",
+    "size": "31",
+    "amount": 2,
+    "tagprice": 129,
+    "retailprice": 129
+  },
+  {
+    "ecode": "18K1130",
+    "sku": "18K11300932",
+    "color": "黑色",
+    "size": "32",
+    "amount": 2,
+    "tagprice": 129,
+    "retailprice": 129
+  },
+  {
+    "ecode": "18K1130",
+    "sku": "18K11300933",
+    "color": "黑色",
+    "size": "33",
+    "amount": 2,
+    "tagprice": 129,
+    "retailprice": 129
+  },
+  {
+    "ecode": "18K1130",
+    "sku": "18K11300934",
+    "color": "黑色",
+    "size": "34",
+    "amount": 2,
+    "tagprice": 129,
+    "retailprice": 129
+  },
+  {
+    "ecode": "18N1042",
+    "sku": "18N10426629",
+    "color": "牛仔蓝",
+    "size": "29",
+    "amount": 5,
+    "tagprice": 129,
+    "retailprice": 129
+  },
+  {
+    "ecode": "18N5084",
+    "sku": "18N50846604",
+    "color": "牛仔蓝",
+    "size": "S",
+    "amount": 4,
+    "tagprice": 129,
+    "retailprice": 129
+  },
+  {
+    "ecode": "18N5084",
+    "sku": "18N50846605",
+    "color": "牛仔蓝",
+    "size": "M",
+    "amount": 4,
+    "tagprice": 129,
+    "retailprice": 129
+  },
+  {
+    "ecode": "18N5084",
+    "sku": "18N50846606",
+    "color": "牛仔蓝",
+    "size": "L",
+    "amount": 5,
+    "tagprice": 129,
+    "retailprice": 129
+  },
+  {
+    "ecode": "18N5084",
+    "sku": "18N50846607",
+    "color": "牛仔蓝",
+    "size": "XL",
+    "amount": 4,
+    "tagprice": 129,
+    "retailprice": 129
+  },
+  {
+    "ecode": "18N5084",
+    "sku": "18N50846608",
+    "color": "牛仔蓝",
+    "size": "2XL",
+    "amount": 3,
+    "tagprice": 129,
+    "retailprice": 129
+  },
+  {
+    "ecode": "18Q5006",
+    "sku": "18Q50060906",
+    "color": "黑色",
+    "size": "L",
+    "amount": 6,
+    "tagprice": 129,
+    "retailprice": 129
+  },
+  {
+    "ecode": "18Q5006",
+    "sku": "18Q50060907",
+    "color": "黑色",
+    "size": "XL",
+    "amount": 4,
+    "tagprice": 129,
+    "retailprice": 129
+  },
+  {
+    "ecode": "18Q5006",
+    "sku": "18Q50066005",
+    "color": "淡蓝色",
+    "size": "M",
+    "amount": 8,
+    "tagprice": 129,
+    "retailprice": 129
+  },
+  {
+    "ecode": "18Q5006",
+    "sku": "18Q50066006",
+    "color": "淡蓝色",
+    "size": "L",
+    "amount": 8,
+    "tagprice": 129,
+    "retailprice": 129
+  },
+  {
+    "ecode": "18Q5006",
+    "sku": "18Q50066007",
+    "color": "淡蓝色",
+    "size": "XL",
+    "amount": 6,
+    "tagprice": 129,
+    "retailprice": 129
+  },
+  {
+    "ecode": "8H1015",
+    "sku": "8H10150942",
+    "color": "黑色",
+    "size": "42",
+    "amount": 1,
+    "tagprice": 129,
+    "retailprice": 129
+  },
+  {
+    "ecode": "8N5046",
+    "sku": "8N50466626",
+    "color": "牛仔蓝",
+    "size": "26",
+    "amount": 1,
+    "tagprice": 129,
+    "retailprice": 129
+  },
+  {
+    "ecode": "8N5046",
+    "sku": "8N50466627",
+    "color": "牛仔蓝",
+    "size": "27",
+    "amount": 1,
+    "tagprice": 129,
+    "retailprice": 129
+  },
+  {
+    "ecode": "8N5046",
+    "sku": "8N50466631",
+    "color": "牛仔蓝",
+    "size": "31",
+    "amount": -1,
+    "tagprice": 129,
+    "retailprice": 129
+  },
+  {
+    "ecode": "18N1035",
+    "sku": "18N10356629",
+    "color": "牛仔蓝",
+    "size": "29",
+    "amount": 3,
+    "tagprice": 149,
+    "retailprice": 149
+  },
+  {
+    "ecode": "18N1035",
+    "sku": "18N10356630",
+    "color": "牛仔蓝",
+    "size": "30",
+    "amount": 6,
+    "tagprice": 149,
+    "retailprice": 149
+  },
+  {
+    "ecode": "18N1035",
+    "sku": "18N10356631",
+    "color": "牛仔蓝",
+    "size": "31",
+    "amount": 4,
+    "tagprice": 149,
+    "retailprice": 149
+  },
+  {
+    "ecode": "18N1035",
+    "sku": "18N10356632",
+    "color": "牛仔蓝",
+    "size": "32",
+    "amount": 2,
+    "tagprice": 149,
+    "retailprice": 149
+  },
+  {
+    "ecode": "18N1035",
+    "sku": "18N10356633",
+    "color": "牛仔蓝",
+    "size": "33",
+    "amount": 4,
+    "tagprice": 149,
+    "retailprice": 149
+  },
+  {
+    "ecode": "18N1035",
+    "sku": "18N10356634",
+    "color": "牛仔蓝",
+    "size": "34",
+    "amount": 4,
+    "tagprice": 149,
+    "retailprice": 149
+  },
+  {
+    "ecode": "18N1035",
+    "sku": "18N10356636",
+    "color": "牛仔蓝",
+    "size": "36",
+    "amount": 3,
+    "tagprice": 149,
+    "retailprice": 149
+  },
+  {
+    "ecode": "18N1036",
+    "sku": "18N10366629",
+    "color": "牛仔蓝",
+    "size": "29",
+    "amount": 4,
+    "tagprice": 149,
+    "retailprice": 149
+  },
+  {
+    "ecode": "18N1036",
+    "sku": "18N10366630",
+    "color": "牛仔蓝",
+    "size": "30",
+    "amount": 6,
+    "tagprice": 149,
+    "retailprice": 149
+  },
+  {
+    "ecode": "18N1036",
+    "sku": "18N10366631",
+    "color": "牛仔蓝",
+    "size": "31",
+    "amount": 4,
+    "tagprice": 149,
+    "retailprice": 149
+  },
+  {
+    "ecode": "18N1036",
+    "sku": "18N10366632",
+    "color": "牛仔蓝",
+    "size": "32",
+    "amount": 3,
+    "tagprice": 149,
+    "retailprice": 149
+  },
+  {
+    "ecode": "18N1036",
+    "sku": "18N10366633",
+    "color": "牛仔蓝",
+    "size": "33",
+    "amount": 1,
+    "tagprice": 149,
+    "retailprice": 149
+  },
+  {
+    "ecode": "18N1036",
+    "sku": "18N10366634",
+    "color": "牛仔蓝",
+    "size": "34",
+    "amount": 3,
+    "tagprice": 149,
+    "retailprice": 149
+  },
+  {
+    "ecode": "18H1017",
+    "sku": "18H10170139",
+    "color": "白色",
+    "size": "39",
+    "amount": 2,
+    "tagprice": 159,
+    "retailprice": 159
+  },
+  {
+    "ecode": "18H1017",
+    "sku": "18H10170140",
+    "color": "白色",
+    "size": "40",
+    "amount": 3,
+    "tagprice": 159,
+    "retailprice": 159
+  },
+  {
+    "ecode": "18H1017",
+    "sku": "18H10170141",
+    "color": "白色",
+    "size": "41",
+    "amount": 3,
+    "tagprice": 159,
+    "retailprice": 159
+  },
+  {
+    "ecode": "18H1017",
+    "sku": "18H10170142",
+    "color": "白色",
+    "size": "42",
+    "amount": 3,
+    "tagprice": 159,
+    "retailprice": 159
+  },
+  {
+    "ecode": "18H1017",
+    "sku": "18H10170143",
+    "color": "白色",
+    "size": "43",
+    "amount": 2,
+    "tagprice": 159,
+    "retailprice": 159
+  },
+  {
+    "ecode": "8H1006",
+    "sku": "8H10060140",
+    "color": "白色",
+    "size": "40",
+    "amount": 2,
+    "tagprice": 159,
+    "retailprice": 159
+  },
+  {
+    "ecode": "8H1006",
+    "sku": "8H10060141",
+    "color": "白色",
+    "size": "41",
+    "amount": 2,
+    "tagprice": 159,
+    "retailprice": 159
+  },
+  {
+    "ecode": "8H1006",
+    "sku": "8H10060143",
+    "color": "白色",
+    "size": "43",
+    "amount": 2,
+    "tagprice": 159,
+    "retailprice": 159
+  },
+  {
+    "ecode": "18D5034",
+    "sku": "18D50341405",
+    "color": "大红色",
+    "size": "M",
+    "amount": 4,
+    "tagprice": 169,
+    "retailprice": 169
+  },
+  {
+    "ecode": "18D5034",
+    "sku": "18D50341406",
+    "color": "大红色",
+    "size": "L",
+    "amount": 3,
+    "tagprice": 169,
+    "retailprice": 169
+  },
+  {
+    "ecode": "18D5034",
+    "sku": "18D50341407",
+    "color": "大红色",
+    "size": "XL",
+    "amount": 2,
+    "tagprice": 169,
+    "retailprice": 169
+  },
+  {
+    "ecode": "18D5034",
+    "sku": "18D50344505",
+    "color": "亮黄",
+    "size": "M",
+    "amount": 5,
+    "tagprice": 169,
+    "retailprice": 169
+  },
+  {
+    "ecode": "18D5034",
+    "sku": "18D50344506",
+    "color": "亮黄",
+    "size": "L",
+    "amount": 4,
+    "tagprice": 169,
+    "retailprice": 169
+  },
+  {
+    "ecode": "18D5034",
+    "sku": "18D50344507",
+    "color": "亮黄",
+    "size": "XL",
+    "amount": 3,
+    "tagprice": 169,
+    "retailprice": 169
+  },
+  {
+    "ecode": "18H1005",
+    "sku": "18H10050139",
+    "color": "白色",
+    "size": "39",
+    "amount": 1,
+    "tagprice": 199,
+    "retailprice": 199
+  },
+  {
+    "ecode": "18H1005",
+    "sku": "18H10050140",
+    "color": "白色",
+    "size": "40",
+    "amount": 1,
+    "tagprice": 199,
+    "retailprice": 199
+  },
+  {
+    "ecode": "18H1005",
+    "sku": "18H10050141",
+    "color": "白色",
+    "size": "41",
+    "amount": 2,
+    "tagprice": 199,
+    "retailprice": 199
+  },
+  {
+    "ecode": "18H1005",
+    "sku": "18H10050142",
+    "color": "白色",
+    "size": "42",
+    "amount": 2,
+    "tagprice": 199,
+    "retailprice": 199
+  },
+  {
+    "ecode": "18H1005",
+    "sku": "18H10050143",
+    "color": "白色",
+    "size": "43",
+    "amount": 1,
+    "tagprice": 199,
+    "retailprice": 199
+  },
+  {
+    "ecode": "18H1005",
+    "sku": "18H10050939",
+    "color": "黑色",
+    "size": "39",
+    "amount": 1,
+    "tagprice": 199,
+    "retailprice": 199
+  },
+  {
+    "ecode": "18H1005",
+    "sku": "18H10050940",
+    "color": "黑色",
+    "size": "40",
+    "amount": 2,
+    "tagprice": 199,
+    "retailprice": 199
+  },
+  {
+    "ecode": "18H1005",
+    "sku": "18H10050941",
+    "color": "黑色",
+    "size": "41",
+    "amount": 1,
+    "tagprice": 199,
+    "retailprice": 199
+  },
+  {
+    "ecode": "18H1005",
+    "sku": "18H10050942",
+    "color": "黑色",
+    "size": "42",
+    "amount": 1,
+    "tagprice": 199,
+    "retailprice": 199
+  },
+  {
+    "ecode": "18H1005",
+    "sku": "18H10050943",
+    "color": "黑色",
+    "size": "43",
+    "amount": 1,
+    "tagprice": 199,
+    "retailprice": 199
+  }
+]

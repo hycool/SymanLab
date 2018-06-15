@@ -319,14 +319,56 @@
           res.json().then(rowData => {
             agReport(self.$refs.posGridReport, {
               reportMode: 'rowGroup', // one of ['normal', 'rowGroup']
+              // 所有可见列
+              allVisibleColumns: ['ecode', 'sku', 'color', 'size', 'size', '...'],
+              // 所有允许进行分组查看的列（可以被group by）
               groupAllowedColumns: ["ecode", "sku", "color", "size"],
+              // 初始化展示时，默认进行分组的列
               defaultGroupColumns: ["ecode", "sku", "color", "size"],
-              aggregationColumns: ['amount', 'tagprice', 'retailprice'],
+              // 所有允许使用聚合函数的列，聚合函数（sum/avg/max/min/count）
+              aggregationColumns: [
+                {
+                  colname: 'amount', // group by 时，对amount做sum聚合
+                  aggType: 'sum',
+                  createRatioColumn: true, // 是否根据当前列，虚拟出占比列
+                },
+                {
+                  colname: 'tagprice', // group by 时，对tagprice做count聚合
+                  aggType: 'count',
+                },
+                {
+                  colname: 'size', // group by 时，对retailprice做avg聚合
+                  aggType: 'avg',
+                },
+              ],
+              // 需要显示底部合计值的列
               subTotalColumns: ['amount', 'tagprice', 'retailprice'],
             })
               .setCols(columnDefs)
               .setRows(rowData);
             
+          })
+        })
+      },
+
+      fetchPosDataNew() {
+        const self = this;
+        fetch('./assets/pos_report_response.json').then((res) => {
+          res.json().then(data => {
+            agReport(self.$refs.posGridReport, {
+              reportMode: 'rowGroup',
+              // 所有允许进行分组查看的列（可以被group by）
+              groupAllowedColumns: data.groupAllowedColumns || [],
+              // 初始化展示时，默认进行分组的列
+              defaultGroupColumns: data.defaultGroupColumns || [],
+              // 所有允许使用聚合函数的列，聚合函数（sum/avg/max/min/count）
+              aggregationColumns: data.aggregationColumns || [],
+              // 需要显示底部合计值的列
+              subTotalColumns: data.subTotalColumns || [],
+            })
+              .setCols(data.cols || [])
+              .setRows(data.rows || []);
+
           })
         })
       },
@@ -381,7 +423,7 @@
         this.fetchCsv();
       }
       if (this.enablePosReport) {
-        this.fetchPosData();
+        this.fetchPosDataNew();
       }
       // this.convertCsvToExcel();
       // this.mockDemo();

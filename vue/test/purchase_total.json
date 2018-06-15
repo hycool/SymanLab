@@ -1,0 +1,38 @@
+{
+  "code": 0,
+  "data": [
+    {
+      "PS_C_PRO_ECODE": "0A111",
+      "SUM_QTY_EXEC": 20,
+      "SUM_QTY_REM": 10
+    },
+    {
+      "PS_C_PRO_ECODE": "0A112",
+      "SUM_QTY_EXEC": 30,
+      "SUM_QTY_REM": 30
+    },
+    {
+      "PS_C_PRO_ECODE": "0A113",
+      "SUM_QTY_EXEC": 20,
+      "SUM_QTY_REM": 10
+    },
+    {
+      "PS_C_PRO_ECODE": "0A114",
+      "SUM_QTY_EXEC": 20,
+      "SUM_QTY_REM": 10
+    },
+    {
+      "PS_C_PRO_ECODE": "0A115",
+      "SUM_QTY_EXEC": 20,
+      "SUM_QTY_REM": 10
+    },
+    {
+      "PS_C_PRO_ECODE": "0A116",
+      "SUM_QTY_EXEC": 20,
+      "SUM_QTY_REM": 10
+    }
+  ],
+  "totalExec": 50,
+  "totalRem": 40,
+  "message": "success"
+}

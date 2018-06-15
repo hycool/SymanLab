@@ -1,0 +1,44 @@
+{
+  "code": 0,
+  "data": {
+    "execItemList": [
+      {
+        "DL_B_PUR_REQ_BILL_DATE": "2018-06-07",
+        "PS_C_CLR_ENAME": "均色",
+        "DL_B_PUR_REQ_ID": 3454,
+        "PS_C_SIZE_ENAME": "M均",
+        "PS_C_PRO_ENAME": "样衣处理",
+        "SKU_REQ_REMARK": null,
+        "DPRICE_LIST": null,
+        "DL_B_PUR_REQ_BILL_NO": "PU0118060700001",
+        "PS_C_SKU_ECODE": "0A0000200000",
+        "PS_C_SIZE_ID": 1215,
+        "DL_B_PUR_REQ_BILL_TYPE": "4",
+        "QTY_BILL": 23.00,
+        "CP_C_STORE_ENAME": "快鱼总仓",
+        "PRO_TYPE_DEPART_ENAME": "A类",
+        "PS_C_CLR_ECODE": "000",
+        "QTY_EXEC": null,
+        "PRO_TYPE_DEPART_ID": 71,
+        "PS_C_PRO_ECODE": "0A00002",
+        "PS_C_SKU_ID": 15000025,
+        "PS_C_SIZE_ECODE": "00",
+        "DL_B_PUR_REQ_ITEM_ID": 5552,
+        "CP_C_STORE_ID": 200000243688,
+        "CP_C_STORE_ECODE": "00001",
+        "PRO_TYPE_DEPART_ECODE": "01",
+        "PS_C_CLR_ID": 1133,
+        "PS_C_PRO_ID": 15000002
+      }
+    ],
+    "sizeList": [
+      {
+        "ENAME": "M均",
+        "ECODE": "00",
+        "MATRIXCOLNO": 0,
+        "ID": 1215
+      }
+    ]
+  },
+  "message": "Success"
+}
