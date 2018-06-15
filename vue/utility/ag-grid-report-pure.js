@@ -350,32 +350,41 @@ const initializeAgReport = (container, opt) => {
         // 处理groupAllowedColumns
         if (groupAllowedColumns && groupAllowedColumns.indexOf(item.field) > -1) {
           item.enableRowGroup = true;
+          item.suppressToolPanel = false;
         }
 
         // defaultGroups
         if (defaultGroups && defaultGroups.indexOf(item.field) === -1) {
           item.enableRowGroup = true;
+          item.suppressToolPanel = false;
           // item.lockVisible = true;
         }
 
         // 处理allowedAggFuncs | aggFunc | valueGetter
-        if (aggregationColumns && aggregationColumns.map(d => d.colname).indexOf(item.field) > -1) {
+        let aggFieldInfo = null;
+        let aggregationAllowed = aggregationColumns.some(d =>{
+          if (d.colname === item.field) {
+            aggFieldInfo = d;
+            return true;
+          }
+        });
+        if (aggregationAllowed) {
+          console.log(`${item.field}_${item.headerName} aggregationAllowed =  ${aggregationAllowed}, aggFun = ${aggFieldInfo.aggType}`);
           item.enableValue = true;
           item.filter = 'agNumberColumnFilter';
           item.allowedAggFuncs = ['sum', 'count', 'avg', 'max', 'min'];
-          item.aggFunc = d.aggType;
+          item.aggFunc = aggFieldInfo.aggType;
           item.suppressMovable = false;
         }
 
-        item.valueGetter = (params) => {
-          if (aggregationColumns.map(d => d.colname).indexOf(params.colDef.field) > -1) {
-            console.log('agg: ', params.colDef.field, params.data);
-            return parseFloat(params.data[params.colDef.field]);
-          } else {
-            console.log(params.colDef.field, params.data);
-            return params.data[params.colDef.field]
-          }
-        };
+        // item.valueGetter = (params) => {
+        //   if (aggregationColumns.map(d => d.colname).indexOf(params.colDef.field) > -1) {
+        //     console.log('agg: ', params);
+        //     return parseFloat(params.data[params.colDef.field]);
+        //   } else {
+        //     return params.data[params.colDef.field]
+        //   }
+        // };
 
         return item;
       });
