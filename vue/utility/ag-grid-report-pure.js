@@ -376,16 +376,6 @@ const initializeAgReport = (container, opt) => {
           item.aggFunc = aggFieldInfo.aggType;
           item.suppressMovable = false;
         }
-
-        // item.valueGetter = (params) => {
-        //   if (aggregationColumns.map(d => d.colname).indexOf(params.colDef.field) > -1) {
-        //     console.log('agg: ', params);
-        //     return parseFloat(params.data[params.colDef.field]);
-        //   } else {
-        //     return params.data[params.colDef.field]
-        //   }
-        // };
-
         return item;
       });
     };

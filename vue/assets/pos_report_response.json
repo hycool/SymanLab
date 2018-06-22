@@ -27,15 +27,18 @@
   "aggregationColumns": [
     {
       "colname": "POLL",
-      "aggType": "count"
+      "aggType": "count",
+      "createRatioColumn": true
     },
     {
       "colname": "QTY_BILL",
-      "aggType": "sum"
+      "aggType": "sum",
+      "createRatioColumn": true
     },
     {
       "colname": "AMT_ACTUAL",
-      "aggType": "sum"
+      "aggType": "sum",
+      "createRatioColumn": true
     }
   ],
   "subTotalColumns": [
