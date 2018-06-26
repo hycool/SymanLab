@@ -7,6 +7,7 @@ import Papa from 'papaparse';
 
 // 设置enterprise key
 // 以下license key 为研发试用key，有效期到2018-06-06
+// LicenseManager.setLicenseKey("Evaluation_License_Valid_Until_6_June_2018__MTUyODIzOTYwMDAwMA==4c69615c372b7cdc6c4bda8601ac106b");
 LicenseManager.setLicenseKey("Evaluation_License_Valid_Until_1_Jan_2050__MjUyNDYwNDQwMDAwMA==ed754b6037ea7ee7168aa5d8dc10c3da");
 const cssFeatures = {
   hover: 'ag-syman-hover',
@@ -250,6 +251,7 @@ const initializeAgReport = (container, opt) => {
       toolPanelSuppressColumnSelectAll: true, // 禁用ColumnSelectAll checkbox
       toolPanelSuppressSideButtons: !(options.reportMode && options.reportMode !== 'normal'), // 禁用侧边栏的开关按钮
       groupIncludeFooter: false, // 是否显示分组的footer 合计行
+      groupIncludeTotalFooter: true, // 是否允许底部合计行
       floatingFilter: options && options.floatingFilter ? options.floatingFilter : true, // 是否显表头下方的浮动筛选框
       rowDragManaged: true,
       rowGroupPanelShow: options && options.rowGroupPanelShow ? options.rowGroupPanelShow : 'never', // 是否显最顶部的group panel ['always', 'onlyWhenGrouping', 'never']
@@ -369,7 +371,6 @@ const initializeAgReport = (container, opt) => {
           }
         });
         if (aggregationAllowed) {
-          console.log(`${item.field}_${item.headerName} aggregationAllowed =  ${aggregationAllowed}, aggFun = ${aggFieldInfo.aggType}`);
           item.enableValue = true;
           item.filter = 'agNumberColumnFilter';
           item.allowedAggFuncs = ['sum', 'count', 'avg', 'max', 'min'];
