@@ -7,7 +7,7 @@ import Papa from 'papaparse';
 
 // 设置enterprise key
 // 以下license key 为研发试用key，有效期到2018-06-06
-LicenseManager.setLicenseKey("Evaluation_License_Valid_Until_6_June_2018__MTUyODIzOTYwMDAwMA==4c69615c372b7cdc6c4bda8601ac106b");
+LicenseManager.setLicenseKey("Evaluation_License_Valid_Until_1_Jan_2050__MjUyNDYwNDQwMDAwMA==ed754b6037ea7ee7168aa5d8dc10c3da");
 const cssFeatures = {
   hover: 'ag-syman-hover',
   imagePreviewBox: 'image-preview-box',

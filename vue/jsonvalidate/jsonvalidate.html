@@ -25,9 +25,9 @@
       right: -1000000px;
       bottom: -1000000px;
       tab-size: 4;
-      border: 1px solid green;
-      background: rgba(100,255,0,0.5);
-      color: #080;
+      border: rgba(203, 232, 184, 0.8);
+      background: rgba(203, 232, 184, 0.5);
+      color: #818681;
       overflow: auto;
       min-height: 200px;
       max-height: 350px;
@@ -43,7 +43,7 @@
   <script>
     const doValidate = function(e) {
       if (e) { doValidate.dom = e.target; }
-      const validatorWidth = 300;
+      const validatorWidth = 350;
       const validator = document.querySelector('.json-validator');
       validator.style.display = '';
       if (doValidate.dom) {
@@ -79,6 +79,8 @@
         validator.style.width = `${validatorWidth}px`;
         validator.style.top = `${top}px`;
         validator.style.left = `${left}px`;
+        validator.style.fontFamily= 'Tahoma';
+        validator.style.fontSize = '16px';
       }
       let obj;
       let result = '';
