@@ -23,9 +23,9 @@
     "webpack-cli": "^2.0.14"
   },
   "dependencies": {
-    "ag-grid": "^17.1.1",
-    "ag-grid-enterprise": "^17.1.1",
-    "ag-grid-vue": "^18.0.0",
+    "ag-grid": "^18.1.0",
+    "ag-grid-enterprise": "^18.1.0",
+    "ag-grid-vue": "^18.1.0",
     "less": "^3.0.4",
     "less-loader": "^4.1.0",
     "mockjs": "^1.0.1-beta3",
