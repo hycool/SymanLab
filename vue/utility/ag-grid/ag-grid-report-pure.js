@@ -282,23 +282,14 @@ const initializeAgReport = (container, opt) => {
         ];
       }, // 设置每列的general menu item
       getContextMenuItems() {
-        return [
+        const { enableRankColumn, reportMode } = agReport;
+        const defaultMenu = [
           'copy',
           'copyWithHeaders',
           'paste',
           'export',
-          'separator',
-          'expandAll',
-          'contractAll',
-          {
-            // custom item
-            name: 'test ',
-            action: function() {
-              api.exportDataAsExcel();
-            },
-            cssClasses: ['redFont', 'bold']
-          }
         ];
+        return enableRankColumn || reportMode === 'normal' ? defaultMenu : defaultMenu.concat(['separator', 'expandAll', 'contractAll']);
       }, // 表体右击菜单
       onGridReady(params) {
         const { columnApi } = params;

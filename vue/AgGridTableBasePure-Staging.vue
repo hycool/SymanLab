@@ -357,7 +357,7 @@
           res.json().then(data => {
             agReport(self.$refs.posGridReport, {
               // enableRankColumn: true,
-              reportMode: 'rowGroup',
+              reportMode: 'normal',
               // 所有允许进行分组查看的列（可以被group by）
               groupAllowedColumns: data.groupAllowedColumns || [],
               // 初始化展示时，默认进行分组的列
