@@ -1,14 +1,11 @@
 import { Grid } from 'ag-grid';
-import "../../node_modules/ag-grid/dist/styles/ag-grid.css"
-import "../../node_modules/ag-grid/dist/styles/ag-theme-balham.css"
+import "../../../node_modules/ag-grid/dist/styles/ag-grid.css"
+import "../../../node_modules/ag-grid/dist/styles/ag-theme-balham.css"
 import "ag-grid-enterprise/main";
 import { LicenseManager } from "ag-grid-enterprise/main";
 import Papa from 'papaparse';
 
 // 设置enterprise key
-// 以下license key 为研发试用key，有效期到2018-06-06
-// LicenseManager.setLicenseKey("Evaluation_License_Valid_Until_6_June_2018__MTUyODIzOTYwMDAwMA==4c69615c372b7cdc6c4bda8601ac106b");
-// LicenseManager.setLicenseKey("Evaluation_License_Valid_Until_1_Jan_2050__MjUyNDYwNDQwMDAwMA==ed754b6037ea7ee7168aa5d8dc10c3da");
 LicenseManager.setLicenseKey("COGITO_SOFTWARE_Co_Ltd_on_behalf_of_FAST_FISH_(CHINA)_APPAREL_LTD._,CO_MultiApp_1Devs2_July_2019__MTU2MjAyMjAwMDAwMA==73f4b2d33a7f2bf6aca17a21940fd8ed");
 const cssFeatures = {
   hover: 'ag-syman-hover',
@@ -85,6 +82,7 @@ const localeText = {
   max: '最大值',
   first: '首值',
   last: '末值',
+  percent:'占比',
   none: 'None',
   count: '计数',
   avg: '平均',
@@ -97,7 +95,7 @@ const localeText = {
   ctrlV: 'ctrl+V'
 };
 
-const setCommonStyles = () => {
+const setCommonStyles = (options) => {
   const commonStyles = document.createElement('style');
   const styleArray = [
     `.pos-ag-report-container { font-family: 'Microsoft YaHei', 'Hiragino Sans GB', !important; }`,
@@ -110,6 +108,7 @@ const setCommonStyles = () => {
     '.ag-body-viewport::-webkit-scrollbar-thumb, .ag-column-container::-webkit-scrollbar-thumb, .ag-column-drop-list::-webkit-scrollbar-thumb { background-color: #c5c2c2; border-radius: 5px; }',
     '.ag-body-viewport::-webkit-scrollbar-track, .ag-column-container::-webkit-scrollbar-track, .ag-column-drop-list::-webkit-scrollbar-track { box-shadow: inset 0 0 15px lightgray; background-color: #f8f7f7; border-radius: 5px; }',
     `.${cssFeatures.hover} { cursor: pointer; }`,
+    `.ag-theme-balham .ag-icon-contracted, .ag-theme-balham .ag-icon-expanded { display: ${options.enableRankColumn ? 'none' : ''} }`
   ];
   commonStyles.innerHTML = styleArray.join('\r\n');
   return commonStyles;
@@ -143,30 +142,36 @@ const exportCustomExcel = (csvData, groupState) => {
   const simplifyData = [];
   Papa.parse(csvData, {
     complete(result) {
-     const { data } = result;
-     data.forEach((d, i) => {
-       if (d[0].replace(/\s/g, '').split('->')[1]) {
-         d[0] = d[0].replace(/\s/g, '').split('->')[1]
-       }
+      const { data } = result;
+      data.forEach((d, i) => {
+        if (d[0].replace(/\s/g, '').split('->')[1]) {
+          d[0] = d[0].replace(/\s/g, '').split('->')[1]
+        }
 
-       // 处理无效数据
-       if (d[groupNumber - 1] !== '') {
-         simplifyData.push(d);
-       }
-     });
+        // 处理无效数据
+        if (d[groupNumber - 1] !== '') {
+          simplifyData.push(d);
+        }
+      });
 
-     // 填补显示问题
-     simplifyData.forEach((d, i) => {
-       for (let j = 1; j < groupNumber -1; j++) {
-         if (d[j] === '') {
-           d[j] = simplifyData[i - 1][j];
-         }
-       }
-     });
+      // 填补显示问题
+      simplifyData.forEach((d, i) => {
+        for (let j = 1; j < groupNumber -1; j++) {
+          if (d[j] === '') {
+            d[j] = simplifyData[i - 1][j];
+          }
+        }
+      });
 
-     // console.log(simplifyData);
+      // console.log(simplifyData);
     }
   })
+};
+
+// define some constant for ag report
+const AG_REPORT_RANK_COLUMN = {
+  colname: 'AG_REPORT_RANK_COLUMN',
+  name: '排名'
 };
 
 /**
@@ -194,6 +199,7 @@ const initializeAgReport = (container, opt) => {
         agReport.defaultGroupColumns = options.defaultGroupColumns || []; // 当前默认的分组情况
         agReport.aggregationColumns = options.aggregationColumns || []; // 所有聚合列的信息
         agReport.subTotalColumns = options.subTotalColumns || []; // 哪些列需要在页面内计算合计值
+        agReport.enableRankColumn = options.enableRankColumn; // 是否显示排名列
       }
 
       // 判断agGridTableContainer是否已经被ag实例化
@@ -252,7 +258,6 @@ const initializeAgReport = (container, opt) => {
       toolPanelSuppressColumnSelectAll: true, // 禁用ColumnSelectAll checkbox
       toolPanelSuppressSideButtons: !(options.reportMode && options.reportMode !== 'normal'), // 禁用侧边栏的开关按钮
       groupIncludeFooter: false, // 是否显示分组的footer 合计行
-      // groupIncludeTotalFooter: true, // 是否允许底部合计行
       floatingFilter: options && options.floatingFilter ? options.floatingFilter : true, // 是否显表头下方的浮动筛选框
       rowDragManaged: true,
       rowGroupPanelShow: options && options.rowGroupPanelShow ? options.rowGroupPanelShow : 'never', // 是否显最顶部的group panel ['always', 'onlyWhenGrouping', 'never']
@@ -284,7 +289,15 @@ const initializeAgReport = (container, opt) => {
           'export',
           'separator',
           'expandAll',
-          'contractAll'
+          'contractAll',
+          {
+            // custom item
+            name: 'test ',
+            action: function() {
+              api.exportDataAsExcel();
+            },
+            cssClasses: ['redFont', 'bold']
+          }
         ];
       }, // 表体右击菜单
       onGridReady(params) {
@@ -305,6 +318,20 @@ const initializeAgReport = (container, opt) => {
 
       }, // 当表格渲染好之后，触发onGridReady
       onColumnRowGroupChanged() {
+        const { enableRankColumn, rowData, api, columnApi } = agReport;
+        if (enableRankColumn) {
+          let tempKey = '';
+          columnApi.getColumnState().some(column => {
+            if (column.rowGroupIndex === 1) {
+              tempKey = column.colId;
+              return true;
+            }
+          });
+          api.setRowData(rowData.map(d => {
+            d[AG_REPORT_RANK_COLUMN.colname] = d[tempKey];
+            return d;
+          }));
+        }
         agReport.dealWithPinnedColumns();
         agReport.autoSizeAllColumns();
       }, // 分组变化
@@ -336,7 +363,8 @@ const initializeAgReport = (container, opt) => {
     new Grid(agGridDiv, gridOptions);
 
     const transformColumnDefs = (data) => {
-      const defaultGroups = agReport.defaultGroupColumns;
+      const { enableRankColumn } = agReport;
+      const defaultGroups = enableRankColumn ? [AG_REPORT_RANK_COLUMN.colname].concat(agReport.defaultGroupColumns) : agReport.defaultGroupColumns;
       const aggregationColumns = agReport.aggregationColumns;
       const groupAllowedColumns = agReport.groupAllowedColumns;
       return data.map(d => {
@@ -349,7 +377,13 @@ const initializeAgReport = (container, opt) => {
         item.suppressMovable = true; // 默认禁止拖拽移动
         item.enableRowGroup = false; // 默认禁止row group
         item.suppressToolPanel = true; // 默认禁用所有列的tool panel
-
+        item.cellRenderer = (params) => {
+          const { value, rowIndex } = params;
+          if (item.field === AG_REPORT_RANK_COLUMN.colname) {
+            return rowIndex + 1;
+          }
+          return value;
+        };
         // 处理groupAllowedColumns
         if (groupAllowedColumns && groupAllowedColumns.indexOf(item.field) > -1) {
           item.enableRowGroup = true;
@@ -357,10 +391,9 @@ const initializeAgReport = (container, opt) => {
         }
 
         // defaultGroups
-        if (defaultGroups && defaultGroups.indexOf(item.field) === -1) {
+        if (defaultGroups && defaultGroups.indexOf(item.field) > -1) {
           item.enableRowGroup = true;
           item.suppressToolPanel = false;
-          // item.lockVisible = true;
         }
 
         // 处理allowedAggFuncs | aggFunc | valueGetter
@@ -374,7 +407,7 @@ const initializeAgReport = (container, opt) => {
         if (aggregationAllowed) {
           item.enableValue = true;
           item.filter = 'agNumberColumnFilter';
-          item.allowedAggFuncs = ['sum', 'count', 'avg', 'max', 'min'];
+          item.allowedAggFuncs = ['sum', 'count', 'avg', 'max', 'min','percent'];
           item.aggFunc = aggFieldInfo.aggType;
           item.suppressMovable = false;
         }
@@ -391,7 +424,8 @@ const initializeAgReport = (container, opt) => {
         subTotalRowObj[d] = null;
       });
       subTotalColumns.forEach(d => {
-        subTotalRowObj[d] = data.reduce((accumulator, currentValue) => accumulator + (parseFloat(currentValue[d]) || 0), 0);
+        let n= data.reduce((accumulator, currentValue) => accumulator + (parseFloat(currentValue[d]) || 0), 0);
+        subTotalRowObj[d] =Math.round(n * 100) / 100;
       });
       pinnedBottomRowData.push(subTotalRowObj);
       return { rowData, pinnedBottomRowData };
@@ -413,9 +447,9 @@ const initializeAgReport = (container, opt) => {
 
     // 处理分组情况
     agReport.dealGroupInfo = () => {
-      const defaultGroups = agReport.defaultGroupColumns;
-      if (defaultGroups) {
-        columnApi.setRowGroupColumns(defaultGroups);
+      const { defaultGroupColumns, enableRankColumn } = agReport;
+      if (defaultGroupColumns) {
+        columnApi.setRowGroupColumns(enableRankColumn ? [AG_REPORT_RANK_COLUMN.colname].concat(defaultGroupColumns) : defaultGroupColumns);
       }
       return agReport;
     };
@@ -443,13 +477,17 @@ const initializeAgReport = (container, opt) => {
 
     // 设置columnDefs
     agReport.setCols = (data) => {
-      const reportMode = agReport.reportMode;
+      const { reportMode, enableRankColumn } = agReport;
       if (!data) { return agReport; } // 如果未传参，则返回。
       if (!(Object.prototype.toString.call(data) === '[object Array]')) {
         alert('agReport.setCols requires Array as first param');
         return agReport;
       }
-      api.setColumnDefs(transformColumnDefs(data));
+      if (enableRankColumn) {
+        api.setColumnDefs(transformColumnDefs([AG_REPORT_RANK_COLUMN].concat(data)));
+      } else {
+        api.setColumnDefs(transformColumnDefs(data));
+      }
       if (reportMode && reportMode !== 'normal') {
         agReport.dealWithShowedColumns();
         agReport.dealGroupInfo();
@@ -457,16 +495,46 @@ const initializeAgReport = (container, opt) => {
       return agReport;
     };
 
+    agReport.insertColumn=(t,id,name,cols,rows,fn)=>{
+      switch(t){
+        case "aggregationColumns":
+          agReport.allVisibleColumns.push(id);
+          agReport.aggregationColumns.push({colname: id, aggType: "sum"});
+          rows.map(function(o){
+            fn(o);
+          });
+          cols.push({colname:id,name:name});
+          agReport.setCols(cols).setRows(rows);
+          break;
+      }
+    };
+
     // 设置rowData
     agReport.setRows = (data) => {
+      const  { enableRankColumn } = agReport;
       if (!data) { return agReport; } // 如果未传参，则返回。
       if (!(Object.prototype.toString.call(data) === '[object Array]')) {
         alert('agReport.setRows requires Array as first param');
         return agReport;
       }
       const { rowData, pinnedBottomRowData } = transformRowData(data);
-      api.setRowData(rowData);
+      if (enableRankColumn) {
+        let tempColumnId = '';
+        columnApi.getColumnState().some(column => {
+          if (column.rowGroupIndex === 1) {
+            tempColumnId = column.colId;
+            return true;
+          }
+        });
+        api.setRowData(rowData.map(d => {
+          d[AG_REPORT_RANK_COLUMN.colname] = d[tempColumnId];
+          return d;
+        }));
+      } else {
+        api.setRowData(rowData);
+      }
       api.setPinnedBottomRowData(pinnedBottomRowData);
+      agReport.rowData = rowData;
       return agReport;
     };
 

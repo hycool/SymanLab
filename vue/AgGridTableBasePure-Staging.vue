@@ -18,7 +18,7 @@
 <script>
   import Papa from 'papaparse';
   import agTable from './utility/ag-grid/ag-grid-table-pure';
-  import agReport from './utility/ag-grid-report-pure';
+  import agReport from './utility/ag-grid/ag-grid-report-pure';
   import AgGridTableBaseWrapper from './AgGridTableBaseWrapper.vue';
   import mock from 'mockjs';
   const headers = [
@@ -356,6 +356,7 @@
         fetch('./assets/pos_report_response.json').then((res) => {
           res.json().then(data => {
             agReport(self.$refs.posGridReport, {
+              // enableRankColumn: true,
               reportMode: 'rowGroup',
               // 所有允许进行分组查看的列（可以被group by）
               groupAllowedColumns: data.groupAllowedColumns || [],
@@ -415,7 +416,7 @@
       }
     },
     mounted() {
-      console.log('Vue组件渲染用时：', Date.now() - beforeMountTime);
+      // console.log('Vue组件渲染用时：', Date.now() - beforeMountTime);
       if (this.enableAgTable) {
         this.fetchFCData();
       }
