@@ -201,6 +201,7 @@ const initializeAgReport = (container, opt) => {
       agReport.containerIsNull = false;
 
       if(opt) {
+        agReport.enableExport = options.enableExport || true; // 默认为禁用导出
         agReport.reportMode = options.reportMode || 'normal'; // 默认为普通模式
         agReport.allVisibleColumns = options.allVisibleColumns || []; // 所有允许可见的列
         agReport.displayedColumns = options.displayedColumns || []; // 默认展示的列
@@ -291,14 +292,16 @@ const initializeAgReport = (container, opt) => {
         ];
       }, // 设置每列的general menu item
       getContextMenuItems() {
-        const { enableRankColumn, reportMode } = agReport;
-        const defaultMenu = [
+        const { enableRankColumn, reportMode, enableExport } = agReport;
+        let defaultMenu = [
           'copy',
           'copyWithHeaders',
-          'paste',
-          'export',
         ];
-        return enableRankColumn || reportMode === 'normal' ? defaultMenu : defaultMenu.concat(['separator', 'expandAll', 'contractAll']);
+        if (enableExport) { defaultMenu = defaultMenu.concat(['export']) }
+        if (enableRankColumn || reportMode === 'normal') {
+          defaultMenu = defaultMenu.concat(['separator', 'expandAll', 'contractAll'])
+        }
+        return defaultMenu;
       }, // 表体右击菜单
       onGridReady(params) {
         const { columnApi } = params;
