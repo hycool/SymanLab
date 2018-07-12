@@ -296,16 +296,22 @@ const initializeAgReport = (container, opt) => {
         columnApi.autoSizeAllColumns();
 
         // 替换class = '.ag-column-select-label'的内容，以禁用点击label显示和隐藏列的功能
-        document.querySelectorAll('.ag-column-select-label').forEach(d => {
+        agGridDiv.querySelectorAll('.ag-column-select-label').forEach(d => {
           replaceNode(d);
         });
 
         // 移除class = '.ag-column-select-checkbox' 以免给用户造成困扰
-        document.querySelectorAll('.ag-column-select-checkbox').forEach(d => {
+        agGridDiv.querySelectorAll('.ag-column-select-checkbox').forEach(d => {
           d.style.opacity = 0;
           d.style.width = '0';
           d.style.overflow = 'hidden';
         })
+
+        // 处理“工具栏”显示问题，将“工具栏”三个字变为纵向显示
+        agGridDiv.querySelectorAll('.ag-side-buttons button').forEach(button => {
+          button.style.transform = 'rotate(0) translateY(0px) translateX(-2px)';
+          button.innerHTML = '工<br/>具<br/>栏'
+        });
 
       }, // 当表格渲染好之后，触发onGridReady
       onColumnRowGroupChanged() {
@@ -354,7 +360,7 @@ const initializeAgReport = (container, opt) => {
     new Grid(agGridDiv, gridOptions);
 
     const transformColumnDefs = (data) => {
-      const { enableRankColumn } = agReport;
+      const { enableRankColumn, reportMode } = agReport;
       const defaultGroups = enableRankColumn ? [AG_REPORT_RANK_COLUMN.colname].concat(agReport.defaultGroupColumns) : agReport.defaultGroupColumns;
       const aggregationColumns = agReport.aggregationColumns;
       const groupAllowedColumns = agReport.groupAllowedColumns;
@@ -368,13 +374,12 @@ const initializeAgReport = (container, opt) => {
         item.suppressMovable = true; // 默认禁止拖拽移动
         item.enableRowGroup = false; // 默认禁止row group
         item.suppressToolPanel = true; // 默认禁用所有列的tool panel
-        item.cellRenderer = (params) => {
-          const { value, rowIndex } = params;
-          if (item.field === AG_REPORT_RANK_COLUMN.colname) {
-            return rowIndex + 1;
-          }
-          return value;
-        };
+
+        // 处理cellRender
+        if (item.field === AG_REPORT_RANK_COLUMN.colname) {
+          // 如果该列是排名列，则显示行号
+          item.cellRenderer = params => params.rowIndex + 1;
+        }
         // 处理groupAllowedColumns
         if (groupAllowedColumns && groupAllowedColumns.indexOf(item.field) > -1) {
           item.enableRowGroup = true;
@@ -407,16 +412,35 @@ const initializeAgReport = (container, opt) => {
     };
 
     const transformRowData = (data) => {
-      const { subTotalColumns } = agReport;
+      const { subTotalColumns, aggregationColumns } = agReport;
+      const aggregationColumnsMap = {};
+      aggregationColumns.forEach(d => {
+        aggregationColumnsMap[d.colname] = d;
+      });
       let rowData = [].concat(data);
       let pinnedBottomRowData = [];
       const subTotalRowObj = {};
       columnApi.getAllColumns().map(d => d.colId).forEach(d => {
         subTotalRowObj[d] = null;
       });
+
       subTotalColumns.forEach(d => {
-        let n= data.reduce((accumulator, currentValue) => accumulator + (parseFloat(currentValue[d]) || 0), 0);
-        subTotalRowObj[d] =Math.round(n * 100) / 100;
+        let aggregationFun = 'sum';
+        if (aggregationColumnsMap[d].aggType) {
+          aggregationFun = aggregationColumnsMap[d].aggType;
+        }
+        switch (aggregationFun) {
+          case 'sum' : {
+            let sumValue= data.reduce((accumulator, currentValue) => accumulator + (parseFloat(currentValue[d]) || 0), 0);
+            subTotalRowObj[d] =Math.round(sumValue * 100) / 100;
+            break;
+          }
+          case 'count' : {
+            subTotalRowObj[d] = data.length || 0;
+            break;
+          }
+          default: break;
+        }
       });
       pinnedBottomRowData.push(subTotalRowObj);
       return { rowData, pinnedBottomRowData };
@@ -502,7 +526,7 @@ const initializeAgReport = (container, opt) => {
 
     // 设置rowData
     agReport.setRows = (data) => {
-      const  { enableRankColumn } = agReport;
+      const  { enableRankColumn, reportMode } = agReport;
       if (!data) { return agReport; } // 如果未传参，则返回。
       if (!(Object.prototype.toString.call(data) === '[object Array]')) {
         alert('agReport.setRows requires Array as first param');
@@ -524,7 +548,9 @@ const initializeAgReport = (container, opt) => {
       } else {
         api.setRowData(rowData);
       }
-      api.setPinnedBottomRowData(pinnedBottomRowData);
+      if (reportMode === 'rowGroup') {
+        api.setPinnedBottomRowData(pinnedBottomRowData);
+      }
       agReport.rowData = rowData;
       return agReport;
     };

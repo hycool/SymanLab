@@ -26,7 +26,7 @@
   ],
   "aggregationColumns": [
     {
-      "colname": "POLL",
+      "colname": "BILL_NO",
       "aggType": "count",
       "createRatioColumn": true
     },
@@ -42,7 +42,7 @@
     }
   ],
   "subTotalColumns": [
-    "POLL",
+    "BILL_NO",
     "QTY_BILL",
     "AMT_ACTUAL"
   ],
