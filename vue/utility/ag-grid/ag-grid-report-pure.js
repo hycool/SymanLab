@@ -168,6 +168,15 @@ const exportCustomExcel = (csvData, groupState) => {
   })
 };
 
+const byThousands = (value, decimal) => {
+  if (isNaN(value)) { return value }
+  const arr = `${value}`.split('.');
+  decimal = decimal === undefined && Number(value) % 1 !== 0;
+  return decimal ?
+    `${Number(arr[0]) >= 0? arr[0].replace(/(?=(?!^)(\d{3})+$)/g, ',') : '-' + String(Math.abs(arr[0])).replace(/(?=(?!^)(\d{3})+$)/g, ',')}.${arr[1] || ''}` :
+    `${Number(arr[0]) >= 0? arr[0].replace(/(?=(?!^)(\d{3})+$)/g, ',') : '-' + String(Math.abs(arr[0])).replace(/(?=(?!^)(\d{3})+$)/g, ',')}`;
+};
+
 // define some constant for ag report
 const AG_REPORT_RANK_COLUMN = {
   colname: 'AG_REPORT_RANK_COLUMN',
@@ -360,13 +369,14 @@ const initializeAgReport = (container, opt) => {
     new Grid(agGridDiv, gridOptions);
 
     const transformColumnDefs = (data) => {
-      const { enableRankColumn, reportMode } = agReport;
+      const { enableRankColumn, aggregationColumns, groupAllowedColumns } = agReport;
+      const aggregationColumnsMap = {};
+      aggregationColumns.forEach(d => {
+        aggregationColumnsMap[d.colname] = d;
+      });
       const defaultGroups = enableRankColumn ? [AG_REPORT_RANK_COLUMN.colname].concat(agReport.defaultGroupColumns) : agReport.defaultGroupColumns;
-      const aggregationColumns = agReport.aggregationColumns;
-      const groupAllowedColumns = agReport.groupAllowedColumns;
       return data.map(d => {
         const item = {};
-
         item.headerName = d.name;
         item.field = d.colname;
         item.filter = 'agTextColumnFilter';
@@ -375,11 +385,34 @@ const initializeAgReport = (container, opt) => {
         item.enableRowGroup = false; // 默认禁止row group
         item.suppressToolPanel = true; // 默认禁用所有列的tool panel
 
-        // 处理cellRender
-        if (item.field === AG_REPORT_RANK_COLUMN.colname) {
-          // 如果该列是排名列，则显示行号
-          item.cellRenderer = params => params.rowIndex + 1;
+        // 处理valueFormatter
+        if (d.valueFormatter && typeof d.valueFormatter === 'function') {
+          item.valueFormatter = (params) => d.valueFormatter({ value: params.value });
+        } else {
+          item.valueFormatter = params => {
+            const { node, value } = params;
+            if (item.field === AG_REPORT_RANK_COLUMN.colname) {
+              return node.rowIndex + 1
+            } // 当该列为“排名”列时，显示行号
+
+            if (aggregationColumns.map(d => d.colname).indexOf(item.field) !== -1) {
+              return `${byThousands(value)}`
+            }
+
+            return value || '';
+          };
         }
+
+        // 处理cellStyle
+        if (aggregationColumns.map(d => d.colname).indexOf(item.field) !== -1) {
+          item.cellStyle = (params) => {
+            const { value } = params;
+            return isNaN(value) ? null : {
+              'text-align': 'right'
+            };
+          };
+        }
+
         // 处理groupAllowedColumns
         if (groupAllowedColumns && groupAllowedColumns.indexOf(item.field) > -1) {
           item.enableRowGroup = true;
