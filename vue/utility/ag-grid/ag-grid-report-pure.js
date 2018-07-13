@@ -168,13 +168,15 @@ const exportCustomExcel = (csvData, groupState) => {
   })
 };
 
-const byThousands = (value, decimal) => {
-  if (isNaN(value)) { return value }
+const byThousands = (params) => {
+  const { value, decimal, suffix } = params;
+  if (isNaN(value) || value === null || value === undefined) { return value || '' }
   const arr = `${value}`.split('.');
-  decimal = decimal === undefined && Number(value) % 1 !== 0;
-  return decimal ?
-    `${Number(arr[0]) >= 0? arr[0].replace(/(?=(?!^)(\d{3})+$)/g, ',') : '-' + String(Math.abs(arr[0])).replace(/(?=(?!^)(\d{3})+$)/g, ',')}.${arr[1] || ''}` :
+  const enableDecimal = decimal === undefined && Number(value) % 1 !== 0;
+  const temp =  enableDecimal ?
+    `${Number(arr[0]) >= 0? arr[0].replace(/(?=(?!^)(\d{3})+$)/g, ',') : '-' + String(Math.abs(arr[0])).replace(/(?=(?!^)(\d{3})+$)/g, ',')}.${arr[1].slice(0, 2) || ''}` :
     `${Number(arr[0]) >= 0? arr[0].replace(/(?=(?!^)(\d{3})+$)/g, ',') : '-' + String(Math.abs(arr[0])).replace(/(?=(?!^)(\d{3})+$)/g, ',')}`;
+  return `${temp}${suffix || ''}`;
 };
 
 // define some constant for ag report
@@ -298,7 +300,7 @@ const initializeAgReport = (container, opt) => {
           'copyWithHeaders',
         ];
         if (enableExport) { defaultMenu = defaultMenu.concat(['export']) }
-        if (enableRankColumn || reportMode === 'normal') {
+        if (!(enableRankColumn || reportMode === 'normal')) {
           defaultMenu = defaultMenu.concat(['separator', 'expandAll', 'contractAll'])
         }
         return defaultMenu;
@@ -322,6 +324,8 @@ const initializeAgReport = (container, opt) => {
         // 处理“工具栏”显示问题，将“工具栏”三个字变为纵向显示
         agGridDiv.querySelectorAll('.ag-side-buttons button').forEach(button => {
           button.style.transform = 'rotate(0) translateY(0px) translateX(-2px)';
+          button.style.margin = '0 auto';
+          button.style.border = '0';
           button.innerHTML = '工<br/>具<br/>栏'
         });
 
@@ -399,7 +403,13 @@ const initializeAgReport = (container, opt) => {
             } // 当该列为“排名”列时，显示行号
 
             if (aggregationColumns.map(d => d.colname).indexOf(item.field) !== -1) {
-              return `${byThousands(value)}`
+              const suffix = item.field === 'percent' ? '%' : '';
+              return `${byThousands({ value, suffix })}`
+            }
+
+            // 以下内容是为配合POS销售报表而产生的“硬编码”，后续开发人员不应采纳此种开发方式
+            if (item.field === 'STATUSTIME') {
+              return `${value}:00`
             }
 
             return value || '';
@@ -468,7 +478,7 @@ const initializeAgReport = (container, opt) => {
         switch (aggregationFun) {
           case 'sum' : {
             let sumValue= data.reduce((accumulator, currentValue) => accumulator + (parseFloat(currentValue[d]) || 0), 0);
-            subTotalRowObj[d] =Math.round(sumValue * 100) / 100;
+            subTotalRowObj[d] =(Math.round(sumValue * 100) / 100) || '';
             break;
           }
           case 'count' : {
@@ -630,6 +640,11 @@ const initializeAgReport = (container, opt) => {
     agReport.destroy = () => {
       api.destroy();
       return agReport;
+    };
+
+    // 暴露导出接口
+    agReport.exportExcel = () => {
+      api.exportDataAsExcel();
     };
 
     agGridTableContainer.agReport = agReport;

@@ -353,8 +353,9 @@
 
       fetchPosDataNew() {
         const self = this;
-        fetch('./assets/pos_report_response.json').then((res) => {
-          res.json().then(data => {
+        fetch('./assets/pos_sale_6.json').then((res) => {
+          res.json().then(result => {
+            const data = result.data;
             agReport(self.$refs.posGridReport, {
               // enableRankColumn: true,
               reportMode: 'rowGroup',
