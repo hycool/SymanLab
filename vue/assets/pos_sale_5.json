@@ -88,10 +88,6 @@
     ],
     "aggregationColumns": [
       {
-        "colname": "POLL",
-        "aggType": "count"
-      },
-      {
         "colname": "QTY_BILL",
         "aggType": "sum"
       },
@@ -101,7 +97,7 @@
       }
     ],
     "defaultGroupColumns": [
-      "PS_C_PRO_PROMOTIONTYPE"
+      "PS_C_PRO_ECODE"
     ],
     "rows": [
       {
@@ -1406,8 +1402,7 @@
       "SEASON",
       "PS_C_PRO_ECODE"
     ],
-    "code": 0,
-    "scrollid": "DnF1ZXJ5VGhlbkZldGNoBQAAAAAARJLgFkZrX1VUNnIwVHVTYUlXQVRheDN5SGcAAAAAAEaPpBZKbkNlQmlHdVJFMjFDa0hmd21TbjhRAAAAAABEowkWTWZLdFRaREhTXzJFRG15a0swbTZrZwAAAAAARJJWFl9WN0hGakU5UmNDbElfeXJsZGVpX3cAAAAAAEX6-BZ1bDZNVVBwZlFVaTJfeXB1LXBhUU1n"
+    "code": 0
   },
   "code": 0
 }

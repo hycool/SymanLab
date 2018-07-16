@@ -353,11 +353,11 @@
 
       fetchPosDataNew() {
         const self = this;
-        fetch('./assets/pos_sale_6.json').then((res) => {
+        fetch('./assets/pos_sale_5.json').then((res) => {
           res.json().then(result => {
             const data = result.data;
             agReport(self.$refs.posGridReport, {
-              // enableRankColumn: true,
+              enableRankColumn: true,
               reportMode: 'rowGroup',
               // 所有允许进行分组查看的列（可以被group by）
               groupAllowedColumns: data.groupAllowedColumns || [],

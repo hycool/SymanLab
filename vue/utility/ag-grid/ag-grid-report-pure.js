@@ -98,7 +98,7 @@ const localeText = {
 const setCommonStyles = (options) => {
   const commonStyles = document.createElement('style');
   const styleArray = [
-    `.pos-ag-report-container { font-family: 'Microsoft YaHei', 'Hiragino Sans GB', !important; }`,
+    `.ag-theme-balham .pos-ag-report-container { font-family: 'Microsoft YaHei', 'Hiragino Sans GB', !important; }`,
     '.ag-pinned-left-cols-container .ag-row { background-color: #f6f8f9; }',
     '.ag-floating-bottom-viewport { font-weight: 600; color: #3b3771; }',
     '.ag-row-footer { background-color: rgba(206, 218, 216, 0.5) !important; font-weight: 600; color: #3b3771;}',
@@ -472,7 +472,7 @@ const initializeAgReport = (container, opt) => {
 
       subTotalColumns.forEach(d => {
         let aggregationFun = 'sum';
-        if (aggregationColumnsMap[d].aggType) {
+        if (aggregationColumnsMap[d] && aggregationColumnsMap[d].aggType) {
           aggregationFun = aggregationColumnsMap[d].aggType;
         }
         switch (aggregationFun) {
@@ -645,6 +645,65 @@ const initializeAgReport = (container, opt) => {
     // 暴露导出接口
     agReport.exportExcel = () => {
       api.exportDataAsExcel();
+    };
+
+    // 暴露打印方法
+    agReport.executePrint = (params) => {
+      const csv = api.getDataAsCsv();
+      let transformedData = null;
+      Papa.parse(csv, {
+        complete(result) {
+          const { data } = result;
+          if (parseInt(params.reportType, 10) === 1) {
+            const tempArr = data
+              .filter(d => d[0] !== '' && d[1] === '')
+              .map((d, i) => {
+                d.forEach((item, valueIndex) => {
+                  if (!isNaN(item) && parseFloat(item) % 1 === 0) {
+                    d[valueIndex] = Number(item);
+                  } else if (!isNaN(item) && parseFloat(item) % 1 !== 0) {
+                    d[valueIndex] = Number(parseFloat(item).toFixed(2));
+                  }
+                }); // 处理保留两位小数点
+                d[1] = d[0].replace(/\s|->/g, '');
+                d[0] = i + 1;
+                return d;
+              }); // 先清洗ag处理的csv导出源数据
+            const printData = {
+              rows: tempArr.map(d => {
+                const row = {};
+                d.forEach((v, vi) => {
+                  row[`PRINT_COLUMN_${vi + 1}`] = v;
+                });
+                return row;
+              }),
+              header: data[0].map((d, i) => ({
+                columnName: `PRINT_COLUMN_${i + 1}`,
+                name: d,
+                order: i
+              }))
+            };
+            const { rows, header } = printData;
+            const totalRow = {};
+            const sumColumns = [];
+            header.forEach(header => {
+              totalRow[header.columnName] = '';
+            });
+            printData.header.forEach(header => {
+              if (header.name.indexOf('求和') > -1) {
+                sumColumns.push(header.columnName);
+              }
+            });
+            sumColumns.forEach(columnName => {
+              const sumValue = rows.reduce((acc, row) => acc + (parseFloat(row[columnName]) || 0), 0);
+              totalRow[columnName] = Number(sumValue % 1 === 0 ? sumValue : sumValue.toFixed(2))
+            });
+            rows.push(totalRow);
+            transformedData =  printData;
+          }
+        }
+      });
+      return transformedData;
     };
 
     agGridTableContainer.agReport = agReport;
