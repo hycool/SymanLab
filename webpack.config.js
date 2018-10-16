@@ -3,9 +3,19 @@ const path = require('path');
 module.exports = () => ({
   entry: {
     table: './vue/table.js',
-    agGridIndex: './vue/agGrid.js',
-    crossTable: './vue/crossTable.js',
-    entryReportPreview: './vue/entryReportPreview.js',
+    // agGridIndex: './vue/agGrid.js',
+    // crossTable: './vue/crossTable.js',
+    // entryReportPreview: './vue/entryReportPreview.js',
+  },
+  devServer: {
+    contentBase: path.join(__dirname, 'dist'),
+    compress: true,
+    port: 9000,
+    proxy: {
+      '/api': {
+        target: 'http://yapi.demo.qunar.com/mock/23356',
+      }
+    }
   },
   output: {
     filename: '[name].bundle.js',
