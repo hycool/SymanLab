@@ -353,7 +353,7 @@
 
       fetchPosDataNew() {
         const self = this;
-        fetch('./assets/pos_sale_5.json').then((res) => {
+        fetch('./assets/pos_sale_3.json').then((res) => {
           res.json().then(result => {
             const data = result.data;
             agReport(self.$refs.posGridReport, {

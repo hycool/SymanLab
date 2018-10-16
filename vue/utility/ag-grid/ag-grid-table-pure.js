@@ -3,15 +3,17 @@ import "../../../node_modules/ag-grid/dist/styles/ag-grid.css"
 import "../../../node_modules/ag-grid/dist/styles/ag-theme-balham.css"
 import "ag-grid-enterprise/main";
 import { LicenseManager } from "ag-grid-enterprise/main";
+import { agGridEnterpriseLicenseKey } from './constant';
 
 // 设置enterprise key
-// 以下license key 为研发试用key，有效期到2018-06-06
-// LicenseManager.setLicenseKey("Evaluation_License_Valid_Until_1_Jan_2050__MjUyNDYwNDQwMDAwMA==ed754b6037ea7ee7168aa5d8dc10c3da");
+LicenseManager.setLicenseKey(agGridEnterpriseLicenseKey);
 const cssFeatures = {
   hover: 'ag-syman-hover',
   imagePreviewBox: 'image-preview-box',
   tooltipBox: 'tooltip-box',
   tooltipTopBox: 'tooltip-top-box',
+  textRight: 'text-right',
+  attachment: 'attachment'
 };
 
 const AG_SEQUENCE_COLUMN_NAME = '__ag_sequence_column_name__';
@@ -105,12 +107,15 @@ const localeText = {
 const setCommonStyles = (options) => {
   const commonStyles = document.createElement('style');
   const styleArray = [
+    `.ag-bl-overlay { pointer-events: auto; user-select: none; }`,
     '.ag-body-viewport::-webkit-scrollbar, .ag-column-container::-webkit-scrollbar { width: 8px; height: 8px; }',
     '.ag-body-viewport::-webkit-scrollbar-thumb, .ag-column-container::-webkit-scrollbar-thumb { background-color: #c5c2c2; border-radius: 5px; }',
     '.ag-body-viewport::-webkit-scrollbar-track, .ag-column-container::-webkit-scrollbar-track { box-shadow: inset 0 0 15px lightgray; background-color: #f8f7f7; border-radius: 5px; }',
     '.ag-theme-balham .ag-header { background-color: #F5F6FA; border-bottom: 1px solid #d8d8d8; }',
     '.ag-theme-balham .ag-icon-checkbox-unchecked, .ag-theme-balham .ag-icon-checkbox-checked, .ag-theme-balham .ag-icon-checkbox-indeterminate { background-size: 14px 14px; }',
     '.ag-theme-balham .ag-header-cell-label .ag-header-cell-text { font-weight: normal; color: #575757; }',
+    // '.ag-theme-balham .ag-header-cell, .ag-theme-balham .ag-header-group-cell { padding-left: 4px; padding-right: 4px;}',
+    // '.ag-theme-balham .ag-cell { padding-left: 4px; padding-right: 4px;}',
     '.ag-theme-balham .ag-root { border: none; }',
     '.ag-theme-balham .ag-header-select-all { margin-right: 4px; }',
     '.ag-theme-balham .ag-selection-checkbox span { margin-right: 4px; }',
@@ -143,7 +148,7 @@ const setCommonStyles = (options) => {
         border: 1px solid black;
         max-width: 200px;
         word-break: break-all;
-        text-align: center;
+        text-align: left;
         left: -10000px;
     }`,
     `.${cssFeatures.tooltipBox}::before {
@@ -193,6 +198,21 @@ const setCommonStyles = (options) => {
         top: calc(100% - 1px);
         left: 48%;
         border-top-color: #fff;
+    }`,
+    `.text-right { text-align: right }
+    .attachment-wrapper {
+        display: inline-block;
+        margin-right: 5px;
+    }
+    a.attachment {
+        text-decoration: none;
+        color: inherit
+    }
+    a.attachment:hover {
+        border-bottom: 1px solid black;
+    }
+    a.attachment i {
+        color: rgb(32, 160, 255);
     }`
   ];
   commonStyles.innerHTML = styleArray.join('\r\n');
@@ -279,6 +299,23 @@ fkComponent.prototype.init = function(params) {
 };
 
 fkComponent.prototype.getGui = function() {
+  return this.eGui;
+};
+
+
+// for attachment
+const attachmentComponent = function() {};
+
+attachmentComponent.prototype.init = function(params) {
+  const eGui = document.createElement('span');
+  this.eGui = eGui;
+  const { value } = params;
+  if (Object.prototype.toString.call(JSON.parse(value)) === '[object Array]') {
+    eGui.innerHTML = JSON.parse(value).map(d => `<span class="attachment-wrapper"><a class="attachment" href="${d.url || ''}"><i class="iconfont">&#xe649;</i> ${d.name}(${d.Size || ''})</a></span>`).join(' ');
+  }
+};
+
+attachmentComponent.prototype.getGui = function() {
   return this.eGui;
 };
 
@@ -464,9 +501,13 @@ const cleanChildNode = (node) => {
   while(node && node.firstChild) { node.removeChild(node.firstChild); }
 };
 
-const currencyFormat = (value) => {
+const currencyFormat = (value, decimal) => {
   const arr = `${value}`.split('.');
-  return `${arr[0].replace(/(?=(?!^)(\d{3})+$)/g, ',')}.${arr[1] || ''}`;
+  const num = decimal ?
+    `${Number(arr[0]) >= 0? arr[0].replace(/(?=(?!^)(\d{3})+$)/g, ',') : '-' + String(Math.abs(arr[0])).replace(/(?=(?!^)(\d{3})+$)/g, ',')}.${arr[1] || ''}` :
+    `${Number(arr[0]) >= 0? arr[0].replace(/(?=(?!^)(\d{3})+$)/g, ',') : '-' + String(Math.abs(arr[0])).replace(/(?=(?!^)(\d{3})+$)/g, ',')}`;
+  /*李斌改*/
+  return parseFloat(num) === 0? 0 : num;
 };
 
 /**
@@ -477,6 +518,7 @@ const currencyFormat = (value) => {
 const initializeAgTable = (container, opt) => {
   const agTable = (agGridTableContainer, options) => {
     agTable.customizeOptions = options;
+    let isResetAllColumn = false;
     let updateColumnPositionDelay = -1; // column move 延迟计时器
     let updateColumnVisibleDelay = -1; // column visible 延迟计时器
     let updateBodyScrollDelay = -1; // 横向滚动延迟计时器
@@ -492,7 +534,7 @@ const initializeAgTable = (container, opt) => {
       window.onresize = function() {
         // console.log('window.resize', document.body.clientHeight);
         agGridTableContainer.style.height = `${document.body.clientHeight - agGridTableContainer.getBoundingClientRect().top - 30}px`;
-      }
+      };
 
       // 判断agGridTableContainer是否已经被ag实例化
       if (agGridTableContainer.agTable) {
@@ -532,6 +574,7 @@ const initializeAgTable = (container, opt) => {
     const tooltipTopBox = document.createElement('div');
     tooltipTopBox.classList.add(cssFeatures.tooltipTopBox);
     tooltipTopBox.classList.add('arrow-down');
+    tooltipTopBox.style.display = 'none';
 
     agGridDiv.style.width = `100%`;
     // agGridDiv.style.height = `${agGridTableContainer.offsetHeight}px`;
@@ -546,6 +589,9 @@ const initializeAgTable = (container, opt) => {
 
     // 列组件筛选器
     const componentPicker = (columnItem) => {
+      if (columnItem.display === 'doc') {
+        return 'attachmentComponent'
+      }
       if (columnItem.colname === 'ID') {
         return 'sequenceComponent';
       }
@@ -617,6 +663,7 @@ const initializeAgTable = (container, opt) => {
         const item = JSON.parse(decodeURI(encodeURI(JSON.stringify(d))));
         item.headerName = d.colname === 'ID' ? '序号' : d.name || '未定义';
         item.lockVisible = d.colname === 'ID'; // 锁定序号列的隐藏功能
+        item.suppressToolPanel = d.colname === 'ID'; // 锁定ID列工具栏操作能力
         item.pinned = d.colname === 'ID' ? 'left' : getPinnedState(d.colname);
         item.maxWidth = d.colname === 'ID' ? 80 : null; // 为ID列预设最大宽度
         item.suppressResize = d.colname === 'ID'; // 禁止拖动ID列边缘以改变其列宽
@@ -642,8 +689,8 @@ const initializeAgTable = (container, opt) => {
         item.unSortIcon = item.isorder; // 设置未排序图表Icon
         item.hide = hideColumn.indexOf(item.colname) > -1;
         item.suppressMenu = d.colname === 'ID'; // 是否禁用每一列的菜单选择
-        if (item.display !== 'check') {
-          // 只有不为check的才允许文本筛选
+        if ('check,select'.indexOf(d.display) === -1 ) {
+          // 只有不为check、select、的才允许文本筛选
           item.filter = 'agTextColumnFilter'
         }
         item.checkboxSelection = d.colname === 'ID' ? function (params) {
@@ -653,16 +700,46 @@ const initializeAgTable = (container, opt) => {
           return params.columnApi.getRowGroupColumns().length === 0;
         } : null;
         item.headerCheckboxSelectionFilteredOnly = d.colname === 'ID';
+        item.cellClass = function(params) {
+          const { colDef } = params;
+          const { display, type, colId } = colDef;
+          if (colId !== 'ID' && display.toLowerCase() === 'text' && type.toLowerCase() === 'number') {
+            return cssFeatures.textRight;
+          }
+          return null;
+        }; // 所有type=Number, display=text 的列，居右侧显示其数值
         // 最后处理zhColumnNameMap
         zhColumnNameMap[item.headerName] = d.colname;
         return item;
       });
     };
 
+    const dealWithFullRangeSubTotalRow = (fullRangeSubTotalRow) => {
+      const fullRangeSubTotalRowData = {};
+      columnApi.getAllColumns().forEach(d => {
+        const { colname } = d.colDef;
+        fullRangeSubTotalRowData[colname] = { val: colname === 'ID' ? '总计' : fullRangeSubTotalRow[colname] ? fullRangeSubTotalRow[colname].val : '' };
+      });
+      if (JSON.stringify(fullRangeSubTotalRow) !== '{}') {
+        fullRangeSubTotalRowData.__ag_is_statistic_row__ = true;
+      }
+      return fullRangeSubTotalRowData;
+    };
+
     // 处理行数据
     const transformRowData = (data) => {
       const options = agTable.customizeOptions;
-      let rowData = data;
+      const { ids } = options.datas;
+      const keySetOfIdSequence = {};
+      let rowData = [];
+      if (Object.prototype.toString.call(ids) === '[object Array]' && ids.length > 0) {
+        ids.forEach((d, i) => {
+          keySetOfIdSequence[d] = parseInt(i + 1, 10);
+        });
+        rowData = data.concat([]).sort((a, b) => (keySetOfIdSequence[a.ID.val] || Infinity) - (keySetOfIdSequence[b.ID.val] || Infinity)); // 根据后台返回的ids来排序rowData
+      } else {
+        rowData = data;
+      }
       const pinnedBottomRowData = [];
       let fullRangeSubTotalRow = null;
       let isFullRangeSubTotalEnabled = null;
@@ -690,7 +767,15 @@ const initializeAgTable = (container, opt) => {
           subtotalRowData[field].val = data.reduce(function(sum, row) {
             return sum + (parseFloat(`${row[field].val}`.replace(/\,/g, '')) || 0)
           }, 0);
-          subtotalRowData[field].val = currencyFormat(subtotalRowData[field].val.toFixed(2));
+          let scale = 0;
+          columnApi.getAllColumns().some(d => {
+            if (d.colId === field) {
+              scale = d.colDef.scale || 0;
+              return true;
+            }
+            return false;
+          });
+          subtotalRowData[field].val = currencyFormat(subtotalRowData[field].val.toFixed(scale), scale !== 0);
         });
         subtotalRowData.ID.val = '合计';
         subtotalRowData.__ag_is_statistic_row__ = true;
@@ -698,16 +783,8 @@ const initializeAgTable = (container, opt) => {
       }
 
       // 计算总计值
-      if(isFullRangeSubTotalEnabled) {
-        const fullRangeSubTotalRowData = {};
-        columnApi.getAllColumns().forEach(d => {
-          const { colname } = d.colDef;
-          fullRangeSubTotalRowData[colname] = { val: colname === 'ID' ? '总计' : fullRangeSubTotalRow[colname] ? fullRangeSubTotalRow[colname].val || '' : '' };
-        });
-        if (JSON.stringify(fullRangeSubTotalRow) !== '{}') {
-          fullRangeSubTotalRowData.__ag_is_statistic_row__ = true;
-          pinnedBottomRowData.push(fullRangeSubTotalRowData);
-        }
+      if(isFullRangeSubTotalEnabled && fullRangeSubTotalRow) {
+        pinnedBottomRowData.push(dealWithFullRangeSubTotalRow(fullRangeSubTotalRow));
       }
 
       return { rowData, pinnedBottomRowData };
@@ -716,6 +793,7 @@ const initializeAgTable = (container, opt) => {
     // 处理ag-body-viewport 横向滚动问题
     const horizontalScrollTo = function (element, scrollValue) {
       element.scrollLeft = parseFloat(scrollValue);
+      columnApi.autoSizeAllColumns();
     };
 
     const initGridOptions = () => {
@@ -762,13 +840,15 @@ const initializeAgTable = (container, opt) => {
           fkComponent,
           customerUrlComponent,
           sequenceComponent,
-          customHeader
+          customHeader,
+          attachmentComponent
         },
         columnTypes: {
           // 防止后台api返回的colDef中有type，会引起columnType警告
           'NUMBER': {},
           'STRING': {},
         },
+        overlayLoadingTemplate: '<img src="../../../static/img/loading.svg" />',
         getContextMenuItems(param) {
           return [
             'copy',
@@ -807,6 +887,7 @@ const initializeAgTable = (container, opt) => {
             {
               name: '重置所有列位置信息',
               action: function() {
+                isResetAllColumn = true;
                 if (typeof options.onColumnMoved === 'function') {
                   const visibleColumns = [];
                   agTable.originColumnDefs.map(d => d.colname).forEach(d => {
@@ -830,6 +911,9 @@ const initializeAgTable = (container, opt) => {
                   options.onColumnMoved('');
                   agTable.colPosition = '';
                 }
+                setTimeout(() => {
+                  isResetAllColumn = false;
+                }, 500);
               }
             },
           ];
@@ -893,6 +977,7 @@ const initializeAgTable = (container, opt) => {
           document.body.appendChild(tooltipTopBox);
           // 移除ag-tool-panel
           agGridDiv.querySelector('.ag-tool-panel').remove();
+          agTable.dealWithPinnedColumns();
         }, // 当表格渲染好之后，触发onGridReady
         onBodyScroll(params) {
           const { columnApi, direction } = params;
@@ -924,29 +1009,70 @@ const initializeAgTable = (container, opt) => {
           }, 10);
         }, // 显示或者隐藏列的监听
         onColumnMoved(param) {
-          const { columnApi } = param;
-          clearTimeout(updateColumnPositionDelay);
-          updateColumnPositionDelay = setTimeout(() => {
-            if (typeof options.onColumnMoved === 'function') {
-              const columnState = columnApi.getColumnState().map(d => d.colId);
-              const orderedColumns = [];
-              const hideColumn = options.datas.hideColumn && options.datas.hideColumn !== '' ? options.datas.hideColumn.split(',') : [];
-              columnState.forEach(d => {
-                if (hideColumn.indexOf(d) === -1 && d !== 'ID') {
-                  // 所有非隐藏列，并且不是ID列，进组。
-                  orderedColumns.push(d);
+          // if (param.columns.length > 0) {
+          //   if(param.columns[0].pinned===null||param.columns[0].pinned===undefined){
+              const { columnApi } = param;
+              clearTimeout(updateColumnPositionDelay);
+              updateColumnPositionDelay = setTimeout(() => {
+                if (typeof options.onColumnMoved === 'function') {
+                  const columnState = columnApi.getColumnState().map(d => d.colId);
+                  const orderedColumns = [];
+                  const hideColumn = options.datas.hideColumn && options.datas.hideColumn !== '' ? options.datas.hideColumn.split(',') : [];
+                  columnState.forEach(d => {
+                    if (hideColumn.indexOf(d) === -1 && d !== 'ID') {
+                      // 所有非隐藏列，并且不是ID列，进组。
+                      orderedColumns.push(d);
+                    }
+                  });
+                  // ID列永远作为显示列，并且永远放在排序的首位，并且记录用户操作后的列的顺序到agTable实例中
+                  agTable.colPosition = ['ID'].concat(orderedColumns).toString();
+                  options.onColumnMoved(['ID'].concat(orderedColumns).toString());
                 }
-              });
-              // ID列永远作为显示列，并且永远放在排序的首位，并且记录用户操作后的列的顺序到agTable实例中
-              agTable.colPosition = ['ID'].concat(orderedColumns).toString();
-              options.onColumnMoved(['ID'].concat(orderedColumns).toString());
-            }
-          }, 500);
+              }, 500);
+            // } else {
+            //   this.onColumnPinned(param)
+            // }
+          // }
         },
         onColumnPinned(params) {
+
           const pinnedLeft = params.columnApi.getDisplayedLeftColumns().map(d => d.colId);
           const pinnedRight = params.columnApi.getDisplayedRightColumns().map(d => d.colId);
           agGridTableContainer.setAttribute('data-pinned-status', encodeURI(JSON.stringify({ pinnedLeft, pinnedRight })));
+
+          //  取消固定列的时候将该固定放到固定位置
+          if (typeof options.onColumnPinned === 'function') {
+            if(!isResetAllColumn){
+              if (params.pinned === null) {
+                const columnState = params.columnApi.getColumnState().map(d => d.colId);
+                const orderedColumns = [];
+                const hideColumn = options.datas.hideColumn && options.datas.hideColumn !== '' ? options.datas.hideColumn.split(',') : [];
+                columnState.forEach(d => {
+                  if (hideColumn.indexOf(d) === -1 && d !== params.column.colId && d !== 'ID') {
+                    // 所有非隐藏列，并且不是ID列，也不是当前取消的固定列，进组。
+                    orderedColumns.push(d);
+                  }
+                });
+
+                //  取消固定列的时候将该列移动到所有列的列尾
+                // agTable.colPosition = orderedColumns.concat([params.column.colId]).toString();
+                // options.onColumnMoved(orderedColumns.concat([params.column.colId]).toString());
+
+                //  取消固定列的时候将该列移动到所有列的列首
+                agTable.colPosition = ['ID'].concat([params.column.colId].concat(orderedColumns)).toString();
+                setTimeout(() => {
+                  agTable.colPosition.split(',').forEach((d, i) => {
+                      params.columnApi.moveColumn(d, i);
+                  });
+                }, 48);
+                options.onColumnMoved(['ID'].concat([params.column.colId].concat(orderedColumns)).toString());
+              }
+            }
+
+            //  将固定列保存到数据库
+            const pinnedPosition = pinnedLeft.join(',')+"|"+pinnedRight.join(',');
+            options.onColumnPinned(pinnedPosition);
+          }
         },
         getRowClass(params) {
           let className = '';
@@ -981,6 +1107,7 @@ const initializeAgTable = (container, opt) => {
 
     // 设置columnDefs
     agTable.setCols = (data) => {
+      agTable.colPosition = '';
       const options = agTable.customizeOptions;
       if (!data) { return agTable; } // 如果未传参，则返回。
       agTable.originColumnDefs = data;
@@ -1007,7 +1134,9 @@ const initializeAgTable = (container, opt) => {
         });
 
         positionColumns.forEach(columnName => {
-          visibleColumns.push(columnMap[columnName]);
+          if (columnMap[columnName]) {
+            visibleColumns.push(columnMap[columnName]);
+          }
         });
 
         // console.table(positionColumns.map(colname => ({ name: columnMap[colname].name, colname })));
@@ -1024,6 +1153,21 @@ const initializeAgTable = (container, opt) => {
       return agTable;
     };
 
+    // 处理pinned columns
+    agTable.dealWithPinnedColumns = () => {
+      const options = agTable.customizeOptions;
+      const { pinnedPosition } = options.datas;
+      if (pinnedPosition !== null) {
+        let pinnedColumns = pinnedPosition.split('|');
+        let pinnedLeftColumns = pinnedColumns[0].split(',');
+        if (pinnedColumns[1]!=null){
+          let pinnedRightColumns = pinnedColumns[1].split(',');
+          columnApi.setColumnsPinned(pinnedRightColumns, 'right');
+        }
+        columnApi.setColumnsPinned(pinnedLeftColumns, 'left');
+      }
+    };
+
     // 设置rowData
     agTable.setRows = (data) => {
       if (!data) { return agTable; } // 如果未传参，则返回。
@@ -1036,8 +1180,10 @@ const initializeAgTable = (container, opt) => {
       rowData.forEach((d, i) => {
         d[AG_SEQUENCE_COLUMN_NAME] = { val: i + 1 }
       });
+      agTable.pinnedBottomRowData = pinnedBottomRowData;
       api.setRowData(rowData);
       api.setPinnedBottomRowData(pinnedBottomRowData);
+      api.hideOverlay();
       agTable.fixAgRenderChoke();
       return agTable;
     };
@@ -1062,11 +1208,43 @@ const initializeAgTable = (container, opt) => {
     // 暴露纵向滚动方法
     agTable.fixAgRenderChoke = () => {
       const viewport = document.querySelector('.ag-body-viewport');
-      viewport.scrollTop = 5;
-      setTimeout(() => {
-        viewport.scrollTop = 0;
-      }, 0);
+      if (viewport) {
+        let currentViewPortScrollLeft = viewport.scrollLeft;
+        viewport.scrollTop = 5;
+        viewport.scrollLeft = 1;
+        setTimeout(() => {
+          viewport.scrollTop = 0;
+          viewport.scrollLeft = currentViewPortScrollLeft || 0;
+          columnApi.autoSizeAllColumns();
+        }, 50);
+      }
+      return agTable;
+    };
+
+    // 暴露ag showOverlay方法
+    agTable.showLoading = () => {
+      api.clearFocusedCell(); // 清楚选中单元格
       columnApi.autoSizeAllColumns();
+      api.showLoadingOverlay();
+      return agTable;
+    };
+
+    // 暴露ag hideOverlay方法
+    agTable.hideLoading = () => {
+      api.hideOverlay();
+      return agTable;
+    };
+
+    // 暴露销毁方法，释放内存
+    agTable.destroy = () => {
+      api.destroy();
+      return agTable;
+    };
+
+    // 暴露设置fullRangeSubTotalRow的方法
+    agTable.setFullRangeSubTotalRow = (data) => {
+      const { pinnedBottomRowData } = agTable;
+      api.setPinnedBottomRowData(pinnedBottomRowData.concat([dealWithFullRangeSubTotalRow(data)]));
     };
 
     agGridTableContainer.agTable = agTable;

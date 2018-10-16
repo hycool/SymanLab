@@ -269,7 +269,7 @@ const initializeAgReport = (container, opt) => {
       toolPanelSuppressColumnFilter: true, // 禁用columns filter
       toolPanelSuppressColumnSelectAll: true, // 禁用ColumnSelectAll checkbox
       toolPanelSuppressSideButtons: !(options.reportMode && options.reportMode !== 'normal'), // 禁用侧边栏的开关按钮
-      groupIncludeFooter: false, // 是否显示分组的footer 合计行
+      groupIncludeFooter: true, // 是否显示分组的footer 合计行
       floatingFilter: options && options.floatingFilter ? options.floatingFilter : true, // 是否显表头下方的浮动筛选框
       rowDragManaged: true,
       rowGroupPanelShow: options && options.rowGroupPanelShow ? options.rowGroupPanelShow : 'never', // 是否显最顶部的group panel ['always', 'onlyWhenGrouping', 'never']
